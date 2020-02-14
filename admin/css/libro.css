@@ -1,0 +1,112 @@
+		.busqueda_alumno{
+			width: 320px;
+			margin: 40px auto 0 auto;
+			background: #f3f3f3;
+			padding: 4px;
+		}
+		.busqueda_alumno .busqueda_titulo{
+			padding: 5px;
+			font-size: 18px
+		}
+		.busqueda_alumno .ingreso_nombre{
+
+		}
+		.busqueda_alumno .ingreso_nombre input{
+			width: 100%;
+			height: 40px;
+			border: 0px;
+		}
+		.busqueda_alumno .lista{
+			background: #f9f9f9;
+		}
+		.busqueda_alumno .lista .item_alumno{
+			padding: 10px;
+			display: block;
+			background: #00f9c9;
+		}
+		.busqueda_alumno .prestar{
+			background: #ccc;
+			text-align: center;
+			padding: 6px 0px;
+			font-size: 20px;
+			display: none;
+			margin-top: 4px;
+		}
+		.devolucion_libro{
+			width: 320px;
+			margin: 0 auto;
+			background: #f3f3f3;
+			padding: 4px;
+		}
+		.devolucion_libro .devolver{
+			display: block;
+			font-size: 20px;
+			text-align: center;
+			background: #ccc;
+			padding: 5px 0px;
+		}
+		.nombre_libro{
+			width: 320px;
+			margin: 0 auto;
+			background: #f3f3f3;
+			padding: 4px;
+		}
+		.nombre_libro .nombre{
+			display: block;
+			font-size: 20px;
+			text-align: center;
+			padding: 6px 0px;
+		}
+		.nombre_libro .alumno{
+			display: block;
+			font-size: 16px;
+			text-align: center;
+			padding: 2px 0px;
+		}
+		.nombre_libro .fecha{
+			display: block;
+			font-size: 16px;
+			text-align: center;
+			padding: 2px 0px;
+		}
+		.ingresar_libro{
+			width: 320px;
+			margin: 0 auto;
+			background: #f3f3f3;
+			padding: 4px;
+		}
+		.ingresar_libro .libro_nombre{
+		
+		}
+		.ingresar_libro .libro_nombre input{
+			width: 100%;
+			height: 40px;
+			border: 0px;
+		}
+		.ingresar_libro .ingresar{
+			display: block;
+			font-size: 20px;
+			text-align: center;
+			background: #ccc;
+			padding: 5px 0px;
+		}
+		.prestados{
+			width: 320px;
+			margin: 30px auto 0 auto;
+			background: #f3f3f3;
+			padding: 4px;
+		}
+		.prestados .titulo{
+			font-size: 20px;
+			padding: 5px 5px 10px 5px;
+		}
+		.prestados .datos{
+			background: #ededed;
+			padding: 5px;
+		}
+		.prestados .datos .alumno{
+			font-size: 16px;
+		}
+		.prestados .datos .libro{
+			font-size: 14px;
+		}
