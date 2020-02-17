@@ -1,0 +1,715 @@
+html{
+    height: 100%;
+    body{
+        height: 100%;
+        .sitio{
+            width: 100%;
+            height: 100%;
+            background: #ddf;
+            position: relative;
+            .clouds{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                z-index: 1;
+                overflow: hidden;
+                .cloud {
+                    right: -200px;
+                    width: 200px;
+                    height: 60px;
+                    background: #fff;
+                    border-radius: 200px;
+                    position: absolute;
+                }
+                .cloud:before, .cloud:after {
+                    content: '';
+                    position: absolute; 
+                    background: #fff;
+                    width: 100px; height: 80px;
+                    position: absolute; top: -15px; left: 10px;
+                    border-radius: 100px;
+                    -moz-border-radius: 100px;
+                    -webkit-border-radius: 100px;
+                    -webkit-transform: rotate(30deg);
+                    transform: rotate(30deg);
+                    -moz-transform: rotate(30deg);
+                }    
+                .cloud:after {
+                    width: 120px;
+                    height: 120px;
+                    top: -55px;
+                    left: auto;
+                    right: 15px;
+                }
+            }
+            .background{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                z-index: 2;
+                overflow: hidden;
+                .pasto{
+                    position: absolute;
+                    bottom: 0px;
+                    width: 100%;
+                    height: 200px;
+                    background: url('../img/pasto.png') repeat-x center;
+                }
+                .pasto{
+                    position: absolute;
+                    bottom: 0px;
+                    width: 100%;
+                    height: 200px;
+                    background: url('../img/pasto.png') repeat-x center;
+                }
+                .arbol{
+                    position: absolute;
+                    bottom: 100px;
+                    left: -30px;
+                    width: 253px;
+                    height: 222px;
+                    background: url('../img/arbol.png') no-repeat;
+                }
+                .arbol2{
+                    position: absolute;
+                    bottom: 90px;
+                    right: -50px;
+                    width: 253px;
+                    height: 222px;
+                    background: url('../img/arbol.png') no-repeat;
+                }
+            }
+            .web{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                z-index: 3;
+                .contenido{
+                    display: block;
+                    padding: 30px 0px;
+                    width: 90%;
+                    max-width: 1000px;
+                    .menu_resp{
+                        width: 100%;
+                        height: 110px;
+                        position: relative;
+                        .cont{
+                            min-width: 320px;
+                            width: 80%;
+                            .ada_chica{
+                                float: left;
+                                width: 34%;
+                                margin-right: 2%;
+                                height: 100px;
+                                position: relative;
+                                img{
+                                    position: absolute;
+                                    right: 0px;
+                                }
+                            }
+                            .titulo{
+                                float: left;
+                                width: 64%;
+                                height: 100px;
+                                position: relative;
+                                .cont_titulo{
+                                    h1{
+                                        font-size: 28px;
+                                        text-align: center;
+                                    }
+                                    h2{
+                                        font-size: 16px;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .menu{
+                        width: 100%;
+                        padding-bottom: 10px;
+                        .boton{
+                            float: right;
+                            a{
+                                padding: 10px 6px;
+                                border-radius: 5px;
+                                text-decoration: none;
+                                font-size: 15px;
+                                color: #fff;
+                                display: block;
+                            }
+                        }
+                        .boton:not(:last-child){
+                            padding-left: 1%;
+                        }
+                        .color1 a{
+                            background: rgba(170, 170, 170, 0.8);
+                        }
+                        .color2 a{
+                            background: #9BCA00;
+                        }
+                        .color3 a{
+                            background: #FFCC00;
+                        }
+                        .color4 a{
+                            background: #F9800D;
+                        }
+                        .color5 a{
+                            background: #F94827;
+                        }
+                    }
+                    .contenedor{
+                        display: block;
+                        height: 500px;
+                        background: #fff;
+                        position: relative;
+                        overflow: hidden;
+                        .ada{
+                            position: absolute;
+                            z-index: 2;
+                            width: 25%;
+                            top: 100px;
+                            img{
+                                display: block;
+                                margin: 0 auto;
+                            }
+                        }
+                        .info{
+                            position: absolute;
+                            z-index: 1;
+                            height: calc(100% - 30px);
+                            padding: 15px 1%;
+                            .cont_pagina{
+                                width: 100%;
+                                height: 100%;
+                                position: relative;
+                                font-family: 'Baloo Tamma', cursive;
+                                .pagina{
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 10px;
+                                    overflow: hidden;
+                                    position: absolute;
+                                    .data{
+                                        height: 100%;
+                                        width: 100%;
+                                        position: relative;
+                                        .texto{
+                                            z-index: 2;
+                                            position: absolute;
+                                            left: 3%;
+                                            height: 94%;
+                                            top: 3%;
+                                            overflow-y: auto;
+                                            .lista{
+                                                padding: 6px 0 20px 15px;
+                                                li{
+                                                    list-style: initial;
+                                                    font-size: 10px;
+                                                    line-height: 14px;
+                                                }
+                                            }
+                                        }
+                                        .imagen{
+                                            z-index: 2;
+                                            width: 48%;
+                                            position: absolute;
+                                            left: 50%;
+                                            height: 94%;
+                                            top: 3%;
+                                            background-size: cover;
+                                        }
+                                        .fondo{
+                                            position: absolute;
+                                            width: 100%;
+                                            height: 100%;
+                                            z-index: 1;
+                                        }
+                                        .formulario{
+                                            z-index: 2;
+                                            position: absolute;
+                                            left: 3%;
+                                            height: 94%;
+                                            top: 3%;
+                                            width: 53%;
+                                            .titulo{
+                                                font-size: 25px;
+                                                padding-bottom: 5px;
+                                            }
+                                            .input{
+                                                padding-bottom: 5px;
+                                                span{
+                                                    display: block;
+                                                    font-size: 14px;
+                                                    line-height: 14px;
+                                                }
+                                                input{
+                                                    width: 100%;
+                                                    height: 30px;
+                                                }
+                                                textarea{
+                                                    width: 100%;
+                                                    height: 100px;
+                                                }
+                                            }
+                                            .boton{
+                                                padding-top: 5px;
+                                                input{
+                                                    padding: 5px 15px;
+                                                    font-size: 14px;
+                                                }
+                                            }
+                                            .leyenda{
+                                                padding-top: 10px;
+                                                font-size: 16px;
+                                                line-height: 16px;
+                                            }
+                                        }
+                                        .mapa{
+                                            z-index: 2;
+                                            width: 38%;
+                                            position: absolute;
+                                            left: 60%;
+                                            height: 94%;
+                                            top: 3%;
+                                        }
+                                    }
+                                }
+                                .conozcanos{
+                                    top: 0px;
+                                    opacity: 1;
+                                    .data{
+                                        .fondo{
+                                            background: linear-gradient(90deg, rgba(254,218,212, 1) 45%, rgba(254,218,212, 0) 100%);
+                                        }
+                                        .imagen{
+                                            background: url('../img/conozcanos.jpg') repeat-x center;
+                                        }
+                                    }
+                                    .titulo{
+                                        font-size: 25px;
+                                        padding-bottom: 5px;
+                                    }
+                                    .subtitulo{
+                                        font-size: 14px;
+                                        line-height: 14px;
+                                        padding-bottom: 15px;
+                                    }
+                                    .listado{
+                                        font-size: 12px;
+                                        line-height: 16px;
+                                        padding-bottom: 4px;
+                                    }
+                                    .titulo_2{
+                                        font-size: 14px;
+                                        line-height: 14px;
+                                        padding-bottom: 15px;
+                                    }
+                                    .sub_titulo_2{
+                                        font-size: 13px;
+                                        line-height: 13px;
+                                        padding-bottom: 15px;
+                                    }
+                                    .sub_titulo_3{
+                                        font-size: 17px;
+                                        line-height: 17px;
+                                        padding-bottom: 10px;
+                                    }
+                                }
+                                .horarios{
+                                    top: 500px;
+                                    opacity: 0;
+                                    .data{
+                                        .fondo{
+                                            background: linear-gradient(90deg, rgba(255,235,153, 1) 45%, rgba(255,235,153, 0) 100%);
+                                        }
+                                        .imagen{
+                                            background: url('../img/horarios.jpg') repeat-x center;
+                                        }
+                                    }
+                                    .titulo{
+                                        font-size: 25px;
+                                        padding-bottom: 5px;
+                                    }
+                                    .subtitulo{
+                                        font-size: 17px;
+                                        line-height: 17px;
+                                        padding-bottom: 10px;
+                                    }
+                                    .leyenda{
+                                        font-size: 14px;
+                                        line-height: 14px;
+                                        padding-bottom: 10px;
+                                    }
+                                    .item{
+                                        font-size: 14px;
+                                        line-height: 14px;
+                                        padding-bottom: 10px;
+                                    }
+                                    .bajada{
+                                        font-size: 19px;
+                                        line-height: 17px;
+                                        padding-top: 5px;
+                                    }
+                                }
+                                .propuestaeducativa{
+                                    top: 500px;
+                                    opacity: 0;
+                                    .data{
+                                        .fondo{
+                                            background: linear-gradient(90deg, rgba(243,204,159, 1) 45%, rgba(243,204,159, 0) 100%);
+                                        }
+                                        .imagen{
+                                            background: url('../img/propuesta_educativa.jpg') repeat-x center;
+                                        }
+                                    }
+                                    .titulo{
+                                        font-size: 25px;
+                                        padding-bottom: 5px;
+                                    }
+                                    .subtitulo{
+                                        font-size: 14px;
+                                        line-height: 14px;
+                                        padding-bottom: 15px;
+                                    }
+                                    .leyenda{
+                                        font-size: 12px;
+                                        line-height: 12px;
+                                        padding-bottom: 10px;
+                                    }
+                                }
+                                .contacto{
+                                    background: rgba(155,202,0,0.4);
+                                    top: 500px;
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .visita_virtual{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                z-index: 5;
+                background: rgba(0, 0, 0, 0.75);
+                .panorama{
+                    max-width: 970px;
+                    max-height: 470px;
+                    width: 92%;
+                    height: 100%;
+                    overflow: hidden;
+                    position: relative;
+                    background: #F9800D;
+                    .pan{
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        display: none;
+                        width: 100%;
+                        height: 100%;
+                        .punto{
+                            position: absolute;
+                            padding: 10px 20px;
+                            background: rgba(255, 255, 255, 0.9);
+                            border-radius: 5px;
+                            font-size: 15px;
+                            cursor: pointer;
+                        }
+                    }
+                    .visible{
+                        display: block;
+                    }
+                }
+            }
+            .menu_web{
+                position: fixed;
+                height: 100%;
+                width: 260px;
+                z-index: 4;
+                left: -260px;
+                background: #fff;
+                .btn_menu{
+                    position: absolute;
+                    width: 40px;
+                    height: 39px;
+                    top: 17px;
+                    right: -55px;
+                    span{
+                        width: 100%;
+                        height: 9px;
+                        margin-top: 4px;
+                        background: #4193B8;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 580px){
+
+    .pagina{
+        .data{
+            .imagen{
+                display: none;
+            }
+            .fondo{
+                display: block;
+            }
+            .texto{
+                width: 72%;
+                padding-right: 25%;
+            }
+        }
+    }
+    .conozcanos{
+        background: rgba(249,72,39,0.4) url('../img/conozcanos_back.jpg') no-repeat top right;
+    }
+    .horarios{
+        background: rgba(255,204,0,0.4);
+    }
+    .propuestaeducativa{
+        background: rgba(249,128,14,0.4);
+    }
+
+}
+@media only screen and (min-width: 580px){
+
+    .pagina{
+        .data{
+            .imagen{
+                display: block;
+            }
+            .fondo{
+                display: none;
+            }
+            .texto{
+                width: 47%;
+            }
+        }
+    }
+    .conozcanos{
+        background: rgba(249,72,39,0.4);
+    }
+    .horarios{
+        background: rgba(255,204,0,0.4);
+    }
+    .propuestaeducativa{
+        background: rgba(249,128,14,0.4);
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    html{
+        body{
+            .sitio{
+                .menu_web{
+                    display: block;
+                }
+                .web{
+                    .contenido{
+                        .menu_resp{
+                            display: block;
+                        }
+                        .menu{
+                            display: none;
+                        }
+                    }
+                }
+                .contenedor{
+                    .ada{
+                        display: none;
+                    }
+                    .info{
+                        width: 98%;
+                        left: 0%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 768px){
+    html{
+        body{
+            .sitio{
+                .menu_web{
+                    display: none;
+                }
+                .web{
+                    .contenido{
+                        .menu_resp{
+                            display: none;
+                        }
+                        .menu{
+                            display: block;
+                        }
+                    }
+                }
+                .contenedor{
+                    .ada{
+                        display: block;
+                    }
+                    .info{
+                        width: 73%;
+                        left: 25%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.box{
+    width: 100%;
+    padding: 0px;
+    position: relative;
+    background: -webkit-gradient(linear, 100% 100%, 50% 10%, from(#fff), to(#fff), color-stop(.1,#fff));
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 1px 1px 4px rgba(0,0,0, 0.1);
+    -webkit-border-bottom-right-radius: 60px 5px;
+}
+.box:before{
+    content: '';
+    width: 98%;
+    z-index:-1;
+    height: 99%;
+    padding: 0 0 1px 0;
+    position: absolute;
+    bottom: 1%; right:0;
+    background: -webkit-gradient(linear, 0% 20%, 0% 92%, from(#fff), to(#fff), color-stop(.1,#fff));
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 1px 1px 8px rgba(0,0,0, 0.1);
+    -webkit-border-bottom-right-radius: 60px 5px;
+    -webkit-transform: skew(2deg,2deg) translate(3px,5px)
+}
+.box:after{
+    content: '';
+    width: 98%;
+    z-index:-1;
+    height: 96%;
+    padding: 0 0 1px 0;
+    position: absolute;
+    bottom: 2%; right:0;
+    background: -webkit-gradient(linear, 0% 20%, 0% 100%, from(#fff), to(#fff), color-stop(.1,#fff));
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0, 0.1);
+    -webkit-transform: skew(2deg,2deg) translate(-1px,2px)
+}
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+::-webkit-scrollbar{
+    width: 7px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #bbb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{
+	margin:0;
+	padding:0;
+	outline:none;
+}
+body{
+	font: 62.5% Arial, Helvetica, sans-serif;
+}
+table{
+	/*border-collapse:collapse;
+	border-spacing:0;*/
+	width:100%;
+}
+fieldset,img, abbr, acronym{
+	border:0;
+}
+address,caption,cite,code,dfn,th,var{
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul,dl{
+	list-style:none;
+}
+caption,th{
+	text-align:left;
+}
+img{
+	border:0;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size:1em;
+	font-size:100%;
+	font-weight:normal;
+}
+a{
+	outline:none;
+}
+/*PROPIEDADES*******************************/
+.clearfix:after{
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.clearfix{
+	display: inline-block;
+}
+/*\*/* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}/**/
+.margen_bloque{
+	margin-right:10px;
+}
+.flotar_izq{
+	float:left;
+	display:inline;
+}
+.flotar_der{
+	float:right;
+	display:inline;
+}
+.vhalign{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.valign{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.halign{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -1,17 +1,15 @@
+var num = 1;
+var pagina = "conozcanos";
+var btn_active = 1;
+var min = 0;
+var max = 0;
+var panorama_width = 970;
+
 $(document).ready(function(){
     
-    var left = 0;
-    var panorama_width = 970;
-    var min = 0;
-    var max = 0;
-    var ww = $(window).width();
+
     var div = $(".panorama").find('.visible');
-    var hh = $(window).height();
-    
-    var backright = (ww - 970)/2 + 20;
-    var backbottom = (hh - 470)/2 + 20;
-    
-    $('.back').css({bottom: backbottom, right: backright});
+    var cursorX = 0;
     
     $('.punto').click(function(){
         
@@ -22,24 +20,48 @@ $(document).ready(function(){
         max = div.find('.img').width() - 970;
                     
     });
-    
+    $(".panorama").on('touchstart', function(e){
+        e.preventDefault();
+        var xPos = e.originalEvent.touches[0].pageX;
+        alert(xPos);
+    });
+    $(".panorama").on('touchmove', function(e){
+        e.preventDefault();
+        var xPos = e.originalEvent.touches[0].pageX;
+        alert(xPos);
+    });
+    $(".panorama").on('touchend', function(e){
+        e.preventDefault();
+        var xPos = e.originalEvent.touches[0].pageX;
+        alert(xPos);
+    });
+
+    $(".panorama").mousemove(function(event){
         
-    $(".panorama").mousemove(function( event ){
-        
-        var x = (event.pageX - parseInt((ww - 1000)/2) - panorama_width/2)/5;
-        var diff = (max - min)/2;
-        var left = -(diff + (diff * x)/100);
+        var panorama_width = (parseInt($(window).width() * 0.92) > 970) ? 970 : parseInt($(window).width() * 0.92) ;
+        var j = (event.pageX - ($(window).width() - panorama_width)/2)/panorama_width;
+        var left = (panorama_width - div.width())*j;
         div.css('left', left+"px");
         
     });
-    
+    ordernarContenido();
+    $(window).resize(function() {
+        ordernarContenido();
+    });
+
+    /*
+    var left = 0;
+    var div = $(".panorama").find('.visible');
+    var hh = $(window).height();
+    var backright = (ww - 970)/2 + 20;
+    var backbottom = (hh - 470)/2 + 20;
+    $('.back').css({bottom: backbottom, right: backright});
     $('.imgp').click(function(){
         
         var src = $(this).attr('src');
         $(this).parents('.pan').find('.imgx').attr('src', src);
         
     });
-    
     $('#send').click(function(){
         
         var nombre = $('#nombre').val();
@@ -77,8 +99,9 @@ $(document).ready(function(){
         
     });
     
-
-    $('.btncontacto').click(function(){
+    */
+    
+   $('.btncontacto').click(function(){
         aparece('contacto');
         return false;
     });
@@ -94,30 +117,99 @@ $(document).ready(function(){
         aparece('conozcanos');
         return false;
     });
+    $('.clouds').find('.cloud').each(function(){
+        var x = num;
+        setTimeout(function(){ cloud(x); }, num*700);
+        num++;
+    });
+    $('.btn_menu').click(function(){
+        var menu = $(this).parent();
+        if(menu.position().left == -260){
+            $(menu).animate({
+                left: "0px"
+            }, 750);
+            $(this).animate({
+                right: "25px"
+            }, 750);
+        }
+        if(menu.position().left == 0){
+            $(menu).animate({
+                left: "-260px"
+            }, 750);
+            $(this).animate({
+                right: "-55px"
+            }, 750);
+        }
+    });
+    google.maps.event.addDomListener(window, 'load', initialize);
     
 });
+function ordernarContenido(){
 
+    var width = (parseInt($(window).width() * 0.92) > 970) ? 970 : parseInt($(window).width() * 0.92) ;
+    panorama_width = width;
+    $('.panorama').find('.pan').each(function(){
+        if($(this).hasClass('.imgpan')){
+            if(width < $(this).width()){
+                var left = -(($(this).width() - width)/2);
+                $(this).css({ left: left+"px"});
+            }
+        }
+    });
+}
+function cloud(x){
+
+    $('.cloud'+x).css({top: randomInt(40, 250)+"px", opacity: randomFloat(0.6, 1), transform: 'scale('+randomFloat(0.7, 1.1)+')'});
+    $('.cloud'+x).animate({
+        left: "-200px"
+    }, randomInt(2500, 3500), function() {
+        $(this).css({right: '-200px', left: null});
+        cloud(x);
+    });
+
+}
+
+function randomInt(min, max) {
+	return min + Math.floor((max - min) * Math.random());
+}
+function randomFloat(min, max) {
+    return min + (max - min) * Math.random();
+}
 
 function aparece(pag){
-    desaparece();
-    $( "."+pag ).css({top: "100px"});
-    $( "."+pag ).animate({
-        top: "0px",
-        opacity: 1
-    }, 1000, function() {
-        $('#pagina').val(pag);
-    });
-    $(".info").animate({
-        backgroundColor: "#ff0"
-    }, 1000);
-    
+    if(pag != pagina && btn_active == 1){
+        btn_active = 0;
+        desaparece();
+        $("."+pag).css({top: "100px"});
+        $("."+pag).animate({
+            top: "0px",
+            opacity: 1
+        }, 1000, function() {
+            pagina = pag;
+            btn_active = 1;
+        });
+    }
 }
 function desaparece(){
-    var pag = $('#pagina').val();
-    $( "."+pag ).animate({
+    var pag = pagina;
+    $("."+pag).animate({
         top: "100px",
         opacity: 0
     }, 1000, function() {
-        $( "."+pag ).css({top: "500px"});
+        $("."+pag ).css({top: "500px"});
     });
+}
+
+function initialize(){
+    var myCenter = new google.maps.LatLng(-33.480455,-70.5534333);
+    var mapProp = {
+        center: myCenter,
+        zoom: 15,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("mapa"), mapProp);
+    var marker = new google.maps.Marker({
+        position: myCenter,
+    });
+    marker.setMap(map);
 }
