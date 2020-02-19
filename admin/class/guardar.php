@@ -195,7 +195,7 @@ class Guardar{
         $motivo_retiro = $_POST['motivo_retiro'];
         $observaciones = $_POST['observaciones'];
         $curso = $_POST['curso'];
-	$rr = $_POST['rr'];
+	    $rr = $_POST['rr'];
         
         $nombre_01 = $_POST['nombre_01'];
         $nombre_02 = $_POST['nombre_02'];
@@ -208,7 +208,7 @@ class Guardar{
         
         if($id == 0){
             
-            $a = $this->con->sql("INSERT INTO _jardinva_alumnos (id_page) VALUES ('1')");
+            $a = $this->con->sql("INSERT INTO _jardinva_alumnos (rut) VALUES ('1')");
             $id = $a['insert_id'];
             $info['op'] = 1;
             $info['mensaje'] = "Alumno ingresado exitosamente";
@@ -227,7 +227,7 @@ class Guardar{
             $this->con->sql("UPDATE _jardinva_alumnos SET fecha_ingreso='".$fecha_ingreso."' WHERE id_alu='".$id."'");
             $this->con->sql("UPDATE _jardinva_alumnos SET direccion='".$direccion."' WHERE id_alu='".$id."'");
             $this->con->sql("UPDATE _jardinva_alumnos SET nombre_apoderado='".$nombre_apoderado."' WHERE id_alu='".$id."'");
-	    $this->con->sql("UPDATE _jardinva_alumnos SET rut='".$rut."' WHERE id_alu='".$id."'");
+	        $this->con->sql("UPDATE _jardinva_alumnos SET rut='".$rut."' WHERE id_alu='".$id."'");
             $this->con->sql("UPDATE _jardinva_alumnos SET telefono_apoderado='".$telefono_apoderado."' WHERE id_alu='".$id."'");
             $this->con->sql("UPDATE _jardinva_alumnos SET email_apoderado='".$email_apoderado."' WHERE id_alu='".$id."'");
             $this->con->sql("UPDATE _jardinva_alumnos SET fecha_retiro='".$fecha_retiro."' WHERE id_alu='".$id."'");
@@ -235,7 +235,7 @@ class Guardar{
             $this->con->sql("UPDATE _jardinva_alumnos SET observaciones='".$observaciones."' WHERE id_alu='".$id."'");
             
             $this->con->sql("UPDATE _jardinva_alumnos SET id_cur='".$curso."' WHERE id_alu='".$id."'");
-	    $this->con->sql("UPDATE _jardinva_alumnos SET rr='".$rr."' WHERE id_alu='".$id."'");
+	        $this->con->sql("UPDATE _jardinva_alumnos SET rr='".$rr."' WHERE id_alu='".$id."'");
             
             $this->con->sql("UPDATE _jardinva_alumnos SET nombre_01='".$nombre_01."' WHERE id_alu='".$id."'");
             $this->con->sql("UPDATE _jardinva_alumnos SET nombre_02='".$nombre_02."' WHERE id_alu='".$id."'");

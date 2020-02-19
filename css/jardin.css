@@ -400,7 +400,7 @@ html body .sitio .visita_virtual .panorama {
   height: 100%;
   overflow: hidden;
   position: relative;
-  background: #F9800D;
+  background: #FFF;
 }
 html body .sitio .visita_virtual .panorama .pan {
   position: absolute;
@@ -417,9 +417,111 @@ html body .sitio .visita_virtual .panorama .pan .punto {
   border-radius: 5px;
   font-size: 15px;
   cursor: pointer;
+  z-index: 2;
+}
+html body .sitio .visita_virtual .panorama .pan .back {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+}
+html body .sitio .visita_virtual .panorama .pan .fotos {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+html body .sitio .visita_virtual .panorama .pan .fotos .foto_prin {
+  position: absolute;
+  z-index: 2;
+}
+html body .sitio .visita_virtual .panorama .pan .fotos .foto_prin .cont_img {
+  padding: 10px;
+  width: calc(100% - 20px);
+}
+html body .sitio .visita_virtual .panorama .pan .fotos .listado_fotos {
+  position: absolute;
+  background: rgba(255, 255, 0, 0.2);
+  z-index: 1;
+}
+html body .sitio .visita_virtual .panorama .pan .fotos .listado_fotos ul {
+  padding-top: 5px;
+}
+html body .sitio .visita_virtual .panorama .pan .fotos .listado_fotos ul li {
+  float: left;
+  width: 140px;
+  padding: 5px;
+}
+html body .sitio .visita_virtual .panorama .pan .fotos .listado_fotos ul li img {
+  width: 140px;
+  height: 97px;
 }
 html body .sitio .visita_virtual .panorama .visible {
   display: block;
+}
+html body .sitio .visita_virtual .panorama .entrada .pos_patio {
+  top: 150px;
+  left: 960px;
+}
+html body .sitio .visita_virtual .panorama .entrada .pos_biblioteca {
+  top: 150px;
+  left: 770px;
+}
+html body .sitio .visita_virtual .panorama .entrada .pos_salas {
+  top: 150px;
+  left: 1200px;
+}
+html body .sitio .visita_virtual .panorama .entrada .pos_sala_verde {
+  top: 100px;
+  left: 80px;
+}
+html body .sitio .visita_virtual .panorama .entrada .pos_sala_naranja {
+  top: 150px;
+  left: 80px;
+}
+html body .sitio .visita_virtual .panorama .entrada .pos_cocina {
+  top: 200px;
+  left: 80px;
+}
+html body .sitio .visita_virtual .panorama .entrada .pos_entrada {
+  top: 250px;
+  left: 500px;
+}
+html body .sitio .visita_virtual .panorama .pasillo .pos_sala_azul {
+  top: 245px;
+  left: 740px;
+}
+html body .sitio .visita_virtual .panorama .pasillo .pos_sala_roja {
+  top: 166px;
+  left: 620px;
+}
+html body .sitio .visita_virtual .panorama .pasillo .pos_patio {
+  top: 205px;
+  left: 660px;
+}
+html body .sitio .visita_virtual .panorama .pasillo .pos_sala_amarilla {
+  top: 150px;
+  left: 400px;
+}
+html body .sitio .visita_virtual .panorama .pasillo .pos_bano_sala_duna {
+  top: 190px;
+  left: 355px;
+}
+html body .sitio .visita_virtual .panorama .pasillo .pos_bano_jardin {
+  top: 230px;
+  left: 321px;
+}
+html body .sitio .visita_virtual .panorama .Sala_Verde .pos_sala_actividades {
+  top: 245px;
+  left: 160px;
+}
+html body .sitio .visita_virtual .panorama .Sala_Verde .pos_sala_siesta {
+  top: 245px;
+  left: 1380px;
+}
+html body .sitio .visita_virtual .panorama .Sala_Verde .pos_bano_sala_cuna {
+  top: 245px;
+  left: 620px;
 }
 html body .sitio .menu_web {
   position: fixed;
@@ -525,6 +627,104 @@ html body .sitio .menu_web .btn_menu span {
   html body .sitio .contenedor .info {
     width: 73%;
     left: 25%;
+  }
+}
+@media only screen and (max-width: 574px) {
+  .visita_virtual .panorama .pan .fotos .foto_prin {
+    max-width: 670px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    height: calc(100% - 100px);
+  }
+  .visita_virtual .panorama .pan .fotos .foto_prin .cont_img {
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .visita_virtual .panorama .pan .fotos .foto_prin .cont_img img {
+    width: 100%;
+    height: auto;
+  }
+  .visita_virtual .panorama .pan .fotos .listado_fotos {
+    width: 100%;
+    height: 100px;
+    bottom: 0px;
+    right: 0px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+@media only screen and (max-width: 904px) and (min-width: 574px) {
+  .visita_virtual .panorama .pan .fotos .foto_prin {
+    max-width: 670px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(100% - 100px);
+    text-align: center;
+  }
+  .visita_virtual .panorama .pan .fotos .foto_prin .cont_img {
+    height: calc(100% - 20px);
+  }
+  .visita_virtual .panorama .pan .fotos .foto_prin .cont_img img {
+    width: auto;
+    height: 100%;
+  }
+  .visita_virtual .panorama .pan .fotos .listado_fotos {
+    width: 100%;
+    height: 100px;
+    bottom: 0px;
+    right: 0px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+@media only screen and (max-width: 1054px) and (min-width: 904px) {
+  .visita_virtual .panorama .pan .fotos .foto_prin {
+    width: 670px;
+    height: 100%;
+  }
+  .visita_virtual .panorama .pan .fotos .foto_prin .cont_img {
+    height: calc(100% - 20px);
+  }
+  .visita_virtual .panorama .pan .fotos .foto_prin .cont_img img {
+    width: auto;
+    height: 100%;
+  }
+  .visita_virtual .panorama .pan .fotos .listado_fotos {
+    width: calc(100% - 670px);
+    right: 0px;
+    height: 100%;
+    overflow-y: auto;
+  }
+  .visita_virtual .panorama .pan .fotos .listado_fotos ul {
+    width: 150px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1054px) {
+  .visita_virtual .panorama .pan .fotos .foto_prin {
+    width: 670px;
+    height: 100%;
+  }
+  .visita_virtual .panorama .pan .fotos .foto_prin .cont_img {
+    height: calc(100% - 20px);
+  }
+  .visita_virtual .panorama .pan .fotos .foto_prin .cont_img img {
+    width: 100%;
+    height: auto;
+  }
+  .visita_virtual .panorama .pan .fotos .listado_fotos {
+    width: 300px;
+    right: 0px;
+    height: 100%;
+    overflow-y: auto;
+  }
+  .visita_virtual .panorama .pan .fotos .listado_fotos ul {
+    width: 300px;
   }
 }
 .box {
