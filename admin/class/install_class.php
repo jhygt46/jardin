@@ -126,7 +126,6 @@ class Install{
             }
             echo "<br/><br/>KEYS<br/><br/>";
             for($i=0; $i<count($keys); $i++){
-                echo $keys[$i]."<br/>";
                 if($this->ejecutar){
                     if($this->con->query($keys[$i])){
                         echo "ALTER CREADO: <br/>";
@@ -139,7 +138,6 @@ class Install{
             }
             echo "<br/><br/>AUTOINCREMENTS<br/><br/>";
             for($i=0; $i<count($ais); $i++){
-                echo $ais[$i]."<br/>";
                 if($this->ejecutar){
                     if($this->con->query($ais[$i])){
                         echo "ALTER CREADO: <br/>";
@@ -152,7 +150,6 @@ class Install{
             }
             echo "<br/><br/>FILTROS<br/><br/>";
             for($i=0; $i<count($cons); $i++){
-                echo $cons[$i]."<br/>";
                 if($this->ejecutar){
                     if($this->con->query($cons[$i])){
                         echo "ALTER CREADO: <br/>";
