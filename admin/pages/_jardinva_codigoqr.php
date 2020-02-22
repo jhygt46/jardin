@@ -49,7 +49,7 @@ if(!isset($_SESSION['user']['info']['id_user'])){
                         <div class="mensaje"></div>
                     </label>
 		    <label>
-                        <span>Tamaño:</span>
+                        <span>Tama&ntilde;o:</span>
                         <select id="tamano">
 				<?php for($i=1; $i<11; $i++){ ?>
 				<option value="<?php echo $i; ?>" <?php echo ($i == 5) ? 'selected' : '' ; ?>><?php echo $i; ?></option>

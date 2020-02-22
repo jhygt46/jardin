@@ -4,18 +4,21 @@ session_start();
 if(!isset($_SESSION['user']['info']['id_user'])){
     exit;
 }
-require '/var/www/html/virtual/jardinvalleencantado.cl/www/admin/class/mysql_class.php';
-$admin = new Conexion();
 
-/* CONFIG PAGE */
-$parent_id = 0;
-if(isset($_GET["parent_id"])){
-    $parent_id = $_GET["parent_id"];
+if($_SERVER["HTTP_HOST"] == "localhost"){
+    define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
+    define("DIR", DIR_BASE."jardin/");
+}else{
+    define("DIR_BASE", "/var/www/html/");
+    define("DIR", DIR_BASE."jardin/");
 }
 
-$db_var_name = "_jardinva";
-$list_ = $admin->sql("SELECT * FROM ".$db_var_name."_cursos WHERE eliminado='0' ORDER BY orders");
-$list = $list_['resultado'];
+require_once DIR."admin/class/jardin_class.php";
+$jardin = new Jardin();
+
+/* CONFIG PAGE */
+$parent_id = (isset($_GET["parent_id"])) ? $_GET["parent_id"] : 0 ;
+$list = $jardin->cursos();
 
 $titulo = "Cursos";
 $titulo_list = "Lista de Cursos";
@@ -33,9 +36,9 @@ $id = 0;
 $sub_titulo = $sub_titulo1;
 if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
     
-    $sub_titulo = $sub_titulo2;
-    $that = $admin->sql("SELECT * FROM ".$db_var_name."_cursos WHERE id_cur='".$_GET["id"]."' AND eliminado='0'");
     $id = $_GET["id"];
+    $sub_titulo = $sub_titulo2;
+    $that = $jardin->curso($id);
     
 }
 
@@ -63,7 +66,7 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                     <input id="accion" type="hidden" value="<?php echo $accion; ?>" />
                     <label>
                         <span>Nombre:</span>
-                        <input id="nombre" type="text" value="<?php echo $that['resultado'][0]['nombre']; ?>" require="" placeholder="Electro" />
+                        <input id="nombre" type="text" value="<?php echo $that['nombre']; ?>" require="" placeholder="Electro" />
                         <div class="mensaje"></div>
                     </label>
                     <label style='margin-top:20px'>

@@ -4,12 +4,24 @@ session_start();
 if(!isset($_SESSION['user']['info']['id_user'])){
     exit;
 }
-require '/var/www/html/virtual/jardinvalleencantado.cl/www/admin/class/mysql_class.php';
-$admin = new Conexion();
 
-$tipo = $_GET["tipo"];
-$id_cur = $_GET["curso"];
-$db_var_name = "_jardinva";
+if($_SERVER["HTTP_HOST"] == "localhost"){
+    define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
+    define("DIR", DIR_BASE."jardin/");
+}else{
+    define("DIR_BASE", "/var/www/html/");
+    define("DIR", DIR_BASE."jardin/");
+}
+
+$tipo = (isset($_GET["tipo"])) ? $_GET["tipo"] : 0 ;
+$id_cur = (isset($_GET["curso"])) ? $_GET["curso"] : 0 ;
+
+
+require_once DIR."admin/class/jardin_class.php";
+$jardin = new Jardin();
+$list = $jardin->resumen($tipo, $id_cur);
+
+
 
 if($tipo == 1){
     

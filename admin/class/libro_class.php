@@ -1,14 +1,39 @@
 <?php
 
-require '/var/www/html/virtual/jardinvalleencantado.cl/www/admin/class/mysql_class.php';
+if($_SERVER["HTTP_HOST"] == "localhost"){
+    define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
+    define("DIR", DIR_BASE."jardin/");
+}else{
+    define("DIR_BASE", "/var/www/html/");
+    define("DIR", DIR_BASE."jardin/");
+}
+
+require_once DIR."db.php";
+require_once DIR_BASE."config/config.php";
 
 class Libro{
     
-    	public $con = null;
+		public $con = null;
+		public $host = null;
+		public $usuario = null;
+		public $password = null;
+		public $base_datos = null;
+		public $eliminado = 0;
+		public $fecha_devolvio = "0000-00-00 00:00:00";
 
     	public function __construct(){
         
-		$this->con = new Conexion();
+			global $db_host;
+			global $db_user;
+			global $db_password;
+			global $db_database;
+
+			$this->host	= $db_host;
+			$this->usuario = $db_user;
+			$this->password = $db_password;
+			$this->base_datos = $db_database;
+
+			$this->con = new mysqli($this->host[0], $this->usuario[0], $this->password[0]);
 
     	}
     	public function nuevo_libro(){
@@ -21,16 +46,24 @@ class Libro{
 			$nombre = $_POST["nombre"];
 			if($id_lib == 0 && $usr["perm_ingreso"] == 1){
 				$qr = $_POST["qr"];
-				$sql = $this->con->sql("INSERT INTO _jardinva_libros (nombre, qr) VALUES ('".$nombre."', '".$qr."')");
-				if($sql["estado"] == true){
-					$info["op"] = 1;
-				}
+
+				if($sql = $this->con->prepare("INSERT INTO _jardinva_libros (nombre, qr) VALUES (?, ?)")){
+					if($sql->bind_param("ss", $nombre, $qr)){
+						if($sql->execute()){
+							$info['op'] = 1;
+						}else{ echo htmlspecialchars($sql->error); }
+					}else{ echo htmlspecialchars($sql->error); }
+				}else{ echo htmlspecialchars($this->con->error); }
+
 			}
 			if($id_lib > 0 && $usr["perm_edicion"] == 1){
-				$sql = $this->con->sql("UPDATE _jardinva_libros SET nombre='".$nombre."' WHERE id_lib='".$id_lib."'");
-				if($sql["estado"] == true){
-					$info["op"] = 1;
-				}
+				if($sql = $this->con->prepare("UPDATE _jardinva_libros SET nombre=? WHERE id_lib=?")){
+					if($sql->bind_param("si", $nombre, $id_lib)){
+						if($sql->execute()){
+							$info['op'] = 1;
+						}else{ echo htmlspecialchars($sql->error); }
+					}else{ echo htmlspecialchars($sql->error); }
+				}else{ echo htmlspecialchars($this->con->error); }
 			}
 		}
 		return $info;
@@ -46,15 +79,15 @@ class Libro{
 		$send['correo'] = $correo;
 
 		$ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://www.izusushi.cl/mail_jardin');
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                if(!curl_errno($ch)){
+		curl_setopt($ch, CURLOPT_URL, 'https://www.izusushi.cl/mail_jardin');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+		if(!curl_errno($ch)){
 			$resp_email = json_decode(curl_exec($ch));
 			curl_close($ch);
-                        if($resp_email->{'op'} != 1){
-                                // ALERTAR ERROR //
-                        }
+			if($resp_email->{'op'} != 1){
+					// ALERTAR ERROR //
+			}
 		}
 
 	}
@@ -66,20 +99,27 @@ class Libro{
 		if($usr["user"] == 1){
 			if($usr["perm_prestamo"] == 1){
 				$id_alu = $_POST["id_alu"];
-				$sql_alumnos = $this->con->sql("SELECT nombres, apellido_p, apellido_m, email_01, email_02 FROM _jardinva_alumnos WHERE id_alu='".$id_alu."'");
-				if($sql_alumnos["count"] == 1){
-						$data_alumno = $sql_alumnos["resultado"][0];
-						$nombre = $data_alumno["nombres"]." ".$data_alumno["apellido_p"]{0}.". ".$data_alumno["apellido_m"]{0}.".";
-						$fecha = $this->get_date(time());
-						$data_alumno['email_01'] = "valle-encantado@hotmail.com";
-						if(filter_var($data_alumno['email_01'], FILTER_VALIDATE_EMAIL)){
-							$this->enviar_correo($data_alumno['email_01'], $nombre, '', $fecha, 4);
-						}
-						if(filter_var($data_alumno['email_01'], FILTER_VALIDATE_EMAIL)){
-							//$this->enviar_correo($data_alumno['email_02'], $nombre, '', $fecha, 4);
-						}
-						$info["op"] = 1;
-				}
+
+				if($sql = $this->con->prepare("SELECT nombres, apellido_p, apellido_m, email_01, email_02 FROM _jardinva_alumnos WHERE id_alu=? AND eliminado=?")){
+					if($sql->bind_param("ii", $id_alu, $this->eliminado)){
+						if($sql->execute()){
+		
+							$data_alumno = $sql->get_result()->fetch_all(MYSQLI_ASSOC)[0];
+							$nombre = $data_alumno["nombres"]." ".$data_alumno["apellido_p"]{0}.". ".$data_alumno["apellido_m"]{0}.".";
+							$fecha = $this->get_date(time());
+							$data_alumno['email_01'] = "valle-encantado@hotmail.com";
+							if(filter_var($data_alumno['email_01'], FILTER_VALIDATE_EMAIL)){
+								$this->enviar_correo($data_alumno['email_01'], $nombre, '', $fecha, 4);
+							}
+							if(filter_var($data_alumno['email_01'], FILTER_VALIDATE_EMAIL)){
+								//$this->enviar_correo($data_alumno['email_02'], $nombre, '', $fecha, 4);
+							}
+							$info["op"] = 1;
+		
+						}else{ echo htmlspecialchars($sql->error); }
+					}else{ echo htmlspecialchars($sql->error); }
+				}else{ echo htmlspecialchars($this->con->error); }
+
 			}
 		}
 
@@ -91,31 +131,50 @@ class Libro{
 		
 		if($usr["user"] == 1){
 			if($usr["perm_prestamo"] == 1){
+
 				$id_lib = $_POST["id_lib"];
 				$id_alu = $_POST["id_alu"];
 				$estado = $_POST["estado"];
 				$comentario = $_POST["comentario"];
-				$sql = $this->con->sql("INSERT INTO _jardinva_prestamos (id_lib, id_alu, fecha_presto, id_user_presto, estado, comentario) VALUES ('".$id_lib."', '".$id_alu."', now(), '".$usr["id_user"]."', '".$estado."', '".$comentario."')");
-				if($sql["estado"] == true){
 
-					$sql_alumnos = $this->con->sql("SELECT nombres, apellido_p, apellido_m, email_01, email_02 FROM _jardinva_alumnos WHERE id_alu='".$id_alu."'");
-					$sql_libros = $this->con->sql("SELECT nombre FROM _jardinva_libros WHERE id_lib='".$id_lib."'");
-					if($sql_alumnos["count"] == 1 && $sql_libros["count"] == 1){
-						$data_alumno = $sql_alumnos["resultado"][0];
-						$data_libro = $sql_libros["resultado"][0];
-						$nombre = $data_alumno["nombres"]." ".$data_alumno["apellido_p"]{0}.". ".$data_alumno["apellido_m"]{0}.".";
-						$fecha = $this->get_date(time());
-						$data_alumno['email_01'] = "valle-encantado@hotmail.com";
-						if(filter_var($data_alumno['email_01'], FILTER_VALIDATE_EMAIL)){
-							$this->enviar_correo($data_alumno['email_01'], $nombre, $data_libro['nombre'], $fecha, 1);
-						}
-						if(filter_var($data_alumno['email_01'], FILTER_VALIDATE_EMAIL)){
-							//$this->enviar_correo($data_alumno['email_02'], $nombre, $data_libro['nombre'], $fecha, 1);
-						}
-						$info["op"] = 1;
-					}
+				if($sql = $this->con->prepare("INSERT INTO _jardinva_prestamos (id_lib, id_alu, fecha_presto, id_user_presto) VALUES (?, ?, now(), ?)")){
+				if($sql->bind_param("iii", $id_lib, $id_alu, $usr["id_user"])){
+				if($sql->execute()){
+					
+					if($sqla = $this->con->prepare("SELECT * FROM _jardinva_alumnos WHERE eliminado=?")){
+					if($sqla->bind_param("i", $this->eliminado)){
+					if($sqla->execute()){
+	
+						$data_alumno = $sqla->get_result()->fetch_all(MYSQLI_ASSOC)[0];
 
-				}
+						if($sqll = $this->con->prepare("SELECT * FROM _jardinva_alumnos WHERE eliminado=?")){
+						if($sqll->bind_param("i", $this->eliminado)){
+						if($sqll->execute()){
+		
+							$data_libro = $sqll->get_result()->fetch_all(MYSQLI_ASSOC)[0];
+							$nombre = $data_alumno["nombres"]." ".$data_alumno["apellido_p"]{0}.". ".$data_alumno["apellido_m"]{0}.".";
+							$fecha = $this->get_date(time());
+							$data_alumno['email_01'] = "valle-encantado@hotmail.com";
+							if(filter_var($data_alumno['email_01'], FILTER_VALIDATE_EMAIL)){
+								$this->enviar_correo($data_alumno['email_01'], $nombre, $data_libro['nombre'], $fecha, 1);
+							}
+							if(filter_var($data_alumno['email_01'], FILTER_VALIDATE_EMAIL)){
+								//$this->enviar_correo($data_alumno['email_02'], $nombre, $data_libro['nombre'], $fecha, 1);
+							}
+							$info["op"] = 1;
+
+						}else{ echo htmlspecialchars($sqll->error); }
+						}else{ echo htmlspecialchars($sqll->error); }
+						}else{ echo htmlspecialchars($this->con->error); }
+	
+					}else{ echo htmlspecialchars($sqla->error); }
+					}else{ echo htmlspecialchars($sqla->error); }
+					}else{ echo htmlspecialchars($this->con->error); }
+
+				}else{ echo htmlspecialchars($sql->error); }
+				}else{ echo htmlspecialchars($sql->error); }
+				}else{ echo htmlspecialchars($this->con->error); }
+
 			}
 		}
 		
@@ -128,14 +187,29 @@ class Libro{
 		$usr = $this->get_user();
 		
 		if($usr["user"] == 1){
+
 			$id_lib = $_POST["id_lib"];
-			$sql_prestamos = $this->con->sql("SELECT * FROM _jardinva_prestamos WHERE id_lib='".$id_lib."' AND id_user_devolvio='0' AND fecha_devolvio='0000-00-00 00:00:00'");
-			if($sql_prestamos["count"] == 1 && ($usr["perm_prestamo"] == 2 || ($usr["perm_prestamo"] == 1 && $usr["id_user"] == $sql_prestamos["resultado"][0]["id_user_presto"]))){
-				$sql = $this->con->sql("UPDATE _jardinva_prestamos SET fecha_devolvio=now(), id_user_devolvio='".$usr["id_user"]."' WHERE id_pre='".$sql_prestamos["resultado"][0]["id_pre"]."'");
-				if($sql["estado"] == true){
-					$info["op"] = 1;
-				}
-			}
+			if($sql = $this->con->prepare("SELECT * FROM _jardinva_prestamos WHERE id_lib=? AND id_user_devolvio='0' AND fecha_devolvio='0000-00-00 00:00:00'")){
+				if($sql->bind_param("i", $id_lib)){
+					if($sql->execute()){
+	
+						$prestamos = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+						if(count($prestamos) == 1 && ($usr["perm_prestamo"] == 2 || ($usr["perm_prestamo"] == 1 && $usr["id_user"] == $prestamos[0]["id_user_presto"]))){
+							
+							if($sqlx = $this->con->prepare("UPDATE _jardinva_prestamos SET fecha_devolvio=now(), id_user_devolvio=? WHERE id_pre=?")){
+								if($sqlx->bind_param("ii", $usr["id_user"], $prestamos[0]["id_pre"])){
+									if($sqlx->execute()){
+										$info['op'] = 1;
+									}else{ echo htmlspecialchars($sqlx->error); }
+								}else{ echo htmlspecialchars($sqlx->error); }
+							}else{ echo htmlspecialchars($this->con->error); }
+
+						}
+	
+					}else{ echo htmlspecialchars($sql->error); }
+				}else{ echo htmlspecialchars($sql->error); }
+			}else{ echo htmlspecialchars($this->con->error); }
+			
 		}
 		return $info;
 		
@@ -144,19 +218,27 @@ class Libro{
 
 		$info["user"] = 0;
 		if(isset($_COOKIE["uid"]) && isset($_COOKIE["hash"])){
-			$sql_user = $this->con->sql("SELECT * FROM usuarios WHERE id_user='".$_COOKIE["uid"]."' AND code_cookie='".$_COOKIE["hash"]."' AND eliminado='0'");
-			if($sql_user["count"] == 1){
-				$info["user"] = 1;
-				$info["id_user"] = $_COOKIE["uid"];
-				$info["nombre"] = $sql_user['resultado'][0]['nombre'];
-				$info["perm_ingreso"] = $sql_user['resultado'][0]['perm_ingreso'];
-				$info["perm_existente"] = $sql_user['resultado'][0]['perm_existente'];
-				$info["perm_prestamo"] = $sql_user['resultado'][0]['perm_prestamo'];
-				$info["perm_devolucion"] = $sql_user['resultado'][0]['perm_devolucion'];
-				$info["perm_historial"] = $sql_user['resultado'][0]['perm_historial'];
-				$info["perm_edicion"] = $sql_user['resultado'][0]['perm_edicion'];
-				$info["ultimos_alumnos"] = $this->ultimos_alumnos($info["id_user"]);
-			}		
+
+			if($sql = $this->con->prepare("SELECT * FROM usuarios WHERE id_user=? AND code_cookie=? AND eliminado=?")){
+				if($sql->bind_param("isi", $_COOKIE["uid"], $_COOKIE["hash"], $this->eliminado)){
+					if($sql->execute()){
+	
+						$usuario = $sql->get_result()->fetch_all(MYSQLI_ASSOC)[0];
+						$info["user"] = 1;
+						$info["id_user"] = $_COOKIE["uid"];
+						$info["nombre"] = $usuario['nombre'];
+						$info["perm_ingreso"] = $usuario['perm_ingreso'];
+						$info["perm_existente"] = $usuario['perm_existente'];
+						$info["perm_prestamo"] = $usuario['perm_prestamo'];
+						$info["perm_devolucion"] = $usuario['perm_devolucion'];
+						$info["perm_historial"] = $usuario['perm_historial'];
+						$info["perm_edicion"] = $usuario['perm_edicion'];
+						$info["ultimos_alumnos"] = $this->ultimos_alumnos($info["id_user"]);
+	
+					}else{ echo htmlspecialchars($sql->error); }
+				}else{ echo htmlspecialchars($sql->error); }
+			}else{ echo htmlspecialchars($this->con->error); }
+	
 		}
 		return $info;
 	
@@ -164,43 +246,72 @@ class Libro{
 	
 	private function ultimos_alumnos($id_user){
 
-		$sql_prestamos_2 = $this->con->sql("SELECT id_alu FROM _jardinva_prestamos WHERE id_user_devolvio='0' OR fecha_devolvio='0000-00-00 00:00:00'");
-		$sql_prestamos = $this->con->sql("SELECT t2.id_alu, t2.nombres, t2.apellido_p, t2.apellido_m FROM _jardinva_prestamos t1, _jardinva_alumnos t2 WHERE t1.id_user_presto='".$id_user."' AND t1.id_alu=t2.id_alu ORDER BY t1.id_pre DESC");
-		
-		$aux_alu = Array();
-		if($sql_prestamos["count"] > 0){
-			for($i=0; $i<$sql_prestamos["count"]; $i++){
-				if(!in_array($sql_prestamos["resultado"][$i]["id_alu"], $aux_alu)){
-					$aux_alu[] = $sql_prestamos["resultado"][$i]["id_alu"];
-					$aux['id'] = $sql_prestamos["resultado"][$i]["id_alu"];
-					$aux['nombre'] = $sql_prestamos['resultado'][$i]['nombres']." ".$sql_prestamos['resultado'][$i]['apellido_p']." ".$sql_prestamos['resultado'][$i]['apellido_m'];
-					$aux['count'] = $this->get_prestados_user($sql_prestamos_2['resultado'], $aux['id']);
-					$info[] = $aux;
-					unset($aux);
-					if(count($aux_alu) >= 10){
-						return $info;
+		if($sql = $this->con->prepare("SELECT id_alu FROM _jardinva_prestamos WHERE id_user_devolvio='0' OR fecha_devolvio=?")){
+		if($sql->bind_param("s", $this->fecha_devolvio)){
+		if($sql->execute()){
+
+			$prestamos = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+			$aux_alu = Array();
+			if(count($prestamos) > 0){
+			
+				if($sqlx = $this->con->prepare("SELECT t2.id_alu, t2.nombres, t2.apellido_p, t2.apellido_m FROM _jardinva_prestamos t1, _jardinva_alumnos t2 WHERE t1.id_user_presto=? AND t1.id_alu=t2.id_alu ORDER BY t1.id_pre DESC")){
+				if($sqlx->bind_param("s", $id_user)){
+				if($sqlx->execute()){
+
+					$prestamos_user = $sqlx->get_result()->fetch_all(MYSQLI_ASSOC);
+					
+					for($i=0; $i<count($prestamos); $i++){
+						if(!in_array($prestamos[$i]["id_alu"], $aux_alu)){
+							$aux_alu[] = $prestamos[$i]["id_alu"];
+							$aux['id'] = $prestamos[$i]["id_alu"];
+							$aux['nombre'] = $prestamos[$i]['nombres']." ".$prestamos[$i]['apellido_p']." ".$sql_prestamos['resultado'][$i]['apellido_m'];
+							$aux['count'] = $this->get_prestados_user($prestamos_user, $aux['id']);
+							$info[] = $aux;
+							unset($aux);
+							if(count($aux_alu) >= 10){
+								return $info;
+							}
+						}
 					}
-				}
+					return 0;
+					
+				}else{ echo htmlspecialchars($sqlx->error); }
+				}else{ echo htmlspecialchars($sqlx->error); }
+				}else{ echo htmlspecialchars($this->con->error); }
+
+			}else{
+				return 0;
 			}
-			return $info;
-		}else{
-			return 0;
-		}
+
+		}else{ echo htmlspecialchars($sql->error); }
+		}else{ echo htmlspecialchars($sql->error); }
+        }else{ echo htmlspecialchars($this->con->error); }
+
+		return 0;		
 		
 	}
 	public function get_libro(){
 
 		$info["lib"] = 0;
-		if(isset($_GET["id"])){
-			$sql_libro = $this->con->sql("SELECT * FROM _jardinva_libros WHERE qr='".$_GET["id"]."' AND eliminado='0'");
-			if($sql_libro['count'] == 1){
-				$info["lib"] = 1;
-				$info["id_lib"] = $sql_libro['resultado'][0]['id_lib'];
-				$info["nombre"] = $sql_libro['resultado'][0]['nombre'];
-				$info["codigo"] = $sql_libro['resultado'][0]['codigo'];
-				$info["prestamos"] = $this->get_prestamos($sql_libro['resultado'][0]['id_lib']);
-				$info["estado"] = $this->get_estado_libro($sql_libro['resultado'][0]['id_lib']);
-			}
+		$qr = (isset($_GET["id"])) ? $_GET["id"] : 0 ;
+		if($qr != 0){
+
+			if($sql = $this->con->prepare("SELECT * FROM _jardinva_libros WHERE qr=? AND eliminado=?")){
+				if($sql->bind_param("si", $qr, $this->eliminado)){
+					if($sql->execute()){
+	
+						$libros = $sql->get_result()->fetch_all(MYSQLI_ASSOC)[0];
+						$info["lib"] = 1;
+						$info["id_lib"] = $libros['id_lib'];
+						$info["nombre"] = $libros['nombre'];
+						$info["codigo"] = $libros['codigo'];
+						$info["prestamos"] = $this->get_prestamos($libros['id_lib']);
+						$info["estado"] = $this->get_estado_libro($libros['id_lib']);
+	
+					}else{ echo htmlspecialchars($sql->error); }
+				}else{ echo htmlspecialchars($sql->error); }
+			}else{ echo htmlspecialchars($this->con->error); }
+
 		}		
 		return $info;
 
@@ -208,35 +319,61 @@ class Libro{
 	
 	private function get_prestamos($id_lib){
 
-		$sql_prestamos = $this->con->sql("SELECT t1.id_user_presto, t1.fecha_presto, t1.id_user_devolvio, t1.fecha_devolvio, t1.email, t1.estado, t1.comentario, t2.id_alu, t2.nombres, t2.apellido_p, t2.apellido_m FROM _jardinva_prestamos t1, _jardinva_alumnos t2 WHERE t1.id_lib='".$id_lib."' AND t1.id_alu=t2.id_alu");
-		if($sql_prestamos["count"] > 0){
-			return $sql_prestamos['resultado'];
-		}else{
-			return 0;
-		}
+		if($sql = $this->con->prepare("SELECT t1.id_user_presto, t1.fecha_presto, t1.id_user_devolvio, t1.fecha_devolvio, t1.email, t1.estado, t1.comentario, t2.id_alu, t2.nombres, t2.apellido_p, t2.apellido_m FROM _jardinva_prestamos t1, _jardinva_alumnos t2 WHERE t1.id_lib=? AND t1.id_alu=t2.id_alu")){
+			if($sql->bind_param("i", $id_lib)){
+				if($sql->execute()){
+
+					$libros = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+					if(count($libros) > 0){
+						return $libros;
+					}else{
+						return 0;
+					}
+
+				}else{ echo htmlspecialchars($sql->error); }
+			}else{ echo htmlspecialchars($sql->error); }
+		}else{ echo htmlspecialchars($this->con->error); }
 
 	}
 	private function get_estado_libro($id_lib){
 
 		$info["prestado"] = 0;
-		$sql_estado = $this->con->sql("SELECT * FROM _jardinva_prestamos t1, _jardinva_alumnos t2 WHERE t1.id_alu=t2.id_alu AND t1.id_lib='".$id_lib."' AND (t1.fecha_devolvio='0000-00-00 00:00:00' OR t1.id_user_devolvio='0')");
-		if($sql_estado["count"] == 1){
-			$info["prestado"] = 1;
-			$info["id_user_presto"] = $sql_estado['resultado'][0]['id_user_presto'];
-			$info["nombre"] = $sql_estado['resultado'][0]['nombres']." ".$sql_estado['resultado'][0]['apellido_p']{0}.". ".$sql_estado['resultado'][0]['apellido_m']{0}.".";
-			$info["fecha_presto"] = $sql_estado['resultado'][0]['fecha_presto'];
-		}
+
+		if($sql = $this->con->prepare("SELECT t1.id_user_presto, t1.fecha_presto, t1.id_user_devolvio, t1.fecha_devolvio, t1.email, t1.estado, t1.comentario, t2.id_alu, t2.nombres, t2.apellido_p, t2.apellido_m FROM _jardinva_prestamos t1, _jardinva_alumnos t2 WHERE t1.id_lib=? AND t1.id_alu=t2.id_alu")){
+			if($sql->bind_param("i", $id_lib)){
+				if($sql->execute()){
+
+					$estado = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+					if(count($estado) == 1){
+						$info["prestado"] = 1;
+						$info["id_user_presto"] = $estado[0]['id_user_presto'];
+						$info["nombre"] = $estado[0]['nombres']." ".$estado[0]['apellido_p']{0}.". ".$estado[0]['apellido_m']{0}.".";
+						$info["fecha_presto"] = $estado[0]['fecha_presto'];
+					}
+
+				}else{ echo htmlspecialchars($sql->error); }
+			}else{ echo htmlspecialchars($sql->error); }
+		}else{ echo htmlspecialchars($this->con->error); }
+
 		return $info;
 
 	}
 	public function prestados_user($id_user){
 
-		$sql_prestamos = $this->con->sql("SELECT t1.id_user_presto, t1.fecha_presto, t1.id_user_devolvio, t1.fecha_devolvio, t1.email, t1.estado, t1.comentario, t2.id_alu, t2.nombres, t2.apellido_p, t2.apellido_m, t3.nombre, t3.codigo FROM _jardinva_prestamos t1, _jardinva_alumnos t2, _jardinva_libros t3 WHERE t1.id_user_presto='".$id_user."' AND t1.fecha_devolvio='0000-00-00 00:00:00' AND t1.id_alu=t2.id_alu AND t1.id_lib=t3.id_lib");
-		if($sql_prestamos["count"] > 0){
-			return $sql_prestamos['resultado'];
-		}else{
-			return 0;
-		}
+		if($sql = $this->con->prepare("SELECT t1.id_user_presto, t1.fecha_presto, t1.id_user_devolvio, t1.fecha_devolvio, t1.email, t1.estado, t1.comentario, t2.id_alu, t2.nombres, t2.apellido_p, t2.apellido_m, t3.nombre, t3.codigo FROM _jardinva_prestamos t1, _jardinva_alumnos t2, _jardinva_libros t3 WHERE t1.id_user_presto=? AND t1.fecha_devolvio='0000-00-00 00:00:00' AND t1.id_alu=t2.id_alu AND t1.id_lib=t3.id_lib")){
+			if($sql->bind_param("i", $id_user)){
+				if($sql->execute()){
+
+					$prestamos = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+					if(count($prestamos) > 0){
+						return $prestamos;
+					}else{
+						return 0;
+					}
+
+				}else{ echo htmlspecialchars($sql->error); }
+			}else{ echo htmlspecialchars($sql->error); }
+		}else{ echo htmlspecialchars($this->con->error); }
 
 	}
 	private function get_prestados_user($prestados, $id_alu){
@@ -250,41 +387,72 @@ class Libro{
 	}
 	public function get_alumnos(){
 
-		$sql_prestamos = $this->con->sql("SELECT id_alu FROM _jardinva_prestamos WHERE id_user_devolvio='0' OR fecha_devolvio='0000-00-00 00:00:00'");
-		$sql_alumnos = $this->con->sql("SELECT id_alu, nombres, apellido_p, apellido_m FROM _jardinva_alumnos WHERE eliminado='0'");
-		for($i=0; $i<$sql_alumnos["count"]; $i++){
-			$aux['id'] = $sql_alumnos['resultado'][$i]['id_alu'];
-			$aux['nombre'] = $sql_alumnos['resultado'][$i]['nombres']." ".$sql_alumnos['resultado'][$i]['apellido_p']." ".$sql_alumnos['resultado'][$i]['apellido_m'];
-			$aux['count'] = $this->get_prestados_user($sql_prestamos['resultado'], $aux['id']);
-			$data[] = $aux;
-			unset($aux);
-		}
-		return $data;
+		if($sqlx = $this->con->prepare("SELECT id_alu FROM _jardinva_prestamos WHERE id_user_presto='0' OR fecha_devolvio=?")){
+			if($sqlx->bind_param("s", $this->fecha_devolvio)){
+				if($sqlx->execute()){
+
+					$prestamos = $sqlx->get_result()->fetch_all(MYSQLI_ASSOC);
+					if($sql = $this->con->prepare("SELECT id_alu, nombres, apellido_p, apellido_m FROM _jardinva_alumnos WHERE eliminado=?")){
+						if($sql->bind_param("i", $this->eliminado)){
+							if($sql->execute()){
+			
+								$alumnos = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+			
+								for($i=0; $i<count($alumnos); $i++){
+									$aux['id'] = $alumnos[$i]['id_alu'];
+									$aux['nombre'] = $alumnos[$i]['nombres']." ".$alumnos[$i]['apellido_p']." ".$alumnos[$i]['apellido_m'];
+									$aux['count'] = $this->get_prestados_user($prestamos, $alumnos[$i]['id_alu']);
+									$data[] = $aux;
+									unset($aux);
+								}
+								return $data;
+			
+							}else{ echo htmlspecialchars($sql->error); }
+						}else{ echo htmlspecialchars($sql->error); }
+					}else{ echo htmlspecialchars($this->con->error); }
+
+				}else{ echo htmlspecialchars($sqlx->error); }
+			}else{ echo htmlspecialchars($sqlx->error); }
+		}else{ echo htmlspecialchars($this->con->error); }
+
 
 	}
 	public function libro_cron(){
 		
-		$sql_alumnos = $this->con->sql("SELECT t1.id_pre, t1.fecha_presto, t2.email_01, t2.email_02, t2.nombres, t2.apellido_p, t2.apellido_m, t3.nombre FROM _jardinva_prestamos t1, _jardinva_alumnos t2, _jardinva_libros t3  WHERE t1.email='0' AND t1.fecha_devolvio='0000-00-00 00:00:00' AND t1.id_user_devolvio='0' AND t1.id_alu=t2.id_alu AND t1.id_lib=t3.id_lib");
-		if($sql_alumnos["count"] > 0){
-			for($i=0; $i<$sql_alumnos["count"]; $i++){
-				$data_alumno = $sql_alumnos['resultado'][$i];
-				$fecha = time() - strtotime($data_alumno['fecha_presto']);
-				if($fecha > 43200){
 
-					$nombre = $data_alumno["nombres"]." ".$data_alumno["apellido_p"]{0}.". ".$data_alumno["apellido_m"]{0}.".";
-					$fecha_p = $this->get_date(time()+432000);
-					if(filter_var($data_alumno['email_01'], FILTER_VALIDATE_EMAIL)){
-						$data_alumno['email_01'] = "misitiodelivery@gmail.com";
-						$this->enviar_correo($data_alumno['email_01'], $nombre, $data_alumno['nombre'], $fecha_p, 2);
-					}
-					if(filter_var($data_alumno['email_02'], FILTER_VALIDATE_EMAIL)){
-						//$this->enviar_correo($data_alumno['email_02'], $nombre, $data_alumno['nombre'], $fecha_p, 2);
-					}
-					$this->con->sql("UPDATE _jardinva_prestamos SET email='1' WHERE id_pre='".$data_alumno['id_pre']."'");
+		if($sql = $this->con->prepare("SELECT t1.id_pre, t1.fecha_presto, t2.email_01, t2.email_02, t2.nombres, t2.apellido_p, t2.apellido_m, t3.nombre FROM _jardinva_prestamos t1, _jardinva_alumnos t2, _jardinva_libros t3  WHERE t1.email='0' AND t1.fecha_devolvio=? AND t1.id_user_devolvio='0' AND t1.id_alu=t2.id_alu AND t1.id_lib=t3.id_lib")){
+            if($sql->bind_param("s", $this->fecha_devolvio)){
+                if($sql->execute()){
 
-				}
-			}
-		}
+					$alumnos = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+					for($i=0; $i<count($alumnos); $i++){
+						$alumno = $alumnos[$i];
+						$fecha = time() - strtotime($alumno['fecha_presto']);
+						if($fecha > 43200){
+
+							if($sqld = $this->con->prepare("UPDATE _jardinva_prestamos SET email='1' WHERE id_pre=?")){
+								if($sqld->bind_param("i", $alumno["id_pre"])){
+									if($sqld->execute()){
+
+										$nombre = $alumno["nombres"]." ".$alumno["apellido_p"]{0}.". ".$alumno["apellido_m"]{0}.".";
+										$fecha_p = $this->get_date(time()+432000);
+										if(filter_var($alumno['email_01'], FILTER_VALIDATE_EMAIL)){
+											$alumno['email_01'] = "misitiodelivery@gmail.com";
+											$this->enviar_correo($alumno['email_01'], $nombre, $alumno['nombre'], $fecha_p, 2);
+										}
+										if(filter_var($alumno['email_02'], FILTER_VALIDATE_EMAIL)){
+											//$this->enviar_correo($alumno['email_02'], $nombre, $alumno['nombre'], $fecha_p, 2);
+										}
+
+									}else{ echo htmlspecialchars($sqld->error); }
+								}else{ echo htmlspecialchars($sqld->error); }
+							}else{ echo htmlspecialchars($this->con->error); }
+						}
+					}
+
+                }else{ echo htmlspecialchars($sql->error); }
+            }else{ echo htmlspecialchars($sql->error); }
+		}else{ echo htmlspecialchars($this->con->error); }
 		
 	}
 	private function get_date($time){

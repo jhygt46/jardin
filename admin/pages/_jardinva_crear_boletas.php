@@ -4,33 +4,25 @@ if(!isset($_SESSION['user']['info']['id_user'])){
     exit;
 }
 
-require '/var/www/html/virtual/jardinvalleencantado.cl/www/admin/class/mysql_class.php';
-$admin = new Conexion();
-
-/* CONFIG PAGE */
-$dia = $_GET['dia'];
-if($dia == ""){
-    $dia = date("d");
+if($_SERVER["HTTP_HOST"] == "localhost"){
+    define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
+    define("DIR", DIR_BASE."jardin/");
+}else{
+    define("DIR_BASE", "/var/www/html/");
+    define("DIR", DIR_BASE."jardin/");
 }
-$mes = $_GET['mes'];
-if($mes == ""){
-    $mes = intval(date("m"));
-}
-$ano = $_GET['ano'];
-if($ano == ""){
-    $ano = date("Y");
-}
-$cant_dias = cal_days_in_month(CAL_GREGORIAN, $mes, $ano);
 
-$db_var_name = "_jardinva";
-$list_ = $admin->sql("SELECT * FROM ".$db_var_name."_boletas WHERE ano='".$ano."' AND mes='".$mes."' AND eliminado='0'");
-$list = $list_['resultado'];
+$dia = (isset($_GET['dia'])) ? $_GET['dia'] : date("d") ;
+$mes = (isset($_GET['mes'])) ? $_GET['mes'] : intval(date("m")) ;
+$ano = (isset($_GET['ano'])) ? $_GET['ano'] : date("Y") ;
 
-$max_boleta_ = $admin->sql("SELECT MAX(numero) as max FROM ".$db_var_name."_boletas WHERE tipo='1' AND eliminado='0'");
-$max_factura_ = $admin->sql("SELECT MAX(numero) as max FROM ".$db_var_name."_boletas WHERE tipo='2' AND eliminado='0'");
+require_once DIR."admin/class/jardin_class.php";
+$jardin = new Jardin();
+$info = $jardin->boletas($ano, $mes);
 
-$max_boleta = $max_boleta_['resultado'][0]['max'] + 1;
-$max_factura = $max_factura_['resultado'][0]['max'] + 1;
+$list = $info['lista'];
+$max_boleta = $info['max_boleta'];
+$max_factura = $info['max_factura'];
 
 $titulo = "Boletas";
 $titulo_list = "Listado de Boletas y Facturas";
@@ -48,45 +40,27 @@ $page_mod = "pages/_jardinva_crear_boletas.php";
 $id = 0;
 $sub_titulo = $sub_titulo1;
 $m_factura = "none";
+$cant_dias = cal_days_in_month(CAL_GREGORIAN, $mes, $ano);
+
 if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
     
-    $sub_titulo = $sub_titulo2;
-    $that = $admin->sql("SELECT * FROM ".$db_var_name."_boletas WHERE id_bol='".$_GET["id"]."' AND eliminado='0'");
     $id = $_GET["id"];
+    $sub_titulo = $sub_titulo2;
+    $that = $jardin->boleta($id);
     
-    $ano = $that['resultado'][0]['ano'];
-    $mes = $that['resultado'][0]['mes'];
-    $dia = $that['resultado'][0]['dia'];
-    
-    $tipo = $that['resultado'][0]['tipo'];
-    $nula = $that['resultado'][0]['nula'];
-    
-    $valor = $that['resultado'][0]['matricula'] + $that['resultado'][0]['mjardin'] + $that['resultado'][0]['msalacuna'];
-    
-    if($tipo == 1){
-        $max_boleta = $that['resultado'][0]['numero'];
-        $m_boleta = "block";
-        $m_factura = "none";
-    }
-    if($tipo == 2){
-        $max_factura = $that['resultado'][0]['numero'];
-        $m_boleta = "none";
-        $m_factura = "block";
-    }
-    
+    $ano = $that['ano'];
+    $mes = $that['mes'];
+    $dia = $that['dia'];
+    $tipo = $that['tipo'];
+    $nula = $that['nula'];
+    $valor = $that['matricula'];
+
 }
 
 
 ?>
 
 <script>
-    /*
-    $("input[name=tipo1]").change(function(a){ 
-        var tipo = $('input[name=tipo1]:checked').val();
-        if(tipo == 1){ $('.nboleta').show(); $('.nfactura').hide(); }
-        if(tipo == 2){ $('.nfactura').show(); $('.nboleta').hide(); }
-    });
-    */
     <?php if($id == 0){ ?>
     $("#mes").change(function (){
         var ano = $("#ano option:selected").val();
@@ -167,50 +141,19 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                         </select>
                         <div class="mensaje"></div>
                     </label>
-                    <!--
-                    <label>
-                        <span>Tipo:</span>
-                        <input name="tipo1" id="tipo" type="radio" value="1" <?php if(!isset($tipo) || $tipo == 1){ ?>checked="checked"<?php } ?> /> Boleta
-                        <div class="mensaje"></div>
-                    </label>
-                    <label>
-                        <span></span>
-                        <input name="tipo1" id="tipo" type="radio" value="2" <?php if($tipo == 2){ ?>checked="checked"<?php } ?>/> Factura
-                        <div class="mensaje"></div>
-                    </label>
-                    -->
-                    <label class="nboleta" style="display:<?php echo $m_boleta; ?>">
+                    <label class="nboleta">
                         <span>Numero Boleta:</span>
-                        <input id="nboleta" type="text" value="<?php echo $max_boleta; ?>" />
+                        <input id="nboleta" type="text" value="<?php echo $$that['numero']; ?>" />
                         <div class="mensaje"></div>
                     </label>
-                    <!--
-                    <label class="nfactura" style="display:<?php echo $m_factura; ?>">
-                        <span>Numero Factura:</span>
-                        <input id="nfactura" type="text" value="<?php echo $max_factura; ?>" />
-                        <div class="mensaje"></div>
-                    </label>
-                    -->
                     <label>
                         <span>Valor:</span>
                         <input id="matricula" type="text" value="<?php echo $valor; ?>" />
                         <div class="mensaje"></div>
                     </label>
-                    <!--
-                    <label>
-                        <span>Mensualidad Jardin:</span>
-                        <input id="mjardin" type="text" value="<?php echo $that['resultado'][0]['mjardin']; ?>" />
-                        <div class="mensaje"></div>
-                    </label>
-                    <label>
-                        <span>Mensualidad Sala Cuna:</span>
-                        <input id="msalacuna" type="text" value="<?php echo $that['resultado'][0]['msalacuna']; ?>" />
-                        <div class="mensaje"></div>
-                    </label>
-                    -->
                     <label>
                         <span>Nula:</span>
-                        <input id="nula" type="checkbox" value="1" <?php if($that['resultado'][0]['nula'] == 1){ echo "checked='checked'";} ?> />
+                        <input id="nula" type="checkbox" value="1" <?php if($that['nula'] == 1){ echo "checked='checked'";} ?> />
                         <div class="mensaje"></div>
                     </label>
                     <label style='margin-top:20px'>
@@ -383,7 +326,7 @@ function mayormenor($array){
                 <li class="user" rel="<?php echo $id; ?>">
                     <ul class="clearfix">
                         <li class="nombre"><strong><?php echo $nombre; ?></strong></li>
-                        <a title="Eliminar" class="icn borrar" onclick="eliminar('<?php echo $eliminaraccion; ?>', <?php echo $id; ?>, '<?php echo $eliminarobjeto; ?>', '<?php echo $nombre; ?>')"></a>
+                        <a title="Eliminar" class="icn borrar" onclick="eliminar('<?php echo $eliminaraccion; ?>', <?php echo $id; ?>, '<?php echo $eliminarobjeto; ?>', '<?php echo $nombre; ?>##<?php echo $ano; ?>##<?php echo $mes; ?>##<?php echo $dia; ?>')"></a>
                         <a title="Modificar" class="icn modificar" onclick="navlink('<?php echo $page_mod; ?>?id=<?php echo $id; ?>&mes=<?php echo $mes; ?>&ano=<?php echo $ano; ?>')"></a>
                     </ul>
                 </li>

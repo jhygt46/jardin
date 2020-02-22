@@ -1,9 +1,15 @@
 <?php
 
+if($_SERVER["HTTP_HOST"] == "localhost"){
+    define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
+    define("DIR", DIR_BASE."jardin/");
+}else{
+    define("DIR_BASE", "/var/www/html/");
+    define("DIR", DIR_BASE."jardin/");
+}
 
-
-require_once '/var/www/html/virtual/jardinvalleencantado.cl/www/admin/db_config.php';
-require_once '/var/www/html/virtual/jardinvalleencantado.cl/www/config/config.php';
+require_once DIR."db.php";
+require_once DIR_BASE."config/config.php";
 
 class Conexion {
 

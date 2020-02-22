@@ -1,18 +1,24 @@
 <?php
+
 session_start();
 if(!isset($_SESSION['user']['info']['id_user'])){
     exit;
 }
-require '/var/www/html/virtual/jardinvalleencantado.cl/www/admin/class/mysql_class.php';
-$admin = new Conexion();
+
+if($_SERVER["HTTP_HOST"] == "localhost"){
+    define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
+    define("DIR", DIR_BASE."jardin/");
+}else{
+    define("DIR_BASE", "/var/www/html/");
+    define("DIR", DIR_BASE."jardin/");
+}
+
+require_once DIR."admin/class/jardin_class.php";
+$jardin = new Jardin();
+$list_ = $jardin->alumnos();
+$curs_ = $jardin->cursos();
 
 /* CONFIG PAGE */
-$db_var_name = "_jardinva";
-$list_ = $admin->sql("SELECT * FROM ".$db_var_name."_alumnos  WHERE eliminado='0' ORDER BY orders");
-$curs_ = $admin->sql("SELECT * FROM ".$db_var_name."_cursos WHERE eliminado='0' ORDER BY orders");
-$list = $list_['resultado'];
-$curs = $curs_['resultado'];
-
 $titulo = "Alumnos";
 $titulo_list = "Lista de Alumnos";
 $sub_titulo1 = "Ingresar Alumno";
@@ -29,12 +35,12 @@ $id = 0;
 $sub_titulo = $sub_titulo1;
 if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
     
-    $sub_titulo = $sub_titulo2;
-    $that = $admin->sql("SELECT * FROM ".$db_var_name."_alumnos WHERE id_alu='".$_GET["id"]."' AND eliminado='0'");
     $id = $_GET["id"];
-    
-    if($that['resultado'][0]['nmatricula'] == 0){
-        $that['resultado'][0]['nmatricula'] = $that['resultado'][0]['id_alu'] + 400;
+    $sub_titulo = $sub_titulo2;
+    $that = $jardin->curso($id);
+
+    if($that['nmatricula'] == 0){
+        $that['nmatricula'] = $that['id_alu'] + 400;
     }
     
 }
@@ -105,35 +111,35 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                     <input id="accion" type="hidden" value="<?php echo $accion; ?>" />
                     <label>
                         <span>N° de Matricula:</span>
-                        <input id="nmatricula" type="text" value="<?php echo $that['resultado'][0]['nmatricula']; ?>" require="" placeholder="" />
+                        <input id="nmatricula" type="text" value="<?php echo $that['nmatricula']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Rut:</span>
-                        <input id="rut" type="text" value="<?php echo $that['resultado'][0]['rut']; ?>" require="" placeholder="" />
+                        <input id="rut" type="text" value="<?php echo $that['rut']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Apellidos Paterno:</span>
-                        <input id="apellido_p" type="text" value="<?php echo $that['resultado'][0]['apellido_p']; ?>" require="" placeholder="" />
+                        <input id="apellido_p" type="text" value="<?php echo $that['apellido_p']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Apellidos Materno:</span>
-                        <input id="apellido_m" type="text" value="<?php echo $that['resultado'][0]['apellido_m']; ?>" require="" placeholder="" />
+                        <input id="apellido_m" type="text" value="<?php echo $that['apellido_m']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Nombres:</span>
-                        <input id="nombres" type="text" value="<?php echo $that['resultado'][0]['nombres']; ?>" require="" placeholder="" />
+                        <input id="nombres" type="text" value="<?php echo $that['nombres']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Sexo:</span>
                         <select id="sexo">
                             <option value="0">Seleccionar</option>
-                            <option value="1" <?php if($that['resultado'][0]['sexo'] == 1){ echo "selected"; } ?>>Masculino</option>
-                            <option value="2" <?php if($that['resultado'][0]['sexo'] == 2){ echo "selected"; } ?>>Femenino</option>
+                            <option value="1" <?php if($that['sexo'] == 1){ echo "selected"; } ?>>Masculino</option>
+                            <option value="2" <?php if($that['sexo'] == 2){ echo "selected"; } ?>>Femenino</option>
                         </select>
                         <div class="mensaje"></div>
                     </label>
@@ -141,72 +147,72 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                         <span>Recib&iacute; reglamento:</span>
                         <select id="rr">
                             <option value="0">Seleccionar</option>
-                            <option value="1" <?php if($that['resultado'][0]['rr'] == 1){ echo "selected"; } ?>>Si</option>
-                            <option value="2" <?php if($that['resultado'][0]['rr'] == 2){ echo "selected"; } ?>>No</option>
+                            <option value="1" <?php if($that['rr'] == 1){ echo "selected"; } ?>>Si</option>
+                            <option value="2" <?php if($that['rr'] == 2){ echo "selected"; } ?>>No</option>
                         </select>
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Fecha Nacimiento:</span>
-                        <input id="fecha_nacimiento" type="text" value="<?php echo $that['resultado'][0]['fecha_nacimiento']; ?>" require="" placeholder="" />
+                        <input id="fecha_nacimiento" type="text" value="<?php echo $that['fecha_nacimiento']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Fecha Matricula:</span>
-                        <input id="fecha_matricula" type="text" value="<?php echo $that['resultado'][0]['fecha_matricula']; ?>" require="" placeholder="" />
+                        <input id="fecha_matricula" type="text" value="<?php echo $that['fecha_matricula']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Fecha Ingreso:</span>
-                        <input id="fecha_ingreso" type="text" value="<?php echo $that['resultado'][0]['fecha_ingreso']; ?>" require="" placeholder="" />
+                        <input id="fecha_ingreso" type="text" value="<?php echo $that['fecha_ingreso']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Direccion:</span>
-                        <input id="direccion" type="text" value="<?php echo $that['resultado'][0]['direccion']; ?>" require="" placeholder="" />
+                        <input id="direccion" type="text" value="<?php echo $that['direccion']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Nombre Apoderado:</span>
-                        <input id="nombre_apoderado" type="text" value="<?php echo $that['resultado'][0]['nombre_apoderado']; ?>" require="" placeholder="" />
+                        <input id="nombre_apoderado" type="text" value="<?php echo $that['nombre_apoderado']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Telefono Apoderado:</span>
-                        <input id="telefono_apoderado" type="text" value="<?php echo $that['resultado'][0]['telefono_apoderado']; ?>" require="" placeholder="" />
+                        <input id="telefono_apoderado" type="text" value="<?php echo $that['telefono_apoderado']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Email Apoderado:</span>
-                        <input id="email_apoderado" type="text" value="<?php echo $that['resultado'][0]['email_apoderado']; ?>" require="" placeholder="" />
+                        <input id="email_apoderado" type="text" value="<?php echo $that['email_apoderado']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Fecha Retiro:</span>
-                        <input id="fecha_retiro" type="text" value="<?php echo $that['resultado'][0]['fecha_retiro']; ?>" require="" placeholder="" />
+                        <input id="fecha_retiro" type="text" value="<?php echo $that['fecha_retiro']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Motivo Retiro:</span>
                         <select id="motivo_retiro">
                             <option value="0">Seleccionar</option>
-                            <option value="1" <?php if($that['resultado'][0]['motivo_retiro'] == 1){ echo "selected"; } ?>>Cumpli&oacute; 2 a&ntilde;os</option>
-                            <option value="2" <?php if($that['resultado'][0]['motivo_retiro'] == 2){ echo "selected"; } ?>>Enfermedad</option>
-                            <option value="3" <?php if($that['resultado'][0]['motivo_retiro'] == 3){ echo "selected"; } ?>>Decision de Padres</option>
-                            <option value="4" <?php if($that['resultado'][0]['motivo_retiro'] == 4){ echo "selected"; } ?>>Egreso</option>
+                            <option value="1" <?php if($that['motivo_retiro'] == 1){ echo "selected"; } ?>>Cumpli&oacute; 2 a&ntilde;os</option>
+                            <option value="2" <?php if($that['motivo_retiro'] == 2){ echo "selected"; } ?>>Enfermedad</option>
+                            <option value="3" <?php if($that['motivo_retiro'] == 3){ echo "selected"; } ?>>Decision de Padres</option>
+                            <option value="4" <?php if($that['motivo_retiro'] == 4){ echo "selected"; } ?>>Egreso</option>
                         </select>
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Observaciones:</span>
-                        <textarea id="observaciones"><?php echo $that['resultado'][0]['observaciones']; ?></textarea>
+                        <textarea id="observaciones"><?php echo $that['observaciones']; ?></textarea>
                         <div class="mensaje"></div>
                     </label>
                     <label>
                         <span>Curso:</span>
                         <select id="curso">
                             <option value="0">Retirado</option>
-                            <?php for($i=0; $i<$curs_['count']; $i++){ $sel=""; if($curs[$i]['id_cur'] == $that['resultado'][0]['id_cur']){ $sel = "selected"; } ?>
+                            <?php for($i=0; $i<$curs_['count']; $i++){ $sel=""; if($curs[$i]['id_cur'] == $that['id_cur']){ $sel = "selected"; } ?>
                             <option value="<?php echo $curs[$i]['id_cur']; ?>" <?php echo $sel; ?>><?php echo $curs[$i]['nombre']; ?></option>
                             <?php } ?>
                         </select>
@@ -217,20 +223,20 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                         <li>
                             <div class="padre">Madre</div>
                             <span>Nombre:</span>
-                            <input type="text" id="nombre_01" value="<?php echo $that['resultado'][0]['nombre_01']; ?>"></input>
+                            <input type="text" id="nombre_01" value="<?php echo $that['nombre_01']; ?>"></input>
                             <span>Tel celular:</span>
-                            <input type="text" id="celular_01" value="<?php echo $that['resultado'][0]['celular_01']; ?>"></input>
+                            <input type="text" id="celular_01" value="<?php echo $that['celular_01']; ?>"></input>
                             <span>Email :</span>
-                            <input type="text" id="email_01" value="<?php echo $that['resultado'][0]['email_01']; ?>"></input>
+                            <input type="text" id="email_01" value="<?php echo $that['email_01']; ?>"></input>
                         </li>
                         <li>
                             <div class="padre">Padre</div>
                             <span>Nombre:</span>
-                            <input type="text" id="nombre_02" value="<?php echo $that['resultado'][0]['nombre_02']; ?>"></input>
+                            <input type="text" id="nombre_02" value="<?php echo $that['nombre_02']; ?>"></input>
                             <span>Tel celular:</span>
-                            <input type="text" id="celular_02" value="<?php echo $that['resultado'][0]['celular_02']; ?>"></input>
+                            <input type="text" id="celular_02" value="<?php echo $that['celular_02']; ?>"></input>
                             <span>Email :</span>
-                            <input type="text" id="email_02" value="<?php echo $that['resultado'][0]['email_02']; ?>"></input>
+                            <input type="text" id="email_02" value="<?php echo $that['email_02']; ?>"></input>
                         </li>
                     </ul>
                     

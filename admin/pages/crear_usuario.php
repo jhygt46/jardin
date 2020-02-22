@@ -5,11 +5,18 @@ if(!isset($_SESSION['user']['info']['id_user'])){
     exit;
 }
 
-require '/var/www/html/virtual/jardinvalleencantado.cl/www/admin/class/mysql_class.php';
-$admin = new Conexion();
+if($_SERVER["HTTP_HOST"] == "localhost"){
+    define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
+    define("DIR", DIR_BASE."jardin/");
+}else{
+    define("DIR_BASE", "/var/www/html/");
+    define("DIR", DIR_BASE."jardin/");
+}
 
-$list_ = $admin->sql("SELECT * FROM usuarios WHERE eliminado='0'");
-$list = $list_['resultado'];
+require_once DIR."admin/class/jardin_class.php";
+$jardin = new Jardin();
+$list = $jardin->usuarios();
+
 
 $titulo = "Usuarios";
 $titulo_list = "Lista de Usuarios";
@@ -34,9 +41,8 @@ $that['perm_edicion'] = 0;
 if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
     
 	$id = $_GET["id"];
-    	$sub_titulo = $sub_titulo2;
-    	$user = $admin->sql("SELECT * FROM usuarios WHERE id_user='".$id."' AND eliminado='0'");
-    	$that = $user['resultado'][0];
+    $sub_titulo = $sub_titulo2;
+    $that = $jardin->usuario($id);
     	
 }
 

@@ -5,18 +5,23 @@ if(!isset($_SESSION['user']['info']['id_user'])){
     exit;
 }
 
-require '/var/www/html/virtual/jardinvalleencantado.cl/www/admin/class/mysql_class.php';
-$admin = new Conexion();
-
-if(isset($_GET["alu"])){
-	$list_ = $admin->sql("SELECT t1.id_pre, t1.fecha_presto, t2.nombres, t2.apellido_p, t2.apellido_m, t3.nombre FROM _jardinva_prestamos t1, _jardinva_alumnos t2, _jardinva_libros t3  WHERE t1.id_alu='".$_GET["id_alu"]."' AND t1.fecha_devolvio='0000-00-00 00:00:00' AND t1.id_user_devolvio='0' AND t1.id_alu=t2.id_alu AND t1.id_lib=t3.id_lib ORDER BY t1.fecha_presto");
+if($_SERVER["HTTP_HOST"] == "localhost"){
+    define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
+    define("DIR", DIR_BASE."jardin/");
 }else{
-	$list_ = $admin->sql("SELECT t1.id_pre, t1.fecha_presto, t2.nombres, t2.apellido_p, t2.apellido_m, t3.nombre FROM _jardinva_prestamos t1, _jardinva_alumnos t2, _jardinva_libros t3  WHERE t1.fecha_devolvio='0000-00-00 00:00:00' AND t1.id_user_devolvio='0' AND t1.id_alu=t2.id_alu AND t1.id_lib=t3.id_lib ORDER BY t1.fecha_presto");
+    define("DIR_BASE", "/var/www/html/");
+    define("DIR", DIR_BASE."jardin/");
 }
+
+$id_alu = (isset($_GET["id_alu"])) ? $_GET["id_alu"] : 0 ;
+
+require_once DIR."admin/class/jardin_class.php";
+$jardin = new Jardin();
+$list_ = $jardin->prestamos($id_alu);
 
 $eliminaraccion = "_jardinva_eliminarprestamo";
 $eliminarobjeto = "Prestamo";
-$list = $list_['resultado'];
+
 
 ?>
 
@@ -45,8 +50,8 @@ $list = $list_['resultado'];
                 for($i=0; $i<count($list); $i++){
                     $id = $list[$i]['id_pre'];
                     $nombre = $list[$i]['nombres']." ".$list[$i]['apellido_p']." ".$list[$i]['apellido_m'];
-		    $dias = intval((time() - strtotime($list[$i]['fecha_presto']))/86400);
-		    $libro = $list[$i]['nombre'];
+		            $dias = intval((time() - strtotime($list[$i]['fecha_presto']))/86400);
+		            $libro = $list[$i]['nombre'];
                 ?>
                 
                 <li class="user">

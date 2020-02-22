@@ -1,12 +1,15 @@
+		body{
+			font-family: 'Sriracha', cursive;
+		}
 		.busqueda_alumno{
-			width: 320px;
-			margin: 40px auto 0 auto;
+			width: 86%;
+			margin: 20px auto 0 auto;
 			background: #f3f3f3;
-			padding: 4px;
+			padding: 10px;
 		}
 		.busqueda_alumno .busqueda_titulo{
-			padding: 5px;
-			font-size: 18px
+			padding-left: 3px;
+			font-size: 20px
 		}
 		.busqueda_alumno .ingreso_nombre{
 
@@ -22,58 +25,74 @@
 		.busqueda_alumno .lista .item_alumno{
 			padding: 10px;
 			display: block;
-			background: #00f9c9;
+			background: #f9f9f9;
+			border-bottom: 1px solid #eee;
 		}
 		.busqueda_alumno .prestar{
 			background: #ccc;
 			text-align: center;
-			padding: 6px 0px;
-			font-size: 20px;
+			font-size: 24px;
 			display: none;
-			margin-top: 4px;
+			margin-top: 10px;
 		}
 		.devolucion_libro{
-			width: 320px;
+			width: 86%;
 			margin: 0 auto;
 			background: #f3f3f3;
-			padding: 4px;
+			padding: 0px 10px 10px 10px;
 		}
 		.devolucion_libro .devolver{
 			display: block;
-			font-size: 20px;
+			font-size: 24px;
 			text-align: center;
 			background: #ccc;
-			padding: 5px 0px;
+		}
+		.encabezado{
+			width: 86%;
+			margin: 20px auto 0 auto;
+			text-align: center;
+			font-size: 24px;
+		}
+		.hada{
+			width: 86%;
+			margin: 0 auto 20px auto;
+			text-align: center;
 		}
 		.nombre_libro{
-			width: 320px;
-			margin: 0 auto;
+			width: 86%;
+			margin: 0 auto 0 auto;
 			background: #f3f3f3;
-			padding: 4px;
+			padding: 10px;
 		}
 		.nombre_libro .nombre{
 			display: block;
-			font-size: 20px;
+			font-size: 24px;
 			text-align: center;
-			padding: 6px 0px;
+			padding: 14px 10px;
+			line-height: 22px;
 		}
 		.nombre_libro .alumno{
 			display: block;
-			font-size: 16px;
+			font-size: 20px;
 			text-align: center;
-			padding: 2px 0px;
+			line-height: 20px;
 		}
 		.nombre_libro .fecha{
 			display: block;
-			font-size: 16px;
+			font-size: 20px;
 			text-align: center;
-			padding: 2px 0px;
+			line-height: 20px;
+			padding-bottom: 14px;
 		}
 		.ingresar_libro{
-			width: 320px;
-			margin: 0 auto;
+			width: 86%;
+			margin: 0 auto 0 auto;
 			background: #f3f3f3;
-			padding: 4px;
+			padding: 10px;
+		}
+		.ingresar_libro .libro_titulo{
+			font-size: 20px;
+			padding-left: 3px;
 		}
 		.ingresar_libro .libro_nombre{
 		
@@ -85,28 +104,57 @@
 		}
 		.ingresar_libro .ingresar{
 			display: block;
-			font-size: 20px;
+			font-size: 24px;
 			text-align: center;
 			background: #ccc;
-			padding: 5px 0px;
+			margin-top: 10px;
 		}
 		.prestados{
-			width: 320px;
-			margin: 30px auto 0 auto;
+			width: 86%;
+			margin: 25px auto 25px auto;
 			background: #f3f3f3;
-			padding: 4px;
+			padding: 10px;
 		}
 		.prestados .titulo{
-			font-size: 20px;
-			padding: 5px 5px 10px 5px;
+			position: relative;
 		}
-		.prestados .datos{
+		.prestados .titulo .texto{
+			font-size: 24px;
+			padding-left: 3px;
+		}
+		.prestados .titulo .mas{
+			position: absolute;
+			width: 4px;
+			height: 20px;
+			top: 10px;
+			right: 12px;
+			background: #999;
+		}
+		.prestados .titulo .menos{
+			position: absolute;
+			width: 20px;
+			height: 4px;
+			top: 18px;
+			right: 4px;
+			background: #999;
+		}
+		.prestados .cont_datos{
+			display: none;
 			background: #ededed;
-			padding: 5px;
+			padding: 5px 0px;
+			overflow-y: auto;
+			max-height: 300px;
+			height: auto;
 		}
-		.prestados .datos .alumno{
+		.prestados .cont_datos .datos{
+			padding: 2px 5px;
+			border-bottom: 1px solid #ccc;
+		}
+		.prestados .cont_datos .datos .alumno{
 			font-size: 16px;
+			line-height: 20px;
 		}
-		.prestados .datos .libro{
-			font-size: 14px;
+		.prestados .cont_datos .datos .libro{
+			font-size: 15px;
+			line-height: 17px;
 		}

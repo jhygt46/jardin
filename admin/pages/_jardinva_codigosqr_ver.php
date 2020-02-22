@@ -1,13 +1,15 @@
 <?php
 
-session_start();
-if(!isset($_SESSION['user']['info']['id_user'])){
-    exit;
+if($_SERVER["HTTP_HOST"] == "localhost"){
+    define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
+    define("DIR", DIR_BASE."jardin/");
+}else{
+    define("DIR_BASE", "/var/www/html/");
+    define("DIR", DIR_BASE."jardin/");
 }
 
-require '/var/www/html/virtual/jardinvalleencantado.cl/www/admin/class_qr/qrlib.php';
-$dir = "/var/www/html/virtual/jardinvalleencantado.cl/www/admin/images/tempqr/";
-
+require DIR."admin/class_qr/qrlib.php";
+$dir = DIR."admin/images/tempqr/";
 
 if($handler = opendir($dir)) {
     while(false !== ($file = readdir($handler))) {
