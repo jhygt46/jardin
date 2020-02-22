@@ -35,7 +35,7 @@ class Install{
         $this->password = $db_password;
         $this->base_datos = $db_database;
 
-        $this->con = new mysqli($this->host[0], $this->usuario[0], $this->password[0], $db_database[0]);
+        $this->con = new mysqli($this->host[0], $this->usuario[0], $this->password[0]);
     }
     private function get_data($tabla, $url){
         return json_decode(file_get_contents($url.$tabla));
