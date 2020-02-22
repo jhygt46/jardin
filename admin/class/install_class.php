@@ -17,6 +17,7 @@ class Install{
     public $tablas = [];
     public $tabla = [];
     public $ejecutar = true;
+    public $detalle = 2;
 
     public $host = null;
     public $usuario = null;
@@ -111,57 +112,82 @@ class Install{
         }
 
         if($this->con->query("CREATE DATABASE IF NOT EXISTS ".$this->base_datos[0]." CHARACTER SET UTF8 COLLATE UTF8_GENERAL_CI")){
-            //echo "BASE CREADA: ".$this->base_datos[0]."<br/><br/>TABLAS<br/><br/>";
+            if($this->detalle > 0){ echo "<strong>BASE DE DATOS: ".$this->base_datos[0]." - CREADA</strong><br/><br/>"; }
+            if($this->detalle > 0 && count($tables) > 0){ echo "<br/>TABLAS<br/>"; }
             $this->con->select_db($this->base_datos[0]);
             for($i=0; $i<count($tables); $i++){
                 if($this->ejecutar){
                     if($this->con->query($tables[$i])){
-                        echo "Tabla creada: ".$tables_name[$i]."<br/>";
+                        if($this->detalle > 1){
+                            echo "Tabla creada: ".$tables_name[$i]."<br/>";
+                        }
                     }else{
-                        echo "<strong>ERROR: ".$tables_name[$i]." NO FUE CREADA</strong> => ".$this->con->error."<br/>";
+                        if($this->detalle > 0){ 
+                            echo "<strong>ERROR: ".$tables_name[$i]." NO FUE CREADA</strong> => ".$this->con->error."<br/>";
+                        }
                     }
                 }else{
-                    //echo $tables[$i]."<br/>";
+                    if($this->detalle > 0){ 
+                        echo $tables[$i]."<br/>";
+                    }
                 }
             }
-            //echo "<br/><br/>KEYS<br/><br/>";
+            if($this->detalle > 0 && count($keys) > 0){ echo "<br/>KEYS<br/>"; }
             for($i=0; $i<count($keys); $i++){
                 if($this->ejecutar){
                     if($this->con->query($keys[$i])){
-                        echo "ALTER CREADO: <br/>";
+                        if($this->detalle > 1){
+                            echo "KEY CREADA: <br/>";
+                        }
                     }else{
-                        echo "<strong>ERROR: KEY </strong> => ".$this->con->error."<br/>";
+                        if($this->detalle > 0){
+                            echo "<strong>ERROR: KEY </strong> => ".$this->con->error."<br/>";
+                        }
                     }
                 }else{
-                    //echo $keys[$i]."<br/>";
+                    if($this->detalle > 0){ 
+                        echo $keys[$i]."<br/>";
+                    }
                 }
             }
-            //echo "<br/><br/>AUTOINCREMENTS<br/><br/>";
+            if($this->detalle > 0 && count($ais) > 0){ echo "<br/>AUTOINCREMENTS<br/>"; }
             for($i=0; $i<count($ais); $i++){
                 if($this->ejecutar){
                     if($this->con->query($ais[$i])){
-                        echo "ALTER CREADO: <br/>";
+                        if($this->detalle > 1){
+                            echo "AUTOINCREMENT CREADO: <br/>";
+                        }
                     }else{
-                        echo "<strong>ERROR: AUTO</strong> => ".$this->con->error."<br/>";
+                        if($this->detalle > 0){
+                            echo "<strong>ERROR: AUTOINCREMENT</strong> => ".$this->con->error."<br/>";
+                        }
                     }
                 }else{
-                    //echo $ais[$i]."<br/>";
+                    if($this->detalle > 0){
+                        echo $ais[$i]."<br/>";
+                    }
                 }
             }
-            //echo "<br/><br/>FILTROS<br/><br/>";
+            if($this->detalle > 0 && count($cons) > 0){ echo "<br/>FILTROS<br/>"; }
             for($i=0; $i<count($cons); $i++){
                 if($this->ejecutar){
                     if($this->con->query($cons[$i])){
-                        echo "ALTER CREADO: <br/>";
+                        if($this->detalle > 1){
+                            echo "FILTROS CREADO: <br/>";
+                        }
                     }else{
-                        echo "<strong>ERROR: FILTRO</strong> => ".$this->con->error."<br/>";
+                        if($this->detalle > 0){
+                            echo "<strong>ERROR: FILTRO</strong> => ".$this->con->error."<br/>";
+                        }
                     }
                 }else{
-                    //echo $cons[$i]."<br/>";
+                    if($this->detalle > 0){
+                        echo $cons[$i]."<br/>";
+                    }
                 }
             }
-            echo "<br/><br/>INSERT<br/><br/>";
-            
+
+            if($this->detalle > 0){ echo "<br/>INSERT<br/>"; }
             
             for($i=0; $i<count($this->tablas); $i++){
         
@@ -182,12 +208,18 @@ class Install{
                     $sql = "INSERT INTO ".$this->tablas[$i]["nombre"]." (".implode(", ", $campos).") VALUES (".implode(", ", $matriz[$j]).")";
                     if($this->ejecutar){
                         if($this->con->query($sql)){
-                            echo "INSERTAR REGISTRO ".$this->tablas[$i]["nombre"]."<br/>";
+                            if($this->detalle > 1){
+                                echo "INSERTAR REGISTRO ".$this->tablas[$i]["nombre"]."<br/>";
+                            }
                         }else{
-                            echo "<strong>ERROR: INSERT</strong> => ".$this->con->error."<br/>";
+                            if($this->detalle > 0){
+                                echo "<strong>ERROR: INSERT</strong> => ".$this->con->error."<br/>";
+                            }
                         }
                     }else{
-                        echo $sql."<br/>";
+                        if($this->detalle > 0){
+                            echo $sql."<br/>";
+                        }
                     }
                 }
         
