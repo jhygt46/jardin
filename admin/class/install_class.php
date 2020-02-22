@@ -180,6 +180,7 @@ class Install{
                 }
                 for($j=0; $j<count($matriz); $j++){
                     $sql = "INSERT INTO ".$this->tablas[$i]["nombre"]." (".implode(", ", $campos).") VALUES (".implode(", ", $matriz[$j]).")";
+                    echo $sql."<br/>";
                     if($this->ejecutar){
                         if($this->con->query($sql)){
                             echo "INSERTAR REGISTRO ".$this->tablas[$i]["nombre"]."<br/>";
