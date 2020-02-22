@@ -100,7 +100,7 @@ $in->add('email', 'tinyint(1)', 0);
 $in->add_tabla();
 
 
-$in->ejecutar(true);
+$in->ejecutar(false);
 $in->process();
 /*
 $in->llenar_data('http://www.jardinvalleencantado.cl/aux.php?aux=');

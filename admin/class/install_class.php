@@ -121,7 +121,7 @@ class Install{
                         echo "<strong>ERROR: ".$tables_name[$i]." NO FUE CREADA</strong> => ".$this->con->error."<br/>";
                     }
                 }else{
-                    echo $tables[$i]."<br/>";
+                    //echo $tables[$i]."<br/>";
                 }
             }
             echo "<br/><br/>KEYS<br/><br/>";
@@ -134,7 +134,7 @@ class Install{
                         echo "<strong>ERROR: KEY </strong> => ".$this->con->error."<br/>";
                     }
                 }else{
-                    echo $keys[$i]."<br/>";
+                    //echo $keys[$i]."<br/>";
                 }
             }
             echo "<br/><br/>AUTOINCREMENTS<br/><br/>";
@@ -160,7 +160,7 @@ class Install{
                         echo "<strong>ERROR: FILTRO</strong> => ".$this->con->error."<br/>";
                     }
                 }else{
-                    echo $cons[$i]."<br/>";
+                    //echo $cons[$i]."<br/>";
                 }
             }
             echo "<br/><br/>INSERT<br/><br/>";
@@ -173,6 +173,7 @@ class Install{
                     $cant = count($this->tablas[$i]["campos"][$j]["values"]);
                     if($cant > 0){
                         $campos[] = $this->tablas[$i]["campos"][$j]["nombre"];
+                        echo "NOMBRE: ".$this->tablas[$i]["campos"][$j]["nombre"]."<br/>";
                         for($k=0; $k<$cant; $k++){
                             $matriz[$k][] = "'".$this->tablas[$i]["campos"][$j]["values"][$k]."'";
                         }
@@ -180,7 +181,6 @@ class Install{
                 }
                 for($j=0; $j<count($matriz); $j++){
                     $sql = "INSERT INTO ".$this->tablas[$i]["nombre"]." (".implode(", ", $campos).") VALUES (".implode(", ", $matriz[$j]).")";
-                    echo $sql."<br/>";
                     if($this->ejecutar){
                         if($this->con->query($sql)){
                             echo "INSERTAR REGISTRO ".$this->tablas[$i]["nombre"]."<br/>";
