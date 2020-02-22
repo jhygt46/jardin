@@ -19,7 +19,7 @@ $in->add('correo', 'varchar(255) COLLATE utf8_spanish2_ci', 0, 'elibruzzo@hotmai
 $in->add('pass', 'varchar(32) COLLATE utf8_spanish2_ci', 0, 'bed319758c912ff419e1f0722468e572');
 $in->add('code_cookie', 'varchar(50) COLLATE utf8_spanish2_ci', 0, '');
 $in->add('fecha_creado', 'datetime', 0, '');
-$in->add('tipo', 'tinyint(1)', 0, 1);
+$in->add('tipo', 'tinyint(1)', 0, 0);
 $in->add('perm_ingreso', 'tinyint(1)', 0, 1);
 $in->add('perm_prestamo', 'tinyint(1)', 0, 1);
 $in->add('perm_devolucion', 'tinyint(1)', 0, 2);
