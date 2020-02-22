@@ -173,12 +173,14 @@ class Install{
                     $cant = count($this->tablas[$i]["campos"][$j]["values"]);
                     if($cant > 0){
                         $campos[] = $this->tablas[$i]["campos"][$j]["nombre"];
-                        echo "NOMBRE: ".$this->tablas[$i]["campos"][$j]["nombre"]."<br/>";
                         for($k=0; $k<$cant; $k++){
                             $matriz[$k][] = "'".$this->tablas[$i]["campos"][$j]["values"][$k]."'";
                         }
                     }
                 }
+                echo "<pre>";
+                print_r($matriz);
+                echo "</pre>";
                 for($j=0; $j<count($matriz); $j++){
                     $sql = "INSERT INTO ".$this->tablas[$i]["nombre"]." (".implode(", ", $campos).") VALUES (".implode(", ", $matriz[$j]).")";
                     if($this->ejecutar){
