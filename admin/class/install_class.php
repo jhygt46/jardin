@@ -147,7 +147,7 @@ class Install{
                         echo "<strong>ERROR: AUTO</strong> => ".$this->con->error."<br/>";
                     }
                 }else{
-                    echo $ais[$i]."<br/>";
+                    //echo $ais[$i]."<br/>";
                 }
             }
             echo "<br/><br/>FILTROS<br/><br/>";
