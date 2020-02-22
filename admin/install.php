@@ -108,8 +108,9 @@ $in->addCampo('estado', 'tinyint(1)', 0);
 $in->addCampo('comentario', 'varchar(255) COLLATE utf8_spanish2_ci', 0);
 $in->add_tabla();
 
-/*
+
 $in->ejecutar(true);
 $in->process();
+/*
 $in->llenar_data('http://www.jardinvalleencantado.cl/aux.php?aux=');
 */
