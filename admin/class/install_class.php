@@ -126,6 +126,7 @@ class Install{
                         }
                     }else{
                         if($this->detalle > 0){ 
+                            echo $tables[$i]."<br/>";
                             echo "<strong>ERROR: ".$tables_name[$i]." NO FUE CREADA</strong> => ".$this->con->error."<br/>";
                         }
                     }
@@ -144,6 +145,7 @@ class Install{
                         }
                     }else{
                         if($this->detalle > 0){
+                            echo $keys[$i]."<br/>";
                             echo "<strong>ERROR: KEY </strong> => ".$this->con->error."<br/>";
                         }
                     }
@@ -162,6 +164,7 @@ class Install{
                         }
                     }else{
                         if($this->detalle > 0){
+                            echo $ais[$i]."<br/>";
                             echo "<strong>ERROR: AUTOINCREMENT</strong> => ".$this->con->error."<br/>";
                         }
                     }
@@ -180,6 +183,7 @@ class Install{
                         }
                     }else{
                         if($this->detalle > 0){
+                            echo $cons[$i]."<br/>";
                             echo "<strong>ERROR: FILTRO</strong> => ".$this->con->error."<br/>";
                         }
                     }
@@ -216,6 +220,7 @@ class Install{
                             }
                         }else{
                             if($this->detalle > 0){
+                                echo $sql."<br/>";
                                 echo "<strong>ERROR: INSERT</strong> => ".$this->con->error."<br/>";
                             }
                         }
