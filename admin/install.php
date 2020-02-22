@@ -19,16 +19,10 @@ $in->add('correo', 'varchar(255) COLLATE utf8_spanish2_ci', 0, 'Buena@Nelson');
 $in->add('pass', 'varchar(32) COLLATE utf8_spanish2_ci', 0, 'purospuntitos');
 $in->add('code_cookie', 'varchar(50) COLLATE utf8_spanish2_ci', 0, '');
 $in->add('fecha_creado', 'datetime', 0, '');
-$in->add('intentos', 'smallint(2)', 0, 0);
-$in->add('block', 'tinyint(1)', 0, 0);
-$in->add('fecha_block', 'datetime', 0, '');
-$in->add('admin', 'tinyint(1)', 0, 1);
 $in->add('tipo', 'tinyint(1)', 0, 1);
 $in->add('perm_ingreso', 'tinyint(1)', 0, 1);
-$in->add('perm_existente', 'tinyint(1)', 0, 1);
 $in->add('perm_prestamo', 'tinyint(1)', 0, 1);
 $in->add('perm_devolucion', 'tinyint(1)', 0, 2);
-$in->add('perm_historial', 'tinyint(1)', 0, 1);
 $in->add('perm_edicion', 'tinyint(1)', 0, 1);
 $in->add('eliminado', 'tinyint(1)', 0, 0);
 $in->add_tabla();
@@ -75,7 +69,6 @@ $in->add_tabla();
 $in->crearTable('_jardinva_libros');
 $in->add('id_lib', 'int(4)', 0, null, 1, 1);
 $in->add('nombre', 'varchar(255) COLLATE utf8_spanish2_ci', 0);
-$in->add('codigo', 'varchar(20) COLLATE utf8_spanish2_ci', 0);
 $in->add('qr', 'varchar(30) COLLATE utf8_spanish2_ci', 0);
 $in->add('fecha_ingreso', 'datetime', 0);
 $in->add('eliminado', 'tinyint(1)', 0);
@@ -104,8 +97,6 @@ $in->add('fecha_presto', 'datetime', 0);
 $in->add('id_user_devolvio', 'int(4)', 0); // REFERENCIA??
 $in->add('fecha_devolvio', 'datetime', 0);
 $in->add('email', 'tinyint(1)', 0);
-$in->add('estado', 'tinyint(1)', 0);
-$in->add('comentario', 'varchar(255) COLLATE utf8_spanish2_ci', 0);
 $in->add_tabla();
 
 

@@ -53,7 +53,7 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
     $dia = $that['dia'];
     $tipo = $that['tipo'];
     $nula = $that['nula'];
-    $valor = $that['matricula'];
+    $valor = $that['matricula'] + $that['mjardin'] + $that['msalacuna'];
 
 }
 

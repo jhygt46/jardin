@@ -32,7 +32,7 @@ class Guardar{
         $this->password = $db_password;
         $this->base_datos = $db_database;
 
-        $this->con = new mysqli($this->host[0], $this->usuario[0], $this->password[0]);
+        $this->con = new mysqli($this->host[0], $this->usuario[0], $this->password[0], $db_database[0]);
 
     }
 
