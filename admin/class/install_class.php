@@ -206,7 +206,7 @@ class Install{
                     if($cant > 0){
                         $campos[] = $this->tablas[$i]["campos"][$j]["nombre"];
                         for($k=0; $k<$cant; $k++){
-                            $matriz[$k][] = $this->tablas[$i]["campos"][$j]["values"][$k];
+                            $matriz[$k][] = "'".$this->tablas[$i]["campos"][$j]["values"][$k]."'";
                         }
                     }
                 }
