@@ -48,6 +48,9 @@ class Install{
     public function ejecutar($e){
         $this->ejecutar = $e;
     }
+    public function detalle($e){
+        $this->detalle = $e;
+    }
     public function process(){
 
         for($i=0; $i<count($this->tablas); $i++){
