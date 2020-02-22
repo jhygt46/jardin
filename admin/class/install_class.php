@@ -111,7 +111,7 @@ class Install{
         }
 
         if($this->con->query("CREATE DATABASE IF NOT EXISTS ".$this->base_datos[0]." CHARACTER SET UTF8 COLLATE UTF8_GENERAL_CI")){
-            echo "BASE CREADA: ".$this->base_datos[0]."<br/><br/>TABLAS<br/><br/>";
+            //echo "BASE CREADA: ".$this->base_datos[0]."<br/><br/>TABLAS<br/><br/>";
             $this->con->select_db($this->base_datos[0]);
             for($i=0; $i<count($tables); $i++){
                 if($this->ejecutar){
@@ -124,7 +124,7 @@ class Install{
                     //echo $tables[$i]."<br/>";
                 }
             }
-            echo "<br/><br/>KEYS<br/><br/>";
+            //echo "<br/><br/>KEYS<br/><br/>";
             for($i=0; $i<count($keys); $i++){
                 if($this->ejecutar){
                     if($this->con->query($keys[$i])){
@@ -136,7 +136,7 @@ class Install{
                     //echo $keys[$i]."<br/>";
                 }
             }
-            echo "<br/><br/>AUTOINCREMENTS<br/><br/>";
+            //echo "<br/><br/>AUTOINCREMENTS<br/><br/>";
             for($i=0; $i<count($ais); $i++){
                 if($this->ejecutar){
                     if($this->con->query($ais[$i])){
@@ -148,7 +148,7 @@ class Install{
                     //echo $ais[$i]."<br/>";
                 }
             }
-            echo "<br/><br/>FILTROS<br/><br/>";
+            //echo "<br/><br/>FILTROS<br/><br/>";
             for($i=0; $i<count($cons); $i++){
                 if($this->ejecutar){
                     if($this->con->query($cons[$i])){
@@ -161,11 +161,13 @@ class Install{
                 }
             }
             echo "<br/><br/>INSERT<br/><br/>";
+            
+            
             for($i=0; $i<count($this->tablas); $i++){
         
                 $campos = [];
                 $matriz = [];
-        
+
                 for($j=0; $j<count($this->tablas[$i]["campos"]); $j++){
                     $cant = count($this->tablas[$i]["campos"][$j]["values"]);
                     if($cant > 0){
@@ -175,9 +177,7 @@ class Install{
                         }
                     }
                 }
-                echo "<pre>";
-                print_r($matriz);
-                echo "</pre>";
+                
                 for($j=0; $j<count($matriz); $j++){
                     $sql = "INSERT INTO ".$this->tablas[$i]["nombre"]." (".implode(", ", $campos).") VALUES (".implode(", ", $matriz[$j]).")";
                     if($this->ejecutar){
@@ -258,11 +258,11 @@ class Install{
         $this->tabla['nombre'] = $nombre;
         $this->tabla['campos'] = [];
     }
-    public function add($nombre, $tipo, $null, $values, $pk = NULL, $ai = NULL, $k = NULL, $kt = NULL, $kc = NULL){
+    public function add($nombre, $tipo, $null, $values = NULL, $pk = NULL, $ai = NULL, $k = NULL, $kt = NULL, $kc = NULL){
         $res['nombre'] = $nombre;
         $res['tipo'] = $tipo;
         $res['null'] = $null;
-        if($values !== NULL){ $res['values'] = $values; }
+        if($values !== NULL){ $res['values'][] = $values; }
         if($pk !== NULL){ $res['pk'] = $pk; }
         if($ai !== NULL){ $res['ai'] = $ai; }
         if($k !== NULL){ $res['k'] = $k; }

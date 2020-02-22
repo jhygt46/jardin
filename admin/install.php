@@ -14,9 +14,9 @@ $in = new Install();
 
 $in->crearTable('usuarios');
 $in->add('id_user', 'int(4)', 0, null, 1, 1);
-$in->add('nombre', 'varchar(255) COLLATE utf8_spanish2_ci', 0, 'Diego');
-$in->add('correo', 'varchar(255) COLLATE utf8_spanish2_ci', 0, 'Buena@Nelson');
-$in->add('pass', 'varchar(32) COLLATE utf8_spanish2_ci', 0, 'purospuntitos');
+$in->add('nombre', 'varchar(255) COLLATE utf8_spanish2_ci', 0, 'Eliana');
+$in->add('correo', 'varchar(255) COLLATE utf8_spanish2_ci', 0, 'elibruzzo@hotmail.com');
+$in->add('pass', 'varchar(32) COLLATE utf8_spanish2_ci', 0, 'bed319758c912ff419e1f0722468e572');
 $in->add('code_cookie', 'varchar(50) COLLATE utf8_spanish2_ci', 0, '');
 $in->add('fecha_creado', 'datetime', 0, '');
 $in->add('tipo', 'tinyint(1)', 0, 1);
