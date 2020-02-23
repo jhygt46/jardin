@@ -38,7 +38,7 @@ class Jardin{
 
     public function boletas($ano, $mes){
 
-        if($sql = $this->con->prepare("SELECT * FROM _jardinva_boletas WHERE ano=?, mes=? AND eliminado=?")){
+        if($sql = $this->con->prepare("SELECT * FROM _jardinva_boletas WHERE ano=? AND mes=? AND eliminado=?")){
             if($sql->bind_param("iii", $ano, $mes, $this->eliminado)){
                 if($sql->execute()){
 
@@ -101,7 +101,7 @@ class Jardin{
     }
     public function curso($id){
 
-        if($sql = $this->con->prepare("SELECT ano, mes, dia, tipo, nula, matricula, mjardin, msalacuna, numero FROM _jardinva_boletas WHERE id_bol=? AND eliminado=?")){
+        if($sql = $this->con->prepare("SELECT * FROM _jardinva_cursos WHERE id_cur=? AND eliminado=?")){
             if($sql->bind_param("ii", $id, $this->eliminado)){
                 if($sql->execute()){
 
@@ -170,8 +170,8 @@ class Jardin{
         $id_user_devolvio = 0;
 
         if($id_alu > 0){
-            if($sql = $this->con->prepare("SELECT t1.id_pre, t1.fecha_presto, t2.nombres, t2.apellido_p, t2.apellido_m, t3.nombre FROM _jardinva_prestamos t1, _jardinva_alumnos t2, _jardinva_libros t3 WHERE t1.id_alu=? AND t1.fecha_devolvio='0000-00-00 00:00:00' AND t1.id_user_devolvio='0' AND t1.id_alu=t2.id_alu AND t1.id_lib=t3.id_lib ORDER BY t1.fecha_presto")){
-                if($sql->bind_param("sii", $fecha_devolvio, $id_user_devolvio, $id_alu)){
+            if($sql = $this->con->prepare("SELECT t1.id_pre, t1.fecha_presto, t2.nombres, t2.apellido_p, t2.apellido_m, t3.nombre FROM _jardinva_prestamos t1, _jardinva_alumnos t2, _jardinva_libros t3 WHERE t1.id_alu=? AND t1.fecha_devolvio=? AND t1.id_user_devolvio=? AND t1.id_alu=t2.id_alu AND t1.id_lib=t3.id_lib ORDER BY t1.fecha_presto")){
+                if($sql->bind_param("isi", $id_alu, $fecha_devolvio, $id_user_devolvio)){
                     if($sql->execute()){
                         return $sql->get_result()->fetch_all(MYSQLI_ASSOC)[0];
                     }else{ echo htmlspecialchars($sql->error); }
@@ -179,7 +179,7 @@ class Jardin{
             }else{ echo htmlspecialchars($this->con->error); }
         }
         if($id_alu == 0){
-            if($sql = $this->con->prepare("SELECT t1.id_pre, t1.fecha_presto, t2.nombres, t2.apellido_p, t2.apellido_m, t3.nombre FROM _jardinva_prestamos t1, _jardinva_alumnos t2, _jardinva_libros t3 WHERE t1.fecha_devolvio='0000-00-00 00:00:00' AND t1.id_user_devolvio='0' AND t1.id_alu=t2.id_alu AND t1.id_lib=t3.id_lib ORDER BY t1.fecha_presto")){
+            if($sql = $this->con->prepare("SELECT t1.id_pre, t1.fecha_presto, t2.nombres, t2.apellido_p, t2.apellido_m, t3.nombre FROM _jardinva_prestamos t1, _jardinva_alumnos t2, _jardinva_libros t3 WHERE t1.fecha_devolvio=? AND t1.id_user_devolvio=? AND t1.id_alu=t2.id_alu AND t1.id_lib=t3.id_lib ORDER BY t1.fecha_presto")){
                 if($sql->bind_param("si", $fecha_devolvio, $id_user_devolvio)){
                     if($sql->execute()){
                         return $sql->get_result()->fetch_all(MYSQLI_ASSOC)[0];

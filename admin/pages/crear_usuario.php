@@ -32,7 +32,6 @@ $page_mod = "pages/crear_usuario.php";
 $id = 0;
 $sub_titulo = $sub_titulo1;
 
-$that['tipo'] = 0;
 $that['perm_devolucion'] = 0;
 $that['perm_prestamo'] = 0;
 $that['perm_ingreso'] = 0;
@@ -48,15 +47,6 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
 
 
 ?>
-<script>
-	function cambiar_tipo(that){
-		if(that.value == 0){
-			document.getElementById("perm_").style.display = "none";
-		}else{
-			document.getElementById("perm_").style.display = "block";
-		}
-	}
-</script>
 <div class="title">
     <h1><?php echo $titulo; ?></h1>
     <ul class="clearfix">
@@ -86,44 +76,34 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                         <input id="correo" type="text" value="<?php echo $that['correo']; ?>" require="" placeholder="diegomez13@hotmail.com" />
                         <div class="mensaje"></div>
                     </label>
-		    <label>
+		            <label>
                         <span>Password:</span>
                         <input id="pass" type="password" value="" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
-		    <label>
-                        <span>Tipo:</span>
-                        <select id="tipo" onchange="cambiar_tipo(this)">
-				<option value="0" <?php echo ($that['tipo'] == 0) ? 'selected' : '' ; ?>>Sistema</option>
-				<option value="1" <?php echo ($that['tipo'] == 1) ? 'selected' : '' ; ?>>Biblioteca</option>
-			</select>
-                        <div class="mensaje"></div>
-                    </label>
-		    <div id="perm_" <?php echo ($that['tipo'] == 1) ? 'style="display: block"' : 'style="display: none"' ; ?>>
-		    <label>
+                    <label>
                         <span>Ingreso Libros:</span>
                         <input id="perm_ingreso" type="checkbox" value="1" <?php echo ($that['perm_ingreso'] == 1) ? 'checked="checked"' : '' ; ?>>
                         <div class="mensaje"></div>
                     </label>
-		    <label>
+                    <label>
                         <span>Editar Libros:</span>
                         <input id="perm_edicion" type="checkbox" value="1" <?php echo ($that['perm_edicion'] == 1) ? 'checked="checked"' : '' ; ?>>
                         <div class="mensaje"></div>
                     </label>
-		    <label>
+                    <label>
                         <span>Prestar Libros:</span>
                         <input id="perm_prestamo" type="checkbox" value="1" <?php echo ($that['perm_prestamo'] == 1) ? 'checked="checked"' : '' ; ?>>
                         <div class="mensaje"></div>
                     </label>
-		    <label>
+                    <label>
                         <span>Devolver Libro:</span>
-                        <select id="perm_devolucion">
-				<option value="1" <?php echo ($that['perm_devolucion'] == 1) ? 'selected' : '' ; ?>>Devolver solo prestados por mi</option>
-				<option value="2" <?php echo ($that['perm_devolucion'] == 2) ? 'selected' : '' ; ?>>Devolver todos</option>
-			</select>
+                            <select id="perm_devolucion">
+                                <option value="1" <?php echo ($that['perm_devolucion'] == 1) ? 'selected' : '' ; ?>>Devolver solo prestados por mi</option>
+                                <option value="2" <?php echo ($that['perm_devolucion'] == 2) ? 'selected' : '' ; ?>>Devolver todos</option>
+                            </select>
                         <div class="mensaje"></div>
                     </label>
-		    </div>
                     <label style='margin-top:20px'>
                         <span>&nbsp;</span>
                         <a id='button' onclick="form()">Enviar</a>

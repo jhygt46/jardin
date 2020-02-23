@@ -72,11 +72,10 @@ class Guardar{
         $info['op'] = 2;
         $info['mensaje'] = "Usuario no se pudo guardar";
         
+        $tipo = 1;
         $nombre = $_POST['nombre'];
         $correo = $_POST['correo'];
         $password = $_POST['pass'];
-        $tipo = $_POST['tipo'];
-        $tipo = 2;
         $perm_ingreso = $_POST['perm_ingreso'];
         $perm_edicion = $_POST['perm_edicion'];
         $perm_prestamo = $_POST['perm_prestamo'];
@@ -156,8 +155,8 @@ class Guardar{
         $id = $_POST['id'];
 
         if($id > 0){
-            if($sql = $this->con->prepare("UPDATE _jardinva_alumnos SET nmatricula=?, rut=?, apellido_p=?, apellido_m=?, nombres=?, sexo=?, fecha_nacimiento=?, fecha_matricula=?, fecha_ingreso=?, direccion=?, nombre_apoderado=?, rut=?, telefono_apoderado=?, email_apoderado=?, fecha_retiro=?, fecha_retiro=?, observaciones=?, curso=?, rr=?, nombre_01=?, nombre_02=?, celular_01=?, celular_02=?, email_01=?, email_02=? WHERE id_alu=?")){
-                if($sql->bind_param("issssisssssssssssiissssssi", $nmatricula, $rut, $apellido_p, $apellido_m, $nombres, $sexo, $fecha_nacimiento, $fecha_matricula, $fecha_ingreso, $direccion, $nombre_apoderado, $rut, $telefono_apoderado, $email_apoderado, $fecha_retiro, $motivo_retiro, $observaciones, $curso, $rr, $nombre_01, $nombre_02, $celular_01, $celular_02, $email_01, $email_02, $id)){
+            if($sql = $this->con->prepare("UPDATE _jardinva_alumnos SET nmatricula=?, rut=?, apellido_p=?, apellido_m=?, nombres=?, sexo=?, fecha_nacimiento=?, fecha_matricula=?, fecha_ingreso=?, direccion=?, nombre_apoderado=?, telefono_apoderado=?, email_apoderado=?, fecha_retiro=?, motivo_retiro=?, observaciones=?, id_cur=?, rr=?, nombre_01=?, nombre_02=?, celular_01=?, celular_02=?, email_01=?, email_02=? WHERE id_alu=?")){
+                if($sql->bind_param("issssissssssssssiissssssi", $nmatricula, $rut, $apellido_p, $apellido_m, $nombres, $sexo, $fecha_nacimiento, $fecha_matricula, $fecha_ingreso, $direccion, $nombre_apoderado, $telefono_apoderado, $email_apoderado, $fecha_retiro, $motivo_retiro, $observaciones, $curso, $rr, $nombre_01, $nombre_02, $celular_01, $celular_02, $email_01, $email_02, $id)){
                     if($sql->execute()){
                         $info['op'] = 1;
                         $info['mensaje'] = "Alumno modificada exitosamente";
@@ -165,10 +164,9 @@ class Guardar{
                 }else{ echo htmlspecialchars($sql->error); }
             }else{ echo htmlspecialchars($this->con->error); }
         }
-
         if($id == 0){
-            if($sql = $this->con->prepare("INSERT INTO _jardinva_alumnos (nmatricula, rut, apellido_p, apellido_m, nombres, sexo, fecha_nacimiento, fecha_matricula, fecha_creado, fecha_ingreso, direccion, nombre_apoderado, rut, telefono_apoderado, email_apoderado, fecha_retiro, fecha_retiro, observaciones, curso, rr, nombre_01, nombre_02, celular_01, celular_02, email_01, email_02) VALUES (?, ?, ?, ?, ?, ?, ?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")){
-                if($sql->bind_param("issssisssssssssssiissssss", $nmatricula, $rut, $apellido_p, $apellido_m, $nombres, $sexo, $fecha_nacimiento, $fecha_matricula, $fecha_ingreso, $direccion, $nombre_apoderado, $rut, $telefono_apoderado, $email_apoderado, $fecha_retiro, $motivo_retiro, $observaciones, $curso, $rr, $nombre_01, $nombre_02, $celular_01, $celular_02, $email_01, $email_02)){
+            if($sql = $this->con->prepare("INSERT INTO _jardinva_alumnos (nmatricula, rut, apellido_p, apellido_m, nombres, sexo, fecha_nacimiento, fecha_matricula, fecha_creado, fecha_ingreso, direccion, nombre_apoderado, telefono_apoderado, email_apoderado, fecha_retiro, motivo_retiro, observaciones, id_cur, rr, nombre_01, nombre_02, celular_01, celular_02, email_01, email_02) VALUES (?, ?, ?, ?, ?, ?, ?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")){
+                if($sql->bind_param("issssissssssssssiissssss", $nmatricula, $rut, $apellido_p, $apellido_m, $nombres, $sexo, $fecha_nacimiento, $fecha_matricula, $fecha_ingreso, $direccion, $nombre_apoderado, $telefono_apoderado, $email_apoderado, $fecha_retiro, $motivo_retiro, $observaciones, $curso, $rr, $nombre_01, $nombre_02, $celular_01, $celular_02, $email_01, $email_02)){
                     if($sql->execute()){
                         $info['op'] = 1;
                         $info['mensaje'] = "Alumno ingresado exitosamente";

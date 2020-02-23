@@ -60,10 +60,11 @@ $(document).ready(function(){
         var telefono = $('#telefono').val();
         var mensaje = $('#texto').val();
         
-        var send = {accion: "enviar", nombre: nombre, correo: correo, telefono: telefono, mensaje: mensaje};
+        var send = { accion: "enviar", nombre: nombre, correo: correo, telefono: telefono, mensaje: mensaje };
+        
         $.ajax({
             dataType: "json",
-            url: "send.php",
+            url: "/send",
             type: "POST",
             data: send,
             success: function(data){
@@ -89,20 +90,24 @@ $(document).ready(function(){
         });
         
     });
-   $('.btncontacto').click(function(){
+    $('.btncontacto').click(function(){
         aparece('contacto');
+        history.pushState(null, 'Contacto', '/contacto/');
         return false;
     });
     $('.btnhorarios').click(function(){
         aparece('horarios');
+        history.pushState(null, 'Horarios', '/horarios/');
         return false;
     });
     $('.btnpropuesta').click(function(){
         aparece('propuestaeducativa');
+        history.pushState(null, 'Propuesta Educativa', '/propuestaeducativa/');
         return false;
     });
     $('.btnconozcanos').click(function(){
         aparece('conozcanos');
+        history.pushState(null, 'Conozcanos', '/conozcanos/');
         return false;
     });
     $('.clouds').find('.cloud').each(function(){
@@ -129,9 +134,31 @@ $(document).ready(function(){
             }, 750);
         }
     });
+
     google.maps.event.addDomListener(window, 'load', initialize);
     
 });
+
+
+$(window).on('popstate', function(e){
+
+    var back = window.location.href.split('/');
+    if(back[3] == "conozcanos"){
+        aparece('conozcanos');
+    }
+    if(back[3] == "propuestaeducativa"){
+        aparece('propuestaeducativa');
+    }
+    if(back[3] == "horarios"){
+        aparece('horarios');
+    }
+    if(back[3] == "contacto"){
+        aparece('contacto');
+    }
+
+});
+
+
 function ordernarContenido(){
 
     var width = (parseInt($(window).width() * 0.92) > 970) ? 970 : parseInt($(window).width() * 0.92) ;

@@ -1,3 +1,34 @@
+<?php
+
+    $url = explode("/", $_SERVER["REQUEST_URI"]);
+    $c_url = count($url) - 1;
+    if($url[$c_url] == ""){
+        unset($url[$c_url]);
+    }
+
+    echo "<pre>";
+    print_r($url);
+    echo "</pre>";
+
+    if($url[1] != ""){
+
+        if($url[1] == "conozcanos"):
+            die("conozcanos");
+        elseif($url[1] == "propuestaeducativa"):
+            die("propuestaeducativa");
+        elseif($url[1] == "horarios"):
+            die("horarios");
+        elseif($url[1] == "contacto"):
+            die("contacto");
+        else:
+            die("ERROR 404 NOT FOUND");
+        endif;
+
+    }
+?>
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -11,8 +42,8 @@
         <meta name="author" content="diegomez13@hotmail.com" />
         <meta name="revisit-after" content="1 weeks" />
         <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma" rel="stylesheet">
-        <link rel="stylesheet" href="css/jardin.css" media="all" />
-        <script src="js/jquery-1.3.2.min.js" type="text/javascript"></script>
+        <link href="css/jardin.css" rel="stylesheet" media="all" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="js/base.js" type="text/javascript"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIXenuYoczpO6oh4uzeOj11b7Nvg8zrFM&signed_in=true"></script>
     </head>
@@ -156,7 +187,7 @@
                     </div>
                 </div>
             </div>
-            <div class="visita_virtual">
+            <div class="visita_virtual" style="display: none">
                 <div class="panorama vhalign" id="panorama">
 
                     <div class="pan entrada visible imgpan" style="width: 970px">

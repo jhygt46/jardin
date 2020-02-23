@@ -4,6 +4,8 @@ if(!isset($_SESSION['user']['info']['id_user'])){
     exit;
 }
 
+date_default_timezone_set('America/Santiago');
+
 if($_SERVER["HTTP_HOST"] == "localhost"){
     define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
     define("DIR", DIR_BASE."jardin/");

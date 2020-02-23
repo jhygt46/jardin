@@ -18,6 +18,7 @@ $jardin = new Jardin();
 $list_ = $jardin->alumnos();
 $curs_ = $jardin->cursos();
 
+
 /* CONFIG PAGE */
 $titulo = "Alumnos";
 $titulo_list = "Lista de Alumnos";
@@ -37,7 +38,7 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
     
     $id = $_GET["id"];
     $sub_titulo = $sub_titulo2;
-    $that = $jardin->curso($id);
+    $that = $jardin->alumno($id);
 
     if($that['nmatricula'] == 0){
         $that['nmatricula'] = $that['id_alu'] + 400;
@@ -48,9 +49,6 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
 
 ?>
 
-<script>
-
-</script>  
 
 <style>
     .padres{
@@ -143,7 +141,7 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                         </select>
                         <div class="mensaje"></div>
                     </label>
-		    <label>
+		            <label>
                         <span>Recib&iacute; reglamento:</span>
                         <select id="rr">
                             <option value="0">Seleccionar</option>
@@ -211,14 +209,12 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                     <label>
                         <span>Curso:</span>
                         <select id="curso">
-                            <option value="0">Retirado</option>
-                            <?php for($i=0; $i<$curs_['count']; $i++){ $sel=""; if($curs[$i]['id_cur'] == $that['id_cur']){ $sel = "selected"; } ?>
-                            <option value="<?php echo $curs[$i]['id_cur']; ?>" <?php echo $sel; ?>><?php echo $curs[$i]['nombre']; ?></option>
+                            <?php for($i=0; $i<count($curs_); $i++){ $sel=""; if($curs_[$i]['id_cur'] == $that['id_cur']){ $sel = "selected"; } ?>
+                            <option value="<?php echo $curs_[$i]['id_cur']; ?>" <?php echo $sel; ?>><?php echo $curs_[$i]['nombre']; ?></option>
                             <?php } ?>
                         </select>
                         <div class="mensaje"></div>
                     </label>
-                    
                     <ul class="padres clearfix">
                         <li>
                             <div class="padre">Madre</div>
@@ -239,7 +235,6 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                             <input type="text" id="email_02" value="<?php echo $that['email_02']; ?>"></input>
                         </li>
                     </ul>
-                    
                     <label style='margin-top:20px'>
                         <span>&nbsp;</span>
                         <a id='button' onclick="form()">Enviar</a>
@@ -286,11 +281,11 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                 
                 <?php
                 
-                for($i=0; $i<count($list); $i++){
+                for($i=0; $i<count($list_); $i++){
                     $k = $i + 1;
-                    $id = $list[$i][$id_list];
-                    $nombre = $k."- ".utf8_encode($list[$i]['nombres'])." ".utf8_encode($list[$i]['apellido_p'])." ".utf8_encode($list[$i]['apellido_m']);
-                    $id_cur = $list[$i]['id_cur'];
+                    $id = $list_[$i][$id_list];
+                    $nombre = $k."- ".utf8_encode($list_[$i]['nombres'])." ".utf8_encode($list_[$i]['apellido_p'])." ".utf8_encode($list_[$i]['apellido_m']);
+                    $id_cur = $list_[$i]['id_cur'];
                 ?>
                 
                 <li class="user" rel="<?php echo $id; ?>">
@@ -298,9 +293,6 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                         <li class="nombre" id_cur="<?php echo $id_cur; ?>" name="<?php echo $nombre; ?>"><?php echo $nombre; ?></li>
                         <a title="Eliminar" class="icn borrar" onclick="eliminar('<?php echo $eliminaraccion; ?>', <?php echo $id; ?>, '<?php echo $eliminarobjeto; ?>', '<?php echo $nombre; ?>')"></a>
                         <a title="Modificar" class="icn modificar" onclick="navlink('<?php echo $page_mod; ?>?id=<?php echo $id; ?>')"></a>
-                        <?php if($_SESSION['user']['info']['tareas'] == 1){ ?>
-                        <a title="Perfiles" class="icn agregaradmin" onclick="navlink('<?php echo $page_mod; ?>?id=<?php echo $id; ?>')"></a>
-                        <?php } ?>
                     </ul>
                 </li>
                 

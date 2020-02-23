@@ -21,34 +21,6 @@ require_once DIR."admin/class/jardin_class.php";
 $jardin = new Jardin();
 $list = $jardin->resumen($tipo, $id_cur);
 
-
-
-if($tipo == 1){
-    
-    $list_ = $admin->sql("SELECT * FROM ".$db_var_name."_alumnos WHERE eliminado='0' ORDER BY apellido_p");
-    $list = $list_['resultado'];
-
-}
-if($tipo == 3){
-    
-    $admin_curso = $admin->sql("SELECT * FROM ".$db_var_name."_cursos WHERE id_cur='".$id_cur."' AND eliminado='0'");
-    $prnt_id = $admin_curso['resultado'][0]['parent_id'];
-    
-    if($prnt_id > 0){
-        $list_ = $admin->sql("SELECT * FROM ".$db_var_name."_alumnos WHERE (id_cur='".$id_cur."' OR id_cur='".$prnt_id."') AND eliminado='0' ORDER BY apellido_p");
-    }else{
-        $list_ = $admin->sql("SELECT * FROM ".$db_var_name."_alumnos WHERE id_cur='".$id_cur."' AND eliminado='0' ORDER BY apellido_p");
-    }
-
-    $list = $list_['resultado'];
-    
-}
-if($tipo == 2 || $tipo == 4){
-    
-    $list_ = $admin->sql("SELECT * FROM ".$db_var_name."_alumnos WHERE eliminado='0' ORDER BY apellido_p");
-    $list = $list_['resultado'];
-    
-}
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" lang="es-CL">
@@ -111,7 +83,7 @@ if($tipo == 2 || $tipo == 4){
             }
         </style>
 
-<?php if($tipo == 1){ ?>
+    <?php if($tipo == 1){ ?>
     <table cellspacing="0" cellpadding="0" border="0">
         <tr>
             <td colspan="2"><img src="../images/hada2.jpg" style="width: 162px"></td>
