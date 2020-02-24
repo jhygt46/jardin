@@ -1,5 +1,4 @@
 var num = 1;
-var pagina = "conozcanos";
 var btn_active = 1;
 var panorama_width = 970;
 var isMobile = window.orientation > -1;
@@ -143,19 +142,21 @@ $(document).ready(function(){
 $(window).on('popstate', function(e){
 
     var back = window.location.href.split('/');
-    console.log(back);
-    console.log(back[3]);
-    console.log(back[4]);
-    if(back[3] == "conozcanos"){
+    if(back[2] == "localhost"){
+        var pagina = back[4];
+    }else{
+        var pagina = back[3];
+    }
+    if(pagina == "conozcanos" || pagina == ""){
         aparece('conozcanos');
     }
-    if(back[3] == "propuestaeducativa"){
+    if(pagina == "propuesta-educativa"){
         aparece('propuestaeducativa');
     }
-    if(back[3] == "horarios"){
+    if(pagina == "horarios"){
         aparece('horarios');
     }
-    if(back[3] == "contacto"){
+    if(pagina == "contacto"){
         aparece('contacto');
     }
 

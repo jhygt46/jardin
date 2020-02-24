@@ -20,6 +20,7 @@
         }
         return $aux;
     }
+
     $url = url();    
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
 
@@ -27,17 +28,21 @@
     $style_propuesta = "opacity: 0; top: 500px";
     $style_horarios = "opacity: 0; top: 500px";
     $style_contacto = "opacity: 0; top: 500px";
+    $pagina_inicio = "conozcanos";
 
-    if($pagina != ""){
+    if($pagina != ""){ 
 
         if($pagina == "conozcanos"){
             $style_conozcanos = "opacity: 1; top: 0px";
         }elseif($pagina == "propuesta-educativa"){
             $style_propuesta = "opacity: 1; top: 0px";
+            $pagina_inicio = "propuestaeducativa";
         }elseif($pagina == "horarios"){
             $style_horarios = "opacity: 1; top: 0px";
+            $pagina_inicio = "horarios";
         }elseif($pagina == "contacto"){
             $style_contacto = "opacity: 1; top: 0px";
+            $pagina_inicio = "contacto";
         }elseif($pagina == "visita-virtual"){
             require $url['dir']."visita.php";
             exit;
@@ -75,7 +80,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="<?php echo $url['path']; ?>js/base.js" type="text/javascript"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIXenuYoczpO6oh4uzeOj11b7Nvg8zrFM&signed_in=true"></script>
-        <script> var path = '<?php echo $url['path']; ?>'; </script>
+        <script> var path = '<?php echo $url['path']; ?>'; var pagina = '<?php echo $pagina_inicio; ?>'; </script>
     </head>
     <body>
         <div class="sitio">
