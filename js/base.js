@@ -143,6 +143,9 @@ $(document).ready(function(){
 $(window).on('popstate', function(e){
 
     var back = window.location.href.split('/');
+    console.log(back);
+    console.log(back[3]);
+    console.log(back[4]);
     if(back[3] == "conozcanos"){
         aparece('conozcanos');
     }
