@@ -1,6 +1,6 @@
 <?php
 
-    function url($dir){
+    function url(){
         $url = explode("/", $_SERVER["REQUEST_URI"]);
         for($i=0; $i<count($url); $i++){
             if(($_SERVER["HTTP_HOST"] == "localhost" && $i != 1 && $url[$i] != "") || ($_SERVER["HTTP_HOST"] != "localhost" && $url[$i] != "")){
@@ -12,19 +12,24 @@
             $aux['dir'] = $aux['dir_base'].$url[1]."/";
             $aux['path'] = "/".$url[1]."/";
         }else{
-            $aux['dir_base'] = "/var/www/html/";
-            $aux['dir'] = $aux['dir_base'].$dir."/";
+            $a = explode("/", $_SERVER["DOCUMENT_ROOT"]);
+            array_pop($a);
+            $aux['dir_base'] = "/".implode("/", $a)."/";
+            $aux['dir'] = $_SERVER["DOCUMENT_ROOT"]."/";
             $aux['path'] = "/";
         }
         return $aux;
     }
-
+    $url = url();
+    echo "<pre>";
+    print_r($url);
+    echo "</pre>";
     echo "<pre>";
     print_r($_SERVER);
     echo "</pre>";
     exit;
 
-    $url = url("jardin");
+    
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
 
     $opacity_conozcanos = 1;
