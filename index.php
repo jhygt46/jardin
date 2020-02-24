@@ -26,14 +26,12 @@
     function url(){
         
         $url = explode("/", $_SERVER["REQUEST_URI"]);
-        $c_url = count($url) - 1;
-        if($url[$c_url] == ""){
-            unset($url[$c_url]);
+        for($i=0; $i<count($url); $i++){
+            if(($_SERVER["HTTP_HOST"] == "localhost" && $i != 1 && $url[$i] != "") || ($_SERVER["HTTP_HOST"] != "localhost" && $url[$i] != "")){
+                $aux[] = $url[$i];
+            }
         }
-        if($_SERVER["HTTP_HOST"] == "localhost"){
-            unset($url[0]);
-        }
-        return $url;
+        return $aux;
     }
 
 ?>
