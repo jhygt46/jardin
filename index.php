@@ -96,7 +96,7 @@
                 <div class="contenido vhalign">
                     <div class="menu_resp">
                         <div class="cont clearfix vhalign">
-                            <div class="ada_chica"><img src="img/hada_chica.png" alt=""></div>
+                            <div class="ada_chica"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt=""></div>
                             <div class="titulo"><div class="cont_titulo valign"><h1>ValleEncantado</h1><h2>Jardin Infantil - Sala Cuna</h2></div></div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                         <div class="boton color5"><a href="" class="btnconozcanos">Con&oacute;zcanos</a></div>
                     </div>
                     <div class="contenedor box">
-                        <div class="ada"><img src="img/hada.png" alt=""></div>
+                        <div class="ada"><img src="<?php echo $url['path']; ?>img/hada.png" alt=""></div>
                         <div class="info">
                             <div class="cont_pagina">
                                 <div class="pagina contacto" style="opacity: <?php echo $opacity_contacto; ?>">
