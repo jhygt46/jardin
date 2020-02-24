@@ -14,7 +14,7 @@
         }else{
             $a = explode("/", $_SERVER["DOCUMENT_ROOT"]);
             array_pop($a);
-            $aux['dir_base'] = "/".implode("/", $a)."/";
+            $aux['dir_base'] = implode("/", $a)."/";
             $aux['dir'] = $_SERVER["DOCUMENT_ROOT"]."/";
             $aux['path'] = "/";
         }
