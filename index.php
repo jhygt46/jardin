@@ -1,30 +1,47 @@
 <?php
 
+    if($_SERVER["HTTP_HOST"] == "localhost"){
+        define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
+        define("DIR", DIR_BASE."jardin/");
+    }else{
+        define("DIR_BASE", "/var/www/html/");
+        define("DIR", DIR_BASE."jardin/");
+    }
+
     $url = url();
 
     echo "<pre>";
     print_r($url);
     echo "</pre>";
 
-    if($url[1] != ""){
+    $display_conozcanos = "block";
+    $display_propuesta = "none";
+    $display_horarios = "none";
+    $display_visita = "none";
 
-        if($url[1] == "conozcanos"):
-            die("conozcanos");
-        elseif($url[1] == "propuestaeducativa"):
-            die("propuestaeducativa");
-        elseif($url[1] == "horarios"):
-            die("horarios");
-        elseif($url[1] == "contacto"):
-            die("contacto");
+    if($url[0] != ""){
+
+        if($url[0] == "conozcanos"):
+            $display_conozcanos = "block";
+        elseif($url[0] == "propuesta-educativa"):
+            $display_propuesta = "block";
+        elseif($url[0] == "horarios"):
+            $display_horarios = "block";
+        elseif($url[0] == "contacto"):
+            $display_contacto = "block";
+        elseif($url[0] == "visita-virtual"):
+            require DIR."visita.php";
+            exit;
+        elseif($url[0] == "libro"):
+            require DIR."admin/libro.php";
+            exit;
         else:
             die("ERROR 404 NOT FOUND");
         endif;
-
+        
     }
-    exit;
 
     function url(){
-        
         $url = explode("/", $_SERVER["REQUEST_URI"]);
         for($i=0; $i<count($url); $i++){
             if(($_SERVER["HTTP_HOST"] == "localhost" && $i != 1 && $url[$i] != "") || ($_SERVER["HTTP_HOST"] != "localhost" && $url[$i] != "")){
