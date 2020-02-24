@@ -23,21 +23,21 @@
     $url = url();    
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
 
-    $opacity_conozcanos = 0;
-    $opacity_propuesta = 0;
-    $opacity_horarios = 0;
-    $opacity_contacto = 0;
+    $style_conozcanos = "opacity: 0; top: 500px";
+    $style_propuesta = "opacity: 0; top: 500px";
+    $style_horarios = "opacity: 0; top: 500px";
+    $style_contacto = "opacity: 0; top: 500px";
 
     if($pagina != ""){
 
         if($pagina == "conozcanos"){
-            $opacity_conozcanos = 1;
+            $style_conozcanos = "opacity: 1; top: 0px";
         }elseif($pagina == "propuesta-educativa"){
-            $opacity_propuesta = 1;
+            $style_propuesta = "opacity: 1; top: 0px";
         }elseif($pagina == "horarios"){
-            $opacity_horarios = 1;
+            $style_horarios = "opacity: 1; top: 0px";
         }elseif($pagina == "contacto"){
-            $opacity_contacto = 1;
+            $style_contacto = "opacity: 1; top: 0px";
         }elseif($pagina == "visita-virtual"){
             require $url['dir']."visita.php";
             exit;
@@ -49,7 +49,7 @@
         }
         
     }else{
-        $opacity_conozcanos = 1;
+        $style_conozcanos = "opacity: 1; top: 0px";
     }
 
     
@@ -113,7 +113,7 @@
                         <div class="ada"><img src="<?php echo $url['path']; ?>img/hada.png" alt=""></div>
                         <div class="info">
                             <div class="cont_pagina">
-                                <div class="pagina contacto" style="opacity: <?php echo $opacity_contacto; ?>">
+                                <div class="pagina contacto" style="<?php echo $style_contacto; ?>">
                                     <div class="data">
                                         <div class="formulario">
                                             <div class="titulo">Contacto</div>
@@ -127,7 +127,7 @@
                                         <div class="mapa" id="mapa"></div>
                                     </div>
                                 </div>
-                                <div class="pagina horarios" style="opacity: <?php echo $opacity_horarios; ?>">
+                                <div class="pagina horarios" style="<?php echo $style_horarios; ?>">
                                     <div class="data">
                                         <div class="texto">
                                             <div class="titulo">Horarios</div>
@@ -141,7 +141,7 @@
                                         <div class="imagen"></div>
                                     </div>
                                 </div>
-                                <div class="pagina propuestaeducativa" style="opacity: <?php echo $opacity_propuesta; ?>">
+                                <div class="pagina propuestaeducativa" style="<?php echo $style_propuesta; ?>">
                                     <div class="data">
                                         <div class="texto">
                                             <div class="titulo">Propuesta Educativa</div>
@@ -185,7 +185,7 @@
                                         <div class="imagen"></div>
                                     </div>
                                 </div>
-                                <div class="pagina conozcanos" style="opacity: <?php echo $opacity_conozcanos; ?>">
+                                <div class="pagina conozcanos" style="<?php echo $style_conozcanos; ?>">
                                     <div class="data">
                                         <div class="texto">
                                             <div class="titulo">Con&oacute;zcanos</div>
