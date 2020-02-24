@@ -10,19 +10,15 @@
 
     $url = url();
 
-    echo "<pre>";
-    print_r($url);
-    echo "</pre>";
-
     $display_conozcanos = "block";
     $display_propuesta = "none";
     $display_horarios = "none";
-    $display_visita = "none";
+    $display_contacto = "none";
 
     if($url[0] != ""){
 
         if($url[0] == "conozcanos"):
-            $display_conozcanos = "block";
+            
         elseif($url[0] == "propuesta-educativa"):
             $display_propuesta = "block";
         elseif($url[0] == "horarios"):
@@ -109,7 +105,7 @@
                         <div class="ada"><img src="img/hada.png" alt=""></div>
                         <div class="info">
                             <div class="cont_pagina">
-                                <div class="pagina contacto">
+                                <div class="pagina contacto" style="display:<?php echo $display_contacto; ?>">
                                     <div class="data">
                                         <div class="formulario">
                                             <div class="titulo">Contacto</div>
@@ -123,7 +119,7 @@
                                         <div class="mapa" id="mapa"></div>
                                     </div>
                                 </div>
-                                <div class="pagina horarios">
+                                <div class="pagina horarios" style="display:<?php echo $display_horarios; ?>">
                                     <div class="data">
                                         <div class="texto">
                                             <div class="titulo">Horarios</div>
@@ -137,7 +133,7 @@
                                         <div class="imagen"></div>
                                     </div>
                                 </div>
-                                <div class="pagina propuestaeducativa">
+                                <div class="pagina propuestaeducativa" style="display:<?php echo $display_propuesta; ?>">
                                     <div class="data">
                                         <div class="texto">
                                             <div class="titulo">Propuesta Educativa</div>
@@ -181,7 +177,7 @@
                                         <div class="imagen"></div>
                                     </div>
                                 </div>
-                                <div class="pagina conozcanos">
+                                <div class="pagina conozcanos" style="display:<?php echo $display_conozcanos; ?>">
                                     <div class="data">
                                         <div class="texto">
                                             <div class="titulo">Con&oacute;zcanos</div>
