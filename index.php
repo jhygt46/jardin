@@ -1,51 +1,60 @@
 <?php
 
-    if($_SERVER["HTTP_HOST"] == "localhost"){
-        define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
-        define("DIR", DIR_BASE."jardin/");
-    }else{
-        define("DIR_BASE", "/var/www/html/");
-        define("DIR", DIR_BASE."jardin/");
-    }
-
-    $url = url();
-
-    $display_conozcanos = "block";
-    $display_propuesta = "none";
-    $display_horarios = "none";
-    $display_contacto = "none";
-
-    if($url[0] != ""){
-
-        if($url[0] == "conozcanos"):
-            
-        elseif($url[0] == "propuesta-educativa"):
-            $display_propuesta = "block";
-        elseif($url[0] == "horarios"):
-            $display_horarios = "block";
-        elseif($url[0] == "contacto"):
-            $display_contacto = "block";
-        elseif($url[0] == "visita-virtual"):
-            require DIR."visita.php";
-            exit;
-        elseif($url[0] == "libro"):
-            require DIR."admin/libro.php";
-            exit;
-        else:
-            die("ERROR 404 NOT FOUND");
-        endif;
-        
-    }
-
-    function url(){
+    function url($dir){
         $url = explode("/", $_SERVER["REQUEST_URI"]);
         for($i=0; $i<count($url); $i++){
             if(($_SERVER["HTTP_HOST"] == "localhost" && $i != 1 && $url[$i] != "") || ($_SERVER["HTTP_HOST"] != "localhost" && $url[$i] != "")){
-                $aux[] = $url[$i];
+                $aux['url'][] = $url[$i];
             }
+        }
+        if($_SERVER["HTTP_HOST"] == "localhost"){
+            $aux['dir_base'] = $_SERVER["DOCUMENT_ROOT"]."/";
+            $aux['dir'] = $aux['dir_base'].$url[1]."/";
+            $aux['path'] = "/".$url[1]."/";
+        }else{
+            $aux['dir_base'] = "/var/www/html/";
+            $aux['dir'] = $aux['dir_base'].$dir."/";
+            $aux['path'] = "/";
         }
         return $aux;
     }
+
+    echo "<pre>";
+    print_r($_SERVER);
+    echo "</pre>";
+    exit;
+
+    $url = url("jardin");
+    $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
+
+    $opacity_conozcanos = 1;
+    $opacity_propuesta = 0;
+    $opacity_horarios = 0;
+    $opacity_contacto = 0;
+
+    if($pagina != ""){
+
+        if($pagina == "conozcanos"){
+            
+        }elseif($pagina == "propuesta-educativa"){
+            $opacity_propuesta = 1;
+        }elseif($pagina == "horarios"){
+            $opacity_horarios = 1;
+        }elseif($pagina == "contacto"){
+            $opacity_contacto = 1;
+        }elseif($pagina == "visita-virtual"){
+            require $url['dir']."visita.php";
+            exit;
+        }elseif($pagina == "visita-virtual"){
+            require $url['dir']."admin/libro.php";
+            exit;
+        }else{
+            die("ERROR 404 NOT FOUND");
+        }
+        
+    }
+
+    
 
 ?>
 
@@ -64,9 +73,9 @@
         <meta name="author" content="diegomez13@hotmail.com" />
         <meta name="revisit-after" content="1 weeks" />
         <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma" rel="stylesheet">
-        <link href="css/jardin.css" rel="stylesheet" media="all" />
+        <link href="<?php echo $url['path']; ?>css/jardin.css" rel="stylesheet" media="all" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="js/base.js" type="text/javascript"></script>
+        <script src="<?php echo $url['path']; ?>js/base.js" type="text/javascript"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIXenuYoczpO6oh4uzeOj11b7Nvg8zrFM&signed_in=true"></script>
     </head>
     <body>
@@ -105,7 +114,7 @@
                         <div class="ada"><img src="img/hada.png" alt=""></div>
                         <div class="info">
                             <div class="cont_pagina">
-                                <div class="pagina contacto" style="display:<?php echo $display_contacto; ?>">
+                                <div class="pagina contacto" style="opacity: <?php echo $opacity_contacto; ?>">
                                     <div class="data">
                                         <div class="formulario">
                                             <div class="titulo">Contacto</div>
@@ -119,7 +128,7 @@
                                         <div class="mapa" id="mapa"></div>
                                     </div>
                                 </div>
-                                <div class="pagina horarios" style="display:<?php echo $display_horarios; ?>">
+                                <div class="pagina horarios" style="opacity: <?php echo $opacity_horarios; ?>">
                                     <div class="data">
                                         <div class="texto">
                                             <div class="titulo">Horarios</div>
@@ -133,7 +142,7 @@
                                         <div class="imagen"></div>
                                     </div>
                                 </div>
-                                <div class="pagina propuestaeducativa" style="display:<?php echo $display_propuesta; ?>">
+                                <div class="pagina propuestaeducativa" style="opacity: <?php echo $opacity_propuesta; ?>">
                                     <div class="data">
                                         <div class="texto">
                                             <div class="titulo">Propuesta Educativa</div>
@@ -177,7 +186,7 @@
                                         <div class="imagen"></div>
                                     </div>
                                 </div>
-                                <div class="pagina conozcanos" style="display:<?php echo $display_conozcanos; ?>">
+                                <div class="pagina conozcanos" style="opacity: <?php echo $opacity_conozcanos; ?>">
                                     <div class="data">
                                         <div class="texto">
                                             <div class="titulo">Con&oacute;zcanos</div>
