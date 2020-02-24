@@ -23,7 +23,7 @@
     $url = url();    
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
 
-    $opacity_conozcanos = 1;
+    $opacity_conozcanos = 0;
     $opacity_propuesta = 0;
     $opacity_horarios = 0;
     $opacity_contacto = 0;
@@ -31,7 +31,7 @@
     if($pagina != ""){
 
         if($pagina == "conozcanos"){
-            
+            $opacity_conozcanos = 1;
         }elseif($pagina == "propuesta-educativa"){
             $opacity_propuesta = 1;
         }elseif($pagina == "horarios"){
@@ -48,6 +48,8 @@
             die("ERROR 404 NOT FOUND");
         }
         
+    }else{
+        $opacity_conozcanos = 1;
     }
 
     

@@ -102,7 +102,7 @@ $(document).ready(function(){
     });
     $('.btnpropuesta').click(function(){
         aparece('propuestaeducativa');
-        history.pushState(null, 'Propuesta Educativa', path+'propuestaeducativa/');
+        history.pushState(null, 'Propuesta Educativa', path+'propuesta-educativa/');
         return false;
     });
     $('.btnconozcanos').click(function(){
