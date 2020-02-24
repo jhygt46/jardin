@@ -92,22 +92,22 @@ $(document).ready(function(){
     });
     $('.btncontacto').click(function(){
         aparece('contacto');
-        history.pushState(null, 'Contacto', '/contacto/');
+        history.pushState(null, 'Contacto', path+'contacto/');
         return false;
     });
     $('.btnhorarios').click(function(){
         aparece('horarios');
-        history.pushState(null, 'Horarios', '/horarios/');
+        history.pushState(null, 'Horarios', path+'horarios/');
         return false;
     });
     $('.btnpropuesta').click(function(){
         aparece('propuestaeducativa');
-        history.pushState(null, 'Propuesta Educativa', '/propuestaeducativa/');
+        history.pushState(null, 'Propuesta Educativa', path+'propuestaeducativa/');
         return false;
     });
     $('.btnconozcanos').click(function(){
         aparece('conozcanos');
-        history.pushState(null, 'Conozcanos', '/conozcanos/');
+        history.pushState(null, 'Conozcanos', path+'conozcanos/');
         return false;
     });
     $('.clouds').find('.cloud').each(function(){

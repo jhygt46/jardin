@@ -20,16 +20,7 @@
         }
         return $aux;
     }
-    $url = url();
-    echo "<pre>";
-    print_r($url);
-    echo "</pre>";
-    echo "<pre>";
-    print_r($_SERVER);
-    echo "</pre>";
-    exit;
-
-    
+    $url = url();    
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
 
     $opacity_conozcanos = 1;
@@ -82,6 +73,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="<?php echo $url['path']; ?>js/base.js" type="text/javascript"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIXenuYoczpO6oh4uzeOj11b7Nvg8zrFM&signed_in=true"></script>
+        <script> var path = '<?php echo $url['path']; ?>'; </script>
     </head>
     <body>
         <div class="sitio">
