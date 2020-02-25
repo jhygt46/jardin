@@ -393,16 +393,22 @@ html body .sitio .visita_virtual {
   z-index: 5;
   background: rgba(0, 0, 0, 0.75);
 }
-html body .sitio .visita_virtual .panorama {
+html body .sitio .visita_virtual .cont_visita {
+  width: 92%;
+  height: 100%;
+  max-width: 970px;
+  max-height: 520px;
+}
+html body .sitio .visita_virtual .cont_visita .panorama {
   max-width: 970px;
   max-height: 470px;
-  width: 92%;
+  width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
   background: #FFF;
 }
-html body .sitio .visita_virtual .panorama .pan {
+html body .sitio .visita_virtual .cont_visita .panorama .pan {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -410,7 +416,7 @@ html body .sitio .visita_virtual .panorama .pan {
   width: 100%;
   height: 100%;
 }
-html body .sitio .visita_virtual .panorama .pan .punto {
+html body .sitio .visita_virtual .cont_visita .panorama .pan .punto {
   position: absolute;
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.9);
@@ -419,109 +425,125 @@ html body .sitio .visita_virtual .panorama .pan .punto {
   cursor: pointer;
   z-index: 2;
 }
-html body .sitio .visita_virtual .panorama .pan .back {
+html body .sitio .visita_virtual .cont_visita .panorama .pan .back {
   position: fixed;
   bottom: 10px;
   right: 10px;
   z-index: 2;
 }
-html body .sitio .visita_virtual .panorama .pan .fotos {
+html body .sitio .visita_virtual .cont_visita .panorama .pan .fotos {
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 1;
 }
-html body .sitio .visita_virtual .panorama .pan .fotos .foto_prin {
+html body .sitio .visita_virtual .cont_visita .panorama .pan .fotos .foto_prin {
   position: absolute;
   z-index: 2;
 }
-html body .sitio .visita_virtual .panorama .pan .fotos .foto_prin .cont_img {
+html body .sitio .visita_virtual .cont_visita .panorama .pan .fotos .foto_prin .cont_img {
   padding: 10px;
   width: calc(100% - 20px);
 }
-html body .sitio .visita_virtual .panorama .pan .fotos .listado_fotos {
+html body .sitio .visita_virtual .cont_visita .panorama .pan .fotos .listado_fotos {
   position: absolute;
   background: rgba(255, 255, 0, 0.2);
   z-index: 1;
 }
-html body .sitio .visita_virtual .panorama .pan .fotos .listado_fotos ul {
+html body .sitio .visita_virtual .cont_visita .panorama .pan .fotos .listado_fotos ul {
   padding-top: 5px;
 }
-html body .sitio .visita_virtual .panorama .pan .fotos .listado_fotos ul li {
+html body .sitio .visita_virtual .cont_visita .panorama .pan .fotos .listado_fotos ul li {
   float: left;
   width: 140px;
   padding: 5px;
 }
-html body .sitio .visita_virtual .panorama .pan .fotos .listado_fotos ul li img {
+html body .sitio .visita_virtual .cont_visita .panorama .pan .fotos .listado_fotos ul li img {
   width: 140px;
   height: 97px;
 }
-html body .sitio .visita_virtual .panorama .visible {
+html body .sitio .visita_virtual .cont_visita .panorama .visible {
   display: block;
 }
-html body .sitio .visita_virtual .panorama .entrada .pos_patio {
+html body .sitio .visita_virtual .cont_visita .panorama .entrada .pos_patio {
   top: 150px;
   left: 960px;
 }
-html body .sitio .visita_virtual .panorama .entrada .pos_biblioteca {
+html body .sitio .visita_virtual .cont_visita .panorama .entrada .pos_biblioteca {
   top: 150px;
   left: 770px;
 }
-html body .sitio .visita_virtual .panorama .entrada .pos_salas {
+html body .sitio .visita_virtual .cont_visita .panorama .entrada .pos_salas {
   top: 150px;
   left: 1200px;
 }
-html body .sitio .visita_virtual .panorama .entrada .pos_sala_verde {
+html body .sitio .visita_virtual .cont_visita .panorama .entrada .pos_sala_verde {
   top: 100px;
   left: 80px;
 }
-html body .sitio .visita_virtual .panorama .entrada .pos_sala_naranja {
+html body .sitio .visita_virtual .cont_visita .panorama .entrada .pos_sala_naranja {
   top: 150px;
   left: 80px;
 }
-html body .sitio .visita_virtual .panorama .entrada .pos_cocina {
+html body .sitio .visita_virtual .cont_visita .panorama .entrada .pos_cocina {
   top: 200px;
   left: 80px;
 }
-html body .sitio .visita_virtual .panorama .entrada .pos_entrada {
+html body .sitio .visita_virtual .cont_visita .panorama .entrada .pos_entrada {
   top: 250px;
   left: 500px;
 }
-html body .sitio .visita_virtual .panorama .pasillo .pos_sala_azul {
+html body .sitio .visita_virtual .cont_visita .panorama .pasillo .pos_sala_azul {
   top: 245px;
   left: 740px;
 }
-html body .sitio .visita_virtual .panorama .pasillo .pos_sala_roja {
+html body .sitio .visita_virtual .cont_visita .panorama .pasillo .pos_sala_roja {
   top: 166px;
   left: 620px;
 }
-html body .sitio .visita_virtual .panorama .pasillo .pos_patio {
+html body .sitio .visita_virtual .cont_visita .panorama .pasillo .pos_patio {
   top: 205px;
   left: 660px;
 }
-html body .sitio .visita_virtual .panorama .pasillo .pos_sala_amarilla {
+html body .sitio .visita_virtual .cont_visita .panorama .pasillo .pos_sala_amarilla {
   top: 150px;
   left: 400px;
 }
-html body .sitio .visita_virtual .panorama .pasillo .pos_bano_sala_duna {
+html body .sitio .visita_virtual .cont_visita .panorama .pasillo .pos_bano_sala_duna {
   top: 190px;
   left: 355px;
 }
-html body .sitio .visita_virtual .panorama .pasillo .pos_bano_jardin {
+html body .sitio .visita_virtual .cont_visita .panorama .pasillo .pos_bano_jardin {
   top: 230px;
   left: 321px;
 }
-html body .sitio .visita_virtual .panorama .Sala_Verde .pos_sala_actividades {
+html body .sitio .visita_virtual .cont_visita .panorama .Sala_Verde .pos_sala_actividades {
   top: 245px;
   left: 160px;
 }
-html body .sitio .visita_virtual .panorama .Sala_Verde .pos_sala_siesta {
+html body .sitio .visita_virtual .cont_visita .panorama .Sala_Verde .pos_sala_siesta {
   top: 245px;
   left: 1380px;
 }
-html body .sitio .visita_virtual .panorama .Sala_Verde .pos_bano_sala_cuna {
+html body .sitio .visita_virtual .cont_visita .panorama .Sala_Verde .pos_bano_sala_cuna {
   top: 245px;
   left: 620px;
+}
+html body .sitio .visita_virtual .cont_visita .espacio {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  background: #f00;
+}
+html body .sitio .visita_virtual .cont_visita .espacio a {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
 }
 html body .sitio .menu_web {
   position: fixed;

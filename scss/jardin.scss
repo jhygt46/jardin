@@ -394,141 +394,160 @@ html{
                 width: 100%;
                 z-index: 5;
                 background: rgba(0, 0, 0, 0.75);
-                .panorama{
-                    max-width: 970px;
-                    max-height: 470px;
-                    width: 92%;
-                    height: 100%;
-                    overflow: hidden;
-                    position: relative;
-                    background: #FFF;
-                    .pan{
-                        position: absolute;
-                        top: 0px;
-                        left: 0px;
-                        display: none;
+                .cont_visita{
+                    width: 92%; height: 100%; max-width: 970px; max-height: 520px;
+                    .panorama{
+                        max-width: 970px;
+                        max-height: 470px;
                         width: 100%;
                         height: 100%;
-                        .punto{
+                        overflow: hidden;
+                        position: relative;
+                        background: #FFF;
+                        .pan{
                             position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            display: none;
+                            width: 100%;
+                            height: 100%;
+                            .punto{
+                                position: absolute;
+                                padding: 10px 20px;
+                                background: rgba(255, 255, 255, 0.9);
+                                border-radius: 5px;
+                                font-size: 15px;
+                                cursor: pointer;
+                                z-index: 2;
+                            }
+                            .back{
+                                position: fixed;
+                                bottom: 10px;
+                                right: 10px;
+                                z-index: 2;
+                            }
+                            .fotos{
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                z-index: 1;
+                                .foto_prin{
+                                    position: absolute;
+                                    z-index: 2;
+                                    .cont_img{
+                                        padding: 10px;
+                                        width: calc(100% - 20px);
+                                        img{}
+                                    }
+                                }
+                                .listado_fotos{
+                                    position: absolute;
+                                    background: rgba(255, 255, 0, 0.2);
+                                    z-index: 1;
+                                    ul{
+                                        padding-top: 5px;
+                                        li{
+                                            float: left;
+                                            width: 140px;
+                                            padding: 5px;
+                                            img{
+                                                width: 140px;
+                                                height: 97px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                        .visible{
+                            display: block;
+                        }
+                        .entrada{
+                            .pos_patio{
+                                top: 150px;
+                                left: 960px;
+                            }
+                            .pos_biblioteca{
+                                top: 150px;
+                                left: 770px;
+                            }
+                            .pos_salas{
+                                top: 150px;
+                                left: 1200px;
+                            }
+                            .pos_sala_verde{
+                                top: 100px;
+                                left: 80px;
+                            }
+                            .pos_sala_naranja{
+                                top: 150px;
+                                left: 80px;
+                            }
+                            .pos_cocina{
+                                top: 200px;
+                                left: 80px;
+                            }
+                            .pos_entrada{
+                                top: 250px;
+                                left: 500px;
+                            }
+                        }
+                        .pasillo{
+                            .pos_sala_azul{
+                                top: 245px;
+                                left: 740px;
+                            }
+                            .pos_sala_roja{
+                                top: 166px;
+                                left: 620px;
+                            }
+                            .pos_patio{
+                                top: 205px;
+                                left: 660px;
+                            }
+                            .pos_sala_amarilla{
+                                top: 150px;
+                                left: 400px;
+                            }
+                            .pos_bano_sala_duna{
+                                top: 190px;
+                                left: 355px;
+                            }
+                            .pos_bano_jardin{
+                                top: 230px;
+                                left: 321px;
+                            }
+                        }
+                        .Sala_Verde{
+                            .pos_sala_actividades{
+                                top: 245px;
+                                left: 160px;
+                            }
+                            .pos_sala_siesta{
+                                top: 245px;
+                                left: 1380px;
+                            }
+                            .pos_bano_sala_cuna{
+                                top: 245px;
+                                left: 620px;
+                            }
+                        }
+                    }
+                    .espacio{
+                        height: 50px;
+                        width: 100%;
+                        position: relative;
+                        background: #f00;
+                        a{
+                            position: absolute;
+                            top: 0px;
+                            right: 0px;
                             padding: 10px 20px;
                             background: rgba(255, 255, 255, 0.9);
                             border-radius: 5px;
                             font-size: 15px;
                             cursor: pointer;
-                            z-index: 2;
-                        }
-                        .back{
-                            position: fixed;
-                            bottom: 10px;
-                            right: 10px;
-                            z-index: 2;
-                        }
-                        .fotos{
-                            width: 100%;
-                            height: 100%;
-                            position: absolute;
-                            z-index: 1;
-                            .foto_prin{
-                                position: absolute;
-                                z-index: 2;
-                                .cont_img{
-                                    padding: 10px;
-                                    width: calc(100% - 20px);
-                                    img{}
-                                }
-                            }
-                            .listado_fotos{
-                                position: absolute;
-                                background: rgba(255, 255, 0, 0.2);
-                                z-index: 1;
-                                ul{
-                                    padding-top: 5px;
-                                    li{
-                                        float: left;
-                                        width: 140px;
-                                        padding: 5px;
-                                        img{
-                                            width: 140px;
-                                            height: 97px;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        
-                    }
-                    .visible{
-                        display: block;
-                    }
-                    .entrada{
-                        .pos_patio{
-                            top: 150px;
-                            left: 960px;
-                        }
-                        .pos_biblioteca{
-                            top: 150px;
-                            left: 770px;
-                        }
-                        .pos_salas{
-                            top: 150px;
-                            left: 1200px;
-                        }
-                        .pos_sala_verde{
-                            top: 100px;
-                            left: 80px;
-                        }
-                        .pos_sala_naranja{
-                            top: 150px;
-                            left: 80px;
-                        }
-                        .pos_cocina{
-                            top: 200px;
-                            left: 80px;
-                        }
-                        .pos_entrada{
-                            top: 250px;
-                            left: 500px;
-                        }
-                    }
-                    .pasillo{
-                        .pos_sala_azul{
-                            top: 245px;
-                            left: 740px;
-                        }
-                        .pos_sala_roja{
-                            top: 166px;
-                            left: 620px;
-                        }
-                        .pos_patio{
-                            top: 205px;
-                            left: 660px;
-                        }
-                        .pos_sala_amarilla{
-                            top: 150px;
-                            left: 400px;
-                        }
-                        .pos_bano_sala_duna{
-                            top: 190px;
-                            left: 355px;
-                        }
-                        .pos_bano_jardin{
-                            top: 230px;
-                            left: 321px;
-                        }
-                    }
-                    .Sala_Verde{
-                        .pos_sala_actividades{
-                            top: 245px;
-                            left: 160px;
-                        }
-                        .pos_sala_siesta{
-                            top: 245px;
-                            left: 1380px;
-                        }
-                        .pos_bano_sala_cuna{
-                            top: 245px;
-                            left: 620px;
                         }
                     }
                 }
