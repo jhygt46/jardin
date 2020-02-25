@@ -304,7 +304,6 @@ class Libro{
 						$info["lib"] = 1;
 						$info["id_lib"] = $libros['id_lib'];
 						$info["nombre"] = $libros['nombre'];
-						$info["codigo"] = $libros['codigo'];
 						$info["prestamos"] = $this->get_prestamos($libros['id_lib']);
 						$info["estado"] = $this->get_estado_libro($libros['id_lib']);
 	
@@ -360,7 +359,7 @@ class Libro{
 	}
 	public function prestados_user($id_user){
 
-		if($sql = $this->con->prepare("SELECT t1.id_user_presto, t1.fecha_presto, t1.id_user_devolvio, t1.fecha_devolvio, t1.email, t2.id_alu, t2.nombres, t2.apellido_p, t2.apellido_m, t3.nombre, t3.codigo FROM _jardinva_prestamos t1, _jardinva_alumnos t2, _jardinva_libros t3 WHERE t1.id_user_presto=? AND t1.fecha_devolvio='0000-00-00 00:00:00' AND t1.id_alu=t2.id_alu AND t1.id_lib=t3.id_lib")){
+		if($sql = $this->con->prepare("SELECT t1.id_user_presto, t1.fecha_presto, t1.id_user_devolvio, t1.fecha_devolvio, t1.email, t2.id_alu, t2.nombres, t2.apellido_p, t2.apellido_m, t3.nombre FROM _jardinva_prestamos t1, _jardinva_alumnos t2, _jardinva_libros t3 WHERE t1.id_user_presto=? AND t1.fecha_devolvio='0000-00-00 00:00:00' AND t1.id_alu=t2.id_alu AND t1.id_lib=t3.id_lib")){
 			if($sql->bind_param("i", $id_user)){
 				if($sql->execute()){
 
