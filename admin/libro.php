@@ -3,7 +3,7 @@
 require_once "./url_function.php";
 $url = url();
 
-require_once $url["dir"]."admin/class/libro_class.php";
+require_once "./admin/class/libro_class.php";
 $libro = new Libro();
 
 $lib = $libro->get_libro();
@@ -294,7 +294,7 @@ if($usr['user'] == 1){
 
 <?php
 
-/*
+
 echo "<pre>";
 print_r($lib);
 echo "</pre>";
@@ -306,6 +306,6 @@ echo "</pre>";
 echo "<pre>";
 print_r($prestados);
 echo "</pre>";
-*/
+
 
 ?>

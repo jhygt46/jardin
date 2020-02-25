@@ -1,6 +1,6 @@
 <?php
 
-    require_once "url_function.php";
+    require_once "./url_function.php";
     $url = url();
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
 
@@ -27,6 +27,7 @@
             require $url['dir']."visita.php";
             exit;
         }elseif($pagina == "libro"){
+            $_GET["id"] = $url['url'][1];
             require $url['dir']."admin/libro.php";
             exit;
         }else{
