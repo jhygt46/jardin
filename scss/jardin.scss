@@ -395,7 +395,7 @@ html{
                 z-index: 5;
                 background: rgba(0, 0, 0, 0.75);
                 .cont_visita{
-                    width: 92%; height: 100%; max-width: 970px; max-height: 520px;
+                    width: 92%; height: 100%; max-width: 970px; max-height: 517px;
                     .panorama{
                         max-width: 970px;
                         max-height: 470px;
@@ -535,10 +535,9 @@ html{
                         }
                     }
                     .espacio{
-                        height: 50px;
+                        height: 47px;
                         width: 100%;
                         position: relative;
-                        background: #f00;
                         a{
                             position: absolute;
                             top: 0px;
@@ -548,6 +547,8 @@ html{
                             border-radius: 5px;
                             font-size: 15px;
                             cursor: pointer;
+                            text-decoration: none;
+                            color: #000;
                         }
                     }
                 }

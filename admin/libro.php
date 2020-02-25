@@ -1,14 +1,9 @@
 <?php
 
-if($_SERVER["HTTP_HOST"] == "localhost"){
-    define("DIR_BASE", $_SERVER["DOCUMENT_ROOT"]."/");
-    define("DIR", DIR_BASE."jardin/");
-}else{
-    define("DIR_BASE", "/var/www/html/");
-    define("DIR", DIR_BASE."jardin/");
-}
+require_once "./url_function.php";
+$url = url();
 
-require_once DIR."admin/class/libro_class.php";
+require_once $url["dir"]."admin/class/libro_class.php";
 $libro = new Libro();
 
 $lib = $libro->get_libro();
@@ -24,7 +19,7 @@ if($usr['user'] == 1){
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jardin Infantil y Sala Cuna Valle Encantado</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="title" content="Jardin Valle Encantado" />
         <meta name="Description" content="Jardin Infantil y Sala Cuna Valle Encantado"/>
         <meta name="Keywords" content="Jardin Infantil, Sala Cuna, Jardin Valle Encantado"/>
@@ -32,8 +27,8 @@ if($usr['user'] == 1){
         <meta name="author" content="diegomez13@hotmail.com" />
         <meta name="revisit-after" content="1 weeks" />
         <link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/admin/css/libro.css" media="all" />
-        <script src="/js/jquery-1.3.2.min.js" type="text/javascript"></script>
+        <link href="<?php echo $url['path']; ?>admin/css/libro.css" rel="stylesheet" media="all" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script>
 		var id_alu = 0;
 		var id_lib = <?php echo (isset($lib["id_lib"])) ? $lib["id_lib"] : 0 ; ?>;

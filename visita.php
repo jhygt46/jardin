@@ -1,3 +1,9 @@
+<?php
+
+    require_once "url_function.php";
+    $url = url();
+    
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -36,7 +42,7 @@
             </div>
             <div class="visita_virtual">
                 <div class="cont_visita vhalign">
-                    <div class="espacio"><a href="#" onclick="goBack()">Go Back</a></div>
+                    <div class="espacio"><a href="#" onclick="goBack()">Volver al Sitio</a></div>
                     <div class="panorama" id="panorama">
 
                         <div class="pan entrada visible imgpan" style="width: 970px">

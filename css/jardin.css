@@ -397,7 +397,7 @@ html body .sitio .visita_virtual .cont_visita {
   width: 92%;
   height: 100%;
   max-width: 970px;
-  max-height: 520px;
+  max-height: 517px;
 }
 html body .sitio .visita_virtual .cont_visita .panorama {
   max-width: 970px;
@@ -530,10 +530,9 @@ html body .sitio .visita_virtual .cont_visita .panorama .Sala_Verde .pos_bano_sa
   left: 620px;
 }
 html body .sitio .visita_virtual .cont_visita .espacio {
-  height: 50px;
+  height: 47px;
   width: 100%;
   position: relative;
-  background: #f00;
 }
 html body .sitio .visita_virtual .cont_visita .espacio a {
   position: absolute;
@@ -544,6 +543,8 @@ html body .sitio .visita_virtual .cont_visita .espacio a {
   border-radius: 5px;
   font-size: 15px;
   cursor: pointer;
+  text-decoration: none;
+  color: #000;
 }
 html body .sitio .menu_web {
   position: fixed;
