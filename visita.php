@@ -248,11 +248,7 @@
                         </div>
 
                     </div>
-                    
                 </div>
-            </div>
-            <div class="menu_web">
-                <div class="btn_menu"><span></span><span></span><span></span></div>
             </div>
         </div>
     </body>

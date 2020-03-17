@@ -96,7 +96,7 @@ html{
                         .cont{
                             min-width: 320px;
                             width: 80%;
-                            .ada_chica{
+                            .hada_chica{
                                 float: left;
                                 width: 34%;
                                 margin-right: 2%;
@@ -164,7 +164,21 @@ html{
                         background: #fff;
                         position: relative;
                         overflow: hidden;
-                        .ada{
+                        /*
+                        .mensaje_hada{
+                            img{
+                                display: block;
+                                margin: 0 auto;
+                            }
+                            .mensaje{
+                                display: block;
+                                text-align: center;
+                                padding-top: 20px;
+                                font-size: 24px;
+                            }
+                        }
+                        */
+                        .hada{
                             position: absolute;
                             z-index: 2;
                             width: 25%;
@@ -202,7 +216,7 @@ html{
                                             top: 3%;
                                             overflow-y: auto;
                                             .lista{
-                                                padding: 6px 0 20px 15px;
+                                                padding: 6px 5px 20px 15px;
                                                 li{
                                                     list-style: initial;
                                                     font-size: 10px;
@@ -217,7 +231,6 @@ html{
                                             left: 50%;
                                             height: 94%;
                                             top: 3%;
-                                            background-size: cover;
                                         }
                                         .fondo{
                                             position: absolute;
@@ -261,8 +274,6 @@ html{
                                             }
                                             .leyenda{
                                                 padding-top: 10px;
-                                                font-size: 16px;
-                                                line-height: 16px;
                                             }
                                         }
                                         .mapa{
@@ -283,37 +294,44 @@ html{
                                             background: linear-gradient(90deg, rgba(254,218,212, 1) 45%, rgba(254,218,212, 0) 100%);
                                         }
                                         .imagen{
-                                            background: url('../img/conozcanos.jpg') repeat-x center;
+                                            background: url('../img/conozcanos.jpg') no-repeat;
+                                            background-size: cover;
                                         }
                                     }
                                     .titulo{
                                         font-size: 25px;
                                         padding-bottom: 5px;
+                                        padding-right: 5px;
                                     }
                                     .subtitulo{
                                         font-size: 14px;
                                         line-height: 14px;
                                         padding-bottom: 15px;
+                                        padding-right: 5px;
                                     }
                                     .listado{
                                         font-size: 12px;
                                         line-height: 16px;
                                         padding-bottom: 4px;
+                                        padding-right: 5px;
                                     }
                                     .titulo_2{
                                         font-size: 14px;
                                         line-height: 14px;
                                         padding-bottom: 15px;
+                                        padding-right: 5px;
                                     }
                                     .sub_titulo_2{
                                         font-size: 13px;
                                         line-height: 13px;
                                         padding-bottom: 15px;
+                                        padding-right: 5px;
                                     }
                                     .sub_titulo_3{
                                         font-size: 17px;
                                         line-height: 17px;
                                         padding-bottom: 10px;
+                                        padding-right: 5px;
                                     }
                                 }
                                 .horarios{
@@ -324,32 +342,38 @@ html{
                                             background: linear-gradient(90deg, rgba(255,235,153, 1) 45%, rgba(255,235,153, 0) 100%);
                                         }
                                         .imagen{
-                                            background: url('../img/horarios.jpg') repeat-x center;
+                                            background: url('../img/horarios.jpg') no-repeat;
+                                            background-size: cover;
                                         }
                                     }
                                     .titulo{
                                         font-size: 25px;
                                         padding-bottom: 5px;
+                                        padding-right: 5px;
                                     }
                                     .subtitulo{
                                         font-size: 17px;
                                         line-height: 17px;
                                         padding-bottom: 10px;
+                                        padding-right: 5px;
                                     }
                                     .leyenda{
                                         font-size: 14px;
                                         line-height: 14px;
                                         padding-bottom: 10px;
+                                        padding-right: 5px;
                                     }
                                     .item{
                                         font-size: 14px;
                                         line-height: 14px;
                                         padding-bottom: 10px;
+                                        padding-right: 5px;
                                     }
                                     .bajada{
                                         font-size: 19px;
                                         line-height: 17px;
                                         padding-top: 5px;
+                                        padding-right: 5px;
                                     }
                                 }
                                 .propuestaeducativa{
@@ -360,22 +384,26 @@ html{
                                             background: linear-gradient(90deg, rgba(243,204,159, 1) 45%, rgba(243,204,159, 0) 100%);
                                         }
                                         .imagen{
-                                            background: url('../img/propuesta_educativa.jpg') repeat-x center;
+                                            background: url('../img/propuesta_educativa.jpg') no-repeat;
+                                            background-size: cover;
                                         }
                                     }
                                     .titulo{
                                         font-size: 25px;
                                         padding-bottom: 5px;
+                                        padding-right: 5px;
                                     }
                                     .subtitulo{
                                         font-size: 14px;
                                         line-height: 14px;
                                         padding-bottom: 15px;
+                                        padding-right: 5px;
                                     }
                                     .leyenda{
                                         font-size: 12px;
                                         line-height: 12px;
                                         padding-bottom: 10px;
+                                        padding-right: 5px;
                                     }
                                 }
                                 .contacto{
@@ -556,16 +584,18 @@ html{
             .menu_web{
                 position: fixed;
                 height: 100%;
-                width: 260px;
+                width: 259px;
                 z-index: 4;
                 left: -260px;
                 background: #fff;
+                border-right: 1px solid #4193B8;
                 .btn_menu{
                     position: absolute;
                     width: 40px;
                     height: 39px;
                     top: 17px;
                     right: -55px;
+                    z-index: 2;
                     span{
                         width: 100%;
                         height: 9px;
@@ -574,9 +604,289 @@ html{
                         display: block;
                     }
                 }
+                .cont_menu{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    top: 0px;
+                    left: 0px;
+                    z-index: 1;
+                    .titulo_menu{
+                        width: calc(100% - 90px);
+                        position: absolute;
+                        top: 20px;
+                        left: 20px;
+                        font-size: 28px;
+                        color: #4193B8;
+                        z-index: 2;
+                    }
+                    .botones_menu{
+                        width: 100%;
+                        position: absolute;
+                        top: 100px;
+                        z-index: 2;
+                        a{
+                            display: block;
+                            text-decoration: none;
+                            color: #000;
+                            margin: 0px 60px 10px 20px;
+                            border-bottom: 1px solid #4193B8;
+                            padding-bottom: 6px;
+                            font-size: 15px;
+                        }
+                    }
+                    .infos_menu{
+                        width: 100%;
+                        position: absolute;
+                        z-index: 1;
+                        height: 300px;
+                        background: #ddf;
+                        bottom: 0px;
+                        right: 0px;
+                        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) , rgba(65, 147, 184, 1));
+                        .info_bottom{
+                            width: calc(100% - 40px);
+                            position: absolute;
+                            bottom: 20px;
+                            left: 20px;
+                            .menu_data_titulo{
+                                padding-bottom: 15px;
+                                position: relative;
+                                height: 102px;
+                                .menu_data_hada{
+                                    position: absolute;
+                                    width: 84px;
+                                    height: 102px;
+                                    left: 0px;
+                                    top: 0px;
+                                }
+                                .menu_data_nombre{
+                                    position: absolute;
+                                    width: 130px;
+                                    left: 89px;
+                                    .menu_data_nombre_1{
+                                        font-size: 18px;
+                                    }
+                                    .menu_data_nombre_2{
+                                        font-size: 11px;
+                                    }
+                                }
+                            }
+                            .menu_data{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+            .curso_online{
+                display: none;
+                position: relative;
+                height: 100%;
+                width: 100%;
+                z-index: 5;
+                background: rgba(0, 0, 0, 0.8);
+                font-family: 'Baloo Tamma', cursive;
+                .curso{
+                    width: 98%;
+                    height: 98%;
+                    max-height: 425px;
+                    max-width: 680px;
+                    background: #fff;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                    overflow: hidden;
+                    .hada{
+                        position: absolute;
+                        width: 201px;
+                        height: 237px;
+                        left: -201px;
+                        top: 70px;
+                        opacity: 0;
+                        z-index: 2;
+                    }
+                    .mensaje{
+                        position: absolute;
+                        width: calc(100% - 231px);
+                        height: calc(100% - 112px);
+                        background: rgba(240, 240, 240, 0.9);
+                        left: 216px;
+                        top: 125px;
+                        opacity: 0;
+                        border-radius: 5px;
+                        box-shadow: 0 0 10px rgba(245, 245, 245, 0.8);
+                        z-index: 2;
+                    }
+                    .ver_cursos{
+                        position: absolute;
+                        font-size: 16px;
+                        padding: 11px 20px;
+                        right: 15px;
+                        bottom: -50px;
+                        opacity: 0;
+                        background: rgba(240, 240, 240, 0.9);
+                        border-radius: 5px;
+                        border: 1px solid #e9e9e9;
+                        z-index: 2;
+                    }
+                    .volver{
+                        position: absolute;
+                        left: 25px;
+                        bottom: -50px;
+                        opacity: 0;
+                        font-size: 16px;
+                        z-index: 2;
+                    }
+                    .salas{
+                        position: absolute;
+                        width: 45%;
+                        max-width: 260px;
+                        padding: 10px 0px;
+                        text-align: center;
+                        right: -260px;
+                        font-size: 18px;
+                        color: #fff;
+                        z-index: 2;
+                    }
+                    .sala_naranja{
+                        top: 80px;
+                        background: #F9800D;
+                    }
+                    .sala_roja{
+                        top: 150px;
+                        background: #F94827;
+                    }
+                    .sala_amarilla{
+                        top: 220px;
+                        background: #FFCC00;
+                    }
+                    .detalle_curso{
+                        position: absolute;
+                        width: 98%;
+                        height: 98%;
+                        top: 21%;
+                        left: 1%;
+                        opacity: 0;
+                        z-index: 1;
+                        overflow: hidden;
+                        .curso_titulo{
+                            position: absolute;
+                            width: 100%;
+                            height: 100px;
+                            top: 0px;
+                            left: 0px;
+                            z-index: 1;
+                            .logo{
+                                width: 76px;
+                                left: 0px;
+                                height: 90px;
+                                img{
+                                    height: 90px;
+                                }
+                            }
+                            .titulo{
+                                width: 200px;
+                                left: 80px;
+                                h1{
+                                    display: block;
+                                    font-size: 24px;
+                                    line-height: 14px;
+                                }
+                                h2{
+                                    display: block;
+                                    font-size: 14px;
+                                    line-height: 14px;
+                                }
+                            }
+                            .botones{
+                                width: 45%;
+                                max-width: calc(100% - 280px);
+                                right: 0px;
+                                height: 85px;
+                                .boton{
+                                    width: 33%;
+                                    height: 100%;
+                                    float: left;
+                                    img{
+                                        width: 75px;
+                                        height: 75px;
+                                        margin: 0 auto;
+                                        display: block;
+                                    }
+                                    span{
+                                        display: block;
+                                        text-align: center;
+                                        height: 10px;
+                                    }
+                                }
+                            }
+                        }
+                        .curso_contenido{
+                            position: absolute;
+                            width: 100%;
+                            height: calc(100% - 100px);
+                            background: #dfd;
+                            top: 100px;
+                            left: 0px;
+                            z-index: 1;
+                        }
+                        .curso_lista{
+                            position: absolute;
+                            width: 100%;
+                            height: 150px;
+                            background: #ddf;
+                            bottom: -150px;
+                            left: 0px;
+                            z-index: 2;
+                        }
+                    }
+                }
             }
         }
     }
+}
+@media only screen and (max-width: 488px){
+    .web{
+        .contenido{
+            .info{
+                .cont_pagina{
+                    .pagina{
+                        .data{
+                            .formulario{
+                                .leyenda{
+                                    font-size: 12px;
+                                    line-height: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 488px){
+    .web{
+        .contenido{
+            .info{
+                .cont_pagina{
+                    .pagina{
+                        .data{
+                            .formulario{
+                                .leyenda{
+                                    font-size: 16px;
+                                    line-height: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 @media only screen and (max-width: 580px){
@@ -596,13 +906,16 @@ html{
         }
     }
     .conozcanos{
-        background: rgba(249,72,39,0.4) url('../img/conozcanos_back.jpg') no-repeat top right;
+        background: rgba(249,72,39,0.4) url('../img/conozcanos.jpg') no-repeat top right;
+        background-size: contain;
     }
     .horarios{
-        background: rgba(255,204,0,0.4);
+        background: rgba(255,204,0,0.4) url('../img/horarios.jpg') no-repeat top right;
+        background-size: contain;
     }
     .propuestaeducativa{
-        background: rgba(249,128,14,0.4);
+        background: rgba(249,128,14,0.4) url('../img/propuesta_educativa.jpg') no-repeat top right;
+        background-size: contain;
     }
 
 }
@@ -651,7 +964,7 @@ html{
                     }
                 }
                 .contenedor{
-                    .ada{
+                    .hada{
                         display: none;
                     }
                     .info{
@@ -681,7 +994,7 @@ html{
                     }
                 }
                 .contenedor{
-                    .ada{
+                    .hada{
                         display: block;
                     }
                     .info{

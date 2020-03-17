@@ -3,6 +3,7 @@ var btn_active = 1;
 
 $(document).ready(function(){
 
+    start_cursos();
     $('#send').click(function(){
         
         var nombre = $('#nombre').val();
@@ -42,22 +43,26 @@ $(document).ready(function(){
     });
     $('.btncontacto').click(function(){
         aparece('contacto');
-        history.pushState(null, 'Contacto', path+'contacto/');
+        history.pushState(null, 'Contacto', path+'contacto');
+        close_menu();
         return false;
     });
     $('.btnhorarios').click(function(){
         aparece('horarios');
-        history.pushState(null, 'Horarios', path+'horarios/');
+        history.pushState(null, 'Horarios', path+'horarios');
+        close_menu();
         return false;
     });
     $('.btnpropuesta').click(function(){
         aparece('propuestaeducativa');
-        history.pushState(null, 'Propuesta Educativa', path+'propuesta-educativa/');
+        history.pushState(null, 'Propuesta Educativa', path+'propuesta-educativa');
+        close_menu();
         return false;
     });
     $('.btnconozcanos').click(function(){
         aparece('conozcanos');
-        history.pushState(null, 'Conozcanos', path+'conozcanos/');
+        history.pushState(null, 'Conozcanos', path+'conozcanos');
+        close_menu();
         return false;
     });
     $('.clouds').find('.cloud').each(function(){
@@ -84,11 +89,8 @@ $(document).ready(function(){
             }, 750);
         }
     });
-    google.maps.event.addDomListener(window, 'load', initialize);
     
 });
-
-
 $(window).on('popstate', function(e){
 
     var back = window.location.href.split('/');
@@ -111,7 +113,17 @@ $(window).on('popstate', function(e){
     }
 
 });
-
+function close_menu(){
+    var menu = $('.menu_web');
+    if(menu.position().left == 0){
+        $(menu).animate({
+            left: "-260px"
+        }, 750);
+        $('.btn_menu').animate({
+            right: "-55px"
+        }, 750);
+    }
+}
 function cloud(x){
 
     $('.cloud'+x).css({top: randomInt(40, 250)+"px", opacity: randomFloat(0.6, 1), transform: 'scale('+randomFloat(0.7, 1.1)+')'});
@@ -152,7 +164,8 @@ function desaparece(){
         $("."+pag ).css({top: "500px"});
     });
 }
-function initialize(){
+function initMap(){
+
     var myCenter = new google.maps.LatLng(-33.480455,-70.5534333);
     var mapProp = {
         center: myCenter,
@@ -164,4 +177,5 @@ function initialize(){
         position: myCenter,
     });
     marker.setMap(map);
+    
 }

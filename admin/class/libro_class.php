@@ -228,10 +228,8 @@ class Libro{
 						$info["id_user"] = $_COOKIE["uid"];
 						$info["nombre"] = $usuario['nombre'];
 						$info["perm_ingreso"] = $usuario['perm_ingreso'];
-						$info["perm_existente"] = $usuario['perm_existente'];
 						$info["perm_prestamo"] = $usuario['perm_prestamo'];
 						$info["perm_devolucion"] = $usuario['perm_devolucion'];
-						$info["perm_historial"] = $usuario['perm_historial'];
 						$info["perm_edicion"] = $usuario['perm_edicion'];
 						$info["ultimos_alumnos"] = $this->ultimos_alumnos($info["id_user"]);
 	

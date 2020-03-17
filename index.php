@@ -1,8 +1,25 @@
 <?php
 
+
+    $directorio = opendir("./cuentos");
+    while ($archivo = readdir($directorio)){
+        if(is_dir($archivo)){
+            echo "[".$archivo . "]<br />"; //de ser un directorio lo envolvemos entre corchetes
+        }
+        else
+        {
+            echo $archivo . "<br />";
+        }
+    }
+
+    exit;
+
+
     require_once "./url_function.php";
     $url = url();
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
+
+    $curso = 1;
 
     $style_conozcanos = "opacity: 0; top: 500px";
     $style_propuesta = "opacity: 0; top: 500px";
@@ -27,18 +44,25 @@
             require $url['dir']."visita.php";
             exit;
         }elseif($pagina == "libro"){
-            $_GET["id"] = $url['url'][1];
-            require $url['dir']."admin/libro.php";
-            exit;
+            if(strlen($url['url'][1]) == 30){
+                $_GET["id"] = $url['url'][1];
+                require $url['dir']."admin/libro.php";
+                exit;
+            }else{
+                header('HTTP/1.1 404 Not Found', true, 404);
+                include('./404.php');
+                exit;
+            }
+        }elseif($pagina == "curso_online"){
+
         }else{
-            die("ERROR 404 NOT FOUND");
+            header('HTTP/1.1 404 Not Found', true, 404);
+            include('./404.php');
+            exit;
         }
-        
     }else{
         $style_conozcanos = "opacity: 1; top: 0px";
     }
-
-    
 
 ?>
 
@@ -59,9 +83,16 @@
         <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma" rel="stylesheet">
         <link href="<?php echo $url['path']; ?>css/jardin.css" rel="stylesheet" media="all" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <?php if($curso == 1){ ?>
+        <script src="<?php echo $url['path']; ?>js/modernizr.2.5.3.min.js" type="text/javascript"></script>
+        <script src="<?php echo $url['path']; ?>js/curso.js" type="text/javascript"></script>
+        <?php } ?>
         <script src="<?php echo $url['path']; ?>js/base.js" type="text/javascript"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIXenuYoczpO6oh4uzeOj11b7Nvg8zrFM&signed_in=true"></script>
-        <script> var path = '<?php echo $url['path']; ?>'; var pagina = '<?php echo $pagina_inicio; ?>'; </script>
+        <script> 
+            var path = '<?php echo $url['path']; ?>';
+            var pagina = '<?php echo $pagina_inicio; ?>';
+            var curso = '<?php echo $curso; ?>';
+        </script>
     </head>
     <body>
         <div class="sitio">
@@ -84,19 +115,19 @@
                 <div class="contenido vhalign">
                     <div class="menu_resp">
                         <div class="cont clearfix vhalign">
-                            <div class="ada_chica"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt=""></div>
+                            <div class="hada_chica"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt=""></div>
                             <div class="titulo"><div class="cont_titulo valign"><h1>ValleEncantado</h1><h2>Jardin Infantil - Sala Cuna</h2></div></div>
                         </div>
                     </div>
                     <div class="menu clearfix">
                         <div class="boton color1"><a href="<?php echo $url['path']; ?>visita-virtual" class="btnvisita">Visita Virtual</a></div>
-                        <div class="boton color2"><a href="" class="btncontacto">Contacto</a></div>
-                        <div class="boton color3"><a href="" class="btnhorarios">Horarios</a></div>
-                        <div class="boton color4"><a href="" class="btnpropuesta">Propuesta Educativa</a></div>
-                        <div class="boton color5"><a href="" class="btnconozcanos">Con&oacute;zcanos</a></div>
+                        <div class="boton color2"><a href="<?php echo $url['path']; ?>contacto" class="btncontacto">Contacto</a></div>
+                        <div class="boton color3"><a href="<?php echo $url['path']; ?>horarios" class="btnhorarios">Horarios</a></div>
+                        <div class="boton color4"><a href="<?php echo $url['path']; ?>propuesta-educativa" class="btnpropuesta">Propuesta Educativa</a></div>
+                        <div class="boton color5"><a href="<?php echo $url['path']; ?>conozcanos" class="btnconozcanos">Con&oacute;zcanos</a></div>
                     </div>
                     <div class="contenedor box">
-                        <div class="ada"><img src="<?php echo $url['path']; ?>img/hada.png" alt=""></div>
+                        <div class="hada"><img src="<?php echo $url['path']; ?>img/hada.png" alt=""></div>
                         <div class="info">
                             <div class="cont_pagina">
                                 <div class="pagina contacto" style="<?php echo $style_contacto; ?>">
@@ -125,6 +156,7 @@
                                             <div class="bajada">Adem&aacute;s atendemos a&ntilde;o continuado</div>
                                         </div>
                                         <div class="imagen"></div>
+                                        <div class="fondo"></div>
                                     </div>
                                 </div>
                                 <div class="pagina propuestaeducativa" style="<?php echo $style_propuesta; ?>">
@@ -169,6 +201,7 @@
                                             </ul>
                                         </div>
                                         <div class="imagen"></div>
+                                        <div class="fondo"></div>
                                     </div>
                                 </div>
                                 <div class="pagina conozcanos" style="<?php echo $style_conozcanos; ?>">
@@ -203,9 +236,79 @@
                     </div>
                 </div>
             </div>
+            <?php if($curso == 1){ ?>
+            <div class="curso_online">
+                <div class="curso vhalign">
+                    <div class="hada"><img src="<?php echo $url['path']; ?>img/hada.png" alt=""></div>
+                    <div class="mensaje"></div>
+                    <div class="ver_cursos" onclick="curso_paso_2()">Ir a curso online</div>
+                    <div class="volver" onclick="ver_sitio()">Deseo ir al sitio</div>
+                    <div class="salas sala_naranja" onclick="sala_naranja()">SALA NARANJA</div>
+                    <div class="salas sala_roja" onclick="sala_roja()">SALA ROJA</div>
+                    <div class="salas sala_amarilla" onclick="sala_amarilla()">SALA AMARILLA</div>
+                    <div class="detalle_curso">
+                        <div class="curso_titulo">
+                            <div class="logo valign"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt="" /></div>
+                            <div class="titulo valign"><h1>Cursos Online</h1><h2>Jardin Valle Encantado</h2></div>
+                            <div class="botones valign">
+                                <div class="boton"><img src="<?php echo $url['path']; ?>img/cuentos.png" alt="" /><span>Cuentos</span></div>
+                                <div class="boton"><img src="<?php echo $url['path']; ?>img/videos.png" alt="" /><span>Videos</span></div>
+                                <div class="boton"><img src="<?php echo $url['path']; ?>img/canciones.png" alt="" /><span>Canciones</span></div>
+                            </div>
+                        </div>
+                        <div class="curso_lista"></div>
+                        <div class="curso_contenido">
+                            <div class="flipbook-viewport">
+                                <div class="container">
+                                   
+                                    <div class="flipbook-0">
+                                        <div style="background-image:url(pages/1.jpg)"></div>
+                                        <div style="background-image:url(pages/2.jpg)"></div>
+                                        <div style="background-image:url(pages/3.jpg)"></div>
+                                        <div style="background-image:url(pages/4.jpg)"></div>
+                                        <div style="background-image:url(pages/5.jpg)"></div>
+                                        <div style="background-image:url(pages/6.jpg)"></div>
+                                        <div style="background-image:url(pages/7.jpg)"></div>
+                                        <div style="background-image:url(pages/8.jpg)"></div>
+                                        <div style="background-image:url(pages/9.jpg)"></div>
+                                        <div style="background-image:url(pages/10.jpg)"></div>
+                                        <div style="background-image:url(pages/11.jpg)"></div>
+                                        <div style="background-image:url(pages/12.jpg)"></div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
             <div class="menu_web">
                 <div class="btn_menu"><span></span><span></span><span></span></div>
+                <div class="cont_menu">
+                    <div class="titulo_menu">Menu</div>
+                    <div class="botones_menu">
+                        <a href="<?php echo $url['path']; ?>conozcanos" class="btnconozcanos">Conozcanos</a>
+                        <a href="<?php echo $url['path']; ?>propuesta-educativa" class="btnpropuesta">Propuesta Educativa</a>
+                        <a href="<?php echo $url['path']; ?>horarios" class="btnhorarios">Horarios</a>
+                        <a href="<?php echo $url['path']; ?>contacto" class="btncontacto">Contacto</a>
+                        <a href="<?php echo $url['path']; ?>visita-virtual">Visita Virtual</a>
+                    </div>
+                    <div class="infos_menu">
+                        <div class="info_bottom">
+                            <div class="menu_data_titulo">
+                                <div class="menu_data_hada"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt=""></div>
+                                <div class="menu_data_nombre valign"><div class="menu_data_nombre_1">Valle Encantado</div><div class="menu_data_nombre_2">Jardin Infantil - Sala Cuna</div></div>
+                            </div>
+                            <div class="menu_data">Alberto Valenzuela Llanos 2705</div>
+                            <div class="menu_data">227589500</div>
+                            <div class="menu_data">Whatsapp +56962856227</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIXenuYoczpO6oh4uzeOj11b7Nvg8zrFM&callback=initMap" async defer></script>
     </body>
 </html>
