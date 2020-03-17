@@ -1,6 +1,5 @@
-var curso_width = 0;
-var curso_height = 0;
-var flipbook = 0;
+var flip_arr = [];
+var sala_seleccionada = 0;
 
 function start_cursos(){
     $(".curso_online").show();
@@ -65,12 +64,15 @@ function ver_sitio(){
     $(".curso_online").hide();
 }
 function sala_naranja(){
+    sala_seleccionada = 1;
     curso_paso_3();
 }
 function sala_roja(){
+    sala_seleccionada = 2;
     curso_paso_3();
 }
 function sala_amarilla(){
+    sala_seleccionada = 3;
     curso_paso_3();
 }
 function curso_paso_3(){
@@ -100,6 +102,63 @@ function curso_paso_3(){
     }, 1000);
     
 }
+function ver_cuentos(){
+    var aux = [];
+    for(var i=0, ilen=material.length; i<ilen; i++){
+        if(material[i].tipo == 1 && material[i].sala == sala_seleccionada){
+            aux.push(material[i]);
+        }
+    }
+    if(aux.length == 0){
+        alert("NO HAY ELEMENTOS");
+    }
+    if(aux.length == 1){
+        loadApp(aux[0].id, aux[0].ancho, aux[0].alto);
+    }
+    if(aux.length > 1){
+        listar_cuentos(aux);
+    }
+
+}
+function listar_cuentos(aux){
+
+    var listado = create_element_class('listado');
+    for(var i=0, ilen=aux.length; i<ilen; i++){
+        var lista = create_element_class('lista');
+        lista.setAttribute('lista-id', aux[i].id);
+        lista.setAttribute('lista-ancho', aux[i].ancho);
+        lista.setAttribute('lista-alto', aux[i].alto);
+        lista.onclick = function(){ loadApp_aux(this) };
+        var foto = create_element_class_inner('foto', '<img src="'+path+'cuentos_prev/'+aux[i].foto+'" alt="" />');
+        var nombre = create_element_class_inner('nombre', aux[i].nombre);
+        lista.appendChild(foto);
+        lista.appendChild(nombre);
+        listado.appendChild(lista);
+    }
+    $('#curso_lista').html(listado);
+    $(".curso_lista").animate({
+        right: "0px",
+    }, 1000);
+
+}
+function ver_videos(){
+    var aux = [];
+    for(var i=0, ilen=material.length; i<ilen; i++){
+        if(material[i].tipo == 2 && material[i].sala == sala_seleccionada){
+            aux.push(material[i]);
+        }
+    }
+    console.log(aux);
+}
+function ver_canciones(){
+    var aux = [];
+    for(var i=0, ilen=material.length; i<ilen; i++){
+        if(material[i].tipo == 3 && material[i].sala == sala_seleccionada){
+            aux.push(material[i]);
+        }
+    }
+    console.log(aux);
+}
 function agrandar(){
     $(".curso").animate({
         "max-width": "900px",
@@ -111,24 +170,61 @@ function agrandar(){
         }, 1000);
     });
 }
-function loadApp(){
-    $('.flipbook-'+flipbook).turn({
-        width: curso_width,
-        height: curso_height,
-        elevation: 50,
-        gradients: true,
-        autoCenter: true
-    });
+function loadApp_aux(that){
+    var i = $(that).attr('lista-id');
+    var ancho = $(that).attr('lista-ancho');
+    var alto = $(that).attr('lista-alto');
+    loadApp(i, ancho, alto);
 }
-function revista(id, width, height){
-    curso_width = width;
-    curso_height = height;
-    flipbook = id;
-    yepnope({
-        test : Modernizr.csstransforms,
-        yep: ['./js/turn.js'],
-        nope: ['./js/turn.html4.min.js'],
-        both: ['./css/basic.css'],
-        complete: loadApp
+function loadApp(id, ancho, alto){
+
+    var w = $('.curso_contenido').width();
+    var h = $('.curso_contenido').height();
+    var n_ancho = ancho;
+    var n_alto = alto;
+
+    if(w < ancho){
+        n_alto = alto / ancho * w;
+        n_ancho = w;
+    }
+
+    if(h > n_alto){
+        var tp = (h - n_alto)/2;
+        $('.cuentos').css( "padding-top", tp+'px' );
+    }else{
+        $('.cuentos').css( "padding-top", '0px' );
+    }
+
+    $(".curso_lista").animate({
+        right: "-150px",
+    }, 1000);
+    $('.cuentos').find('.flipbook-viewport').each(function(){
+        $(this).hide();
     });
+    $('.flip-'+id).show();
+
+    if(!flip_arr.includes(id)){
+        flip_arr.push(id);
+        $('.flipbook-'+id).turn({
+            width: n_ancho,
+            height: n_alto,
+            elevation: 50,
+            gradients: true,
+            autoCenter: true
+        });
+    }else{
+        $('.flipbook-'+id).turn("page", 1);
+    }
+
+}
+function create_element_class(clase){
+    var Div = document.createElement('div');
+    Div.className = clase;
+    return Div;
+}
+function create_element_class_inner(clase, value){
+    var Div = document.createElement('div');
+    Div.className = clase;
+    Div.innerHTML = value;
+    return Div;
 }

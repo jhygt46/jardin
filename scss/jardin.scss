@@ -825,19 +825,40 @@ html{
                             position: absolute;
                             width: 100%;
                             height: calc(100% - 100px);
-                            background: #dfd;
+                            background: #f6f6f6;
                             top: 100px;
                             left: 0px;
                             z-index: 1;
+                            .cuentos{
+                                width: 100%;
+                                height: 100%;
+                            }
                         }
                         .curso_lista{
                             position: absolute;
-                            width: 100%;
-                            height: 150px;
-                            background: #ddf;
-                            bottom: -150px;
-                            left: 0px;
+                            width: 150px;
+                            height: calc(100% - 100px);
+                            background: #e6e6e6;
+                            top: 100px;
+                            right: -150px;
                             z-index: 2;
+                            .listado{
+                                padding-top: 10px;
+                                .lista{
+                                    padding-bottom: 10px;
+                                    .foto{
+                                        display: block;
+                                        img{
+                                            display: block;
+                                            margin: 0 auto;
+                                        }
+                                    }
+                                    .nombre{
+                                        display: block;
+                                        text-align: center;
+                                    }
+                                }
+                            }
                         }
                     }
                 }

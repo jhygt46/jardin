@@ -1,26 +1,26 @@
 <?php
 
+    $curso = 1;
 
-    $directorio = opendir("./cuentos");
-    while ($archivo = readdir($directorio)){
-        if(is_dir($archivo)){
-            echo "[".$archivo . "]<br />"; //de ser un directorio lo envolvemos entre corchetes
-        }
-        else
-        {
-            echo $archivo . "<br />";
-        }
-    }
+    $material[0]["nombre"] = "Cuento 1";
+    $material[0]["tipo"] = 1;
+    $material[0]["ancho"] = 922;
+    $material[0]["alto"] = 600;
+    $material[0]["sala"] = 1;
+    $material[0]["id"] = 0;
+    $material[0]["foto"] = "cuento1prev.jpg";
 
-    exit;
-
+    $material[1]["nombre"] = "Cuento 2";
+    $material[1]["tipo"] = 1;
+    $material[1]["ancho"] = 922;
+    $material[1]["alto"] = 600;
+    $material[1]["sala"] = 1;
+    $material[1]["id"] = 1;
+    $material[1]["foto"] = "cuento2prev.jpg";
 
     require_once "./url_function.php";
     $url = url();
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
-
-    $curso = 1;
-
     $style_conozcanos = "opacity: 0; top: 500px";
     $style_propuesta = "opacity: 0; top: 500px";
     $style_horarios = "opacity: 0; top: 500px";
@@ -54,7 +54,7 @@
                 exit;
             }
         }elseif($pagina == "curso_online"){
-
+            // NADA
         }else{
             header('HTTP/1.1 404 Not Found', true, 404);
             include('./404.php');
@@ -84,14 +84,16 @@
         <link href="<?php echo $url['path']; ?>css/jardin.css" rel="stylesheet" media="all" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <?php if($curso == 1){ ?>
-        <script src="<?php echo $url['path']; ?>js/modernizr.2.5.3.min.js" type="text/javascript"></script>
+        <script src="<?php echo $url['path']; ?>js/turn.min.js" type="text/javascript"></script>
         <script src="<?php echo $url['path']; ?>js/curso.js" type="text/javascript"></script>
         <?php } ?>
         <script src="<?php echo $url['path']; ?>js/base.js" type="text/javascript"></script>
         <script> 
             var path = '<?php echo $url['path']; ?>';
             var pagina = '<?php echo $pagina_inicio; ?>';
-            var curso = '<?php echo $curso; ?>';
+            <?php if($curso == 1){ ?>
+            var material = <?php echo json_encode($material); ?>;
+            <?php } ?>
         </script>
     </head>
     <body>
@@ -251,33 +253,33 @@
                             <div class="logo valign"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt="" /></div>
                             <div class="titulo valign"><h1>Cursos Online</h1><h2>Jardin Valle Encantado</h2></div>
                             <div class="botones valign">
-                                <div class="boton"><img src="<?php echo $url['path']; ?>img/cuentos.png" alt="" /><span>Cuentos</span></div>
-                                <div class="boton"><img src="<?php echo $url['path']; ?>img/videos.png" alt="" /><span>Videos</span></div>
-                                <div class="boton"><img src="<?php echo $url['path']; ?>img/canciones.png" alt="" /><span>Canciones</span></div>
+                                <div class="boton" onclick="ver_cuentos()"><img src="<?php echo $url['path']; ?>img/cuentos.png" alt="" /><span>Cuentos</span></div>
+                                <div class="boton" onclick="ver_videos()"><img src="<?php echo $url['path']; ?>img/videos.png" alt="" /><span>Videos</span></div>
+                                <div class="boton" onclick="ver_canciones()"><img src="<?php echo $url['path']; ?>img/canciones.png" alt="" /><span>Canciones</span></div>
                             </div>
                         </div>
-                        <div class="curso_lista"></div>
+                        <div class="curso_lista" id="curso_lista"></div>
                         <div class="curso_contenido">
-                            <div class="flipbook-viewport">
-                                <div class="container">
-                                   
-                                    <div class="flipbook-0">
-                                        <div style="background-image:url(pages/1.jpg)"></div>
-                                        <div style="background-image:url(pages/2.jpg)"></div>
-                                        <div style="background-image:url(pages/3.jpg)"></div>
-                                        <div style="background-image:url(pages/4.jpg)"></div>
-                                        <div style="background-image:url(pages/5.jpg)"></div>
-                                        <div style="background-image:url(pages/6.jpg)"></div>
-                                        <div style="background-image:url(pages/7.jpg)"></div>
-                                        <div style="background-image:url(pages/8.jpg)"></div>
-                                        <div style="background-image:url(pages/9.jpg)"></div>
-                                        <div style="background-image:url(pages/10.jpg)"></div>
-                                        <div style="background-image:url(pages/11.jpg)"></div>
-                                        <div style="background-image:url(pages/12.jpg)"></div>
-                                    </div>
-
-
-                                </div>
+                            <div class="cuentos">
+                                <?php
+                                    $dir = $url['dir']."cuentos";
+                                    $cuentos = array_diff(scandir($dir), array('..', '.'));
+                                    $x = 0;
+                                    foreach($cuentos as $valor){
+                                        echo "<div class='flip-".$x." flipbook-viewport'><div class='container'><div class='flipbook-".$x."'>";
+                                        $dir_ = $dir."/".$valor."/";
+                                        if($handler = opendir($dir_)) {
+                                            while(false !== ($file = readdir($handler))){
+                                                    if(is_file($dir_.$file) && $file != "index.html"){
+                                                        echo "<div style='background-image:url(cuentos/".$valor."/".$file.")'></div>";
+                                                    }
+                                            }
+                                            closedir($handler);
+                                        }
+                                        echo "</div></div></div>";
+                                        $x++;
+                                    }
+                                ?>
                             </div>
                         </div>
                     </div>
