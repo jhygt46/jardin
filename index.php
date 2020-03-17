@@ -281,11 +281,16 @@
                                     foreach($cuentos as $valor){
                                         echo "<div class='flip-".$x." flipbook-viewport'><div class='container'><div class='flipbook-".$x."'>";
                                         $dir_ = $dir."/".$valor."/";
-                                        if($handler = opendir($dir_)) {
+                                        if($handler = opendir($dir_)){
+                                            $aux_file = [];
                                             while(false !== ($file = readdir($handler))){
                                                     if(is_file($dir_.$file) && $file != "index.html"){
-                                                        echo "<div style='background-image:url(cuentos/".$valor."/".$file.")'></div>";
+                                                        $aux_file[] = $file;
                                                     }
+                                            }
+                                            sort($aux_file);
+                                            for($i=0; $i<count($aux_file); $i++){
+                                                echo "<div style='background-image:url(cuentos/".$valor."/".$aux_file[$i].")'></div>";
                                             }
                                             closedir($handler);
                                         }
