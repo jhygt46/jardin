@@ -748,17 +748,21 @@ html{
                         color: #fff;
                         z-index: 2;
                     }
-                    .sala_naranja{
-                        top: 80px;
-                        background: #F9800D;
-                    }
                     .sala_roja{
-                        top: 150px;
+                        top: 80px;
                         background: #F94827;
+                    }
+                    .sala_azul{
+                        top: 150px;
+                        background: #0000F9;
                     }
                     .sala_amarilla{
                         top: 220px;
                         background: #FFCC00;
+                    }
+                    .sala_verde{
+                        top: 290px;
+                        background: #9BCA00;
                     }
                     .detalle_curso{
                         position: absolute;
@@ -832,6 +836,12 @@ html{
                             .cuentos{
                                 width: 100%;
                                 height: 100%;
+                                display: none;
+                            }
+                            #player{
+                                width: 100%;
+                                height: 100%;
+                                display: none;
                             }
                         }
                         .curso_lista{

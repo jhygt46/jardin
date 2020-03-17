@@ -743,17 +743,21 @@ html body .sitio .curso_online .curso .salas {
   color: #fff;
   z-index: 2;
 }
-html body .sitio .curso_online .curso .sala_naranja {
-  top: 80px;
-  background: #F9800D;
-}
 html body .sitio .curso_online .curso .sala_roja {
-  top: 150px;
+  top: 80px;
   background: #F94827;
+}
+html body .sitio .curso_online .curso .sala_azul {
+  top: 150px;
+  background: #0000F9;
 }
 html body .sitio .curso_online .curso .sala_amarilla {
   top: 220px;
   background: #FFCC00;
+}
+html body .sitio .curso_online .curso .sala_verde {
+  top: 290px;
+  background: #9BCA00;
 }
 html body .sitio .curso_online .curso .detalle_curso {
   position: absolute;
@@ -829,6 +833,12 @@ html body .sitio .curso_online .curso .detalle_curso .curso_contenido {
 html body .sitio .curso_online .curso .detalle_curso .curso_contenido .cuentos {
   width: 100%;
   height: 100%;
+  display: none;
+}
+html body .sitio .curso_online .curso .detalle_curso .curso_contenido #player {
+  width: 100%;
+  height: 100%;
+  display: none;
 }
 html body .sitio .curso_online .curso .detalle_curso .curso_lista {
   position: absolute;

@@ -18,6 +18,18 @@
     $material[1]["id"] = 1;
     $material[1]["foto"] = "cuento2prev.jpg";
 
+    $material[2]["nombre"] = "Video 1";
+    $material[2]["tipo"] = 2;
+    $material[2]["sala"] = 1;
+    $material[2]["code"] = "zlmeWrV_yeo";
+    $material[2]["foto"] = "video1prev.jpg";
+
+    $material[3]["nombre"] = "Video 2";
+    $material[3]["tipo"] = 2;
+    $material[3]["sala"] = 1;
+    $material[3]["code"] = "zlmeWrV_yeo";
+    $material[3]["foto"] = "video2prev.jpg";
+
     require_once "./url_function.php";
     $url = url();
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
@@ -245,9 +257,10 @@
                     <div class="mensaje"></div>
                     <div class="ver_cursos" onclick="curso_paso_2()">Ir a curso online</div>
                     <div class="volver" onclick="ver_sitio()">Deseo ir al sitio</div>
-                    <div class="salas sala_naranja" onclick="sala_naranja()">SALA NARANJA</div>
+                    <div class="salas sala_azul" onclick="sala_naranja()">SALA AZUL</div>
                     <div class="salas sala_roja" onclick="sala_roja()">SALA ROJA</div>
                     <div class="salas sala_amarilla" onclick="sala_amarilla()">SALA AMARILLA</div>
+                    <div class="salas sala_verde" onclick="sala_verde()">SALA VERDE</div>
                     <div class="detalle_curso">
                         <div class="curso_titulo">
                             <div class="logo valign"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt="" /></div>
@@ -281,6 +294,7 @@
                                     }
                                 ?>
                             </div>
+                            <div id="player"></div>
                         </div>
                     </div>
                 </div>
