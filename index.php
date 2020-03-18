@@ -6,7 +6,7 @@
     $material[0]["tipo"] = 1;
     $material[0]["ancho"] = 1180;
     $material[0]["alto"] = 600;
-    $material[0]["sala"] = 1;
+    $material[0]["sala"] = [1, 2];
     $material[0]["id"] = 0;
     $material[0]["foto"] = "cuento1prev.jpg";
 
@@ -14,25 +14,25 @@
     $material[1]["tipo"] = 1;
     $material[1]["ancho"] = 1120;
     $material[1]["alto"] = 572;
-    $material[1]["sala"] = 1;
+    $material[1]["sala"] = [1];
     $material[1]["id"] = 1;
     $material[1]["foto"] = "cuento2prev.jpg";
 
     $material[2]["nombre"] = "¿Dónde está la cebra?";
     $material[2]["tipo"] = 2;
-    $material[2]["sala"] = 1;
+    $material[2]["sala"] = [1];
     $material[2]["code"] = "cgG73CoTz6U";
     $material[2]["foto"] = "cancion1prev.jpg";
 
     $material[3]["nombre"] = "¿Dónde está la cebra?";
     $material[3]["tipo"] = 2;
-    $material[3]["sala"] = 1;
+    $material[3]["sala"] = [1];
     $material[3]["code"] = "cgG73CoTz6U";
     $material[3]["foto"] = "cancion1prev.jpg";
     
     $material[4]["nombre"] = "Trabajo 1";
     $material[4]["tipo"] = 3;
-    $material[4]["sala"] = 1;
+    $material[4]["sala"] = [1];
     $material[4]["foto"] = "trabajo1prev.jpg";
     $material[4]["foto_grande"] = "trabajo1.jpg";
     $material[4]["foto_w"] = 400;
@@ -42,7 +42,7 @@
     $material[5]["tipo"] = 1;
     $material[5]["ancho"] = 972;
     $material[5]["alto"] = 600;
-    $material[5]["sala"] = 1;
+    $material[5]["sala"] = [1];
     $material[5]["id"] = 4;
     $material[5]["foto"] = "cuento3prev.jpg";
 
@@ -50,19 +50,19 @@
     $material[6]["tipo"] = 1;
     $material[6]["ancho"] = 1600;
     $material[6]["alto"] = 600;
-    $material[6]["sala"] = 1;
+    $material[6]["sala"] = [1];
     $material[6]["id"] = 5;
     $material[6]["foto"] = "cuento4prev.jpg";
 
     $material[7]["nombre"] = "Estaba el señor Don Gato";
     $material[7]["tipo"] = 2;
-    $material[7]["sala"] = 1;
+    $material[7]["sala"] = [1];
     $material[7]["code"] = "9Oyz_egsKI4";
     $material[7]["foto"] = "cancion2prev.jpg";
 
     $material[8]["nombre"] = "Ronda de los Conejos";
     $material[8]["tipo"] = 2;
-    $material[8]["sala"] = 1;
+    $material[8]["sala"] = [1];
     $material[8]["code"] = "bdKVVZYefDI";
     $material[8]["foto"] = "cancion3prev.jpg";
 
@@ -70,7 +70,7 @@
     $material[9]["tipo"] = 1;
     $material[9]["ancho"] = 1728;
     $material[9]["alto"] = 600;
-    $material[9]["sala"] = 1;
+    $material[9]["sala"] = [1];
     $material[9]["id"] = 6;
     $material[9]["foto"] = "cuento5prev.jpg";
 
@@ -78,7 +78,7 @@
     $material[10]["tipo"] = 1;
     $material[10]["ancho"] = 1500;
     $material[10]["alto"] = 600;
-    $material[10]["sala"] = 1;
+    $material[10]["sala"] = [1];
     $material[10]["id"] = 7;
     $material[10]["foto"] = "cuento6prev.jpg";
 
@@ -86,7 +86,7 @@
     $material[11]["tipo"] = 1;
     $material[11]["ancho"] = 900;
     $material[11]["alto"] = 600;
-    $material[11]["sala"] = 1;
+    $material[11]["sala"] = [1];
     $material[11]["id"] = 8;
     $material[11]["foto"] = "cuento7prev.jpg";
 
@@ -94,7 +94,7 @@
     $material[12]["tipo"] = 1;
     $material[12]["ancho"] = 2132;
     $material[12]["alto"] = 600;
-    $material[12]["sala"] = 1;
+    $material[12]["sala"] = [1];
     $material[12]["id"] = 9;
     $material[12]["foto"] = "cuento8prev.jpg";
 
@@ -102,7 +102,7 @@
     $material[13]["tipo"] = 1;
     $material[13]["ancho"] = 1200;
     $material[13]["alto"] = 600;
-    $material[13]["sala"] = 1;
+    $material[13]["sala"] = [1];
     $material[13]["id"] = 10;
     $material[13]["foto"] = "cuento9prev.jpg";
 
@@ -110,7 +110,7 @@
     $material[13]["tipo"] = 1;
     $material[13]["ancho"] = 1200;
     $material[13]["alto"] = 600;
-    $material[13]["sala"] = 1;
+    $material[13]["sala"] = [1];
     $material[13]["id"] = 11;
     $material[13]["foto"] = "cuento10prev.jpg";
 

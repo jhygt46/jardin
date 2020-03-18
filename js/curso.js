@@ -177,9 +177,10 @@ function curso_paso_3(){
     
 }
 function ver_cuentos(){
+
     var aux = [];
     for(var i=0, ilen=material.length; i<ilen; i++){
-        if(material[i].tipo == 1 && material[i].sala == sala_seleccionada){
+        if(material[i].tipo == 1 && material[i].sala.includes(sala_seleccionada)){
             aux.push(material[i]);
         }
     }
@@ -219,7 +220,7 @@ function ver_trabajos(){
 
     var aux = [];
     for(var i=0, ilen=material.length; i<ilen; i++){
-        if(material[i].tipo == 3 && material[i].sala == sala_seleccionada){
+        if(material[i].tipo == 3 && material[i].sala.includes(sala_seleccionada)){
             aux.push(material[i]);
         }
     }
@@ -288,7 +289,7 @@ function listar_videos(aux){
 function ver_canciones(){
     var aux = [];
     for(var i=0, ilen=material.length; i<ilen; i++){
-        if(material[i].tipo == 2 && material[i].sala == sala_seleccionada){
+        if(material[i].tipo == 2 && material[i].sala.includes(sala_seleccionada)){
             aux.push(material[i]);
         }
     }
