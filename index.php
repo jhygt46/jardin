@@ -81,6 +81,14 @@
     $material[10]["sala"] = 1;
     $material[10]["id"] = 7;
     $material[10]["foto"] = "cuento6prev.jpg";
+
+    $material[11]["nombre"] = "La selva loca";
+    $material[11]["tipo"] = 1;
+    $material[11]["ancho"] = 900;
+    $material[11]["alto"] = 600;
+    $material[11]["sala"] = 1;
+    $material[11]["id"] = 8;
+    $material[11]["foto"] = "cuento7prev.jpg";
     
     /*
     
