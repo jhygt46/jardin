@@ -888,6 +888,7 @@ html body .sitio .curso_online .curso .detalle_curso .curso_lista {
   top: 100px;
   right: -150px;
   z-index: 2;
+  overflow-y: auto;
 }
 html body .sitio .curso_online .curso .detalle_curso .curso_lista .listado {
   padding-top: 10px;
