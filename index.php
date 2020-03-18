@@ -116,6 +116,14 @@
 
     require_once "./url_function.php";
     $url = url();
+
+    $dir = $url['dir']."online/cuentos";
+    $cuentos = array_diff(scandir($dir), array('..', '.'));
+    echo "<pre>";
+    print_r($cuentos);
+    echo "</pre>";
+    exit;
+
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
     $style_conozcanos = "opacity: 0; top: 500px";
     $style_propuesta = "opacity: 0; top: 500px";

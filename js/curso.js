@@ -29,6 +29,7 @@ function onYouTubeIframeAPIReady(){
 }
 function onPlayerReady(event){
     video_duration = event.target.getDuration();
+    console.log(player);
 }
 function onPlayerStateChange(event){
     if(event.data == YT.PlayerState.PLAYING){
