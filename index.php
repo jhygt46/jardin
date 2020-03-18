@@ -2,117 +2,44 @@
 
     $curso = 1;
 
-    $material[0]["nombre"] = "Te quiero tanto, MAMÁ";
-    $material[0]["tipo"] = 1;
-    $material[0]["ancho"] = 1180;
-    $material[0]["alto"] = 600;
-    $material[0]["sala"] = [1, 2];
-    $material[0]["id"] = 0;
-    $material[0]["foto"] = "cuento1prev.jpg";
+    // roja = 1; azul = 2; amarilla = 3; verde = 4
 
-    $material[1]["nombre"] = "La Cebra Camila";
-    $material[1]["tipo"] = 1;
-    $material[1]["ancho"] = 1120;
-    $material[1]["alto"] = 572;
-    $material[1]["sala"] = [1];
-    $material[1]["id"] = 1;
-    $material[1]["foto"] = "cuento2prev.jpg";
+    function crear_objeto($nombre, $tipo, $sala, $id = null, $code = null, $foto = null, $ancho = null, $alto = null, $foto_grande = null, $foto_w = null, $foto_h = null){
 
-    $material[2]["nombre"] = "¿Dónde está la cebra?";
-    $material[2]["tipo"] = 2;
-    $material[2]["sala"] = [1];
-    $material[2]["code"] = "cgG73CoTz6U";
-    $material[2]["foto"] = "cancion1prev.jpg";
+        $r["nombre"] = $nombre;
+        $r["tipo"] = $tipo;
+        $r["sala"] = $sala;
+        if($id != null){ $r["id"] = $id; }
+        if($foto != null){ $r["foto"] = $foto; }
+        if($alto != null){ $r["alto"] = $alto; }
+        if($ancho != null){ $r["ancho"] = $ancho; }
+        if($code != null){ $r["code"] = $code; }
+        if($foto_grande != null){ $r["foto_grande"] = $foto_grande; }
+        if($foto_w != null){ $r["foto_w"] = $foto_w; }
+        if($foto_h != null){ $r["foto_h"] = $foto_h; }
+        return $r;
 
-    $material[3]["nombre"] = "¿Dónde está la cebra?";
-    $material[3]["tipo"] = 2;
-    $material[3]["sala"] = [1];
-    $material[3]["code"] = "cgG73CoTz6U";
-    $material[3]["foto"] = "cancion1prev.jpg";
+    }
+
+    // CUENTOS
+    $material[] = crear_objeto("Te quiero tanto, MAMÁ", 1, [1, 2, 3, 4], 1, null, "cuento1prev.jpg", 1180, 600);
+    $material[] = crear_objeto("La Cebra Camila", 1, [1, 2, 3, 4], 2, null, "cuento2prev.jpg", 1120, 572);
+    $material[] = crear_objeto("¿Como te sientes?", 1, [1, 2, 3, 4], 4, null, "cuento3prev.jpg", 972, 600);
+    $material[] = crear_objeto("La pequeña oruga glotona", 1, [1, 2, 3, 4], 5, null, "cuento4prev.jpg", 1600, 600);    
+    $material[] = crear_objeto("La casa de Dorita", 1, [1, 2, 3, 4], 6, null, "cuento5prev.jpg", 1728, 600);
+    $material[] = crear_objeto("Te quiero, papi", 1, [1, 2, 3, 4], 7, null, "cuento6prev.jpg", 1500, 600);
+    $material[] = crear_objeto("La selva loca", 1, [1, 2, 3, 4], 8, null, "cuento7prev.jpg", 900, 600);
+    $material[] = crear_objeto("Buena noches, gorila", 1, [1, 2, 3, 4], 9, null, "cuento8prev.jpg", 2132, 600);    
+    $material[] = crear_objeto("Mis papis trabajan", 1, [1, 2, 3, 4], 10, null, "cuento9prev.jpg", 1200, 600);
+    $material[] = crear_objeto("¡A bañarse!", 1, [1, 2, 3, 4], 11, null, "cuento10prev.jpg", 1200, 600);
+
+    // CANCIONES
+    $material[] = crear_objeto("¿Dónde está la cebra?", 2, [1, 2, 3, 4], null, "cgG73CoTz6U", "cancion1prev.jpg", 1120, 572);
+    $material[] = crear_objeto("Estaba el señor Don Gato", 2, [1, 2, 3, 4], null, "9Oyz_egsKI4", "cancion2prev.jpg", 1120, 572);
+    $material[] = crear_objeto("Ronda de los Conejos", 2, [1, 2, 3, 4], null, "bdKVVZYefDI", "cancion3prev.jpg", 1120, 572);
     
-    $material[4]["nombre"] = "Trabajo 1";
-    $material[4]["tipo"] = 3;
-    $material[4]["sala"] = [1];
-    $material[4]["foto"] = "trabajo1prev.jpg";
-    $material[4]["foto_grande"] = "trabajo1.jpg";
-    $material[4]["foto_w"] = 400;
-    $material[4]["foto_h"] = 400;
-
-    $material[5]["nombre"] = "¿Como te sientes?";
-    $material[5]["tipo"] = 1;
-    $material[5]["ancho"] = 972;
-    $material[5]["alto"] = 600;
-    $material[5]["sala"] = [1];
-    $material[5]["id"] = 3;
-    $material[5]["foto"] = "cuento3prev.jpg";
-
-    $material[6]["nombre"] = "La pequeña oruga glotona";
-    $material[6]["tipo"] = 1;
-    $material[6]["ancho"] = 1600;
-    $material[6]["alto"] = 600;
-    $material[6]["sala"] = [1];
-    $material[6]["id"] = 4;
-    $material[6]["foto"] = "cuento4prev.jpg";
-
-    $material[7]["nombre"] = "Estaba el señor Don Gato";
-    $material[7]["tipo"] = 2;
-    $material[7]["sala"] = [1];
-    $material[7]["code"] = "9Oyz_egsKI4";
-    $material[7]["foto"] = "cancion2prev.jpg";
-
-    $material[8]["nombre"] = "Ronda de los Conejos";
-    $material[8]["tipo"] = 2;
-    $material[8]["sala"] = [1];
-    $material[8]["code"] = "bdKVVZYefDI";
-    $material[8]["foto"] = "cancion3prev.jpg";
-
-    $material[9]["nombre"] = "La casa de Dorita";
-    $material[9]["tipo"] = 1;
-    $material[9]["ancho"] = 1728;
-    $material[9]["alto"] = 600;
-    $material[9]["sala"] = [1];
-    $material[9]["id"] = 5;
-    $material[9]["foto"] = "cuento5prev.jpg";
-
-    $material[10]["nombre"] = "Te quiero, papi";
-    $material[10]["tipo"] = 1;
-    $material[10]["ancho"] = 1500;
-    $material[10]["alto"] = 600;
-    $material[10]["sala"] = [1];
-    $material[10]["id"] = 6;
-    $material[10]["foto"] = "cuento6prev.jpg";
-
-    $material[11]["nombre"] = "La selva loca";
-    $material[11]["tipo"] = 1;
-    $material[11]["ancho"] = 900;
-    $material[11]["alto"] = 600;
-    $material[11]["sala"] = [1];
-    $material[11]["id"] = 7;
-    $material[11]["foto"] = "cuento7prev.jpg";
-
-    $material[12]["nombre"] = "Buena noches, gorila";
-    $material[12]["tipo"] = 1;
-    $material[12]["ancho"] = 2132;
-    $material[12]["alto"] = 600;
-    $material[12]["sala"] = [1];
-    $material[12]["id"] = 8;
-    $material[12]["foto"] = "cuento8prev.jpg";
-
-    $material[13]["nombre"] = "Mis papis trabajan";
-    $material[13]["tipo"] = 1;
-    $material[13]["ancho"] = 1200;
-    $material[13]["alto"] = 600;
-    $material[13]["sala"] = [1];
-    $material[13]["id"] = 9;
-    $material[13]["foto"] = "cuento9prev.jpg";
-
-    $material[13]["nombre"] = "¡A bañarse!";
-    $material[13]["tipo"] = 1;
-    $material[13]["ancho"] = 1200;
-    $material[13]["alto"] = 600;
-    $material[13]["sala"] = [1];
-    $material[13]["id"] = 10;
-    $material[13]["foto"] = "cuento10prev.jpg";
+    // TRABAJOS
+    $material[] = crear_objeto("Trabajo 1", 3, [1, 2, 3, 4], null, null, "trabajo1prev.jpg", null, null, "trabajo1.jpg", 400, 400);
 
     require_once "./url_function.php";
     $url = url();
@@ -361,7 +288,7 @@
                                 <?php
                                     $dir = $url['dir']."online/cuentos";
                                     $cuentos = array_diff(scandir($dir), array('..', '.'));
-                                    $x = 0;
+                                    $x = 1;
                                     foreach($cuentos as $valor){
                                         echo "<div class='flip-".$x." flipbook-viewport'><div class='container'><div class='ff flipbook-".$x."'>";
                                         $dir_ = $dir."/".$valor."/";
