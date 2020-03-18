@@ -52,6 +52,7 @@ function play_youtube(v_code){
 
     $('.cuentos').hide();
     $('#player').show();
+    $('.trabajos').hide();
 
     player.loadVideoById(v_code);
     player.playVideo();
@@ -200,7 +201,7 @@ function listar_cuentos(aux){
         lista.setAttribute('lista-ancho', aux[i].ancho);
         lista.setAttribute('lista-alto', aux[i].alto);
         lista.onclick = function(){ loadApp_aux(this) };
-        var foto = create_element_class_inner('foto', '<img src="'+path+'prev/'+aux[i].foto+'" alt="" />');
+        var foto = create_element_class_inner('foto', '<img src="'+path+'online/prev/'+aux[i].foto+'" alt="" />');
         var nombre = create_element_class_inner('nombre', aux[i].nombre);
         lista.appendChild(foto);
         lista.appendChild(nombre);
@@ -212,8 +213,77 @@ function listar_cuentos(aux){
     }, 1000);
 
 }
-function ver_videos(){
+function ver_trabajos(){
 
+    var aux = [];
+    for(var i=0, ilen=material.length; i<ilen; i++){
+        if(material[i].tipo == 3 && material[i].sala == sala_seleccionada){
+            aux.push(material[i]);
+        }
+    }
+
+    if(aux.length == 0){
+        alert("NO HAY ELEMENTOS");
+    }
+    if(aux.length > 0){
+        listar_trabajos(aux);
+    }
+
+}
+function listar_trabajos(aux){
+
+    var listado = create_element_class('listado clearfix');
+    for(var i=0, ilen=aux.length; i<ilen; i++){
+        var lista = create_element_class('lista');
+        lista.setAttribute('foto', aux[i].foto_grande);
+        lista.setAttribute('foto-w', aux[i].foto_w);
+        lista.setAttribute('foto-h', aux[i].foto_h);
+        lista.onclick = function(){ agrandar_trabajo(this) };
+        var foto = create_element_class_inner('foto', '<img src="'+path+'online/prev/'+aux[i].foto+'" alt="" />');
+        var nombre = create_element_class_inner('nombre', aux[i].nombre);
+        lista.appendChild(foto);
+        lista.appendChild(nombre);
+        listado.appendChild(lista);
+    }
+    $('.trabajos').html(listado);
+    $('.cuentos').hide();
+    $('#player').hide();
+    $('.trabajos').show();
+    player.stopVideo();
+
+}
+function agrandar_trabajo(that){
+
+    var foto = $(that).attr('foto');
+    var w = $(that).attr('foto-w');
+    var h = $(that).attr('foto-h');
+    openwn("http://www.jardinvalleencantado.cl/online/trabajos/"+foto, w, h);
+
+}
+function play_youtube_aux(that){
+    var code = $(that).attr('lista-code');
+    play_youtube(code);
+}
+function listar_videos(aux){
+
+    var listado = create_element_class('listado');
+    for(var i=0, ilen=aux.length; i<ilen; i++){
+        var lista = create_element_class('lista');
+        lista.setAttribute('lista-code', aux[i].code);
+        lista.onclick = function(){ play_youtube_aux(this) };
+        var foto = create_element_class_inner('foto', '<img src="'+path+'online/prev/'+aux[i].foto+'" alt="" />');
+        var nombre = create_element_class_inner('nombre', aux[i].nombre);
+        lista.appendChild(foto);
+        lista.appendChild(nombre);
+        listado.appendChild(lista);
+    }
+    $('#curso_lista').html(listado);
+    $(".curso_lista").animate({
+        right: "0px",
+    }, 1000);
+
+}
+function ver_canciones(){
     var aux = [];
     for(var i=0, ilen=material.length; i<ilen; i++){
         if(material[i].tipo == 2 && material[i].sala == sala_seleccionada){
@@ -230,39 +300,6 @@ function ver_videos(){
     if(aux.length > 1){
         listar_videos(aux);
     }
-
-}
-function play_youtube_aux(that){
-    var code = $(that).attr('lista-code');
-    play_youtube(code);
-}
-function listar_videos(aux){
-
-    var listado = create_element_class('listado');
-    for(var i=0, ilen=aux.length; i<ilen; i++){
-        var lista = create_element_class('lista');
-        lista.setAttribute('lista-code', aux[i].code);
-        lista.onclick = function(){ play_youtube_aux(this) };
-        var foto = create_element_class_inner('foto', '<img src="'+path+'prev/'+aux[i].foto+'" alt="" />');
-        var nombre = create_element_class_inner('nombre', aux[i].nombre);
-        lista.appendChild(foto);
-        lista.appendChild(nombre);
-        listado.appendChild(lista);
-    }
-    $('#curso_lista').html(listado);
-    $(".curso_lista").animate({
-        right: "0px",
-    }, 1000);
-
-}
-function ver_canciones(){
-    var aux = [];
-    for(var i=0, ilen=material.length; i<ilen; i++){
-        if(material[i].tipo == 3 && material[i].sala == sala_seleccionada){
-            aux.push(material[i]);
-        }
-    }
-    console.log(aux);
 }
 function agrandar(){
     $(".curso").animate({
@@ -286,6 +323,7 @@ function loadApp(id, ancho, alto){
     player.stopVideo();
     $('.cuentos').show();
     $('#player').hide();
+    $('.trabajos').hide();
 
     var w = $('.curso_contenido').width();
     var h = $('.curso_contenido').height();
@@ -336,4 +374,7 @@ function create_element_class_inner(clase, value){
     Div.className = clase;
     Div.innerHTML = value;
     return Div;
+}
+function openwn(url, w, h){
+    window.open(url, "_blank", "width="+w+",height="+h);
 }

@@ -249,7 +249,7 @@ function confirm(message){
     
 }
 function openwn(url, w, h){
-    var myWindow = window.open(url, "", "width="+w+",height="+h);
+    var myWindow = window.open(url, "_blank", "width="+w+",height="+h);
 }
 function opcs(that, name){
     var ss = $(that).parents('.ss');

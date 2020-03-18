@@ -843,6 +843,33 @@ html{
                                 height: 100%;
                                 display: none;
                             }
+                            .trabajos{
+                                width: 100%;
+                                height: 100%;
+                                display: none;
+                                .listado{
+                                    padding: 10px 0px;
+                                    .lista{
+                                        width: 33%;
+                                        max-width: 150px;
+                                        height: 150px;
+                                        float: left;
+                                        margin: 0px 5px;
+                                        .foto{
+                                            display: block;
+                                            img{
+                                                display: block;
+                                                margin: 0 auto;
+                                            }
+                                        }
+                                        .nombre{
+                                            text-align: center;
+                                            display: block;
+                                            padding: 0 10px;
+                                        }
+                                    }
+                                }
+                            }
                         }
                         .curso_lista{
                             position: absolute;

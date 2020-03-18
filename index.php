@@ -30,6 +30,22 @@
     $material[3]["code"] = "zlmeWrV_yeo";
     $material[3]["foto"] = "video2prev.jpg";
 
+    $material[4]["nombre"] = "Trabajo 1";
+    $material[4]["tipo"] = 3;
+    $material[4]["sala"] = 1;
+    $material[4]["foto"] = "trabajo1prev.jpg";
+    $material[4]["foto_grande"] = "trabajo1.jpg";
+    $material[4]["foto_w"] = 400;
+    $material[4]["foto_h"] = 400;
+
+    $material[5]["nombre"] = "Trabajo 2";
+    $material[5]["tipo"] = 3;
+    $material[5]["sala"] = 1;
+    $material[5]["foto"] = "trabajo2prev.jpg";
+    $material[5]["foto_grande"] = "trabajo2.jpg";
+    $material[5]["foto_w"] = 400;
+    $material[5]["foto_h"] = 400;
+
     require_once "./url_function.php";
     $url = url();
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
@@ -266,16 +282,16 @@
                             <div class="logo valign"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt="" /></div>
                             <div class="titulo valign"><h1>Cursos Online</h1><h2>Jardin Valle Encantado</h2></div>
                             <div class="botones valign">
-                                <div class="boton" onclick="ver_cuentos()"><img src="<?php echo $url['path']; ?>img/cuentos.png" alt="" /><span>Cuentos</span></div>
-                                <div class="boton" onclick="ver_videos()"><img src="<?php echo $url['path']; ?>img/videos.png" alt="" /><span>Videos</span></div>
-                                <div class="boton" onclick="ver_canciones()"><img src="<?php echo $url['path']; ?>img/canciones.png" alt="" /><span>Canciones</span></div>
+                                <div class="boton" onclick="ver_cuentos()"><img src="<?php echo $url['path']; ?>online/cuentos.png" alt="" /><span>Cuentos</span></div>
+                                <div class="boton" onclick="ver_canciones()"><img src="<?php echo $url['path']; ?>online/canciones.png" alt="" /><span>Canciones</span></div>
+                                <div class="boton" onclick="ver_trabajos()"><img src="<?php echo $url['path']; ?>online/trabajos.png" alt="" /><span>Trabajos</span></div>
                             </div>
                         </div>
                         <div class="curso_lista" id="curso_lista"></div>
                         <div class="curso_contenido">
                             <div class="cuentos">
                                 <?php
-                                    $dir = $url['dir']."cuentos";
+                                    $dir = $url['dir']."online/cuentos";
                                     $cuentos = array_diff(scandir($dir), array('..', '.'));
                                     $x = 0;
                                     foreach($cuentos as $valor){
@@ -290,7 +306,7 @@
                                             }
                                             sort($aux_file);
                                             for($i=0; $i<count($aux_file); $i++){
-                                                echo "<div style='background-image:url(cuentos/".$valor."/".$aux_file[$i].")'></div>";
+                                                echo "<div style='background-image:url(online/cuentos/".$valor."/".$aux_file[$i].")'></div>";
                                             }
                                             closedir($handler);
                                         }
@@ -300,6 +316,7 @@
                                 ?>
                             </div>
                             <div id="player"></div>
+                            <div class="trabajos"></div>
                         </div>
                     </div>
                 </div>

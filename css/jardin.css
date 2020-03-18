@@ -840,6 +840,33 @@ html body .sitio .curso_online .curso .detalle_curso .curso_contenido #player {
   height: 100%;
   display: none;
 }
+html body .sitio .curso_online .curso .detalle_curso .curso_contenido .trabajos {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+html body .sitio .curso_online .curso .detalle_curso .curso_contenido .trabajos .listado {
+  padding: 10px 0px;
+}
+html body .sitio .curso_online .curso .detalle_curso .curso_contenido .trabajos .listado .lista {
+  width: 33%;
+  max-width: 150px;
+  height: 150px;
+  float: left;
+  margin: 0px 5px;
+}
+html body .sitio .curso_online .curso .detalle_curso .curso_contenido .trabajos .listado .lista .foto {
+  display: block;
+}
+html body .sitio .curso_online .curso .detalle_curso .curso_contenido .trabajos .listado .lista .foto img {
+  display: block;
+  margin: 0 auto;
+}
+html body .sitio .curso_online .curso .detalle_curso .curso_contenido .trabajos .listado .lista .nombre {
+  text-align: center;
+  display: block;
+  padding: 0 10px;
+}
 html body .sitio .curso_online .curso .detalle_curso .curso_lista {
   position: absolute;
   width: 150px;
