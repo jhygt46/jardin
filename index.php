@@ -89,6 +89,22 @@
     $material[11]["sala"] = 1;
     $material[11]["id"] = 8;
     $material[11]["foto"] = "cuento7prev.jpg";
+
+    $material[12]["nombre"] = "Buena noches, gorila";
+    $material[12]["tipo"] = 1;
+    $material[12]["ancho"] = 2132;
+    $material[12]["alto"] = 600;
+    $material[12]["sala"] = 1;
+    $material[12]["id"] = 9;
+    $material[12]["foto"] = "cuento8prev.jpg";
+
+    $material[13]["nombre"] = "Mis papis trabajan";
+    $material[13]["tipo"] = 1;
+    $material[13]["ancho"] = 1200;
+    $material[13]["alto"] = 600;
+    $material[13]["sala"] = 1;
+    $material[13]["id"] = 10;
+    $material[13]["foto"] = "cuento9prev.jpg";
     
     /*
     
