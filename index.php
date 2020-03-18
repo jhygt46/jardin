@@ -65,6 +65,22 @@
     $material[8]["sala"] = 1;
     $material[8]["code"] = "bdKVVZYefDI";
     $material[8]["foto"] = "cancion3prev.jpg";
+
+    $material[9]["nombre"] = "La casa de Dorita";
+    $material[9]["tipo"] = 1;
+    $material[9]["ancho"] = 1728;
+    $material[9]["alto"] = 600;
+    $material[9]["sala"] = 1;
+    $material[9]["id"] = 6;
+    $material[9]["foto"] = "cuento5prev.jpg";
+
+    $material[10]["nombre"] = "Te quiero, papi";
+    $material[10]["tipo"] = 1;
+    $material[10]["ancho"] = 1500;
+    $material[10]["alto"] = 600;
+    $material[10]["sala"] = 1;
+    $material[10]["id"] = 7;
+    $material[10]["foto"] = "cuento6prev.jpg";
     
     /*
     
