@@ -712,6 +712,12 @@ html body .sitio .curso_online .curso .mensaje {
   box-shadow: 0 0 10px rgba(245, 245, 245, 0.8);
   z-index: 2;
 }
+html body .sitio .curso_online .curso .mensaje .msg {
+  padding: 10px;
+  display: block;
+  text-align: center;
+  font-size: 15px;
+}
 html body .sitio .curso_online .curso .ver_cursos {
   position: absolute;
   font-size: 16px;
@@ -731,6 +737,7 @@ html body .sitio .curso_online .curso .volver {
   opacity: 0;
   font-size: 16px;
   z-index: 2;
+  display: none;
 }
 html body .sitio .curso_online .curso .salas {
   position: absolute;
@@ -834,6 +841,12 @@ html body .sitio .curso_online .curso .detalle_curso .curso_contenido .cuentos {
   width: 100%;
   height: 100%;
   display: none;
+}
+html body .sitio .curso_online .curso .detalle_curso .curso_contenido .cuentos .ff {
+  margin-left: auto !important;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 html body .sitio .curso_online .curso .detalle_curso .curso_contenido #player {
   width: 100%;

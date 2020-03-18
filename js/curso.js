@@ -172,6 +172,8 @@ function curso_paso_3(){
     setTimeout(function(){
         agrandar();
     }, 1000);
+
+    
     
 }
 function ver_cuentos(){
@@ -310,6 +312,7 @@ function agrandar(){
             top: "1%",
             opacity: 1
         }, 1000);
+        loadApp(2, 846, 600);
     });
 }
 function loadApp_aux(that){

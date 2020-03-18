@@ -2,34 +2,34 @@
 
     $curso = 1;
 
-    $material[0]["nombre"] = "Cuento 1";
+    $material[0]["nombre"] = "Te quiero tanto, MAMÁ";
     $material[0]["tipo"] = 1;
-    $material[0]["ancho"] = 922;
+    $material[0]["ancho"] = 1180;
     $material[0]["alto"] = 600;
     $material[0]["sala"] = 1;
     $material[0]["id"] = 0;
     $material[0]["foto"] = "cuento1prev.jpg";
 
-    $material[1]["nombre"] = "Cuento 2";
+    $material[1]["nombre"] = "La Cebra Camila";
     $material[1]["tipo"] = 1;
-    $material[1]["ancho"] = 922;
-    $material[1]["alto"] = 600;
+    $material[1]["ancho"] = 1120;
+    $material[1]["alto"] = 572;
     $material[1]["sala"] = 1;
     $material[1]["id"] = 1;
     $material[1]["foto"] = "cuento2prev.jpg";
 
-    $material[2]["nombre"] = "Video 1";
+    $material[2]["nombre"] = "¿Dónde está la cebra?";
     $material[2]["tipo"] = 2;
     $material[2]["sala"] = 1;
-    $material[2]["code"] = "zlmeWrV_yeo";
-    $material[2]["foto"] = "video1prev.jpg";
+    $material[2]["code"] = "cgG73CoTz6U";
+    $material[2]["foto"] = "cancion1prev.jpg";
 
-    $material[3]["nombre"] = "Video 2";
+    $material[3]["nombre"] = "¿Dónde está la cebra?";
     $material[3]["tipo"] = 2;
     $material[3]["sala"] = 1;
-    $material[3]["code"] = "zlmeWrV_yeo";
-    $material[3]["foto"] = "video2prev.jpg";
-
+    $material[3]["code"] = "cgG73CoTz6U";
+    $material[3]["foto"] = "cancion1prev.jpg";
+    
     $material[4]["nombre"] = "Trabajo 1";
     $material[4]["tipo"] = 3;
     $material[4]["sala"] = 1;
@@ -37,6 +37,9 @@
     $material[4]["foto_grande"] = "trabajo1.jpg";
     $material[4]["foto_w"] = 400;
     $material[4]["foto_h"] = 400;
+    
+    /*
+    
 
     $material[5]["nombre"] = "Trabajo 2";
     $material[5]["tipo"] = 3;
@@ -45,6 +48,7 @@
     $material[5]["foto_grande"] = "trabajo2.jpg";
     $material[5]["foto_w"] = 400;
     $material[5]["foto_h"] = 400;
+    */
 
     require_once "./url_function.php";
     $url = url();
@@ -270,7 +274,7 @@
             <div class="curso_online">
                 <div class="curso vhalign">
                     <div class="hada"><img src="<?php echo $url['path']; ?>img/hada.png" alt=""></div>
-                    <div class="mensaje"></div>
+                    <div class="mensaje"><div class="valign msg">En estos momentos que estamos cuidándonos para que no se propague el coronavirus y nos piden que no salgamos de casa.<br/>Nuestro compromiso es continuo con todas las familias del Valle Encantado, queremos seguir colaborando para estimular y que los niños y niñas a través del juego puedan seguir aprendiendo.<br/>Hemos implementado este recurso, pincha en la sala en que está tu hijo y diariamente encontrarás material para trabajar.</div></div>
                     <div class="ver_cursos" onclick="curso_paso_2()">Ir a curso online</div>
                     <div class="volver" onclick="ver_sitio()">Deseo ir al sitio</div>
                     <div class="salas sala_azul" onclick="sala_naranja()">SALA AZUL</div>
@@ -295,7 +299,7 @@
                                     $cuentos = array_diff(scandir($dir), array('..', '.'));
                                     $x = 0;
                                     foreach($cuentos as $valor){
-                                        echo "<div class='flip-".$x." flipbook-viewport'><div class='container'><div class='flipbook-".$x."'>";
+                                        echo "<div class='flip-".$x." flipbook-viewport'><div class='container'><div class='ff flipbook-".$x."'>";
                                         $dir_ = $dir."/".$valor."/";
                                         if($handler = opendir($dir_)){
                                             $aux_file = [];
@@ -306,7 +310,7 @@
                                             }
                                             sort($aux_file);
                                             for($i=0; $i<count($aux_file); $i++){
-                                                echo "<div style='background-image:url(online/cuentos/".$valor."/".$aux_file[$i].")'></div>";
+                                                echo "<div style='background-image:url(online/cuentos/".$valor."/".$aux_file[$i]."); background-size: cover'></div>";
                                             }
                                             closedir($handler);
                                         }
