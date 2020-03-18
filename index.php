@@ -113,18 +113,6 @@
     $material[13]["sala"] = 1;
     $material[13]["id"] = 11;
     $material[13]["foto"] = "cuento10prev.jpg";
-    
-    /*
-    
-
-    $material[5]["nombre"] = "Trabajo 2";
-    $material[5]["tipo"] = 3;
-    $material[5]["sala"] = 1;
-    $material[5]["foto"] = "trabajo2prev.jpg";
-    $material[5]["foto_grande"] = "trabajo2.jpg";
-    $material[5]["foto_w"] = 400;
-    $material[5]["foto_h"] = 400;
-    */
 
     require_once "./url_function.php";
     $url = url();
