@@ -367,6 +367,11 @@ function loadApp(id, ancho, alto){
     }
 
 }
+function hide_lista(){
+    $(".curso_lista").animate({
+        right: "-150px",
+    }, 1000);
+}
 function create_element_class(clase){
     var Div = document.createElement('div');
     Div.className = clase;

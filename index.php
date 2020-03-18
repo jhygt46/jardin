@@ -45,6 +45,26 @@
     $material[5]["sala"] = 1;
     $material[5]["id"] = 4;
     $material[5]["foto"] = "cuento3prev.jpg";
+
+    $material[6]["nombre"] = "La pequeña oruga glotona";
+    $material[6]["tipo"] = 1;
+    $material[6]["ancho"] = 1600;
+    $material[6]["alto"] = 600;
+    $material[6]["sala"] = 1;
+    $material[6]["id"] = 5;
+    $material[6]["foto"] = "cuento4prev.jpg";
+
+    $material[7]["nombre"] = "Estaba el señor Don Gato";
+    $material[7]["tipo"] = 2;
+    $material[7]["sala"] = 1;
+    $material[7]["code"] = "9Oyz_egsKI4";
+    $material[7]["foto"] = "cancion2prev.jpg";
+
+    $material[8]["nombre"] = "Ronda de los Conejos";
+    $material[8]["tipo"] = 2;
+    $material[8]["sala"] = 1;
+    $material[8]["code"] = "bdKVVZYefDI";
+    $material[8]["foto"] = "cancion3prev.jpg";
     
     /*
     
@@ -300,7 +320,7 @@
                             </div>
                         </div>
                         <div class="curso_lista" id="curso_lista"></div>
-                        <div class="curso_contenido">
+                        <div class="curso_contenido" onclick="hide_lista()">
                             <div class="cuentos">
                                 <?php
                                     $dir = $url['dir']."online/cuentos";
