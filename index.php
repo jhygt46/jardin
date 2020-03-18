@@ -43,7 +43,7 @@
     $material[5]["ancho"] = 972;
     $material[5]["alto"] = 600;
     $material[5]["sala"] = [1];
-    $material[5]["id"] = 4;
+    $material[5]["id"] = 3;
     $material[5]["foto"] = "cuento3prev.jpg";
 
     $material[6]["nombre"] = "La pequeña oruga glotona";
@@ -51,7 +51,7 @@
     $material[6]["ancho"] = 1600;
     $material[6]["alto"] = 600;
     $material[6]["sala"] = [1];
-    $material[6]["id"] = 5;
+    $material[6]["id"] = 4;
     $material[6]["foto"] = "cuento4prev.jpg";
 
     $material[7]["nombre"] = "Estaba el señor Don Gato";
@@ -71,7 +71,7 @@
     $material[9]["ancho"] = 1728;
     $material[9]["alto"] = 600;
     $material[9]["sala"] = [1];
-    $material[9]["id"] = 6;
+    $material[9]["id"] = 5;
     $material[9]["foto"] = "cuento5prev.jpg";
 
     $material[10]["nombre"] = "Te quiero, papi";
@@ -79,7 +79,7 @@
     $material[10]["ancho"] = 1500;
     $material[10]["alto"] = 600;
     $material[10]["sala"] = [1];
-    $material[10]["id"] = 7;
+    $material[10]["id"] = 6;
     $material[10]["foto"] = "cuento6prev.jpg";
 
     $material[11]["nombre"] = "La selva loca";
@@ -87,7 +87,7 @@
     $material[11]["ancho"] = 900;
     $material[11]["alto"] = 600;
     $material[11]["sala"] = [1];
-    $material[11]["id"] = 8;
+    $material[11]["id"] = 7;
     $material[11]["foto"] = "cuento7prev.jpg";
 
     $material[12]["nombre"] = "Buena noches, gorila";
@@ -95,7 +95,7 @@
     $material[12]["ancho"] = 2132;
     $material[12]["alto"] = 600;
     $material[12]["sala"] = [1];
-    $material[12]["id"] = 9;
+    $material[12]["id"] = 8;
     $material[12]["foto"] = "cuento8prev.jpg";
 
     $material[13]["nombre"] = "Mis papis trabajan";
@@ -103,7 +103,7 @@
     $material[13]["ancho"] = 1200;
     $material[13]["alto"] = 600;
     $material[13]["sala"] = [1];
-    $material[13]["id"] = 10;
+    $material[13]["id"] = 9;
     $material[13]["foto"] = "cuento9prev.jpg";
 
     $material[13]["nombre"] = "¡A bañarse!";
@@ -111,19 +111,11 @@
     $material[13]["ancho"] = 1200;
     $material[13]["alto"] = 600;
     $material[13]["sala"] = [1];
-    $material[13]["id"] = 11;
+    $material[13]["id"] = 10;
     $material[13]["foto"] = "cuento10prev.jpg";
 
     require_once "./url_function.php";
     $url = url();
-
-    $dir = $url['dir']."online/cuentos";
-    $cuentos = array_diff(scandir($dir), array('..', '.'));
-    echo "<pre>";
-    print_r($cuentos);
-    echo "</pre>";
-    exit;
-
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
     $style_conozcanos = "opacity: 0; top: 500px";
     $style_propuesta = "opacity: 0; top: 500px";
