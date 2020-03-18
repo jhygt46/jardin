@@ -105,6 +105,14 @@
     $material[13]["sala"] = 1;
     $material[13]["id"] = 10;
     $material[13]["foto"] = "cuento9prev.jpg";
+
+    $material[13]["nombre"] = "¡A bañarse!";
+    $material[13]["tipo"] = 1;
+    $material[13]["ancho"] = 1200;
+    $material[13]["alto"] = 600;
+    $material[13]["sala"] = 1;
+    $material[13]["id"] = 11;
+    $material[13]["foto"] = "cuento10prev.jpg";
     
     /*
     
