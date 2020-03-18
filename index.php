@@ -37,6 +37,14 @@
     $material[4]["foto_grande"] = "trabajo1.jpg";
     $material[4]["foto_w"] = 400;
     $material[4]["foto_h"] = 400;
+
+    $material[5]["nombre"] = "¿Como te sientes?";
+    $material[5]["tipo"] = 1;
+    $material[5]["ancho"] = 972;
+    $material[5]["alto"] = 600;
+    $material[5]["sala"] = 1;
+    $material[5]["id"] = 4;
+    $material[5]["foto"] = "cuento3prev.jpg";
     
     /*
     
