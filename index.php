@@ -32,14 +32,23 @@
     $material[] = crear_objeto("Buena noches, gorila", 1, [1, 2, 3, 4], 9, null, "cuento8prev.jpg", 2132, 600);    
     $material[] = crear_objeto("Mis papis trabajan", 1, [1, 2, 3, 4], 10, null, "cuento9prev.jpg", 1200, 600);
     $material[] = crear_objeto("¡A bañarse!", 1, [1, 2, 3, 4], 11, null, "cuento10prev.jpg", 1200, 600);
+    $material[] = crear_objeto("El autobus de Maisy", 1, [1, 2, 3, 4], 12, null, "cuento11prev.jpg", 2132, 600);
+    $material[] = crear_objeto("Mi primer libro del cuerpo", 1, [1, 2, 3, 4], 13, null, "cuento12prev.jpg", 2132, 600);
 
     // CANCIONES
-    $material[] = crear_objeto("¿Dónde está la cebra?", 2, [1, 2, 3, 4], null, "cgG73CoTz6U", "cancion1prev.jpg", 1120, 572);
-    $material[] = crear_objeto("Estaba el señor Don Gato", 2, [1, 2, 3, 4], null, "9Oyz_egsKI4", "cancion2prev.jpg", 1120, 572);
-    $material[] = crear_objeto("Ronda de los Conejos", 2, [1, 2, 3, 4], null, "bdKVVZYefDI", "cancion3prev.jpg", 1120, 572);
-    
+    $material[] = crear_objeto("¿Dónde está la cebra?", 2, [1, 2, 3, 4], null, "cgG73CoTz6U", "cancion1prev.jpg");
+    $material[] = crear_objeto("Estaba el señor Don Gato", 2, [1, 2, 3, 4], null, "9Oyz_egsKI4", "cancion2prev.jpg");
+    $material[] = crear_objeto("Ronda de los Conejos", 2, [1, 2, 3, 4], null, "bdKVVZYefDI", "cancion3prev.jpg");
+    $material[] = crear_objeto("Si Estás Feliz", 2, [1, 2, 3, 4], null, "lU8zZjBV53M", "cancion4prev.jpg");
+    $material[] = crear_objeto("LA VACA LOLA", 2, [1, 2, 3, 4], null, "0dkHZYeIGIk", "cancion5prev.jpg");
+    $material[] = crear_objeto("Perro Amigo", 2, [1, 2, 3, 4], null, "eMvt0ikkbkg", "cancion6prev.jpg");
+    $material[] = crear_objeto("Las Ruedas del Autobus", 2, [1, 2, 3, 4], null, "EwZ3KhAh448", "cancion7prev.jpg");
+
     // TRABAJOS
     $material[] = crear_objeto("Trabajo 1", 3, [1, 2, 3, 4], null, null, "trabajo1prev.jpg", null, null, "trabajo1.jpg", 400, 400);
+
+
+
 
     require_once "./url_function.php";
     $url = url();

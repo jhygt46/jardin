@@ -325,8 +325,6 @@ function loadApp_aux(that){
 }
 function loadApp(id, ancho, alto){
 
-    console.log("id: "+id);
-
     player.stopVideo();
     $('.cuentos').show();
     $('#player').hide();
