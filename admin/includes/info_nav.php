@@ -33,6 +33,19 @@
         	$menu[] = $aux;
         	unset($aux);
         	unset($array);
+    	}
+
+		$array[0]["nombre"] = "Ingresar Material";
+    	$array[0]["link"] = "pages/crear_material.php";
+    
+    	if(isset($array)){
+    
+        	$aux["ico"] = 3;
+        	$aux["categoria"] = "Curso Online";
+        	$aux["subcategoria"] = $array;
+        	$menu[] = $aux;
+        	unset($aux);
+        	unset($array);
         
     	}
 

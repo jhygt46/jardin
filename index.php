@@ -28,7 +28,7 @@
     $material[] = crear_objeto("La casa de Dorita", 1, [3, 4], 6, null, "cuento5prev.jpg", 1728, 600);
     $material[] = crear_objeto("Te quiero, papi", 1, [3, 4], 7, null, "cuento6prev.jpg", 1500, 600);
     $material[] = crear_objeto("La selva loca", 1, [1], 8, null, "cuento7prev.jpg", 900, 600);
-    $material[] = crear_objeto("Buena noches, gorila", 1, [2], 9, null, "cuento8prev.jpg", 2132, 600);    
+    $material[] = crear_objeto("Buenas noches, gorila", 1, [2], 9, null, "cuento8prev.jpg", 2132, 600);    
     $material[] = crear_objeto("Mis papis trabajan", 1, [3, 4], 10, null, "cuento9prev.jpg", 1200, 600);
     $material[] = crear_objeto("¡A bañarse!", 1, [3, 4], 11, null, "cuento10prev.jpg", 1200, 600);
     $material[] = crear_objeto("El autobus de Maisy", 1, [1], 12, null, "cuento11prev.jpg", 2132, 600);
@@ -37,23 +37,21 @@
     // CANCIONES
     $material[] = crear_objeto("¿Dónde está la cebra?", 2, [1], null, "cgG73CoTz6U", "cancion1prev.jpg");
     $material[] = crear_objeto("Si Estás Feliz", 2, [2], null, "lU8zZjBV53M", "cancion4prev.jpg");
-    $material[] = crear_objeto("Si Estás Feliz", 2, [2], null, "lU8zZjBV53M", "cancion4prev.jpg");
     $material[] = crear_objeto("Estaba el señor Don Gato", 2, [2, 4], null, "9Oyz_egsKI4", "cancion2prev.jpg");
     $material[] = crear_objeto("Ronda de los Conejos", 2, [2, 4], null, "bdKVVZYefDI", "cancion3prev.jpg");
-    
     $material[] = crear_objeto("Mi carita redondita", 2, [3, 4], null, "6r_qz5XnK-M", "cancion8prev.jpg");
     $material[] = crear_objeto("Cinco patitos", 2, [3, 4], null, "Vqq3BwgsI0U", "cancion9prev.jpg");
-
-
     $material[] = crear_objeto("La vaca Lola", 2, [3, 4], null, "0dkHZYeIGIk", "cancion5prev.jpg");
     $material[] = crear_objeto("Perro Amigo", 2, [3, 4], null, "eMvt0ikkbkg", "cancion6prev.jpg");
     $material[] = crear_objeto("Las Ruedas del Autobus", 2, [1], null, "EwZ3KhAh448", "cancion7prev.jpg");
+    $material[] = crear_objeto("La selva loca", 2, [1], null, "JxN_rbCLdso", "cancion7prev.jpg");
+    $material[] = crear_objeto("El Zoológico", 2, [2], null, "UJezG8dP4Nc", "cancion8prev.jpg");
 
     // TRABAJOS
     $material[] = crear_objeto("La cebra Camila", 3, [1], null, null, "trabajo1prev.jpg", null, null, "trabajo1.jpg", 816, 1340);
     $material[] = crear_objeto("¿Cómo te sientes?", 3, [2], null, null, "trabajo2prev.jpg", null, null, "trabajo2.jpg", 816, 910);
-
-
+    $material[] = crear_objeto("La selva loca", 3, [2], null, null, "trabajo3prev.jpg", null, null, "trabajo3.jpg", 800, 1312);
+    $material[] = crear_objeto("Buenas noches, gorila", 3, [2], null, null, "trabajo4prev.jpg", null, null, "trabajo4.jpg", 799, 880);
 
 
     require_once "./url_function.php";

@@ -388,3 +388,8 @@ function create_element_class_inner(clase, value){
 function openwn(url, w, h){
     window.open(url, "_blank", "width="+w+",height="+h);
 }
+function imprimir_flip(){
+
+    var listado = create_element_class('flipbook-viewport');
+
+}
