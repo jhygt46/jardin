@@ -38,6 +38,10 @@
     $material[] = crear_objeto("Colibri", 1, [3], 16, null, "cuento15prev.jpg", 1600, 600);
     $material[] = crear_objeto("Nacho va a la escuela", 1, [4], 17, null, "cuento16prev.jpg", 1500, 600);
     $material[] = crear_objeto("El carnaval de los animales", 1, [4], 18, null, "cuento17prev.jpg", 1600, 600);
+    $material[] = crear_objeto("La vaca en su hamaca", 1, [4], 19, null, "cuento18prev.jpg", 1200, 600);
+    $material[] = crear_objeto("El dinosaurio y sus amigos", 1, [4], 20, null, "cuento19prev.jpg", 1200, 600);
+    $material[] = crear_objeto("Clo-clo Clotilde y los tres huevos", 1, [3], 21, null, "cuento20prev.jpg", 1200, 600);
+    $material[] = crear_objeto("A veces me confunden", 1, [3], 22, null, "cuento21prev.jpg", 1200, 600);
 
 
 
@@ -59,7 +63,12 @@
     $material[] = crear_objeto("Hipopotamos", 2, [4], null, "DYzxoGkRCFM", "cancion13prev.jpg");
     $material[] = crear_objeto("A guardar a guardar cada cosa en su lugar", 2, [4], null, "HCynKopZ6Z4", "cancion14prev.jpg");
     $material[] = crear_objeto("Las Canciones del Zoo 2", 2, [4], null, "UJezG8dP4Nc", "cancion15prev.jpg");
-
+    $material[] = crear_objeto("El oso y los ositos", 2, [3], null, "FHR5h385LhU", "cancion16prev.jpg");
+    $material[] = crear_objeto("La Vaca Lechera", 2, [4], null, "s7LWD0ebo2Y", "cancion17prev.jpg");
+    $material[] = crear_objeto("Mauro el dinosaurio", 2, [4], null, "iL5nlEq3t4U", "cancion18prev.jpg");
+    $material[] = crear_objeto("La Gallina Pintadita", 2, [3], null, "FyVOMX_P3mg", "cancion19prev.jpg");
+    $material[] = crear_objeto("La Familia", 2, [3], null, "EwBeSYtSKn4", "cancion20prev.jpg");
+    
 
     // TRABAJOS
     $material[] = crear_objeto("La cebra Camila", 3, [1], null, null, "trabajo1prev.jpg", null, null, "trabajo1.jpg", 816, 1340);
