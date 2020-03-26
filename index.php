@@ -43,6 +43,7 @@
     $material[] = crear_objeto("Clo-clo Clotilde y los tres huevos", 1, [3], 21, null, "cuento20prev.jpg", 1200, 600);
     $material[] = crear_objeto("A veces me confunden", 1, [3], 22, null, "cuento21prev.jpg", 1200, 600);
     $material[] = crear_objeto("Los Colores", 1, [1], 23, null, "cuento22prev.jpg", 1600, 600);
+    $material[] = crear_objeto("La cama de Mamá", 1, [1], 24, null, "cuento23prev.jpg", 1600, 600);
 
 
     // CANCIONES
@@ -79,6 +80,7 @@
     $material[] = crear_objeto("El autobus de Maisy", 3, [1], null, null, "trabajo5prev.jpg", null, null, "trabajo5.jpg", 800, 1926);
     $material[] = crear_objeto("Libro del Cuerpo", 3, [2], null, null, "trabajo6prev.jpg", null, null, "trabajo6.jpg", 750, 580);
     $material[] = crear_objeto("Los Colores", 3, [1], null, null, "trabajo7prev.jpg", null, null, "trabajo7.jpg", 731, 818);
+    $material[] = crear_objeto("La cama de Mamá", 3, [1], null, null, "trabajo8prev.jpg", null, null, "trabajo8.jpg", 964, 544);
     
 
 
