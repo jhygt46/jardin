@@ -42,7 +42,7 @@
     $material[] = crear_objeto("El dinosaurio y sus amigos", 1, [4], 20, null, "cuento19prev.jpg", 1200, 600);
     $material[] = crear_objeto("Clo-clo Clotilde y los tres huevos", 1, [3], 21, null, "cuento20prev.jpg", 1200, 600);
     $material[] = crear_objeto("A veces me confunden", 1, [3], 22, null, "cuento21prev.jpg", 1200, 600);
-
+    $material[] = crear_objeto("Los Colores", 1, [1], 23, null, "cuento22prev.jpg", 1600, 600);
 
 
     // CANCIONES
@@ -68,6 +68,7 @@
     $material[] = crear_objeto("Mauro el dinosaurio", 2, [4], null, "iL5nlEq3t4U", "cancion18prev.jpg");
     $material[] = crear_objeto("La Gallina Pintadita", 2, [3], null, "FyVOMX_P3mg", "cancion19prev.jpg");
     $material[] = crear_objeto("La Familia", 2, [3], null, "EwBeSYtSKn4", "cancion20prev.jpg");
+    $material[] = crear_objeto("Mi perro Chocolo aprende", 2, [1], null, "wwHTvq-OLHg", "cancion21prev.jpg");
     
 
     // TRABAJOS
@@ -77,6 +78,9 @@
     $material[] = crear_objeto("Buenas noches, gorila", 3, [2], null, null, "trabajo4prev.jpg", null, null, "trabajo4.jpg", 799, 880);
     $material[] = crear_objeto("El autobus de Maisy", 3, [1], null, null, "trabajo5prev.jpg", null, null, "trabajo5.jpg", 800, 1926);
     $material[] = crear_objeto("Libro del Cuerpo", 3, [2], null, null, "trabajo6prev.jpg", null, null, "trabajo6.jpg", 750, 580);
+    $material[] = crear_objeto("Los Colores", 3, [1], null, null, "trabajo7prev.jpg", null, null, "trabajo7.jpg", 731, 818);
+    
+
 
     require_once "./url_function.php";
     $url = url();
