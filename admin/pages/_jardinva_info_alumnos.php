@@ -18,6 +18,9 @@ $jardin = new Jardin();
 $list_ = $jardin->alumnos();
 $curs_ = $jardin->cursos();
 
+echo "<pre>";
+print_r($list_);
+echo "</pre>";
 
 /* CONFIG PAGE */
 $titulo = "Alumnos";
