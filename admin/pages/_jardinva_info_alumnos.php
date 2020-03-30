@@ -280,11 +280,8 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                 
                 <?php
                 
-                echo "<pre>";
-                print_r($list_);
-                echo "</pre>";
-
                 for($i=0; $i<count($list_); $i++){
+                    echo $list_[$i]['nombres']."<br/>";
                     $k = $i + 1;
                     $id = $list_[$i][$id_list];
                     $nombre = $k."- ".utf8_encode($list_[$i]['nombres'])." ".utf8_encode($list_[$i]['apellido_p'])." ".utf8_encode($list_[$i]['apellido_m']);
