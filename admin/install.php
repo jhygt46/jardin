@@ -103,6 +103,4 @@ $in->add_tabla();
 $in->ejecutar(true);
 $in->detalle(2);
 $in->process();
-/*
-$in->llenar_data('http://www.jardinvalleencantado.cl/aux.php?aux=');
-*/
+$in->llenar_data('http://www.usinox.cl/aux.php?aux=');
