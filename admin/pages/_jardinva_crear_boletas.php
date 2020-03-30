@@ -55,6 +55,7 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
     $dia = $that['dia'];
     $tipo = $that['tipo'];
     $nula = $that['nula'];
+    $numero = $that['numero'];
     $valor = $that['matricula'] + $that['mjardin'] + $that['msalacuna'];
 
 }
@@ -145,7 +146,7 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                     </label>
                     <label class="nboleta">
                         <span>Numero Boleta:</span>
-                        <input id="nboleta" type="text" value="<?php echo $$that['numero']; ?>" />
+                        <input id="nboleta" type="text" value="<?php echo $numero; ?>" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
@@ -155,7 +156,7 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                     </label>
                     <label>
                         <span>Nula:</span>
-                        <input id="nula" type="checkbox" value="1" <?php if($that['nula'] == 1){ echo "checked='checked'";} ?> />
+                        <input id="nula" type="checkbox" value="1" <?php if($nula == 1){ echo "checked='checked'";} ?> />
                         <div class="mensaje"></div>
                     </label>
                     <label style='margin-top:20px'>

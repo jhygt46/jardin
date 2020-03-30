@@ -111,7 +111,7 @@ $list = $jardin->resumen($tipo, $id_cur);
         <?php for($i=0; $i<count($list); $i++){ $r=$i+1; if($i % 2 == 0){ $c = "color02"; }else{ $c = "color01"; } ?>
         <tr>
             <td><?php echo $r; ?></td>
-            <td align="left" style="padding: 2px 4px"><?php echo utf8_encode($list[$i]['apellido_p']); ?> <?php echo utf8_encode($list[$i]['apellido_m']); ?> <?php echo utf8_encode($list[$i]['nombres']); ?></td>
+            <td align="left" style="padding: 2px 4px"><?php echo $list[$i]['apellido_p']; ?> <?php echo $list[$i]['apellido_m']; ?> <?php echo $list[$i]['nombres']; ?></td>
             <td></td>
             <td></td>
             <td></td>
@@ -155,7 +155,7 @@ $list = $jardin->resumen($tipo, $id_cur);
         <?php for($i=0; $i<count($list); $i++){ $r=$i+1; if($i % 2 == 0){ $c = "color02"; }else{ $c = "color01"; } ?>
         <tr>
             <td><?php echo $r; ?></td>
-            <td align="left" style="padding: 2px 4px">- <?php echo utf8_encode($list[$i]['apellido_p']); ?> <?php echo utf8_encode($list[$i]['apellido_m']); ?> <?php echo utf8_encode($list[$i]['nombres']); ?> </td>
+            <td align="left" style="padding: 2px 4px">- <?php echo $list[$i]['apellido_p']; ?> <?php echo $list[$i]['apellido_m']; ?> <?php echo $list[$i]['nombres']; ?> </td>
             <?php for($m=1; $m<=31; $m++){ ?>
             <td></td>
             <?php } ?>
@@ -308,13 +308,13 @@ $list = $jardin->resumen($tipo, $id_cur);
         <td align="center"><?php echo $f_i; ?></td>
         <td align="center"><?php echo $f_m; ?></td>
 	<td align="center"><?php echo $rr; ?></td>
-        <td><?php echo utf8_encode($list[$i]['nombre_apoderado']); ?></td>
+        <td><?php echo $list[$i]['nombre_apoderado']; ?></td>
         <td><?php echo $list[$i]['telefono_apoderado']; ?></td>
         <td><?php echo $list[$i]['email_apoderado']; ?></td>
         
-        <td><?php echo utf8_encode($list[$i]['nombre_01']); ?></td>
+        <td><?php echo $list[$i]['nombre_01']; ?></td>
         <td><?php echo $list[$i]['celular_01']; ?></td>
-        <td><?php echo utf8_encode($list[$i]['nombre_02']); ?></td>
+        <td><?php echo $list[$i]['nombre_02']; ?></td>
         <td><?php echo $list[$i]['celular_02']; ?></td>
         
         <td><?php echo $list[$i]['observaciones']; ?></td>
@@ -358,10 +358,10 @@ $list = $jardin->resumen($tipo, $id_cur);
     <tr style="font-size: 20px; padding: 3px 0px;">
         
         <td><?php echo $f; ?></td>
-        <td><?php echo utf8_encode($list[$i]['apellido_p'])." ".utf8_encode($list[$i]['apellido_m'])." ".utf8_encode($list[$i]['nombres']); ?></td>
-        <td><?php echo utf8_encode($list[$i]['nombre_01']); ?></td>
+        <td><?php echo $list[$i]['apellido_p']." ".$list[$i]['apellido_m']." ".$list[$i]['nombres']; ?></td>
+        <td><?php echo $list[$i]['nombre_01']; ?></td>
         <td><?php echo $list[$i]['celular_01']; ?></td>
-        <td><?php echo utf8_encode($list[$i]['nombre_02']); ?></td>
+        <td><?php echo $list[$i]['nombre_02']; ?></td>
         <td><?php echo $list[$i]['celular_02']; ?></td>
         
     </tr>
