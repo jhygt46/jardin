@@ -314,7 +314,7 @@ function agrandar(){
             top: "1%",
             opacity: 1
         }, 1000);
-        loadApp(3, 846, 600);
+        //loadApp(3, 846, 600);
     });
 }
 function loadApp_aux(that){

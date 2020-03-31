@@ -73,6 +73,7 @@
     
 
     // TRABAJOS
+    /*
     $material[] = crear_objeto("La cebra Camila", 3, [1], null, null, "trabajo1prev.jpg", null, null, "trabajo1.jpg", 816, 1340);
     $material[] = crear_objeto("¿Cómo te sientes?", 3, [2], null, null, "trabajo2prev.jpg", null, null, "trabajo2.jpg", 816, 910);
     $material[] = crear_objeto("La selva loca", 3, [2], null, null, "trabajo3prev.jpg", null, null, "trabajo3.jpg", 800, 1312);
@@ -81,7 +82,7 @@
     $material[] = crear_objeto("Libro del Cuerpo", 3, [2], null, null, "trabajo6prev.jpg", null, null, "trabajo6.jpg", 750, 580);
     $material[] = crear_objeto("Los Colores", 3, [1], null, null, "trabajo7prev.jpg", null, null, "trabajo7.jpg", 731, 818);
     $material[] = crear_objeto("La cama de Mamá", 3, [1], null, null, "trabajo8prev.jpg", null, null, "trabajo8.jpg", 964, 544);
-    
+    */
 
 
     require_once "./url_function.php";
