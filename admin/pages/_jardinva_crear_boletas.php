@@ -25,6 +25,8 @@ $info = $jardin->boletas($ano, $mes);
 $list = $info['lista'];
 $max_boleta = $info['max_boleta'];
 $max_factura = $info['max_factura'];
+$numero = $max_boleta;
+
 
 $titulo = "Boletas";
 $titulo_list = "Listado de Boletas y Facturas";
