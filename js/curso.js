@@ -48,6 +48,7 @@ function onPlayerStateChange(event){
 }
 function play_youtube(v_code){
 
+    stop_video();
     hide_lista();
     $('.cuentos').hide();
     $('#player').show();
@@ -256,7 +257,11 @@ function listar_trabajos(aux){
     $('.cuentos').hide();
     $('#player').hide();
     $('.trabajos').show();
+}
+function html_video(that){
 
+    stop_youtube();
+    hide_lista();
     var n = $(that).attr('video');
     var w = $(that).attr('video-w');
     var h = $(that).attr('video-h');
@@ -335,7 +340,8 @@ function loadApp_aux(that){
 }
 function loadApp(id, ancho, alto){
 
-    player.stopVideo();
+    stop_youtube();
+    stop_video();
     $('.cuentos').show();
     $('#player').hide();
     $('.trabajos').hide();
@@ -367,8 +373,8 @@ function loadApp(id, ancho, alto){
     }
 
     var fotos = fotos_cuentos["cuento"+id];
-
     var ff = $("<div class='ff'></div>");
+
     for(var i=0, ilen=fotos.length; i<ilen; i++){
         ff.append("<div style='background-image:url(online/cuentos/cuento"+id+"/"+fotos[i]+"); background-size: cover'></div>");
     }
