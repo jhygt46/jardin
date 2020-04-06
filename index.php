@@ -123,6 +123,24 @@
         $style_conozcanos = "opacity: 1; top: 0px";
     }
 
+    $dir = $url['dir']."online/cuentos";
+    $cuentos = array_diff(scandir($dir), array('..', '.'));
+    foreach($cuentos as $valor){
+        if($handler = opendir($dir_)){
+            $aux_file = [];
+            while(false !== ($file = readdir($handler))){
+                    if(is_file($dir_.$file) && $file != "index.html"){
+                        $aux_file[] = $file;
+                    }
+            }
+            sort($aux_file);
+            for($i=0; $i<count($aux_file); $i++){
+                $fotos_cuentos[$valor][] = $aux_file[$i];
+            }
+            closedir($handler);
+        }
+    }
+
 ?>
 
 
@@ -152,6 +170,7 @@
             var pagina = '<?php echo $pagina_inicio; ?>';
             <?php if($curso == 1){ ?>
             var material = <?php echo json_encode($material); ?>;
+            var fotos_cuentos = <?php echo json_encode($fotos_cuentos); ?>;
             <?php } ?>
         </script>
     </head>
