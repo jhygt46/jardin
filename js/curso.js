@@ -56,7 +56,7 @@ function play_youtube(v_code){
     player.loadVideoById(v_code);
     player.playVideo();
     youtb = 1;
-    
+
 }
 function start_cursos(){
     $(".curso_online").show();
@@ -401,7 +401,6 @@ function imprimir_flip(){
 
     var listado = create_element_class('flipbook-viewport');
 
-<<<<<<< HEAD
 }
 function stop_youtube(){
     if(youtb == 1){
