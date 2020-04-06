@@ -242,18 +242,21 @@ function ver_trabajos(){
 }
 function listar_trabajos(aux){
 
-    var listado = create_element_class('listado clearfix');
+    var listado = create_element_class('listado');
     for(var i=0, ilen=aux.length; i<ilen; i++){
         var lista = create_element_class('lista');
         lista.setAttribute('video', aux[i].foto_grande);
-        lista.setAttribute('video-w', aux[i].foto_w);
-        lista.setAttribute('video-h', aux[i].foto_h);
         lista.onclick = function(){ html_video(this) };
         var nombre = create_element_class_inner('nombre', aux[i].nombre);
         lista.appendChild(nombre);
         listado.appendChild(lista);
     }
-    $('.trabajos').html(listado);
+
+    $('#curso_lista').html(listado);
+    $(".curso_lista").animate({
+        right: "0px",
+    }, 1000);
+
     $('.cuentos').hide();
     $('#player').hide();
     $('.trabajos').show();
@@ -263,9 +266,6 @@ function html_video(that){
     stop_youtube();
     hide_lista();
     var n = $(that).attr('video');
-    var w = $(that).attr('video-w');
-    var h = $(that).attr('video-h');
-
     var video = document.getElementById('video');
     video.setAttribute("src", path+'online/videos/'+n);
     video.load();
