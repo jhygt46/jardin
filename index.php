@@ -18,9 +18,6 @@
 
     }
 
-    // roja = 1; azul = 2; amarilla = 3; verde = 4
-
-    // CUENTOS
     $material[] = crear_objeto("Te quiero tanto, MAMÁ", 1, [3], 1, null, "cuento1prev.jpg", 1180, 600);
     $material[] = crear_objeto("La cebra Camila", 1, [1], 2, null, "cuento2prev.jpg", 1120, 572);
     $material[] = crear_objeto("¿Como te sientes?", 1, [2], 4, null, "cuento3prev.jpg", 972, 600);
@@ -46,7 +43,6 @@
     $material[] = crear_objeto("La cama de Mamá", 1, [1], 24, null, "cuento23prev.jpg", 1600, 600);
 
 
-    // CANCIONES
     $material[] = crear_objeto("¿Dónde está la cebra?", 2, [1], null, "cgG73CoTz6U", "cancion1prev.jpg");
     $material[] = crear_objeto("Si Estás Feliz", 2, [2], null, "lU8zZjBV53M", "cancion4prev.jpg");
     $material[] = crear_objeto("Estaba el señor Don Gato", 2, [2, 4], null, "9Oyz_egsKI4", "cancion2prev.jpg");
@@ -72,6 +68,17 @@
     $material[] = crear_objeto("Mi perro Chocolo aprende", 2, [1], null, "wwHTvq-OLHg", "cancion21prev.jpg");
     
 
+<<<<<<< HEAD
+    $material[] = crear_objeto("Clo Clo Clotilde", 3, [1], null, null, "Clo-Clo-Clotilde.jpg", null, null, "Clo-Clo-Clotilde.mp4", 640, 352);
+    $material[] = crear_objeto("Dino el Dinosuario", 3, [2], null, null, "Dino-el-Dinosuario.jpg", null, null, "Dino-el-Dinosuario.mp4", 640, 352);
+    $material[] = crear_objeto("Autobus de maisy", 3, [2], null, null, "autobus-de-maisy.jpg", null, null, "autobus-de-maisy.mp4", 1920, 1080);
+    $material[] = crear_objeto("Donde estan mis patatillas", 3, [2], null, null, "Donde-estan-mis-patatillas.jpg", null, null, "Donde-estan-mis-patatillas.mp4", 640, 480);
+    $material[] = crear_objeto("El circo internacional de Dumbo", 3, [2], null, null, "El-circo-internacional-de-Dumbo.jpg", null, null, "El-circo-internacional-de-Dumbo.mp4", 640, 352);
+    $material[] = crear_objeto("Los tres cerditos", 3, [2], null, null, "Los-tres-cerditos.jpg", null, null, "Los-tres-cerditos.mp4", 640, 480);
+    $material[] = crear_objeto("Me quiero comer un niño", 3, [2], null, null, "me-quiero-comer-un-nino.jpg", null, null, "me-quiero-comer-un-nino.mp4", 1920, 1080);
+    $material[] = crear_objeto("Quien viene", 3, [2], null, null, "Quien-viene.jpg", null, null, "Quien-viene.mp4", 640, 480);
+    $material[] = crear_objeto("Sito esta malito", 3, [2], null, null, "Sito-esta-malito.jpg", null, null, "Sito-esta-malito.mp4", 640, 352);
+=======
     // TRABAJOS
     /*
     $material[] = crear_objeto("La cebra Camila", 3, [1], null, null, "trabajo1prev.jpg", null, null, "trabajo1.jpg", 816, 1340);
@@ -84,6 +91,7 @@
     $material[] = crear_objeto("La cama de Mamá", 3, [1], null, null, "trabajo8prev.jpg", null, null, "trabajo8.jpg", 964, 544);
     */
 
+>>>>>>> parent of 844f889... aa
 
     require_once "./url_function.php";
     $url = url();
@@ -121,7 +129,7 @@
                 exit;
             }
         }elseif($pagina == "curso_online"){
-            // NADA
+            
         }else{
             header('HTTP/1.1 404 Not Found', true, 404);
             include('./404.php');
@@ -329,6 +337,16 @@
                         <div class="curso_lista" id="curso_lista"></div>
                         <div class="curso_contenido" onclick="hide_lista()">
                             <div class="cuentos">
+<<<<<<< HEAD
+                                <div class='flipbook-viewport'><div class='container'></div></div>
+                            </div>
+                            <div id="player"></div>
+                            <div class="trabajos">
+                                <video id="video" class="vhalign" width="100%" height="100%">
+                                    
+                                </video>
+                            </div>
+=======
                                 <?php
                                     $dir = $url['dir']."online/cuentos";
                                     $cuentos = array_diff(scandir($dir), array('..', '.'));
@@ -356,6 +374,7 @@
                             </div>
                             <div id="player"></div>
                             <div class="trabajos"></div>
+>>>>>>> parent of 844f889... aa
                         </div>
                     </div>
                 </div>

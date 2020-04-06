@@ -1,6 +1,7 @@
 var flip_arr = [];
 var sala_seleccionada = 0;
 var player;
+var youtb = 0;
 
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -57,6 +58,11 @@ function play_youtube(v_code){
 
     player.loadVideoById(v_code);
     player.playVideo();
+<<<<<<< HEAD
+    youtb = 1;
+
+=======
+>>>>>>> parent of 844f889... aa
 }
 function start_cursos(){
     $(".curso_online").show();
@@ -124,7 +130,7 @@ function curso_paso_2(){
     }, 2000);
 }
 function ver_sitio(){
-    //$(".curso_online").hide();
+    $(".curso_online").hide();
 }
 function sala_azul(){
     sala_seleccionada = 2;
@@ -239,6 +245,13 @@ function listar_trabajos(aux){
     var listado = create_element_class('listado clearfix');
     for(var i=0, ilen=aux.length; i<ilen; i++){
         var lista = create_element_class('lista');
+<<<<<<< HEAD
+        lista.setAttribute('video', aux[i].foto_grande);
+        lista.setAttribute('video-w', aux[i].foto_w);
+        lista.setAttribute('video-h', aux[i].foto_h);
+        lista.onclick = function(){ html_video(this) };
+        var nombre = create_element_class_inner('nombre', aux[i].nombre);
+=======
         lista.setAttribute('foto', aux[i].foto_grande);
         lista.setAttribute('foto-w', aux[i].foto_w);
         lista.setAttribute('foto-h', aux[i].foto_h);
@@ -246,6 +259,7 @@ function listar_trabajos(aux){
         var foto = create_element_class_inner('foto', '<img src="'+path+'online/prev/'+aux[i].foto+'" alt="" />');
         var nombre = create_element_class_inner('nombre', aux[i].nombre);
         lista.appendChild(foto);
+>>>>>>> parent of 844f889... aa
         lista.appendChild(nombre);
         listado.appendChild(lista);
     }
@@ -253,7 +267,20 @@ function listar_trabajos(aux){
     $('.cuentos').hide();
     $('#player').hide();
     $('.trabajos').show();
+<<<<<<< HEAD
+
+    var n = $(that).attr('video');
+    var w = $(that).attr('video-w');
+    var h = $(that).attr('video-h');
+
+
+    var video = document.getElementById('video');
+    video.setAttribute("src", path+'online/videos/'+n);
+    video.load();
+    video.play();
+=======
     player.stopVideo();
+>>>>>>> parent of 844f889... aa
 
 }
 function agrandar_trabajo(that){
@@ -314,7 +341,6 @@ function agrandar(){
             top: "1%",
             opacity: 1
         }, 1000);
-        //loadApp(3, 846, 600);
     });
 }
 function loadApp_aux(that){
@@ -353,6 +379,28 @@ function loadApp(id, ancho, alto){
     $('.cuentos').find('.flipbook-viewport').each(function(){
         $(this).hide();
     });
+<<<<<<< HEAD
+
+    if(id < 10){
+        id = "0"+id;
+    }
+
+    var fotos = fotos_cuentos["cuento"+id];
+
+    var ff = $("<div class='ff'></div>");
+    for(var i=0, ilen=fotos.length; i<ilen; i++){
+        ff.append("<div style='background-image:url(online/cuentos/cuento"+id+"/"+fotos[i]+"); background-size: cover'></div>");
+    }
+    $('.container').html(ff);
+    ff.turn({
+        width: n_ancho,
+        height: n_alto,
+        elevation: 50,
+        gradients: true,
+        autoCenter: true
+    });
+    $('.flipbook-viewport').show();
+=======
     $('.flip-'+id).show();
 
     if(!flip_arr.includes(id)){
@@ -367,6 +415,7 @@ function loadApp(id, ancho, alto){
     }else{
         $('.flipbook-'+id).turn("page", 1);
     }
+>>>>>>> parent of 844f889... aa
 
 }
 function hide_lista(){
@@ -392,4 +441,17 @@ function imprimir_flip(){
 
     var listado = create_element_class('flipbook-viewport');
 
+<<<<<<< HEAD
 }
+function stop_youtube(){
+    if(youtb == 1){
+        player.stopVideo();
+    }
+}
+function stop_video(){
+    var video = document.getElementById('video');
+    video.pause();
+}
+=======
+}
+>>>>>>> parent of 844f889... aa
