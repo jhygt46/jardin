@@ -314,8 +314,8 @@
                             <div class="titulo valign"><h1>Cursos Online</h1><h2>Jardin Valle Encantado</h2></div>
                             <div class="botones valign">
                                 <div class="boton" onclick="ver_cuentos()"><img src="<?php echo $url['path']; ?>online/cuentos.png" alt="" /><span>Cuentos</span></div>
-                                <div class="boton" onclick="ver_canciones()"><img src="<?php echo $url['path']; ?>online/canciones.png" alt="" /><span>Canciones</span></div>
-                                <div class="boton" onclick="ver_trabajos()"><img src="<?php echo $url['path']; ?>online/trabajos.png" alt="" /><span>Trabajos</span></div>
+                                <div class="boton" onclick="ver_canciones()"><img src="<?php echo $url['path']; ?>online/cuentos.png" alt="" /><span>Cuentos Narrados</span></div>
+                                <div class="boton" onclick="ver_trabajos()"><img src="<?php echo $url['path']; ?>online/canciones.png" alt="" /><span>Canciones</span></div>
                             </div>
                         </div>
                         <div class="curso_lista" id="curso_lista"></div>
