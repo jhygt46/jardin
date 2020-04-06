@@ -321,44 +321,12 @@
                         <div class="curso_lista" id="curso_lista"></div>
                         <div class="curso_contenido" onclick="hide_lista()">
                             <div class="cuentos">
-<<<<<<< HEAD
                                 <div class='flipbook-viewport'><div class='container'></div></div>
                             </div>
                             <div id="player"></div>
                             <div class="trabajos">
-                                <video id="video" class="vhalign" width="100%" height="100%">
-                                    
-                                </video>
+                                <video id="video" class="vhalign" width="100%" height="100%"></video>
                             </div>
-=======
-                                <?php
-                                    $dir = $url['dir']."online/cuentos";
-                                    $cuentos = array_diff(scandir($dir), array('..', '.'));
-                                    $x = 1;
-                                    foreach($cuentos as $valor){
-                                        echo "<div class='flip-".$x." flipbook-viewport'><div class='container'><div class='ff flipbook-".$x."'>";
-                                        $dir_ = $dir."/".$valor."/";
-                                        if($handler = opendir($dir_)){
-                                            $aux_file = [];
-                                            while(false !== ($file = readdir($handler))){
-                                                    if(is_file($dir_.$file) && $file != "index.html"){
-                                                        $aux_file[] = $file;
-                                                    }
-                                            }
-                                            sort($aux_file);
-                                            for($i=0; $i<count($aux_file); $i++){
-                                                echo "<div style='background-image:url(online/cuentos/".$valor."/".$aux_file[$i]."); background-size: cover'></div>";
-                                            }
-                                            closedir($handler);
-                                        }
-                                        echo "</div></div></div>";
-                                        $x++;
-                                    }
-                                ?>
-                            </div>
-                            <div id="player"></div>
-                            <div class="trabajos"></div>
->>>>>>> parent of 844f889... aa
                         </div>
                     </div>
                 </div>
