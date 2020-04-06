@@ -58,12 +58,8 @@ function play_youtube(v_code){
 
     player.loadVideoById(v_code);
     player.playVideo();
-<<<<<<< HEAD
     youtb = 1;
 
-=======
->>>>>>> parent of 844f889... aa
-}
 function start_cursos(){
     $(".curso_online").show();
     curso_paso_1();
