@@ -144,6 +144,15 @@ function sala_verde(){
 }
 function curso_paso_3(){
     
+    
+    $(".curso_online .hada").fadeOut(700);
+    $(".curso_online .mensaje").fadeOut(700);
+    $(".curso_online .ver_cursos").fadeOut(700);
+    setTimeout(function(){
+        agrandar();
+    }, 500);
+    
+    /*
     $(".sala_roja").animate({
         right: "-260px",
         opacity: 0
@@ -170,11 +179,7 @@ function curso_paso_3(){
             opacity: 0
         }, 1000);
     }, 900, function(){ $(this).hide(); });
-    setTimeout(function(){
-        agrandar();
-    }, 1000);
-
-    
+    */
     
 }
 function ver_cuentos(){
