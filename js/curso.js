@@ -48,10 +48,7 @@ function onPlayerStateChange(event){
 }
 function play_youtube(v_code){
 
-    $(".curso_lista").animate({
-        right: "-150px",
-    }, 1000);
-
+    hide_lista();
     $('.cuentos').hide();
     $('#player').show();
     $('.trabajos').hide();
@@ -59,7 +56,8 @@ function play_youtube(v_code){
     player.loadVideoById(v_code);
     player.playVideo();
     youtb = 1;
-
+    
+}
 function start_cursos(){
     $(".curso_online").show();
     curso_paso_1();
@@ -354,9 +352,7 @@ function loadApp(id, ancho, alto){
         $('.cuentos').css( "padding-top", '0px' );
     }
 
-    $(".curso_lista").animate({
-        right: "-150px",
-    }, 1000);
+    hide_lista();
     $('.cuentos').find('.flipbook-viewport').each(function(){
         $(this).hide();
     });
