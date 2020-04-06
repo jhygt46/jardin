@@ -67,8 +67,6 @@
     $material[] = crear_objeto("La Familia", 2, [3], null, "EwBeSYtSKn4", "cancion20prev.jpg");
     $material[] = crear_objeto("Mi perro Chocolo aprende", 2, [1], null, "wwHTvq-OLHg", "cancion21prev.jpg");
     
-
-<<<<<<< HEAD
     $material[] = crear_objeto("Clo Clo Clotilde", 3, [1], null, null, "Clo-Clo-Clotilde.jpg", null, null, "Clo-Clo-Clotilde.mp4", 640, 352);
     $material[] = crear_objeto("Dino el Dinosuario", 3, [2], null, null, "Dino-el-Dinosuario.jpg", null, null, "Dino-el-Dinosuario.mp4", 640, 352);
     $material[] = crear_objeto("Autobus de maisy", 3, [2], null, null, "autobus-de-maisy.jpg", null, null, "autobus-de-maisy.mp4", 1920, 1080);
@@ -78,20 +76,6 @@
     $material[] = crear_objeto("Me quiero comer un niño", 3, [2], null, null, "me-quiero-comer-un-nino.jpg", null, null, "me-quiero-comer-un-nino.mp4", 1920, 1080);
     $material[] = crear_objeto("Quien viene", 3, [2], null, null, "Quien-viene.jpg", null, null, "Quien-viene.mp4", 640, 480);
     $material[] = crear_objeto("Sito esta malito", 3, [2], null, null, "Sito-esta-malito.jpg", null, null, "Sito-esta-malito.mp4", 640, 352);
-=======
-    // TRABAJOS
-    /*
-    $material[] = crear_objeto("La cebra Camila", 3, [1], null, null, "trabajo1prev.jpg", null, null, "trabajo1.jpg", 816, 1340);
-    $material[] = crear_objeto("¿Cómo te sientes?", 3, [2], null, null, "trabajo2prev.jpg", null, null, "trabajo2.jpg", 816, 910);
-    $material[] = crear_objeto("La selva loca", 3, [2], null, null, "trabajo3prev.jpg", null, null, "trabajo3.jpg", 800, 1312);
-    $material[] = crear_objeto("Buenas noches, gorila", 3, [2], null, null, "trabajo4prev.jpg", null, null, "trabajo4.jpg", 799, 880);
-    $material[] = crear_objeto("El autobus de Maisy", 3, [1], null, null, "trabajo5prev.jpg", null, null, "trabajo5.jpg", 800, 1926);
-    $material[] = crear_objeto("Libro del Cuerpo", 3, [2], null, null, "trabajo6prev.jpg", null, null, "trabajo6.jpg", 750, 580);
-    $material[] = crear_objeto("Los Colores", 3, [1], null, null, "trabajo7prev.jpg", null, null, "trabajo7.jpg", 731, 818);
-    $material[] = crear_objeto("La cama de Mamá", 3, [1], null, null, "trabajo8prev.jpg", null, null, "trabajo8.jpg", 964, 544);
-    */
-
->>>>>>> parent of 844f889... aa
 
     require_once "./url_function.php";
     $url = url();
