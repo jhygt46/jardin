@@ -241,21 +241,11 @@ function listar_trabajos(aux){
     var listado = create_element_class('listado clearfix');
     for(var i=0, ilen=aux.length; i<ilen; i++){
         var lista = create_element_class('lista');
-<<<<<<< HEAD
         lista.setAttribute('video', aux[i].foto_grande);
         lista.setAttribute('video-w', aux[i].foto_w);
         lista.setAttribute('video-h', aux[i].foto_h);
         lista.onclick = function(){ html_video(this) };
         var nombre = create_element_class_inner('nombre', aux[i].nombre);
-=======
-        lista.setAttribute('foto', aux[i].foto_grande);
-        lista.setAttribute('foto-w', aux[i].foto_w);
-        lista.setAttribute('foto-h', aux[i].foto_h);
-        lista.onclick = function(){ agrandar_trabajo(this) };
-        var foto = create_element_class_inner('foto', '<img src="'+path+'online/prev/'+aux[i].foto+'" alt="" />');
-        var nombre = create_element_class_inner('nombre', aux[i].nombre);
-        lista.appendChild(foto);
->>>>>>> parent of 844f889... aa
         lista.appendChild(nombre);
         listado.appendChild(lista);
     }
@@ -263,20 +253,15 @@ function listar_trabajos(aux){
     $('.cuentos').hide();
     $('#player').hide();
     $('.trabajos').show();
-<<<<<<< HEAD
 
     var n = $(that).attr('video');
     var w = $(that).attr('video-w');
     var h = $(that).attr('video-h');
 
-
     var video = document.getElementById('video');
     video.setAttribute("src", path+'online/videos/'+n);
     video.load();
     video.play();
-=======
-    player.stopVideo();
->>>>>>> parent of 844f889... aa
 
 }
 function agrandar_trabajo(that){
@@ -375,7 +360,6 @@ function loadApp(id, ancho, alto){
     $('.cuentos').find('.flipbook-viewport').each(function(){
         $(this).hide();
     });
-<<<<<<< HEAD
 
     if(id < 10){
         id = "0"+id;
@@ -396,22 +380,6 @@ function loadApp(id, ancho, alto){
         autoCenter: true
     });
     $('.flipbook-viewport').show();
-=======
-    $('.flip-'+id).show();
-
-    if(!flip_arr.includes(id)){
-        flip_arr.push(id);
-        $('.flipbook-'+id).turn({
-            width: n_ancho,
-            height: n_alto,
-            elevation: 50,
-            gradients: true,
-            autoCenter: true
-        });
-    }else{
-        $('.flipbook-'+id).turn("page", 1);
-    }
->>>>>>> parent of 844f889... aa
 
 }
 function hide_lista(){
@@ -448,6 +416,3 @@ function stop_video(){
     var video = document.getElementById('video');
     video.pause();
 }
-=======
-}
->>>>>>> parent of 844f889... aa
