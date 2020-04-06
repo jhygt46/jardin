@@ -257,9 +257,6 @@ function listar_trabajos(aux){
         right: "0px",
     }, 1000);
 
-    $('.cuentos').hide();
-    $('#player').hide();
-    $('.trabajos').show();
 }
 function html_video(that){
 
@@ -270,6 +267,10 @@ function html_video(that){
     video.setAttribute("src", path+'online/videos/'+n);
     video.load();
     video.play();
+
+    $('.cuentos').hide();
+    $('#player').hide();
+    $('.trabajos').show();
 
 }
 function agrandar_trabajo(that){
