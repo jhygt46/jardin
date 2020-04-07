@@ -44,9 +44,14 @@
     $material[] = crear_objeto("Lola cuenta patos", 1, [1], 25, null, "cuento24prev.jpg", 1120, 600);
     $material[] = crear_objeto("Lola descubre el agua", 1, [1], 26, null, "cuento25prev.jpg", 944, 600);
     $material[] = crear_objeto("El libro del Osito", 1, [1], 27, null, "cuento26prev.jpg", 876, 600);
-
-
-
+    $material[] = crear_objeto("Gastón Ratón y Gastoncito", 1, [1], 28, null, "cuento27prev.jpg", 1102, 600);
+    $material[] = crear_objeto("Buenas noches monstruo verde", 1, [1], 29, null, "cuento28prev.jpg", 1056, 600);
+    $material[] = crear_objeto("Elmer y el clima", 1, [1], 30, null, "cuento29prev.jpg", 1054, 600);
+    $material[] = crear_objeto("Federico y su hermanita", 1, [1], 31, null, "cuento30prev.jpg", 1168, 600);
+    $material[] = crear_objeto("Las Canciones de Edu", 1, [1], 32, null, "cuento31prev.jpg", 1070, 600);
+    $material[] = crear_objeto("Había una vez un barco", 1, [1], 33, null, "cuento32prev.jpg", 1114, 600);
+    $material[] = crear_objeto("Federico no presta", 1, [1], 34, null, "cuento33prev.jpg", 1272, 600);
+    $material[] = crear_objeto("Federico dice no", 1, [1], 35, null, "cuento34prev.jpg", 1196, 600);
 
 
 
