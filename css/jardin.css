@@ -837,6 +837,11 @@ html body .sitio .curso_online .curso .detalle_curso .curso_contenido {
   left: 0px;
   z-index: 1;
 }
+html body .sitio .curso_online .curso .detalle_curso .curso_contenido .pagina_inicio {
+  width: 100%;
+  height: 100%;
+  background: url("../online/fondo.jpg") no-repeat;
+}
 html body .sitio .curso_online .curso .detalle_curso .curso_contenido .cuentos {
   width: 100%;
   height: 100%;

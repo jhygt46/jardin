@@ -52,6 +52,7 @@ function play_youtube(v_code){
     $('.cuentos').hide();
     $('#player').show();
     $('.trabajos').hide();
+    $('.pagina_inicio').hide();
 
     player.loadVideoById(v_code);
     player.playVideo();
@@ -270,6 +271,7 @@ function html_video(that){
     $('.cuentos').hide();
     $('#player').hide();
     $('.trabajos').show();
+    $('.pagina_inicio').hide();
 
 }
 function agrandar_trabajo(that){
@@ -345,6 +347,7 @@ function loadApp(id, ancho, alto){
     $('.cuentos').show();
     $('#player').hide();
     $('.trabajos').hide();
+    $('.pagina_inicio').hide();
 
     var w = $('.curso_contenido').width();
     var h = $('.curso_contenido').height();
