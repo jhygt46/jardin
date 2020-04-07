@@ -41,6 +41,13 @@
     $material[] = crear_objeto("A veces me confunden", 1, [3], 22, null, "cuento21prev.jpg", 1200, 600);
     $material[] = crear_objeto("Los Colores", 1, [1], 23, null, "cuento22prev.jpg", 1600, 600);
     $material[] = crear_objeto("La cama de Mamá", 1, [1], 24, null, "cuento23prev.jpg", 1600, 600);
+    $material[] = crear_objeto("Lola cuenta patos", 1, [1], 25, null, "cuento24prev.jpg", 1120, 600);
+    $material[] = crear_objeto("Lola descubre el agua", 1, [1], 26, null, "cuento25prev.jpg", 944, 600);
+    $material[] = crear_objeto("El libro del Osito", 1, [1], 27, null, "cuento26prev.jpg", 876, 600);
+
+
+
+
 
 
     $material[] = crear_objeto("¿Dónde está la cebra?", 2, [1], null, "cgG73CoTz6U", "cancion1prev.jpg");
