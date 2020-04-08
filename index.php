@@ -89,6 +89,10 @@
     $material[] = crear_objeto("Quien viene", 3, [2], null, null, "Quien-viene.jpg", null, null, "Quien-viene.mp4", 640, 480);
     $material[] = crear_objeto("Sito esta malito", 3, [2], null, null, "Sito-esta-malito.jpg", null, null, "Sito-esta-malito.mp4", 640, 352);
 
+    $material[] = crear_objeto("Cocorico", 3, [2], null, null, "cocorico.jpg", null, null, "cocorico.mp4", 640, 352);
+    $material[] = crear_objeto("Gorilon", 3, [2], null, null, "gorilon.jpg", null, null, "gorilon.mp4", 640, 352);
+    $material[] = crear_objeto("La Cuncuna", 3, [2], null, null, "la-cuncuna.jpg", null, null, "la-cuncuna.mp4", 640, 352);
+
     require_once "./url_function.php";
     $url = url();
     $pagina = (isset($url['url'])) ? $url['url'][0] : "" ; 
