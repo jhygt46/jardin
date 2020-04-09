@@ -78,6 +78,26 @@
     $material[] = crear_objeto("La Gallina Pintadita", 2, [3], null, "FyVOMX_P3mg", "cancion19prev.jpg");
     $material[] = crear_objeto("La Familia", 2, [3], null, "EwBeSYtSKn4", "cancion20prev.jpg");
     $material[] = crear_objeto("Mi perro Chocolo aprende", 2, [1], null, "wwHTvq-OLHg", "cancion21prev.jpg");
+
+
+    $material[] = crear_objeto("La hormiguita", 2, [1], null, "tEpufVWNHPw", "cancion22prev.jpg");
+    $material[] = crear_objeto("El marinero Baila", 2, [1], null, "uTK_7MOFV4s", "cancion23prev.jpg");
+    $material[] = crear_objeto("Pie Pie Pie", 2, [1], null, "SJGvFI9vwEo", "cancion24prev.jpg");
+    $material[] = crear_objeto("Fui al Mercado", 2, [1], null, "-YLMgR82cHo", "cancion25prev.jpg");
+    $material[] = crear_objeto("La- ballena -Lola", 2, [1], null, "b5PZQ-M6ulA", "cancion26prev.jpg");
+    $material[] = crear_objeto("Bugy Bugy", 2, [1], null, "BqOMVDZHYQw", "cancion27prev.jpg");
+    $material[] = crear_objeto("Dos Pecesitos", 2, [1], null, "DQb5F26YoLA", "cancion28prev.jpg");
+    $material[] = crear_objeto("Cucu Cucu cantaba la rana", 2, [1], null, "56C3xVLMXxk", "cancion29prev.jpg");
+    $material[] = crear_objeto("El Monstruo de los colres", 2, [1], null, "dMrn3_cXPR4", "cancion30prev.jpg");
+    $material[] = crear_objeto("Cinco ranitas saltaban", 2, [1], null, "pxr-thRvVwE", "cancion31prev.jpg");
+
+
+
+
+
+
+
+
     
     $material[] = crear_objeto("Clo Clo Clotilde", 3, [1], null, null, "Clo-Clo-Clotilde.jpg", null, null, "Clo-Clo-Clotilde.mp4", 640, 352);
     $material[] = crear_objeto("Dino el Dinosuario", 3, [2], null, null, "Dino-el-Dinosuario.jpg", null, null, "Dino-el-Dinosuario.mp4", 640, 352);
