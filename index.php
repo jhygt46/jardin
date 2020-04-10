@@ -52,7 +52,9 @@
     $material[] = crear_objeto("Había una vez un barco", 1, [1], 33, null, "cuento32prev.jpg", 1114, 600);
     $material[] = crear_objeto("Federico no presta", 1, [1], 34, null, "cuento33prev.jpg", 1272, 600);
     $material[] = crear_objeto("Federico dice no", 1, [1], 35, null, "cuento34prev.jpg", 1196, 600);
-
+    $material[] = crear_objeto("Que esconde el pequeño Edu", 1, [1], 36, null, "cuento35prev.jpg", 1170, 600);
+    $material[] = crear_objeto("Dinosauria de viaje", 1, [1], 37, null, "cuento36prev.jpg", 1148, 600);
+    $material[] = crear_objeto("Caillou Por favor y Gracias", 1, [1], 38, null, "cuento37prev.jpg", 1124, 600);
 
 
     $material[] = crear_objeto("¿Dónde está la cebra?", 2, [1], null, "cgG73CoTz6U", "cancion1prev.jpg");
@@ -78,8 +80,6 @@
     $material[] = crear_objeto("La Gallina Pintadita", 2, [3], null, "FyVOMX_P3mg", "cancion19prev.jpg");
     $material[] = crear_objeto("La Familia", 2, [3], null, "EwBeSYtSKn4", "cancion20prev.jpg");
     $material[] = crear_objeto("Mi perro Chocolo aprende", 2, [1], null, "wwHTvq-OLHg", "cancion21prev.jpg");
-
-
     $material[] = crear_objeto("La hormiguita", 2, [1], null, "tEpufVWNHPw", "cancion22prev.jpg");
     $material[] = crear_objeto("El marinero Baila", 2, [1], null, "uTK_7MOFV4s", "cancion23prev.jpg");
     $material[] = crear_objeto("Pie Pie Pie", 2, [1], null, "SJGvFI9vwEo", "cancion24prev.jpg");
@@ -90,13 +90,16 @@
     $material[] = crear_objeto("Cucu Cucu cantaba la rana", 2, [1], null, "56C3xVLMXxk", "cancion29prev.jpg");
     $material[] = crear_objeto("El Monstruo de los colres", 2, [1], null, "dMrn3_cXPR4", "cancion30prev.jpg");
     $material[] = crear_objeto("Cinco ranitas saltaban", 2, [1], null, "pxr-thRvVwE", "cancion31prev.jpg");
+    $material[] = crear_objeto("La cancion de la luna", 2, [1], null, "6q38BWTrk8w", "cancion32prev.jpg");
+    $material[] = crear_objeto("La Araña chiquitita", 2, [1], null, "HAcM4cZm_DI", "cancion33prev.jpg");
+    $material[] = crear_objeto("Mi carita redondita", 2, [1], null, "BvFM2Qx3hSU", "cancion34prev.jpg");
+    $material[] = crear_objeto("La mancha del tigre", 2, [1], null, "P3GYSVd_ivo", "cancion35prev.jpg");
 
 
-
-
-
-
-
+    $material[] = crear_objeto("El Oso Goloso", 2, [1], null, "06ydZ2kP4Ek", "cancion36prev.jpg");
+    $material[] = crear_objeto("La Jirafa y el Mono", 2, [1], null, "06ydZ2kP4Ek", "cancion37prev.jpg");
+    $material[] = crear_objeto("Roco el Huron", 2, [1], null, "hxIIEfP78fA", "cancion38prev.jpg");
+    $material[] = crear_objeto("En el fondo del mar", 2, [1], null, "omkpNvrOJVE", "cancion39prev.jpg");
 
     
     $material[] = crear_objeto("Clo Clo Clotilde", 3, [1], null, null, "Clo-Clo-Clotilde.jpg", null, null, "Clo-Clo-Clotilde.mp4", 640, 352);
