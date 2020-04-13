@@ -44,15 +44,19 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
     $that = $jardin->usuario($id);
     	
 }
+if(isset($_GET["categoria"]) && is_numeric($_GET["categoria"]) && $_GET["categoria"] != 0){
+    
+	echo "CATEGORIA: ".$_GET["categoria"];
+    	
+}
 
 
 ?>
 
 <script>
-    $("#mes").change(function (){
-        var ano = $("#ano option:selected").val();
-        var mes = $("#mes option:selected").val();
-        navlink('pages/_jardinva_crear_boletas.php?ano='+ano+'&mes='+mes);
+    $(".categoria").change(function (){
+        var categoria = $(".categoria option:selected").val();
+        navlink('pages/crear_material.php?categoria='+categoria);
     });
 </script>
 
