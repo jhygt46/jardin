@@ -47,6 +47,15 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
 
 
 ?>
+
+<script>
+    $("#mes").change(function (){
+        var ano = $("#ano option:selected").val();
+        var mes = $("#mes option:selected").val();
+        navlink('pages/_jardinva_crear_boletas.php?ano='+ano+'&mes='+mes);
+    });
+</script>
+
 <div class="title">
     <h1><?php echo $titulo; ?></h1>
     <ul class="clearfix">
@@ -72,11 +81,11 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                         <div class="mensaje"></div>
                     </label>
                     <label>
-                        <span>Nivel:</span>
-                            <select id="nivel">
-                                <?php for(){ ?>
-                                <option value="1" <?php echo ($that['perm_devolucion'] == 1) ? 'selected' : '' ; ?>>Devolver solo prestados por mi</option>
-                                <?php } ?>
+                        <span>Categoria:</span>
+                            <select id="categoria">
+                                <option value="1" <?php echo ($that['categoria'] == 1) ? 'selected' : '' ; ?>>Cuentos</option>
+                                <option value="2" <?php echo ($that['categoria'] == 2) ? 'selected' : '' ; ?>>Cuentos Narrados</option>
+                                <option value="3" <?php echo ($that['categoria'] == 3) ? 'selected' : '' ; ?>>Canciones</option>
                             </select>
                         <div class="mensaje"></div>
                     </label>

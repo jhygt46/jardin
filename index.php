@@ -55,6 +55,16 @@
     $material[] = crear_objeto("Que esconde el pequeño Edu", 1, [1], 36, null, "cuento35prev.jpg", 1170, 600);
     $material[] = crear_objeto("Dinosauria de viaje", 1, [1], 37, null, "cuento36prev.jpg", 1148, 600);
     $material[] = crear_objeto("Caillou Por favor y Gracias", 1, [1], 38, null, "cuento37prev.jpg", 1124, 600);
+    $material[] = crear_objeto("Y YO que?", 1, [1], 39, null, "cuento38prev.jpg", 1204, 600);
+    $material[] = crear_objeto("Formas", 1, [1], 40, null, "cuento39prev.jpg", 1086, 600);
+    $material[] = crear_objeto("Me llamo NO", 1, [1], 41, null, "cuento40prev.jpg", 944, 600);
+    $material[] = crear_objeto("Como reconocer a un monstruo", 1, [1], 42, null, "cuento41prev.jpg", 1016, 600);
+    $material[] = crear_objeto("El pequeño Edu tiene hambre", 1, [1], 43, null, "cuento42prev.jpg", 1420, 600);
+    $material[] = crear_objeto("Tito no usa pañal", 1, [1], 44, null, "cuento43prev.jpg", 1120, 600);
+    $material[] = crear_objeto("¿Quien eres Tigre?", 1, [1], 45, null, "cuento44prev.jpg", 1422, 600);
+    $material[] = crear_objeto("Colectivos", 1, [1], 46, null, "cuento45prev.jpg", 1146, 600);
+    $material[] = crear_objeto("Música de Mar", 1, [1], 47, null, "cuento46prev.jpg", 1250, 600);
+    $material[] = crear_objeto("Entramos en el bosque", 1, [1], 48, null, "cuento47prev.jpg", 968, 600);
 
 
     $material[] = crear_objeto("¿Dónde está la cebra?", 2, [1], null, "cgG73CoTz6U", "cancion1prev.jpg");
@@ -94,26 +104,36 @@
     $material[] = crear_objeto("La Araña chiquitita", 2, [1], null, "HAcM4cZm_DI", "cancion33prev.jpg");
     $material[] = crear_objeto("Mi carita redondita", 2, [1], null, "BvFM2Qx3hSU", "cancion34prev.jpg");
     $material[] = crear_objeto("La mancha del tigre", 2, [1], null, "P3GYSVd_ivo", "cancion35prev.jpg");
-
-
     $material[] = crear_objeto("El Oso Goloso", 2, [1], null, "06ydZ2kP4Ek", "cancion36prev.jpg");
     $material[] = crear_objeto("La Jirafa y el Mono", 2, [1], null, "06ydZ2kP4Ek", "cancion37prev.jpg");
     $material[] = crear_objeto("Roco el Huron", 2, [1], null, "hxIIEfP78fA", "cancion38prev.jpg");
     $material[] = crear_objeto("En el fondo del mar", 2, [1], null, "omkpNvrOJVE", "cancion39prev.jpg");
 
     
-    $material[] = crear_objeto("Clo Clo Clotilde", 3, [1], null, null, "Clo-Clo-Clotilde.jpg", null, null, "Clo-Clo-Clotilde.mp4", 640, 352);
-    $material[] = crear_objeto("Dino el Dinosuario", 3, [2], null, null, "Dino-el-Dinosuario.jpg", null, null, "Dino-el-Dinosuario.mp4", 640, 352);
+
+
+
+
+    $material[] = crear_objeto("Clo Clo Clotilde", 3, [1], null, null, "clo-clo-clotilde.jpg", null, null, "Clo-Clo-Clotilde.mp4", 640, 352);
+    $material[] = crear_objeto("Dino el Dinosuario", 3, [2], null, null, "dino-el-dinosuario.jpg", null, null, "Dino-el-Dinosuario.mp4", 640, 352);
     $material[] = crear_objeto("Autobus de maisy", 3, [2], null, null, "autobus-de-maisy.jpg", null, null, "autobus-de-maisy.mp4", 1920, 1080);
     $material[] = crear_objeto("Donde estan mis patatillas", 3, [2], null, null, "Donde-estan-mis-patatillas.jpg", null, null, "Donde-estan-mis-patatillas.mp4", 640, 480);
     $material[] = crear_objeto("El circo internacional de Dumbo", 3, [2], null, null, "El-circo-internacional-de-Dumbo.jpg", null, null, "El-circo-internacional-de-Dumbo.mp4", 640, 352);
     $material[] = crear_objeto("Los tres cerditos", 3, [2], null, null, "Los-tres-cerditos.jpg", null, null, "Los-tres-cerditos.mp4", 640, 480);
     $material[] = crear_objeto("Me quiero comer un niño", 3, [2], null, null, "me-quiero-comer-un-nino.jpg", null, null, "me-quiero-comer-un-nino.mp4", 1920, 1080);
-    $material[] = crear_objeto("Quien viene", 3, [2], null, null, "Quien-viene.jpg", null, null, "Quien-viene.mp4", 640, 480);
-    $material[] = crear_objeto("Sito esta malito", 3, [2], null, null, "Sito-esta-malito.jpg", null, null, "Sito-esta-malito.mp4", 640, 352);
+    $material[] = crear_objeto("Quien viene", 3, [2], null, null, "quien-viene.jpg", null, null, "Quien-viene.mp4", 640, 480);
+    $material[] = crear_objeto("Sito esta malito", 3, [2], null, null, "sito-esta-malito.jpg", null, null, "Sito-esta-malito.mp4", 640, 352);
     $material[] = crear_objeto("Cocorico", 3, [2], null, null, "cocorico.jpg", null, null, "cocorico.mp4", 640, 352);
     $material[] = crear_objeto("Gorilon", 3, [2], null, null, "gorilon.jpg", null, null, "gorilon.mp4", 640, 352);
     $material[] = crear_objeto("La Cuncuna", 3, [2], null, null, "la-cuncuna.jpg", null, null, "La-cuncuna.mp4", 640, 352);
+
+    $material[] = crear_objeto("Animales de la granja", 3, [2], null, null, "animales-de-la-granja.jpg", null, null, "animales-de-la-granja.mp4", 640, 352);
+    $material[] = crear_objeto("El ratoncito valiente", 3, [2], null, null, "el-ratoncito-valiente.jpg", null, null, "el-ratoncito-valiente.mp4", 640, 352);
+    $material[] = crear_objeto("Que veo", 3, [2], null, null, "que-veo.jpg", null, null, "que-veo.mp4", 640, 352);
+    $material[] = crear_objeto("Que le pasa a Tinita", 3, [2], null, null, "que-le-pasa-a-tinita.jpg", null, null, "que-le-pasa-a-tinita.mp4", 640, 352);
+
+
+
 
     require_once "./url_function.php";
     $url = url();
