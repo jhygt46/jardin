@@ -54,8 +54,8 @@ if(isset($_GET["categoria"]) && is_numeric($_GET["categoria"]) && $_GET["categor
 ?>
 
 <script>
-    $(".categoria").change(function (){
-        var categoria = $(".categoria option:selected").val();
+    $("#categoria").change(function (){
+        var categoria = $("#categoria option:selected").val();
         navlink('pages/crear_material.php?categoria='+categoria);
     });
 </script>
@@ -80,17 +80,17 @@ if(isset($_GET["categoria"]) && is_numeric($_GET["categoria"]) && $_GET["categor
                     <input id="id" type="hidden" value="<?php echo $id; ?>" />
                     <input id="accion" type="hidden" value="<?php echo $accion; ?>" />
                     <label>
-                        <span>Nombre:</span>
-                        <input id="nombre" type="text" value="<?php echo $that['nombre']; ?>" require="" placeholder="Diego Gomez" />
-                        <div class="mensaje"></div>
-                    </label>
-                    <label>
                         <span>Categoria:</span>
                             <select id="categoria">
                                 <option value="1" <?php echo ($that['categoria'] == 1) ? 'selected' : '' ; ?>>Cuentos</option>
                                 <option value="2" <?php echo ($that['categoria'] == 2) ? 'selected' : '' ; ?>>Cuentos Narrados</option>
                                 <option value="3" <?php echo ($that['categoria'] == 3) ? 'selected' : '' ; ?>>Canciones</option>
                             </select>
+                        <div class="mensaje"></div>
+                    </label>
+                    <label>
+                        <span>Nombre:</span>
+                        <input id="nombre" type="text" value="<?php echo $that['nombre']; ?>" require="" placeholder="Diego Gomez" />
                         <div class="mensaje"></div>
                     </label>
                     <label>
