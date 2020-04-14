@@ -19,23 +19,23 @@ $list = $jardin->usuarios();
 
 
 $titulo = "Material";
-$titulo_list = "Lista de Usuarios";
-$sub_titulo1 = "Ingresar Usuario";
-$sub_titulo2 = "Modificar Usuario";
-$accion = "crearusuarios";
+$titulo_list = "Lista de Materiales";
+$sub_titulo1 = "Ingresar Material";
+$sub_titulo2 = "Modificar Material";
+$accion = "_jardinva_crearmaterial";
 
-$eliminaraccion = "eliminarusuarios";
-$id_list = "id_user";
-$eliminarobjeto = "Usuarios";
-$page_mod = "pages/crear_usuario.php";
+$eliminaraccion = "eliminarmaterial";
+$id_list = "id_mat";
+$eliminarobjeto = "Material";
+$page_mod = "pages/_jardinva_crear_material.php";
 
 $id = 0;
 $sub_titulo = $sub_titulo1;
 
-$that['perm_devolucion'] = 0;
-$that['perm_prestamo'] = 0;
-$that['perm_ingreso'] = 0;
-$that['perm_edicion'] = 0;
+$categoria = 1;
+if(isset($_GET["categoria"]) && is_numeric($_GET["categoria"]) && $_GET["categoria"] != 0){
+	$categoria = $_GET["categoria"];
+}
 
 if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
     
@@ -44,19 +44,15 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
     $that = $jardin->usuario($id);
     	
 }
-if(isset($_GET["categoria"]) && is_numeric($_GET["categoria"]) && $_GET["categoria"] != 0){
-    
-	echo "CATEGORIA: ".$_GET["categoria"];
-    	
-}
 
+$list = $jardin->get_materiales($categoria);
 
 ?>
 
 <script>
     $("#categoria").change(function (){
         var categoria = $("#categoria option:selected").val();
-        navlink('pages/crear_material.php?categoria='+categoria);
+        navlink('pages/_jardinva_crear_material.php?categoria='+categoria);
     });
 </script>
 
@@ -82,22 +78,36 @@ if(isset($_GET["categoria"]) && is_numeric($_GET["categoria"]) && $_GET["categor
                     <label>
                         <span>Categoria:</span>
                             <select id="categoria">
-                                <option value="1" <?php echo ($that['categoria'] == 1) ? 'selected' : '' ; ?>>Cuentos</option>
-                                <option value="2" <?php echo ($that['categoria'] == 2) ? 'selected' : '' ; ?>>Cuentos Narrados</option>
-                                <option value="3" <?php echo ($that['categoria'] == 3) ? 'selected' : '' ; ?>>Canciones</option>
+                                <option value="1" <?php echo ($categoria == 1) ? 'selected' : '' ; ?>>Cuentos</option>
+                                <option value="2" <?php echo ($categoria == 2) ? 'selected' : '' ; ?>>Cuentos Narrados</option>
+                                <option value="3" <?php echo ($categoria == 3) ? 'selected' : '' ; ?>>Canciones</option>
                             </select>
                         <div class="mensaje"></div>
                     </label>
                     <label>
-                        <span>Nombre:</span>
-                        <input id="nombre" type="text" value="<?php echo $that['nombre']; ?>" require="" placeholder="Diego Gomez" />
+                        <span>Titulo:</span>
+                        <input id="titulo" type="text" value="<?php echo $that['titulo']; ?>" require="" placeholder="Diego Gomez" />
                         <div class="mensaje"></div>
                     </label>
+                    <?php if($categoria == 1 || $categoria == 2){ ?>
+                    <label class="clearfix">
+                        <span><p>Preview: (133x100)</p></span>
+                        <input id="file_image0" type="file" />
+                    </label>
+                    <?php } ?>
+                    <?php if($categoria == 3){ ?>
                     <label>
-                        <span>Ingreso Libros:</span>
-                        <input id="perm_ingreso" type="checkbox" value="1" <?php echo ($that['perm_ingreso'] == 1) ? 'checked="checked"' : '' ; ?>>
+                        <span>Youtube:</span>
+                        <input id="youtube" type="text" value="<?php echo $that['youtube']; ?>" require="" placeholder="Diego Gomez" />
                         <div class="mensaje"></div>
                     </label>
+                    <?php } ?>
+                    <?php if($categoria == 2){ ?>
+                    <label class="clearfix">
+                        <span><p>Video:</p></span>
+                        <input id="file_image1" type="file" />
+                    </label>
+                    <?php } ?>
                     <label style='margin-top:20px'>
                         <span>&nbsp;</span>
                         <a id='button' onclick="form()">Enviar</a>

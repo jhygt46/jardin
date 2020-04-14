@@ -36,7 +36,7 @@
     	}
 
 		$array[0]["nombre"] = "Ingresar Material";
-    	$array[0]["link"] = "pages/crear_material.php";
+    	$array[0]["link"] = "pages/_jardinva_crear_material.php";
     
     	if(isset($array)){
     

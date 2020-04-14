@@ -99,8 +99,24 @@ $in->add('fecha_devolvio', 'datetime', 0);
 $in->add('email', 'tinyint(1)', 0);
 $in->add_tabla();
 
+$in->crearTable('_jardinva_material');
+$in->add('id_mat', 'int(4)', 0, null, 1, 1);
+$in->add('titulo', 'varchar(80) COLLATE utf8_spanish2_ci', 0);
+$in->add('tipo', 'tinyint(1)', 0);
+$in->add('preview', 'varchar(30) COLLATE utf8_spanish2_ci', 0);
+$in->add('youtube', 'varchar(30) COLLATE utf8_spanish2_ci', 0);
+$in->add('video', 'varchar(30) COLLATE utf8_spanish2_ci', 0);
+$in->add('eliminado', 'tinyint(1)', 0);
+$in->add_tabla();
+
+$in->crearTable('_jardinva_material_fotos');
+$in->add('id_maf', 'int(4)', 0, null, 1, 1);
+$in->add('nombre', 'varchar(80) COLLATE utf8_spanish2_ci', 0);
+$in->add('id_mat', 'int(4)', 0, null, null, null, 1, 6, 0);
+$in->add('eliminado', 'tinyint(1)', 0);
+$in->add_tabla();
 
 $in->ejecutar(true);
 $in->detalle(2);
 $in->process();
-$in->llenar_data('http://www.usinox.cl/aux.php?aux=');
+//$in->llenar_data('http://www.usinox.cl/aux.php?aux=');

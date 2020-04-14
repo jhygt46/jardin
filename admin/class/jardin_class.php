@@ -164,6 +164,19 @@ class Jardin{
         }else{ echo htmlspecialchars($this->con->error); }
 
     }
+    public function get_materiales($categoria){
+
+        if($sql = $this->con->prepare("SELECT * FROM _jardinva_material WHERE tipo=? AND eliminado=?")){
+            if($sql->bind_param("ii", $categoria, $this->eliminado)){
+                if($sql->execute()){
+
+                    return $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+
+                }else{ echo htmlspecialchars($sql->error); }
+            }else{ echo htmlspecialchars($sql->error); }
+        }else{ echo htmlspecialchars($this->con->error); }
+
+    }
     public function prestamos($id_alu){
 
         $fecha_devolvio = "0000-00-00 00:00:00";

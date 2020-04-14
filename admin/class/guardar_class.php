@@ -50,6 +50,9 @@ class Guardar{
         if($_POST['accion'] == "_jardinva_crearboleta"){
             return $this->_jardinva_crearboleta();
         }
+        if($_POST['accion'] == "_jardinva_crearmaterial"){
+            return $this->_jardinva_crearmaterial();
+        }
         if($_POST['accion'] == "_jardinva_eliminarcurso"){
             return $this->_jardinva_eliminarcurso();
         }
@@ -61,6 +64,9 @@ class Guardar{
         }
 	    if($_POST['accion'] == "_jardinva_eliminarprestamo"){
             return $this->_jardinva_eliminarprestamo();
+        }
+        if($_POST['accion'] == "eliminarmaterial"){
+            return $this->eliminarmaterial();
         }
         if($_POST['accion'] == "eliminarusuarios"){
             return $this->eliminarusuarios();
@@ -219,6 +225,45 @@ class Guardar{
                 
         $info['reload'] = 1;
         $info['page'] = "_jardinva_crear_boletas.php?mes=".$mes."&ano=".$ano."&dia=".$dia;
+        return $info;
+        
+    }
+    
+    private function _jardinva_crearmaterial(){
+        
+        $info['op'] = 2;
+        $info['mensaje'] = "Material no se pudo crear";
+
+        $id = $_POST['id'];
+        $titulo = $_POST['titulo'];
+        $categoria = $_POST['categoria'];
+
+        if($id > 0){
+            if($sql = $this->con->prepare("UPDATE _jardinva_material SET titulo=? WHERE id_mat=?")){
+                if($sql->bind_param("si", $titulo, $id)){
+                    if($sql->execute()){
+                        $info['op'] = 1;
+                        $info['mensaje'] = "Material modificado exitosamente";
+                    }else{ echo htmlspecialchars($sql->error); }
+                }else{ echo htmlspecialchars($sql->error); }
+            }else{ echo htmlspecialchars($this->con->error); }
+        }
+        if($id == 0){
+            if($sql = $this->con->prepare("INSERT INTO _jardinva_material (titulo) VALUES (?)")){
+                if($sql->bind_param("s", $titulo)){
+                    if($sql->execute()){
+                        $info['op'] = 1;
+                        $info['mensaje'] = "Material ingresado exitosamente";
+                        $id = $this->con->insert_id;
+                    }else{ echo htmlspecialchars($sql->error); }
+                }else{ echo htmlspecialchars($sql->error); }
+            }else{ echo htmlspecialchars($this->con->error); }
+        }
+
+        $prev = $this->uploadPrev();
+                
+        $info['reload'] = 1;
+        $info['page'] = "_jardinva_crear_material.php";
         return $info;
         
     }

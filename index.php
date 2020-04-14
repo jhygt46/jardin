@@ -126,12 +126,17 @@
     $material[] = crear_objeto("Cocorico", 3, [2], null, null, "cocorico.jpg", null, null, "cocorico.mp4", 640, 352);
     $material[] = crear_objeto("Gorilon", 3, [2], null, null, "gorilon.jpg", null, null, "gorilon.mp4", 640, 352);
     $material[] = crear_objeto("La Cuncuna", 3, [2], null, null, "la-cuncuna.jpg", null, null, "La-cuncuna.mp4", 640, 352);
-
     $material[] = crear_objeto("Animales de la granja", 3, [2], null, null, "animales-de-la-granja.jpg", null, null, "animales-de-la-granja.mp4", 640, 352);
     $material[] = crear_objeto("El ratoncito valiente", 3, [2], null, null, "el-ratoncito-valiente.jpg", null, null, "el-ratoncito-valiente.mp4", 640, 352);
     $material[] = crear_objeto("Que veo", 3, [2], null, null, "que-veo.jpg", null, null, "que-veo.mp4", 640, 352);
     $material[] = crear_objeto("Que le pasa a Tinita", 3, [2], null, null, "que-le-pasa-a-tinita.jpg", null, null, "que-le-pasa-a-tinita.mp4", 640, 352);
 
+    //$material[] = crear_objeto("Visito al Doctor", 3, [2], null, null, "visito-al-doctor.jpg", null, null, "visito-al-doctor.mp4", 640, 352);
+    $material[] = crear_objeto("Mi día de suerte", 3, [2], null, null, "mi-dia-de-suerte.jpg", null, null, "mi-dia-de-suerte.mp4", 640, 352);
+    $material[] = crear_objeto("El ratón que se comió la luna", 3, [2], null, null, "el-raton-que-se-comio-la-luna.jpg", null, null, "el-raton-que-se-comio-la-luna.mp4", 640, 352);
+    $material[] = crear_objeto("La clase de las abejitas", 3, [2], null, null, "la-clase-de-las-abejitas.jpg", null, null, "la-clase-de-las-abejitas.mp4", 640, 352);
+    $material[] = crear_objeto("El tacto los sentidos y algo mas", 3, [2], null, null, "el-tacto-los-sentidos-y-algo-mas.jpg", null, null, "el-tacto-los-sentidos-y-algo-mas.mp4", 640, 352);
+    $material[] = crear_objeto("Los tres cerditos y el lobo", 3, [2], null, null, "los-tres-cerditos-y-el-lobo.jpg", null, null, "los-tres-cerditos-y-el-lobo.mp4", 640, 352);
 
 
 
