@@ -137,6 +137,7 @@
     $material[] = crear_objeto("La clase de las abejitas", 3, [2], null, null, "la-clase-de-las-abejitas.jpg", null, null, "la-clase-de-las-abejitas.mp4", 640, 352);
     $material[] = crear_objeto("El tacto los sentidos y algo mas", 3, [2], null, null, "el-tacto-los-sentidos-y-algo-mas.jpg", null, null, "el-tacto-los-sentidos-y-algo-mas.mp4", 640, 352);
     $material[] = crear_objeto("Los tres cerditos y el lobo", 3, [2], null, null, "los-tres-cerditos-y-el-lobo.jpg", null, null, "los-tres-cerditos-y-el-lobo.mp4", 640, 352);
+    $material[] = crear_objeto("Manualidad titere con bolsa", 3, [2], null, null, "manualidad-titeres-con-bolsa-reciclable.jpg", null, null, "manualidad-titeres-con-bolsa-reciclable.mp4", 640, 352);
 
 
 
