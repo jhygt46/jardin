@@ -143,7 +143,13 @@
     $material[] = crear_objeto("Vaya apetito tiene el zorrito", 3, [2], null, null, "vaya-apetito-tiene-el-zorrito.jpg", null, null, "vaya-apetito-tiene-el-zorrito.mp4", 640, 352);
     $material[] = crear_objeto("No te rías pepe", 3, [2], null, null, "no-te-rias-pepe.jpg", null, null, "no-te-rias-pepe.mp4", 640, 352);
     $material[] = crear_objeto("Lobito sentimental", 3, [2], null, null, "lobito-sentimental.jpg", null, null, "lobito-sentimental.mp4", 640, 352);
-    
+    $material[] = crear_objeto("Tengo un perrito", 3, [2], null, null, "tengo_un_perrito.jpg", null, null, "tengo_un_perrito.mp4", 640, 352);
+    $material[] = crear_objeto("A veces me confunden", 3, [2], null, null, "a_veces_me_confunden.jpg", null, null, "a_veces_me_confunden.mp4", 640, 352);
+    $material[] = crear_objeto("El osito panda estaba enojado", 3, [2], null, null, "el_osito_panda_estaba_enojado.jpg", null, null, "el_osito_panda_estaba_enojado.mp4", 640, 352);
+    $material[] = crear_objeto("Mauro es un dinosaurio", 3, [2], null, null, "mauro_es_un_dinosaurio.jpg", null, null, "mauro_es_un_dinosaurio.mp4", 640, 352);
+    $material[] = crear_objeto("El estofado del lobo", 3, [2], null, null, "el-estofado-del-lobo.jpg", null, null, "el-estofado-del-lobo.mp4", 640, 352);
+    $material[] = crear_objeto("Presentacion mounstro de la laguna", 3, [2], null, null, "presentacion_mounstro_de_la_laguna.jpg", null, null, "presentacion_mounstro_de_la_laguna.mp4", 640, 352);
+    $material[] = crear_objeto("El apetito del zorrito", 3, [2], null, null, "dia_del_libro.jpg", null, null, "dia_del_libro.mp4", 640, 352);
 
     require_once "./url_function.php";
     $url = url();
