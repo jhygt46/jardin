@@ -65,6 +65,17 @@
     $material[] = crear_objeto("Colectivos", 1, [1], 46, null, "cuento45prev.jpg", 1146, 600);
     $material[] = crear_objeto("Música de Mar", 1, [1], 47, null, "cuento46prev.jpg", 1250, 600);
     $material[] = crear_objeto("Entramos en el bosque", 1, [1], 48, null, "cuento47prev.jpg", 968, 600);
+    $material[] = crear_objeto("Shh....! Me hice pis", 1, [1], 49, null, "cuento48prev.jpg", 968, 600);
+    $material[] = crear_objeto("Con papel de chocolate", 1, [1], 50, null, "cuento49prev.jpg", 968, 600);
+    $material[] = crear_objeto("Barcos", 1, [1], 51, null, "cuento50prev.jpg", 968, 600);
+    $material[] = crear_objeto("Gatito", 1, [1], 52, null, "cuento51prev.jpg", 968, 600);
+    $material[] = crear_objeto("Lola va a la plaza", 1, [1], 53, null, "cuento52prev.jpg", 968, 600);
+    $material[] = crear_objeto("Animales Bebe", 1, [1], 54, null, "cuento53prev.jpg", 968, 600);
+    $material[] = crear_objeto("Gastón Ratón y Gastoncito salen de paseo", 1, [1], 55, null, "cuento54prev.jpg", 968, 600);
+
+
+
+
 
 
     $material[] = crear_objeto("¿Dónde está la cebra?", 2, [1], null, "cgG73CoTz6U", "cancion1prev.jpg");
