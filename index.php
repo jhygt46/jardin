@@ -161,6 +161,8 @@
     $material[] = crear_objeto("El estofado del lobo", 3, [2], null, null, "el-estofado-del-lobo.jpg", null, null, "el-estofado-del-lobo.mp4", 640, 352);
     $material[] = crear_objeto("Presentacion mounstro de la laguna", 3, [2], null, null, "presentacion_mounstro_de_la_laguna.jpg", null, null, "presentacion_mounstro_de_la_laguna.mp4", 640, 352);
     $material[] = crear_objeto("El apetito del zorrito", 3, [2], null, null, "dia_del_libro.jpg", null, null, "dia_del_libro.mp4", 640, 352);
+    $material[] = crear_objeto("Día de campo de Don Chancho", 3, [2], null, null, "dia-de-campo-de-don-chancho.jpg", null, null, "dia-de-campo-de-don-chancho.mp4", 640, 352);
+
 
     require_once "./url_function.php";
     $url = url();
