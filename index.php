@@ -417,8 +417,8 @@
             <div class="curso_online">
                 <div class="curso vhalign">
                     <div class="hada"><img src="<?php echo $url['path']; ?>img/hada.png" alt=""></div>
-                    <div class="mensaje"><div class="valign msg">En estos momentos que estamos cuidándonos para que no se propague el coronavirus y nos piden que no salgamos de casa.<br/>Nuestro compromiso es continuo con todas las familias del Valle Encantado, queremos seguir colaborando para estimular y que los niños y niñas a través del juego puedan seguir aprendiendo.<br/>Hemos implementado este recurso, pincha en la sala en que está tu hijo y diariamente encontrarás material para trabajar.</div></div>
-                    <div class="ver_cursos" onclick="curso_paso_3()">Ir a curso online</div>
+                    <div class="mensaje"><div class="valign msg">En estos momentos que estamos cuidándonos para que no se propague el coronavirus y nos piden que no salgamos de casa.<br/>Nuestro compromiso es continuo con todas las familias del Valle Encantado, queremos seguir colaborando para estimular y que los niños y niñas a través del juego y de los cuentos puedan seguir aprendiendo.</div></div>
+                    <div class="ver_cursos" onclick="curso_paso_3()">Ingresa aquí</div>
                     <div class="volver" onclick="ver_sitio()">Deseo ir al sitio</div>
                     <div class="salas sala_azul" onclick="sala_azul()">SALA AZUL</div>
                     <div class="salas sala_roja" onclick="sala_roja()">SALA ROJA</div>
