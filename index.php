@@ -72,9 +72,13 @@
     $material[] = crear_objeto("Lola va a la plaza", 1, [1], 53, null, "cuento52prev.jpg", 968, 600);
     $material[] = crear_objeto("Animales Bebe", 1, [1], 54, null, "cuento53prev.jpg", 968, 600);
     $material[] = crear_objeto("Gastón Ratón y Gastoncito salen de paseo", 1, [1], 55, null, "cuento54prev.jpg", 968, 600);
-
-
-
+    $material[] = crear_objeto("Callou es mio", 1, [1], 56, null, "cuento55prev.jpg", 1072, 600);
+    $material[] = crear_objeto("Ojitos Inquietos", 1, [1], 57, null, "cuento56prev.jpg", 912, 600);
+    $material[] = crear_objeto("Mi Hamster", 1, [1], 58, null, "cuento57prev.jpg", 890, 600);
+    $material[] = crear_objeto("Toca y descubre", 1, [1], 59, null, "cuento58prev.jpg", 930, 600);
+    $material[] = crear_objeto("El Pipi de Tento", 1, [1], 60, null, "cuento59prev.jpg", 996, 600);
+    $material[] = crear_objeto("Mis Peces", 1, [1], 61, null, "cuento60prev.jpg", 900, 600);
+    $material[] = crear_objeto("En el Circo", 1, [1], 62, null, "cuento61prev.jpg", 968, 600);
 
 
 
