@@ -79,6 +79,23 @@
     $material[] = crear_objeto("El Pipi de Tento", 1, [1], 60, null, "cuento59prev.jpg", 996, 600);
     $material[] = crear_objeto("Mis Peces", 1, [1], 61, null, "cuento60prev.jpg", 900, 600);
     $material[] = crear_objeto("En el Circo", 1, [1], 62, null, "cuento61prev.jpg", 968, 600);
+    $material[] = crear_objeto("A Comer", 1, [1], 63, null, "cuento62prev.jpg", 900, 600);
+    $material[] = crear_objeto("Mundo en miniatura", 1, [1], 64, null, "cuento63prev.jpg", 900, 600);
+    $material[] = crear_objeto("Al Agua", 1, [1], 65, null, "cuento64prev.jpg", 920, 600);
+    $material[] = crear_objeto("La granja de Teo", 1, [1], 66, null, "cuento65prev.jpg", 972, 600);
+    $material[] = crear_objeto("A dormir", 1, [1], 67, null, "cuento66prev.jpg", 986, 600);
+    $material[] = crear_objeto("Animales en el vecindario", 1, [1], 68, null, "cuento67prev.jpg", 932, 600);
+    $material[] = crear_objeto("Me río", 1, [1], 69, null, "cuento68prev.jpg", 914, 600);
+    $material[] = crear_objeto("En la escuela", 1, [1], 70, null, "cuento69prev.jpg", 916, 600);
+    $material[] = crear_objeto("Gato tiene sueño", 1, [1], 71, null, "cuento70prev.jpg", 900, 600);
+    $material[] = crear_objeto("Un mostruo muy dormilon", 1, [1], 72, null, "cuento71prev.jpg", 1046, 600);
+    $material[] = crear_objeto("En el mar", 1, [1], 73, null, "cuento72prev.jpg", 954, 600);
+    $material[] = crear_objeto("Primeras palabras", 1, [1], 74, null, "cuento73prev.jpg", 900, 600);
+    $material[] = crear_objeto("Muu Muu", 1, [1], 75, null, "cuento74prev.jpg", 934, 600);
+    $material[] = crear_objeto("Dame un abrazo fuerte", 1, [1], 76, null, "cuento75prev.jpg", 996, 600);
+    $material[] = crear_objeto("Los colores", 1, [1], 77, null, "cuento76prev.jpg", 906, 600);
+    $material[] = crear_objeto("Entonces soy feliz", 1, [1], 78, null, "cuento77prev.jpg", 994, 600);
+    $material[] = crear_objeto("Mis opuestos", 1, [1], 79, null, "cuento78prev.jpg", 902, 600);
 
 
 
