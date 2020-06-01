@@ -96,6 +96,19 @@
     $material[] = crear_objeto("Los colores", 1, [1], 77, null, "cuento76prev.jpg", 906, 600);
     $material[] = crear_objeto("Entonces soy feliz", 1, [1], 78, null, "cuento77prev.jpg", 994, 600);
     $material[] = crear_objeto("Mis opuestos", 1, [1], 79, null, "cuento78prev.jpg", 902, 600);
+    $material[] = crear_objeto("Feliz cumpleaños Mauro", 1, [1], 80, null, "cuento79prev.jpg", 940, 600);
+    $material[] = crear_objeto("Quiero a mi papá", 1, [1], 81, null, "cuento80prev.jpg", 898, 600);
+    $material[] = crear_objeto("Cubo", 1, [1], 82, null, "cuento81prev.jpg", 922, 600);
+    $material[] = crear_objeto("En el pantano de mil colores", 1, [1], 83, null, "cuento82prev.jpg", 898, 600);
+    $material[] = crear_objeto("Opuestos", 1, [1], 84, null, "cuento83prev.jpg", 912, 600);
+    $material[] = crear_objeto("El carrusel de las formas", 1, [1], 85, null, "cuento84prev.jpg", 936, 600);
+    $material[] = crear_objeto("Pájaros en la cabeza", 1, [1], 86, null, "cuento85prev.jpg", 902, 600);
+    $material[] = crear_objeto("Las familias", 1, [1], 87, null, "cuento86prev.jpg", 902, 600);
+    $material[] = crear_objeto("Constructor", 1, [1], 88, null, "cuento87prev.jpg", 954, 600);
+    $material[] = crear_objeto("Cuantos ves", 1, [1], 89, null, "cuento88prev.jpg", 898, 600);
+
+
+
 
 
 
