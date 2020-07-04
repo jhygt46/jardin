@@ -20,7 +20,6 @@
         <link href="<?php echo $url['path']; ?>css/jardin.css" rel="stylesheet" media="all" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="<?php echo $url['path']; ?>js/visita.js" type="text/javascript"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIXenuYoczpO6oh4uzeOj11b7Nvg8zrFM&signed_in=true"></script>
         <script> var path = '<?php echo $url['path']; ?>'; var pagina = '<?php echo $pagina_inicio; ?>'; </script>
     </head>
     <body>

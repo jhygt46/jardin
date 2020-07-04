@@ -698,24 +698,27 @@ html{
                     overflow: hidden;
                     .hada{
                         position: absolute;
-                        width: 201px;
+                        width: calc(32% - 15px);
                         height: 237px;
                         left: -201px;
-                        top: 70px;
                         opacity: 0;
                         z-index: 2;
+                        img{
+                            width: 100%;
+                        }
                     }
                     .mensaje{
                         position: absolute;
-                        width: calc(100% - 231px);
+                        width: calc(68% - 15px);
                         height: calc(100% - 112px);
                         background: rgba(240, 240, 240, 0.9);
-                        left: 216px;
+                        right: 15px;
                         top: 125px;
                         opacity: 0;
                         border-radius: 5px;
                         box-shadow: 0 0 10px rgba(245, 245, 245, 0.8);
                         z-index: 2;
+                        overflow-y: auto;
                         .msg{
                             padding: 10px;
                             display: block;
@@ -734,6 +737,7 @@ html{
                         border-radius: 5px;
                         border: 1px solid #e9e9e9;
                         z-index: 2;
+                        cursor: pointer;
                     }
                     .volver{
                         position: absolute;
@@ -742,7 +746,7 @@ html{
                         opacity: 0;
                         font-size: 16px;
                         z-index: 2;
-                        display: none;
+                        cursor: pointer;
                     }
                     .salas{
                         position: absolute;
@@ -787,40 +791,42 @@ html{
                             top: 0px;
                             left: 0px;
                             z-index: 1;
-                            .logo{
-                                width: 76px;
-                                left: 0px;
-                                height: 90px;
-                                img{
-                                    height: 90px;
+                            .new_logo{
+                                width: 45%;
+                                max-width: 280px;
+                                .dlogo{
+                                    width: 30%;
+                                    float: left;
+                                    img{
+                                        width: 100%;
+                                    }
                                 }
-                            }
-                            .titulo{
-                                width: 200px;
-                                left: 80px;
-                                h1{
-                                    display: block;
-                                    font-size: 24px;
-                                    line-height: 14px;
-                                }
-                                h2{
-                                    display: block;
-                                    font-size: 14px;
-                                    line-height: 14px;
+                                .dtitulo{
+                                    width: calc(70% - 5px);
+                                    float: left;
+                                    height: 100%;
+                                    padding-left: 5px;
+                                    h1{
+                                        font-size: 20px;
+                                        line-height: 14px;
+                                    }
+                                    h2{
+                                        font-size: 14px;
+                                        line-height: 14px;
+                                    }
                                 }
                             }
                             .botones{
-                                width: 45%;
-                                max-width: calc(100% - 280px);
+                                width: 55%;
+                                max-width: 400px;
                                 right: 0px;
-                                height: 85px;
                                 .boton{
                                     width: 33%;
                                     height: 100%;
                                     float: left;
                                     img{
-                                        width: 75px;
-                                        height: 75px;
+                                        max-width: 75px;
+                                        width: 100%;
                                         margin: 0 auto;
                                         display: block;
                                     }
@@ -828,6 +834,7 @@ html{
                                         display: block;
                                         text-align: center;
                                         height: 10px;
+                                        line-height: 10px;
                                     }
                                 }
                             }
@@ -1214,6 +1221,9 @@ html{
         }
     }
 }
+
+
+
 
 .box{
     width: 100%;

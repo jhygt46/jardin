@@ -2,11 +2,18 @@ var flip_arr = [];
 var sala_seleccionada = 0;
 var player;
 var youtb = 0;
+var resize = { id: 0, ancho: 0, alto: 0 };
 
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+$(window).resize(function() {
+    if(resize.id > 0){
+        loadApp(resize.id, resize.ancho, resize.alto);
+    }
+});
 
 function onYouTubeIframeAPIReady(){
     player = new YT.Player('player', {
@@ -46,6 +53,8 @@ function onPlayerStateChange(event){
     }
 }
 function play_youtube(v_code){
+
+    resize.id = 0;
 
     stop_video();
     hide_lista();
@@ -149,6 +158,7 @@ function curso_paso_3(){
     $(".curso_online .hada").fadeOut(700);
     $(".curso_online .mensaje").fadeOut(700);
     $(".curso_online .ver_cursos").fadeOut(700);
+    $(".curso_online .volver").fadeOut(700);
     setTimeout(function(){
         agrandar();
     }, 500);
@@ -260,6 +270,8 @@ function listar_trabajos(aux){
 }
 function html_video(that){
 
+    resize.id = 0;
+
     stop_youtube();
     hide_lista();
     var n = $(that).attr('video');
@@ -341,6 +353,10 @@ function loadApp_aux(that){
     loadApp(i, ancho, alto);
 }
 function loadApp(id, ancho, alto){
+
+    resize.id = id;
+    resize.ancho = ancho;
+    resize.alto = alto;
 
     stop_youtube();
     stop_video();
