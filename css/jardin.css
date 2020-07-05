@@ -90,12 +90,11 @@ html body .sitio .web {
   height: 100%;
   width: 100%;
   z-index: 3;
+  overflow-y: auto;
 }
 html body .sitio .web .contenido {
   display: block;
-  padding: 30px 0px;
   width: 90%;
-  max-width: 1000px;
 }
 html body .sitio .web .contenido .menu_resp {
   width: 100%;
@@ -618,7 +617,7 @@ html body .sitio .menu_web .cont_menu .titulo_menu {
 html body .sitio .menu_web .cont_menu .botones_menu {
   width: 100%;
   position: absolute;
-  top: 100px;
+  top: 90px;
   z-index: 2;
 }
 html body .sitio .menu_web .cont_menu .botones_menu a {

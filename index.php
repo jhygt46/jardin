@@ -322,8 +322,8 @@
                 <div class="arbol"></div>
                 <div class="arbol2"></div>
             </div>
-            <div class="web">
-                <div class="contenido vhalign">
+            <div class="web" style="display: none">
+                <div class="contenido halign">
                     <div class="menu_resp">
                         <div class="cont clearfix vhalign">
                             <div class="hada_chica"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt=""></div>
@@ -498,10 +498,12 @@
                     </div>
                     <div class="infos_menu">
                         <div class="info_bottom">
+                            <!--
                             <div class="menu_data_titulo">
                                 <div class="menu_data_hada"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt=""></div>
                                 <div class="menu_data_nombre valign"><div class="menu_data_nombre_1">Valle Encantado</div><div class="menu_data_nombre_2">Jardin Infantil - Sala Cuna</div></div>
                             </div>
+                            -->
                             <div class="menu_data">Alberto Valenzuela Llanos 2705</div>
                             <div class="menu_data">227589500</div>
                             <div class="menu_data">Whatsapp +56962856227</div>

@@ -135,6 +135,8 @@ function curso_paso_2(){
 }
 function ver_sitio(){
     $(".curso_online").hide();
+    $(".web").show();
+    x();
 }
 function sala_azul(){
     sala_seleccionada = 2;

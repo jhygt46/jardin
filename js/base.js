@@ -1,8 +1,21 @@
 var num = 1;
 var btn_active = 1;
 
+function x(){
+    var diff = $('.web').height() - $('.contenido').height();
+    if(diff <= 0){
+        $('.contenido').css({ "padding-top": "20px" });
+        $('.contenido').css({ "padding-bottom": "20px" });
+    }else{
+        $('.contenido').css({ "padding-top": parseInt(diff / 2) + "px" });
+    }
+}
+$(window).resize(function() {
+    x();
+});
 $(document).ready(function(){
 
+    x();
     start_cursos();
     $('#send').click(function(){
         

@@ -67,7 +67,6 @@ function mascoord(){
     $('#cantpts').val(cant);
     
 }
-
 $(window).resize(function() {
     size(1);
 });
