@@ -91,6 +91,7 @@ html body .sitio .web {
   width: 100%;
   z-index: 3;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 html body .sitio .web .contenido {
   display: block;
