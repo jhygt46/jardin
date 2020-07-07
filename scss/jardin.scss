@@ -88,6 +88,7 @@ html{
                 .contenido{
                     display: block;
                     width: 90%;
+                    max-width: 900px;
                     .menu_resp{
                         width: 100%;
                         height: 110px;
@@ -680,21 +681,20 @@ html{
             }
             .curso_online{
                 display: none;
-                position: relative;
+                position: absolute;
                 height: 100%;
                 width: 100%;
                 z-index: 5;
                 background: rgba(0, 0, 0, 0.8);
                 font-family: 'Baloo Tamma', cursive;
+                overflow-y: auto;
+                overflow-x: hidden;
                 .curso{
-                    width: 98%;
-                    height: 98%;
-                    max-height: 425px;
-                    max-width: 680px;
                     background: #fff;
                     border-radius: 10px;
                     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
                     overflow: hidden;
+                    position: relative;
                     .hada{
                         position: absolute;
                         width: calc(32% - 15px);

@@ -101,11 +101,13 @@ function ordernarContenido(){
 }
 function cloud(x){
 
+    console.log("CLOUD: "+x);
+
     $('.cloud'+x).css({top: randomInt(40, 250)+"px", opacity: randomFloat(0.6, 1), transform: 'scale('+randomFloat(0.7, 1.1)+')'});
     $('.cloud'+x).animate({
         left: "-200px"
     }, randomInt(2500, 3500), function() {
-        $(this).css({right: '-200px', left: null});
+        $(this).css({left: ($(window).width() + 200) + 'px'});
         cloud(x);
     });
 

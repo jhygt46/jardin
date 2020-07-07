@@ -9,11 +9,6 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-$(window).resize(function() {
-    if(resize.id > 0){
-        loadApp(resize.id, resize.ancho, resize.alto);
-    }
-});
 
 function onYouTubeIframeAPIReady(){
     player = new YT.Player('player', {
@@ -156,43 +151,20 @@ function sala_verde(){
 }
 function curso_paso_3(){
     
-    
     $(".curso_online .hada").fadeOut(700);
     $(".curso_online .mensaje").fadeOut(700);
     $(".curso_online .ver_cursos").fadeOut(700);
     $(".curso_online .volver").fadeOut(700);
+    $(".curso").addClass("in");
     setTimeout(function(){
-        agrandar();
+        $(".detalle_curso").animate({
+            top: "1%",
+            opacity: 1
+        }, 1000);
+        $(".curso").animate({
+            "min-height": "400px"
+        }, 1000);
     }, 500);
-    
-    /*
-    $(".sala_roja").animate({
-        right: "-260px",
-        opacity: 0
-    }, 1000, function(){ $(this).hide(); });
-    $(".curso_online .hada").animate({
-        left: "-201px",
-        opacity: 0
-    }, 1000, function(){ $(this).hide(); });
-    setTimeout(function(){
-        $(".sala_azul").animate({
-            right: "-260px",
-            opacity: 0
-        }, 1000);
-    }, 300, function(){ $(this).hide(); });
-    setTimeout(function(){
-        $(".sala_amarilla").animate({
-            right: "-260px",
-            opacity: 0
-        }, 1000);
-    }, 600, function(){ $(this).hide(); });
-    setTimeout(function(){
-        $(".sala_verde").animate({
-            right: "-260px",
-            opacity: 0
-        }, 1000);
-    }, 900, function(){ $(this).hide(); });
-    */
     
 }
 function ver_cuentos(){
@@ -336,17 +308,6 @@ function ver_canciones(){
     if(aux.length > 1){
         listar_videos(aux);
     }
-}
-function agrandar(){
-    $(".curso").animate({
-        "max-width": "900px",
-        "max-height": "700px"
-    }, 1000, function(){
-        $(".detalle_curso").animate({
-            top: "1%",
-            opacity: 1
-        }, 1000);
-    });
 }
 function loadApp_aux(that){
     var i = $(that).attr('lista-id');

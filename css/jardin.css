@@ -95,6 +95,7 @@ html body .sitio .web {
 html body .sitio .web .contenido {
   display: block;
   width: 90%;
+  max-width: 900px;
 }
 html body .sitio .web .contenido .menu_resp {
   width: 100%;
@@ -673,22 +674,21 @@ html body .sitio .menu_web .cont_menu .infos_menu .info_bottom .menu_data {
 }
 html body .sitio .curso_online {
   display: none;
-  position: relative;
+  position: absolute;
   height: 100%;
   width: 100%;
   z-index: 5;
   background: rgba(0, 0, 0, 0.8);
   font-family: "Baloo Tamma", cursive;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 html body .sitio .curso_online .curso {
-  width: 98%;
-  height: 98%;
-  max-height: 425px;
-  max-width: 680px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   overflow: hidden;
+  position: relative;
 }
 html body .sitio .curso_online .curso .hada {
   position: absolute;
