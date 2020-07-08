@@ -97,6 +97,7 @@ html body .sitio .web .contenido {
   display: block;
   width: 90%;
   max-width: 900px;
+  margin: 0 auto;
 }
 html body .sitio .web .contenido .menu_resp {
   width: 100%;
@@ -957,6 +958,19 @@ html body .sitio .curso_online .curso .detalle_curso .curso_lista .listado .list
   .propuestaeducativa {
     background: rgba(249, 128, 14, 0.4) url("../img/propuesta_educativa.jpg") no-repeat top right;
     background-size: contain;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .conozcanos {
+    background-size: cover;
+  }
+
+  .horarios {
+    background-size: cover;
+  }
+
+  .propuestaeducativa {
+    background-size: cover;
   }
 }
 @media only screen and (min-width: 580px) {

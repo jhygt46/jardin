@@ -323,7 +323,7 @@
                 <div class="arbol2"></div>
             </div>
             <div class="web" style="display: none">
-                <div class="contenido halign">
+                <div class="contenido">
                     <div class="menu_resp">
                         <div class="cont clearfix vhalign">
                             <div class="hada_chica"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt=""></div>

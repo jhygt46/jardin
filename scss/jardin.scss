@@ -90,6 +90,7 @@ html{
                     display: block;
                     width: 90%;
                     max-width: 900px;
+                    margin: 0 auto;
                     .menu_resp{
                         width: 100%;
                         height: 110px;
@@ -1003,6 +1004,19 @@ html{
     }
 
 }
+@media only screen and (max-width: 420px){
+
+    .conozcanos{
+        background-size: cover;
+    }
+    .horarios{
+        background-size: cover;
+    }
+    .propuestaeducativa{
+        background-size: cover;
+    }
+
+}
 @media only screen and (min-width: 580px){
 
     .pagina{
@@ -1029,6 +1043,7 @@ html{
     }
 
 }
+
 
 @media only screen and (max-width: 768px){
     html{
