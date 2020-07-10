@@ -2,11 +2,45 @@ var num = 1;
 var panorama_width = 970;
 var isMobile = window.orientation > -1;
 
+function calc(w, p, max, min = null){
+
+    var aux = w * p / 100;
+    if(aux > max){
+        return max;
+    }else{
+        if(min != null && aux < min){
+            return min;
+        }else{
+            return aux;
+        }
+    }
+
+}
+function z(){
+
+    var width = $(window).width();
+    var height = $(window).height();
+
+    var w = calc(width, 92, 970);
+    var h = calc(height, 100, 470);
+
+    var aux_w = (width - w) / 2;
+    var aux_h = (height - h) / 2;
+    var x = parseInt((970 - w)/2);
+
+    $('.panorama').css({ "margin-top": aux_h + "px" });
+    $('.panorama').find('.pan').eq(0).css({ "left": -x + "px" });
+
+}
+
+$(window).resize(function() {
+    z();
+});
 $(document).ready(function(){
     
     var div = $(".panorama").find('.visible');
     var touchX = 0;
-
+    z();
     document.getElementById('panorama').addEventListener('touchstart', dragstart, false);
     document.getElementById('panorama').addEventListener('touchmove', dragmove, false);
 

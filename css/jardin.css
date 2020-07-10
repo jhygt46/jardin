@@ -422,18 +422,20 @@ html body .sitio .visita_virtual {
   width: 100%;
   z-index: 5;
   background: rgba(0, 0, 0, 0.75);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 html body .sitio .visita_virtual .cont_visita {
   width: 92%;
   height: 100%;
   max-width: 970px;
-  max-height: 517px;
+  height: 470px;
+  margin: 0 auto;
 }
 html body .sitio .visita_virtual .cont_visita .panorama {
   max-width: 970px;
-  max-height: 470px;
+  height: 470px;
   width: 100%;
-  height: 100%;
   overflow: hidden;
   position: relative;
   background: #FFF;
@@ -1039,7 +1041,7 @@ html body .sitio .curso_online .curso .detalle_curso .curso_lista .listado .list
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    height: calc(100% - 100px);
+    height: calc(100% - 120px);
   }
   .visita_virtual .panorama .pan .fotos .foto_prin .cont_img {
     height: auto;
@@ -1053,20 +1055,23 @@ html body .sitio .curso_online .curso .detalle_curso .curso_lista .listado .list
   }
   .visita_virtual .panorama .pan .fotos .listado_fotos {
     width: 100%;
-    height: 100px;
+    height: 120px;
     bottom: 0px;
     right: 0px;
     overflow-x: auto;
     overflow-y: hidden;
   }
+  .visita_virtual .panorama .pan .fotos .listado_fotos ul {
+    width: max-content;
+  }
 }
-@media only screen and (max-width: 904px) and (min-width: 574px) {
+@media only screen and (max-width: 903px) and (min-width: 574px) {
   .visita_virtual .panorama .pan .fotos .foto_prin {
     max-width: 670px;
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
-    height: calc(100% - 100px);
+    height: calc(100% - 120px);
     text-align: center;
   }
   .visita_virtual .panorama .pan .fotos .foto_prin .cont_img {
@@ -1078,11 +1083,14 @@ html body .sitio .curso_online .curso .detalle_curso .curso_lista .listado .list
   }
   .visita_virtual .panorama .pan .fotos .listado_fotos {
     width: 100%;
-    height: 100px;
+    height: 120px;
     bottom: 0px;
     right: 0px;
     overflow-x: auto;
     overflow-y: hidden;
+  }
+  .visita_virtual .panorama .pan .fotos .listado_fotos ul {
+    width: max-content;
   }
 }
 @media only screen and (max-width: 1054px) and (min-width: 904px) {
@@ -1178,6 +1186,7 @@ html body .sitio .curso_online .curso .detalle_curso .curso_lista .listado .list
 
 ::-webkit-scrollbar {
   width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-thumb {

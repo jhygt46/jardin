@@ -40,8 +40,8 @@
                 <div class="arbol2"></div>
             </div>
             <div class="visita_virtual">
-                <div class="cont_visita vhalign">
-                    <div class="espacio"><a href="#" onclick="goBack()">Volver al Sitio</a></div>
+                <div class="cont_visita">
+                    <!--<div class="espacio"><a href="#" onclick="goBack()">Volver al Sitio</a></div>-->
                     <div class="panorama" id="panorama">
 
                         <div class="pan entrada visible imgpan" style="width: 970px">

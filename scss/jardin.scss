@@ -424,13 +424,18 @@ html{
                 width: 100%;
                 z-index: 5;
                 background: rgba(0, 0, 0, 0.75);
+                overflow-y: auto;
+                overflow-x: hidden;
                 .cont_visita{
-                    width: 92%; height: 100%; max-width: 970px; max-height: 517px;
+                    width: 92%; 
+                    height: 100%; 
+                    max-width: 970px; 
+                    height: 470px;
+                    margin: 0 auto;
                     .panorama{
                         max-width: 970px;
-                        max-height: 470px;
+                        height: 470px;
                         width: 100%;
-                        height: 100%;
                         overflow: hidden;
                         position: relative;
                         background: #FFF;
@@ -1116,7 +1121,7 @@ html{
                         left: 50%;
                         transform: translateX(-50%);
                         text-align: center;
-                        height: calc(100% - 100px);
+                        height: calc(100% - 120px);
                         .cont_img{
                             height: auto;
                             position: absolute;
@@ -1130,18 +1135,21 @@ html{
                     }
                     .listado_fotos{
                         width: 100%;
-                        height: 100px;
+                        height: 120px;
                         bottom: 0px;
                         right: 0px;
                         overflow-x: auto;
                         overflow-y: hidden;
+                        ul{
+                            width: max-content;
+                        }
                     }
                 }
             }
         }
     }
 }
-@media only screen and (max-width: 904px) and (min-width: 574px){
+@media only screen and (max-width: 903px) and (min-width: 574px){
     .visita_virtual{
         .panorama{
             .pan{
@@ -1151,7 +1159,7 @@ html{
                         width: 100%;
                         left: 50%;
                         transform: translateX(-50%);
-                        height: calc(100% - 100px);
+                        height: calc(100% - 120px);
                         text-align: center;
                         .cont_img{
                             height: calc(100% - 20px);
@@ -1163,11 +1171,14 @@ html{
                     }
                     .listado_fotos{
                         width: 100%;
-                        height: 100px;
+                        height: 120px;
                         bottom: 0px;
                         right: 0px;
                         overflow-x: auto;
                         overflow-y: hidden;
+                        ul{
+                            width: max-content;
+                        }
                     }
                 }
             }
@@ -1283,6 +1294,7 @@ html{
 }
 ::-webkit-scrollbar{
     width: 7px;
+    height: 7px;
 }
 ::-webkit-scrollbar-thumb{
     border-radius: 10px;
