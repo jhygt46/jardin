@@ -197,6 +197,12 @@
     $material[] = crear_objeto("El apetito del zorrito", 3, [2], null, null, "dia_del_libro.jpg", null, null, "dia_del_libro.mp4", 640, 352);
     $material[] = crear_objeto("Día de campo de Don Chancho", 3, [2], null, null, "dia-de-campo-de-don-chancho.jpg", null, null, "dia-de-campo-de-don-chancho.mp4", 640, 352);
 
+    $material[] = crear_objeto("Musical de la Familia", 3, [2], null, null, "musical-de-la-familia.jpg", null, null, "musical-de-la-familia.mp4", 640, 352);
+    $material[] = crear_objeto("Figuras Geometricas", 3, [2], null, null, "figuras-geometricas.jpg", null, null, "figuras-geometricas.mp4", 640, 352);
+    $material[] = crear_objeto("Cocodrilo y Raton", 3, [2], null, null, "cocodrilo-y-raton.jpg", null, null, "cocodrilo-y-raton.mp4", 640, 352);
+    $material[] = crear_objeto("Animales Salvajes El Mono", 3, [2], null, null, "animales-salvajes-el-mono.jpg", null, null, "animales-salvajes-el-mono.mp4", 640, 352);
+    $material[] = crear_objeto("Las Frutas Los Colores", 3, [2], null, null, "las-frutas-los-colores.jpg", null, null, "las-frutas-los-colores.mp4", 640, 352);
+
 
     require_once "./url_function.php";
     $url = url();
