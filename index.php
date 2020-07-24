@@ -202,6 +202,9 @@
     $material[] = crear_objeto("Cocodrilo y Raton", 3, [2], null, null, "cocodrilo-y-raton.jpg", null, null, "cocodrilo-y-raton.mp4", 640, 352);
     $material[] = crear_objeto("Animales Salvajes El Mono", 3, [2], null, null, "animales-salvajes-el-mono.jpg", null, null, "animales-salvajes-el-mono.mp4", 640, 352);
     $material[] = crear_objeto("Las Frutas Los Colores", 3, [2], null, null, "las-frutas-los-colores.jpg", null, null, "las-frutas-los-colores.mp4", 640, 352);
+    
+    $material[] = crear_objeto("Los Colores Gaston y Gastoncito", 3, [2], null, null, "los-colores-gaston-y-gastoncito.jpg", null, null, "los-colores-gaston-y-gastoncito.mp4", 640, 352);
+    $material[] = crear_objeto("Mi familia", 3, [2], null, null, "mi-familia.jpg", null, null, "mi-familia.mp4", 640, 352);
 
 
     require_once "./url_function.php";
