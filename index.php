@@ -196,15 +196,23 @@
     $material[] = crear_objeto("Presentacion mounstro de la laguna", 3, [2], null, null, "presentacion_mounstro_de_la_laguna.jpg", null, null, "presentacion_mounstro_de_la_laguna.mp4", 640, 352);
     $material[] = crear_objeto("El apetito del zorrito", 3, [2], null, null, "dia_del_libro.jpg", null, null, "dia_del_libro.mp4", 640, 352);
     $material[] = crear_objeto("Día de campo de Don Chancho", 3, [2], null, null, "dia-de-campo-de-don-chancho.jpg", null, null, "dia-de-campo-de-don-chancho.mp4", 640, 352);
-
     $material[] = crear_objeto("Musical de la Familia", 3, [2], null, null, "musical-de-la-familia.jpg", null, null, "musical-de-la-familia.mp4", 640, 352);
     $material[] = crear_objeto("Figuras Geometricas", 3, [2], null, null, "figuras-geometricas.jpg", null, null, "figuras-geometricas.mp4", 640, 352);
     $material[] = crear_objeto("Cocodrilo y Raton", 3, [2], null, null, "cocodrilo-y-raton.jpg", null, null, "cocodrilo-y-raton.mp4", 640, 352);
     $material[] = crear_objeto("Animales Salvajes El Mono", 3, [2], null, null, "animales-salvajes-el-mono.jpg", null, null, "animales-salvajes-el-mono.mp4", 640, 352);
     $material[] = crear_objeto("Las Frutas Los Colores", 3, [2], null, null, "las-frutas-los-colores.jpg", null, null, "las-frutas-los-colores.mp4", 640, 352);
-    
     $material[] = crear_objeto("Los Colores Gaston y Gastoncito", 3, [2], null, null, "los-colores-gaston-y-gastoncito.jpg", null, null, "los-colores-gaston-y-gastoncito.mp4", 640, 352);
     $material[] = crear_objeto("Mi familia", 3, [2], null, null, "mi-familia.jpg", null, null, "mi-familia.mp4", 640, 352);
+
+
+    $material[] = crear_objeto("Autos", 3, [2], null, null, "autos.jpg", null, null, "autos.mp4", 640, 352);
+    $material[] = crear_objeto("Conejito y sus emociones", 3, [2], null, null, "conejito-y-sus-emociones.jpg", null, null, "conejito-y-sus-emociones.mp4", 640, 352);
+    $material[] = crear_objeto("Saludo", 3, [2], null, null, "saludo.jpg", null, null, "saludo.mp4", 640, 352);
+    $material[] = crear_objeto("Familia", 3, [2], null, null, "familia.jpg", null, null, "familia.mp4", 640, 352);
+    $material[] = crear_objeto("La importancia de bañarse", 3, [2], null, null, "la-importancia-de-banarse.jpg", null, null, "la-importancia-de-banarse.mp4", 640, 352);
+    $material[] = crear_objeto("Avión", 3, [2], null, null, "avion.jpg", null, null, "avion.mp4", 640, 352);
+    $material[] = crear_objeto("Elefante y colores", 3, [2], null, null, "elefante-y-colores.jpg", null, null, "elefante-y-colores.mp4", 640, 352);
+
 
 
     require_once "./url_function.php";
