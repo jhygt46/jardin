@@ -203,8 +203,6 @@
     $material[] = crear_objeto("Las Frutas Los Colores", 3, [2], null, null, "las-frutas-los-colores.jpg", null, null, "las-frutas-los-colores.mp4", 640, 352);
     $material[] = crear_objeto("Los Colores Gaston y Gastoncito", 3, [2], null, null, "los-colores-gaston-y-gastoncito.jpg", null, null, "los-colores-gaston-y-gastoncito.mp4", 640, 352);
     $material[] = crear_objeto("Mi familia", 3, [2], null, null, "mi-familia.jpg", null, null, "mi-familia.mp4", 640, 352);
-
-
     $material[] = crear_objeto("Autos", 3, [2], null, null, "autos.jpg", null, null, "autos.mp4", 640, 352);
     $material[] = crear_objeto("Conejito y sus emociones", 3, [2], null, null, "conejito-y-sus-emociones.jpg", null, null, "conejito-y-sus-emociones.mp4", 640, 352);
     $material[] = crear_objeto("Saludo", 3, [2], null, null, "saludo.jpg", null, null, "saludo.mp4", 640, 352);
@@ -213,6 +211,17 @@
     $material[] = crear_objeto("Avión", 3, [2], null, null, "avion.jpg", null, null, "avion.mp4", 640, 352);
     $material[] = crear_objeto("Elefante y colores", 3, [2], null, null, "elefante-y-colores.jpg", null, null, "elefante-y-colores.mp4", 640, 352);
 
+    $material[] = crear_objeto("Saludo", 3, [2], null, null, "saludo2.jpg", null, null, "saludo2.mp4", 640, 352);
+    $material[] = crear_objeto("Pintura Simetrica", 3, [2], null, null, "pintura-simetrica.jpg", null, null, "pintura-simetrica.mp4", 640, 352);
+    $material[] = crear_objeto("Los Numeros", 3, [2], null, null, "los-numeros.jpg", null, null, "los-numeros.mp4", 640, 352);
+    $material[] = crear_objeto("Las Plantas", 3, [2], null, null, "las-plantas.jpg", null, null, "las-plantas.mp4", 640, 352);
+    $material[] = crear_objeto("Barco", 3, [2], null, null, "barco.jpg", null, null, "barco.mp4", 640, 352);
+    $material[] = crear_objeto("Lavado de manos", 3, [2], null, null, "lavado-de-manos.jpg", null, null, "lavado-de-manos.mp4", 640, 352);
+    $material[] = crear_objeto("Paleta de emociones", 3, [2], null, null, "paleta-de-emociones.jpg", null, null, "paleta-de-emociones.mp4", 640, 352);
+    $material[] = crear_objeto("A lavarse los dientes", 3, [2], null, null, "a-lavarse-los-dientes.jpg", null, null, "a-lavarse-los-dientes.mp4", 640, 352);
+    $material[] = crear_objeto("Pato", 3, [2], null, null, "pato.jpg", null, null, "pato.mp4", 640, 352);
+    $material[] = crear_objeto("Gallina", 3, [2], null, null, "gallina.jpg", null, null, "gallina.mp4", 640, 352);
+    
 
 
     require_once "./url_function.php";
