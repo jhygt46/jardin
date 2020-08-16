@@ -223,6 +223,16 @@
     $material[] = crear_objeto("Gallina", 3, [2], null, null, "gallina.jpg", null, null, "gallina.mp4", 640, 352);
     
 
+    $material[] = crear_objeto("La Familia", 3, [2], null, null, "La_familia.jpg", null, null, "La_familia.mp4", 640, 352);
+    $material[] = crear_objeto("Vaca", 3, [2], null, null, "vaca.jpg", null, null, "vaca.mp4", 640, 352);
+    $material[] = crear_objeto("Metalofono", 3, [2], null, null, "metalofono.jpg", null, null, "metalofono.mp4", 640, 352);
+    $material[] = crear_objeto("Tren", 3, [2], null, null, "tren.jpg", null, null, "tren.mp4", 640, 352);
+    $material[] = crear_objeto("Patrones", 3, [2], null, null, "patrones.jpg", null, null, "patrones.mp4", 640, 352);
+    $material[] = crear_objeto("Arte en colores", 3, [2], null, null, "arte-en-colores.jpg", null, null, "arte-en-colores.mp4", 640, 352);
+    $material[] = crear_objeto("Las vocales", 3, [2], null, null, "las-vocales.jpg", null, null, "las-vocales.mp4", 640, 352);
+    $material[] = crear_objeto("Saludos", 3, [2], null, null, "saludos-3.jpg", null, null, "saludos-3.mp4", 640, 352);
+    
+    
 
     require_once "./url_function.php";
     $url = url();
