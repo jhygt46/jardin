@@ -231,7 +231,7 @@
     $material[] = crear_objeto("Arte en colores", 3, [2], null, null, "arte-en-colores.jpg", null, null, "arte-en-colores.mp4", 640, 352);
     $material[] = crear_objeto("Las vocales", 3, [2], null, null, "las-vocales.jpg", null, null, "las-vocales.mp4", 640, 352);
     $material[] = crear_objeto("Saludos", 3, [2], null, null, "saludos-3.jpg", null, null, "saludos-3.mp4", 640, 352);
-    
+    $material[] = crear_objeto("Día del niño", 3, [2], null, null, "dia-del-nino.jpg", null, null, "dia-del-nino..mp4", 640, 352);
     
 
     require_once "./url_function.php";
