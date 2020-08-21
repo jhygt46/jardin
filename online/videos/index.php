@@ -2,7 +2,7 @@
 
 $dir = ".";
 $directorio = opendir($dir);
-$datos=array();
+$datos = [];
 
 while ($archivo = readdir($directorio)) { 
     if($archivo != '.' && $archivo != '..'){
@@ -12,4 +12,4 @@ while ($archivo = readdir($directorio)) {
 
 closedir($directorio);
 
-print_r($datos);
+echo json_encode($datos);
