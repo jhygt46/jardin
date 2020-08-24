@@ -251,7 +251,7 @@ function html_video(that){
     var n = $(that).attr('video');
     var video = document.getElementById('video');
     //video.setAttribute("src", path+'online/videos/'+n);
-    video.setAttribute("src", 'http://35.239.1.3/video?video='+n);
+    video.setAttribute("src", 'http://34.121.26.254/video?video='+n);
     
     video.load();
     video.play();
