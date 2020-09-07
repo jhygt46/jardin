@@ -237,8 +237,22 @@
     $material[] = crear_objeto("El yembe", 3, [2], null, null, "el_yembe.jpg", null, null, "el_yembe.mp4", 640, 352);
     $material[] = crear_objeto("La familia 1", 3, [2], null, null, "la_familia_1.jpg", null, null, "familia_1.mp4", 640, 352);
     $material[] = crear_objeto("La familia 2", 3, [2], null, null, "la_familia_2.jpg", null, null, "familia_2.mp4", 640, 352);
-    $material[] = crear_objeto("Grande Mediano Pequeño", 3, [2], null, null, "grande_mediano_pequeno.jpg", null, null, "grande_mediano_pequeno.mp4", 640, 352);
+    $material[] = crear_objeto("Grande mediano pequeño", 3, [2], null, null, "grande_mediano_pequeno.jpg", null, null, "grande_mediano_pequeno.mp4", 640, 352);
     $material[] = crear_objeto("Los insectos", 3, [2], null, null, "los_insectos.jpg", null, null, "los_insectos.mp4", 640, 352);
+    
+    $material[] = crear_objeto("Las Formas", 3, [2], null, null, "las-formas.jpg", null, null, "las-formas.mp4", 640, 352);
+    $material[] = crear_objeto("Tenis", 3, [2], null, null, "tenis.jpg", null, null, "tenis.mp4", 640, 352);
+    $material[] = crear_objeto("La Familia", 3, [2], null, null, "la-familia.jpg", null, null, "la-familia.mp4", 640, 352);
+    $material[] = crear_objeto("Los Peces", 3, [2], null, null, "los-peces.jpg", null, null, "los-peces.mp4", 640, 352);
+    $material[] = crear_objeto("El día y la noche", 3, [2], null, null, "el-dia-y-la-noche.jpg", null, null, "el-dia-y-la-noche.mp4", 640, 352);
+    $material[] = crear_objeto("Receta", 3, [2], null, null, "receta.jpg", null, null, "receta.mp4", 640, 352);
+    $material[] = crear_objeto("Rimas", 3, [2], null, null, "rimas.jpg", null, null, "rimas.mp4", 640, 352);
+    $material[] = crear_objeto("Saludo", 3, [2], null, null, "saludo.jpg", null, null, "saludo-4.mp4", 640, 352);
+    $material[] = crear_objeto("Gimnasia", 3, [2], null, null, "gimnasia.jpg", null, null, "gimnasia.mp4", 640, 352);
+    $material[] = crear_objeto("El cangrejo", 3, [2], null, null, "el-cangrejo.jpg", null, null, "el-cangrejo.mp4", 640, 352);
+    $material[] = crear_objeto("La audición", 3, [2], null, null, "la-audicion.jpg", null, null, "la-audicion.mp4", 640, 352);
+    $material[] = crear_objeto("Dinosaurio", 3, [2], null, null, "dinosaurio.jpg", null, null, "dinosaurio.mp4", 640, 352);
+    $material[] = crear_objeto("La mariquita", 3, [2], null, null, "mariquita.jpg", null, null, "mariquita.mp4", 640, 352);
     
 
     require_once "./url_function.php";
