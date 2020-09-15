@@ -903,6 +903,7 @@ html body .sitio .curso_online .curso .detalle_curso .curso_contenido .juegos {
 html body .sitio .curso_online .curso .detalle_curso .curso_contenido .juegos iframe {
   width: inherit;
   height: 100%;
+  border: 0px;
 }
 html body .sitio .curso_online .curso .detalle_curso .curso_lista {
   position: absolute;

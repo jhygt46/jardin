@@ -406,7 +406,10 @@ function stop_video(){
     var video = document.getElementById('video');
     video.pause();
 }
+var game_count = 0;
 function show_game(){
+
+    var arr = ["https://arbolabcgames.top/L6A/", "https://arbolabcgames.top/L4A/", "https://arbolabcgames.top/M1A/"];
 
     $('.juegos').show();
     $('.cuentos').hide();
@@ -414,8 +417,11 @@ function show_game(){
     $('.trabajos').hide();
     $('.pagina_inicio').hide();
 
+    var x = game_count % arr.length;
+    game_count++;
+
     var iframe = document.createElement('iframe');
-    iframe.src = "https://arbolabcgames.top/L4A/";
+    iframe.src = arr[x];
     $('.juegos').html(iframe);
 
 }
