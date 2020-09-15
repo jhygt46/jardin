@@ -408,10 +408,14 @@ function stop_video(){
 }
 function show_game(){
 
+    $('.juegos').show();
+    $('.cuentos').hide();
+    $('#player').hide();
+    $('.trabajos').hide();
+    $('.pagina_inicio').hide();
+
     var iframe = document.createElement('iframe');
-    iframe.style.display = "none";
     iframe.src = "https://arbolabcgames.top/L4A/";
-    //document.body.appendChild(iframe);
     $('.juegos').html(iframe);
 
 }
