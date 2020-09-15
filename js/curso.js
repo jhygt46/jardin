@@ -406,6 +406,7 @@ function stop_video(){
     var video = document.getElementById('video');
     video.pause();
 }
+
 var game_count = 0;
 function show_game(){
 
