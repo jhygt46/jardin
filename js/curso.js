@@ -406,3 +406,12 @@ function stop_video(){
     var video = document.getElementById('video');
     video.pause();
 }
+function show_game(){
+
+    var iframe = document.createElement('iframe');
+    iframe.style.display = "none";
+    iframe.src = "https://arbolabcgames.top/L4A/";
+    //document.body.appendChild(iframe);
+    $('.juegos').html(iframe);
+
+}

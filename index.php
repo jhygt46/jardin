@@ -514,7 +514,7 @@
                     <div class="detalle_curso">
                         <div class="curso_titulo">
                             <div class="new_logo valign">
-                                <div class="dlogo"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt="" /></div>
+                                <div class="dlogo" onclick="show_game()"><img src="<?php echo $url['path']; ?>img/hada_chica.png" alt="" /></div>
                                 <div class="dtitulo"><div class="valign"><h1>Cursos Online</h1><h2>Jardin Valle Encantado</h2></div></div>
                             </div>
                             <div class="botones valign">
@@ -533,6 +533,7 @@
                             <div class="trabajos">
                                 <video id="video" class="vhalign" width="100%" height="100%"></video>
                             </div>
+                            <div class="juegos"></div>
                         </div>
                     </div>
                 </div>

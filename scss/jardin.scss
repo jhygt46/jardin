@@ -901,6 +901,15 @@ html{
                                     }
                                 }
                             }
+                            .juegos{
+                                width: 100%;
+                                height: 100%;
+                                display: none;
+                                iframe{
+                                    width: inherit;
+                                    height: 100%;
+                                }
+                            }
                         }
                         .curso_lista{
                             position: absolute;
