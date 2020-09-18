@@ -263,6 +263,7 @@
     $style_horarios = "opacity: 0; top: 500px";
     $style_contacto = "opacity: 0; top: 500px";
     $pagina_inicio = "conozcanos";
+    $curso_url = "";
 
     if($pagina != ""){ 
 
@@ -291,29 +292,13 @@
                 exit;
             }
         }elseif($pagina == "cancion"){
-            echo "CANCION<br/>";
-            echo "<pre>"; 
-            print_r($url['url']);
-            echo "</pre>";
-            exit;
+            $curso_url = "style='display: none'";
         }elseif($pagina == "cuento"){
-            echo "CUENTO<br/>";
-            echo "<pre>"; 
-            print_r($url['url']);
-            echo "</pre>";
-            exit;
+            $curso_url = "style='display: none'";
         }elseif($pagina == "cuento-narrado"){
-            echo "CUENTO NARRADO<br/>";
-            echo "<pre>"; 
-            print_r($url['url']);
-            echo "</pre>";
-            exit;
+            $curso_url = "style='display: none'";
         }elseif($pagina == "juego"){
-            echo "JUEGO<br/>";
-            echo "<pre>"; 
-            print_r($url['url']);
-            echo "</pre>";
-            exit;
+            $curso_url = "style='display: none'";
         }else{
             header('HTTP/1.1 404 Not Found', true, 404);
             include('./404.php');
@@ -529,10 +514,10 @@
             <?php if($curso == 1){ ?>
             <div class="curso_online">
                 <div class="curso">
-                    <div class="hada valign"><img src="<?php echo $url['path']; ?>img/hada.png" alt=""></div>
-                    <div class="mensaje"><div class="valign msg">En estos momentos que estamos cuidándonos para que no se propague el coronavirus y nos piden que no salgamos de casa.<br/>Nuestro compromiso es continuo con todas las familias del Valle Encantado, queremos seguir colaborando para estimular y que los niños y niñas a través del juego y de los cuentos puedan seguir aprendiendo.</div></div>
-                    <div class="ver_cursos" onclick="curso_paso_3()">Ingresa aquí</div>
-                    <div class="volver" onclick="ver_sitio()">Deseo ir al sitio</div>
+                    <div class="hada valign" <?php echo $curso_url; ?>><img src="<?php echo $url['path']; ?>img/hada.png" alt=""></div>
+                    <div class="mensaje" <?php echo $curso_url; ?>><div class="valign msg">En estos momentos que estamos cuidándonos para que no se propague el coronavirus y nos piden que no salgamos de casa.<br/>Nuestro compromiso es continuo con todas las familias del Valle Encantado, queremos seguir colaborando para estimular y que los niños y niñas a través del juego y de los cuentos puedan seguir aprendiendo.</div></div>
+                    <div class="ver_cursos" <?php echo $curso_url; ?> onclick="curso_paso_3()">Ingresa aquí</div>
+                    <div class="volver" <?php echo $curso_url; ?> onclick="ver_sitio()">Deseo ir al sitio</div>
                     <div class="detalle_curso">
                         <div class="curso_titulo">
                             <div class="new_logo valign">
