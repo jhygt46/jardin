@@ -291,7 +291,8 @@
                 exit;
             }
         }elseif($pagina == "juego"){
-            echo "JUEGO";
+            echo "JUEGO<br/>";
+            echo $url['url'][1];
             exit;
         }else{
             header('HTTP/1.1 404 Not Found', true, 404);
