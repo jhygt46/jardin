@@ -290,6 +290,24 @@
                 include('./404.php');
                 exit;
             }
+        }elseif($pagina == "cancion"){
+            echo "CANCION<br/>";
+            echo "<pre>"; 
+            print_r($url['url']);
+            echo "</pre>";
+            exit;
+        }elseif($pagina == "cuento"){
+            echo "CUENTO<br/>";
+            echo "<pre>"; 
+            print_r($url['url']);
+            echo "</pre>";
+            exit;
+        }elseif($pagina == "cuento-narrado"){
+            echo "CUENTO NARRADO<br/>";
+            echo "<pre>"; 
+            print_r($url['url']);
+            echo "</pre>";
+            exit;
         }elseif($pagina == "juego"){
             echo "JUEGO<br/>";
             echo "<pre>"; 
