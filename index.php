@@ -290,8 +290,9 @@
                 include('./404.php');
                 exit;
             }
-        }elseif($pagina == "curso_online"){
-            
+        }elseif($pagina == "juego"){
+            echo "JUEGO";
+            exit;
         }else{
             header('HTTP/1.1 404 Not Found', true, 404);
             include('./404.php');
