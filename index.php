@@ -294,16 +294,16 @@
             }
         }elseif($pagina == "cancion"){
             $curso_url = "style='display: none'";
-            $curso_url2 = "style='opacity: 1, top: 1%'";
+            $curso_url2 = "style='opacity: 1; top: 1%'";
         }elseif($pagina == "cuento"){
             $curso_url = "style='display: none'";
-            $curso_url2 = "style='opacity: 1, top: 1%'";
+            $curso_url2 = "style='opacity: 1; top: 1%'";
         }elseif($pagina == "cuento-narrado"){
             $curso_url = "style='display: none'";
-            $curso_url2 = "style='opacity: 1, top: 1%'";
+            $curso_url2 = "style='opacity: 1; top: 1%'";
         }elseif($pagina == "juego"){
             $curso_url = "style='display: none'";
-            $curso_url2 = "style='opacity: 1, top: 1%'";
+            $curso_url2 = "style='opacity: 1; top: 1%'";
         }else{
             header('HTTP/1.1 404 Not Found', true, 404);
             include('./404.php');
