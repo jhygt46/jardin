@@ -292,7 +292,9 @@
             }
         }elseif($pagina == "juego"){
             echo "JUEGO<br/>";
-            echo $url['url'][1];
+            echo "<pre>"; 
+            print_r($url['url']);
+            echo "</pre>";
             exit;
         }else{
             header('HTTP/1.1 404 Not Found', true, 404);
