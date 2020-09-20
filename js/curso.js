@@ -59,14 +59,14 @@ function play_youtube(v_code){
     $('.pagina_inicio').hide();
 
     if(typeof player === 'undefined'){
-        console.log("PLAYER UNDEFINED");
+        setTimeout(function(){
+            play_youtube(v_code);
+        }, 30);
     }else{
         player.loadVideoById(v_code);
         player.playVideo();
         youtb = 1;
     }
-
-    
 
 }
 function start_cursos(){
