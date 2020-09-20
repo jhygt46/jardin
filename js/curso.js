@@ -71,8 +71,7 @@ function start_cursos(){
     if(typeof direct_cancion !== 'undefined'){
         for(var i=0, ilen=material.length; i<ilen; i++){
             if(material[i].tipo == 2){
-                console.log(material[i].nombre.replace(/\s+/g, '-').toLowerCase()+"//"+direct_cancion);
-                if(material[i].nombre == direct_cancion){
+                if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_cancion){
                     play_youtube(material[i].code);
                 }
             }
@@ -81,7 +80,7 @@ function start_cursos(){
     if(typeof direct_cuento !== 'undefined'){
         for(var i=0, ilen=material.length; i<ilen; i++){
             if(material[i].tipo == 1){
-                if(material[i].nombre == direct_cuento){
+                if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_cuento){
                     loadApp(material[i].id, material[i].ancho, material[i].alto);
                 }
             }
@@ -90,7 +89,7 @@ function start_cursos(){
     if(typeof direct_cuento_narrado !== 'undefined'){
         for(var i=0, ilen=material.length; i<ilen; i++){
             if(material[i].tipo == 3){
-                if(material[i].nombre == direct_cuento_narrado){
+                if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_cuento_narrado){
                     html_video(null, material[i].foto_grande);
                 }
             }
@@ -99,7 +98,7 @@ function start_cursos(){
     if(typeof direct_juego !== 'undefined'){ 
         for(var i=0, ilen=material.length; i<ilen; i++){
             if(material[i].tipo == 4){
-                if(material[i].nombre == direct_juego){
+                if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_juego){
                     show_game(material[i].code);
                 }
             }
