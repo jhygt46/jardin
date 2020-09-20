@@ -66,6 +66,7 @@ function play_youtube(v_code){
 function start_cursos(){
     $(".curso_online").show();
     curso_paso_1();
+    console.log();
 }
 function curso_paso_1(){
     $(".curso_online .hada").animate({
@@ -360,7 +361,7 @@ function loadApp(id, ancho, alto){
     var ff = $("<div class='ff'></div>");
 
     for(var i=0, ilen=fotos.length; i<ilen; i++){
-        ff.append("<div style='background-image:url(online/cuentos/cuento"+id+"/"+fotos[i]+"); background-size: cover'></div>");
+        ff.append("<div style='background-image:url(/online/cuentos/cuento"+id+"/"+fotos[i]+"); background-size: cover'></div>");
     }
     $('.container').html(ff);
     ff.turn({

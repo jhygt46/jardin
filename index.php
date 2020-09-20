@@ -374,19 +374,17 @@
             var pagina = '<?php echo $pagina_inicio; ?>';
             <?php if($curso == 1){
 
-                echo "(function() {";
-                if(isset($direct_cancion)){ echo "console.log('DIRECT CANCION: ".$direct_cancion."');"; }
-                if(isset($direct_cuento)){ }
-                if(isset($direct_cuento_narrado)){ echo "console.log('DIRECT CUENTO NARRADO: ".$direct_cuento_narrado."');"; }
-                if(isset($direct_juego)){ }
-                echo "})();";
+                if(isset($direct_cancion)){ echo "var direct_cancion = ".$direct_cancion.";"; }
+                if(isset($direct_cuento)){ echo "var direct_cuento = ".$direct_cuento.";"; }
+                if(isset($direct_cuento_narrado)){ echo "var direct_cuento_narrado = ".$direct_cuento_narrado.";"; }
+                if(isset($direct_juego)){ echo "var direct_juego = ".$direct_juego.";"; }
 
             } ?>
             var material = <?php echo json_encode($material); ?>;
             var fotos_cuentos = <?php echo json_encode($fotos_cuentos); ?>;
         </script>
     </head>
-    <body onload="loadApp(1, 1180, 600)">
+    <body>
         <div class="sitio">
             <div class="clouds">
                 <div class="cloud cloud1"></div>
