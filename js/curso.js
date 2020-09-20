@@ -72,7 +72,7 @@ function start_cursos(){
         for(var i=0, ilen=material.length; i<ilen; i++){
             if(material[i].tipo == 2){
                 if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_cancion){
-                    console.log(material[i].nombre.replace(/\s+/g, '-').toLowerCase()+"//"+direct_cancion);
+                    console.log(material[i]);
                     setTimeout(function(){
                         play_youtube(material[i].code);
                     }, 1000);
