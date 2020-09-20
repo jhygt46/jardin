@@ -256,8 +256,8 @@
     $material[] = crear_objeto("La mariquita", 3, [2], null, null, "mariquita.jpg", null, null, "mariquita.mp4", 640, 352);
     
     // TIPO 4
-    $material[] = crear_objeto("Juego 1", 4, [2], null, "https://arbolabcgames.top/L6A/", "juego1.jpg", null, null, null, 0, 0);
-    $material[] = crear_objeto("Juego 2", 4, [2], null, "https://arbolabcgames.top/L4A/", "juego2.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("juego-1", 4, [2], null, "https://arbolabcgames.top/L6A/", "juego1.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("juego-2", 4, [2], null, "https://arbolabcgames.top/L4A/", "juego2.jpg", null, null, null, 0, 0);
     
 
 

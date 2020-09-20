@@ -64,19 +64,41 @@ function play_youtube(v_code){
 
 }
 function start_cursos(){
+
     $(".curso_online").show();
     curso_paso_1();
 
-    for(var i=0, ilen=material.length; i<ilen; i++){
-        if(material[i].tipo == 4){
-            console.log(material[i].nombre);
+    if(typeof direct_cancion !== 'undefined'){ 
+        if(material[i].tipo == 2){
+            if(material[i].nombre == direct_cancion){
+                play_youtube(material[i].code);
+            }
         }
     }
-
-    if(typeof direct_cancion !== 'undefined'){ console.log("direct_cancion: "+direct_cancion); }
-    if(typeof direct_cuento !== 'undefined'){ loadApp(1, 1180, 600); }
-    if(typeof direct_cuento_narrado !== 'undefined'){ console.log("direct_cuento_narrado: "+direct_cuento_narrado); }
-    if(typeof direct_juego !== 'undefined'){ console.log("direct_juego: "+direct_juego); }
+    if(typeof direct_cuento !== 'undefined'){
+        if(material[i].tipo == 1){
+            console.log(material[i].nombre + "//" + direct_cuento);
+            if(material[i].nombre == direct_cuento){
+                loadApp(material[i].id, material[i].ancho, material[i].alto);
+            }
+        }
+    }
+    if(typeof direct_cuento_narrado !== 'undefined'){ 
+        if(material[i].tipo == 3){
+            if(material[i].nombre == direct_cuento_narrado){
+                html_video(null, material[i].foto_grande);
+            }
+        }
+    }
+    if(typeof direct_juego !== 'undefined'){ 
+        for(var i=0, ilen=material.length; i<ilen; i++){
+            if(material[i].tipo == 4){
+                if(material[i].nombre == direct_juego){
+                    show_game(material[i].code);
+                }
+            }
+        }
+     }
 
 }
 function curso_paso_1(){
@@ -254,15 +276,19 @@ function listar_trabajos(aux){
     }, 1000);
 
 }
-function html_video(that){
+function html_video(that, aux = null){
 
     resize.id = 0;
-
     stop_youtube();
     hide_lista();
-    var n = $(that).attr('video');
+
+    if(aux == null){
+        var n = $(that).attr('video');
+    }else{
+        var n = aux;
+    }
+      
     var video = document.getElementById('video');
-    //video.setAttribute("src", path+'online/videos/'+n);
     video.setAttribute("src", 'http://34.121.26.254/video?video='+n);
     
     video.load();
@@ -420,9 +446,7 @@ function stop_video(){
 }
 
 var game_count = 0;
-function show_game(){
-
-    var arr = ["https://arbolabcgames.top/L6A/", "https://arbolabcgames.top/L4A/", "https://arbolabcgames.top/M1A/"];
+function show_game(url){
 
     $('.juegos').show();
     $('.cuentos').hide();
@@ -434,7 +458,7 @@ function show_game(){
     game_count++;
 
     var iframe = document.createElement('iframe');
-    iframe.src = arr[x];
+    iframe.src = url;
     $('.juegos').html(iframe);
 
 }
