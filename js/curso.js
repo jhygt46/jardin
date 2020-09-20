@@ -58,11 +58,15 @@ function play_youtube(v_code){
     $('.trabajos').hide();
     $('.pagina_inicio').hide();
 
-    console.log(player);
+    if(typeof player === 'undefined'){
+        console.log("PLAYER UNDEFINED");
+    }else{
+        player.loadVideoById(v_code);
+        player.playVideo();
+        youtb = 1;
+    }
 
-    player.loadVideoById(v_code);
-    player.playVideo();
-    youtb = 1;
+    
 
 }
 function start_cursos(){
