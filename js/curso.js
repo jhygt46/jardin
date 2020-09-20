@@ -58,15 +58,9 @@ function play_youtube(v_code){
     $('.trabajos').hide();
     $('.pagina_inicio').hide();
 
-    if(typeof player === 'undefined'){
-        setTimeout(function(){
-            play_youtube(v_code);
-        }, 30);
-    }else{
-        player.loadVideoById(v_code);
-        player.playVideo();
-        youtb = 1;
-    }
+    player.loadVideoById(v_code);
+    player.playVideo();
+    youtb = 1;
 
 }
 function start_cursos(){
@@ -79,7 +73,9 @@ function start_cursos(){
             if(material[i].tipo == 2){
                 if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_cancion){
                     console.log(material[i].nombre.replace(/\s+/g, '-').toLowerCase()+"//"+direct_cancion);
-                    play_youtube(material[i].code);
+                    setTimeout(function(){
+                        play_youtube(material[i].code);
+                    }, 1000);
                 }
             }
         }
