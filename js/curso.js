@@ -367,7 +367,7 @@ function loadApp_aux(that){
     var ancho = $(that).attr('lista-ancho');
     var alto = $(that).attr('lista-alto');
     loadApp(i, ancho, alto);
-    history.pushState(null, 'Cuento', path+'cuento/'+nombre);
+    history.pushState(null, 'Cuento', path+'cuento/'+nombre.replace(/\s+/g, '-').toLowerCase());
 }
 function loadApp(id, ancho, alto){
 
