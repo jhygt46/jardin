@@ -18,6 +18,7 @@
 
     }
 
+    //TIPO 1
     $material[] = crear_objeto("Te quiero tanto, MAMÁ", 1, [3], 1, null, "cuento1prev.jpg", 1180, 600);
     $material[] = crear_objeto("La cebra Camila", 1, [1], 2, null, "cuento2prev.jpg", 1120, 572);
     $material[] = crear_objeto("¿Como te sientes?", 1, [2], 4, null, "cuento3prev.jpg", 972, 600);
@@ -111,7 +112,7 @@
 
 
 
-
+    // TIPO 2
     $material[] = crear_objeto("¿Dónde está la cebra?", 2, [1], null, "cgG73CoTz6U", "cancion1prev.jpg");
     $material[] = crear_objeto("Si Estás Feliz", 2, [2], null, "lU8zZjBV53M", "cancion4prev.jpg");
     $material[] = crear_objeto("Estaba el señor Don Gato", 2, [2, 4], null, "9Oyz_egsKI4", "cancion2prev.jpg");
@@ -158,7 +159,7 @@
 
 
 
-
+    // TIPO 3
     $material[] = crear_objeto("Clo Clo Clotilde", 3, [1], null, null, "clo-clo-clotilde.jpg", null, null, "Clo-Clo-Clotilde.mp4", 640, 352);
     $material[] = crear_objeto("Dino el Dinosuario", 3, [2], null, null, "dino-el-dinosuario.jpg", null, null, "Dino-el-Dinosuario.mp4", 640, 352);
     $material[] = crear_objeto("Autobus de maisy", 3, [2], null, null, "autobus-de-maisy.jpg", null, null, "autobus-de-maisy.mp4", 1920, 1080);
@@ -254,6 +255,13 @@
     $material[] = crear_objeto("Dinosaurio", 3, [2], null, null, "dinosaurio.jpg", null, null, "dinosaurio.mp4", 640, 352);
     $material[] = crear_objeto("La mariquita", 3, [2], null, null, "mariquita.jpg", null, null, "mariquita.mp4", 640, 352);
     
+    // TIPO 4
+    $material[] = crear_objeto("Juego 1", 4, [2], null, "https://arbolabcgames.top/L6A/", "juego1.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("Juego 2", 4, [2], null, "https://arbolabcgames.top/L4A/", "juego2.jpg", null, null, null, 0, 0);
+    
+
+
+
 
     require_once "./url_function.php";
     $url = url();

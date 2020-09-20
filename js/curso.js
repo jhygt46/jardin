@@ -67,7 +67,11 @@ function start_cursos(){
     $(".curso_online").show();
     curso_paso_1();
 
-    console.log(material);
+    for(var i=0, ilen=material.length; i<ilen; i++){
+        if(material[i].tipo == 4){
+            console.log(material[i].nombre);
+        }
+    }
 
     if(typeof direct_cancion !== 'undefined'){ console.log("direct_cancion: "+direct_cancion); }
     if(typeof direct_cuento !== 'undefined'){ loadApp(1, 1180, 600); }
