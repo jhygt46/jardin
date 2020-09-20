@@ -295,15 +295,19 @@
         }elseif($pagina == "cancion"){
             $curso_url = "style='display: none'";
             $curso_url2 = "style='opacity: 1; top: 1%'";
+            $direct_cancion = $url['url'][1];
         }elseif($pagina == "cuento"){
             $curso_url = "style='display: none'";
             $curso_url2 = "style='opacity: 1; top: 1%'";
+            $direct_cuento = $url['url'][1];
         }elseif($pagina == "cuento-narrado"){
             $curso_url = "style='display: none'";
             $curso_url2 = "style='opacity: 1; top: 1%'";
+            $direct_cuento_narrado = $url['url'][1];
         }elseif($pagina == "juego"){
             $curso_url = "style='display: none'";
             $curso_url2 = "style='opacity: 1; top: 1%'";
+            $direct_juego = $url['url'][1];
         }else{
             header('HTTP/1.1 404 Not Found', true, 404);
             include('./404.php');
@@ -368,10 +372,17 @@
         <script> 
             var path = '<?php echo $url['path']; ?>';
             var pagina = '<?php echo $pagina_inicio; ?>';
-            <?php if($curso == 1){ ?>
+            <?php if($curso == 1){
+
+                if(isset($direct_juego)){ echo "console.log(DIRECT JUEGO: ".$direct_juego.")"; }
+                if(isset($direct_juego)){ echo "console.log(DIRECT JUEGO: ".$direct_juego.")"; }
+                if(isset($direct_juego)){ echo "console.log(DIRECT JUEGO: ".$direct_juego.")"; }
+                if(isset($direct_juego)){ echo "console.log(DIRECT JUEGO: ".$direct_juego.")"; }
+
+            }
             var material = <?php echo json_encode($material); ?>;
             var fotos_cuentos = <?php echo json_encode($fotos_cuentos); ?>;
-            <?php } ?>
+            ?>
         </script>
     </head>
     <body>
