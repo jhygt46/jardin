@@ -74,9 +74,8 @@ function start_cursos(){
                 if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_cancion){
                     var code = material[i].code;
                     setTimeout(function(){
-                        console.log(code);
                         play_youtube(code);
-                    }, 2000);
+                    }, 1000);
                 }
             }
         }
@@ -238,6 +237,7 @@ function listar_cuentos(aux){
     for(var i=0, ilen=aux.length; i<ilen; i++){
         var lista = create_element_class('lista');
         lista.setAttribute('lista-id', aux[i].id);
+        lista.setAttribute('lista-nombre', aux[i].nombre);
         lista.setAttribute('lista-ancho', aux[i].ancho);
         lista.setAttribute('lista-alto', aux[i].alto);
         lista.onclick = function(){ loadApp_aux(this) };
@@ -363,9 +363,11 @@ function ver_canciones(){
 }
 function loadApp_aux(that){
     var i = $(that).attr('lista-id');
+    var nombre = $(that).attr('lista-nombre');
     var ancho = $(that).attr('lista-ancho');
     var alto = $(that).attr('lista-alto');
     loadApp(i, ancho, alto);
+    history.pushState(null, 'Cuento', path+'cuento/'+nombre);
 }
 function loadApp(id, ancho, alto){
 
