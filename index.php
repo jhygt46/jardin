@@ -374,10 +374,12 @@
             var pagina = '<?php echo $pagina_inicio; ?>';
             <?php if($curso == 1){
 
-                if(isset($direct_cancion)){ echo "console.log('DIRECT JUEGO: ".$direct_cancion."')"; }
-                if(isset($direct_cuento)){ echo "console.log('DIRECT JUEGO: ".$direct_cuento."')"; }
-                if(isset($direct_cuento_narrado)){ echo "console.log('DIRECT JUEGO: ".$direct_cuento_narrado."')"; }
-                if(isset($direct_juego)){ echo "console.log('DIRECT JUEGO: ".$direct_juego."')"; }
+                echo "(function() {";
+                if(isset($direct_cancion)){ echo "console.log('DIRECT JUEGO: ".$direct_cancion."');"; }
+                if(isset($direct_cuento)){ echo "console.log('DIRECT JUEGO: ".$direct_cuento."');"; }
+                if(isset($direct_cuento_narrado)){ echo "console.log('DIRECT JUEGO: ".$direct_cuento_narrado."');"; }
+                if(isset($direct_juego)){ echo "console.log('DIRECT JUEGO: ".$direct_juego."');"; }
+                echo "})();";
 
             } ?>
             var material = <?php echo json_encode($material); ?>;
