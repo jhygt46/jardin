@@ -66,11 +66,12 @@ function play_youtube(v_code){
 function start_cursos(){
     $(".curso_online").show();
     curso_paso_1();
-    if(direct_cancion !== undefined){ console.log("direct_cancion: "+direct_cancion); }
-    if(direct_cuento !== undefined){ console.log("direct_cuento: "+direct_cuento); }
-    if(direct_cuento_narrado !== undefined){ console.log("direct_cuento_narrado: "+direct_cuento_narrado); }
-    if(direct_juego !== undefined){ console.log("direct_juego: "+direct_juego); }
-    
+
+    if(typeof direct_cancion === 'undefined'){ console.log("direct_cancion: "+direct_cancion); }
+    if(typeof direct_cuento === 'undefined'){ console.log("direct_cuento: "+direct_cuento); }
+    if(typeof direct_cuento_narrado === 'undefined'){ console.log("direct_cuento_narrado: "+direct_cuento_narrado); }
+    if(typeof direct_juego === 'undefined'){ console.log("direct_juego: "+direct_juego); }
+
 }
 function curso_paso_1(){
     $(".curso_online .hada").animate({
