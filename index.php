@@ -379,10 +379,9 @@
                 if(isset($direct_juego)){ echo "console.log(DIRECT JUEGO: ".$direct_juego.")"; }
                 if(isset($direct_juego)){ echo "console.log(DIRECT JUEGO: ".$direct_juego.")"; }
 
-            }
+            } ?>
             var material = <?php echo json_encode($material); ?>;
             var fotos_cuentos = <?php echo json_encode($fotos_cuentos); ?>;
-            ?>
         </script>
     </head>
     <body>
