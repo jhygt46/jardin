@@ -68,25 +68,30 @@ function start_cursos(){
     $(".curso_online").show();
     curso_paso_1();
 
-    if(typeof direct_cancion !== 'undefined'){ 
-        if(material[i].tipo == 2){
-            if(material[i].nombre == direct_cancion){
-                play_youtube(material[i].code);
+    if(typeof direct_cancion !== 'undefined'){
+        for(var i=0, ilen=material.length; i<ilen; i++){
+            if(material[i].tipo == 2){
+                if(material[i].nombre == direct_cancion){
+                    play_youtube(material[i].code);
+                }
             }
         }
     }
     if(typeof direct_cuento !== 'undefined'){
-        if(material[i].tipo == 1){
-            console.log(material[i].nombre + "//" + direct_cuento);
-            if(material[i].nombre == direct_cuento){
-                loadApp(material[i].id, material[i].ancho, material[i].alto);
+        for(var i=0, ilen=material.length; i<ilen; i++){
+            if(material[i].tipo == 1){
+                if(material[i].nombre == direct_cuento){
+                    loadApp(material[i].id, material[i].ancho, material[i].alto);
+                }
             }
         }
     }
-    if(typeof direct_cuento_narrado !== 'undefined'){ 
-        if(material[i].tipo == 3){
-            if(material[i].nombre == direct_cuento_narrado){
-                html_video(null, material[i].foto_grande);
+    if(typeof direct_cuento_narrado !== 'undefined'){
+        for(var i=0, ilen=material.length; i<ilen; i++){
+            if(material[i].tipo == 3){
+                if(material[i].nombre == direct_cuento_narrado){
+                    html_video(null, material[i].foto_grande);
+                }
             }
         }
     }
@@ -444,8 +449,6 @@ function stop_video(){
     var video = document.getElementById('video');
     video.pause();
 }
-
-var game_count = 0;
 function show_game(url){
 
     $('.juegos').show();
