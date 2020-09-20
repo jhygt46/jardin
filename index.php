@@ -375,9 +375,9 @@
             <?php if($curso == 1){
 
                 echo "(function() {";
-                if(isset($direct_cancion)){ echo "console.log('DIRECT JUEGO: ".$direct_cancion."');"; }
-                if(isset($direct_cuento)){ echo "console.log('DIRECT JUEGO: ".$direct_cuento."');"; }
-                if(isset($direct_cuento_narrado)){ echo "console.log('DIRECT JUEGO: ".$direct_cuento_narrado."');"; }
+                if(isset($direct_cancion)){ echo "console.log('DIRECT CANCION: ".$direct_cancion."');"; }
+                if(isset($direct_cuento)){ loadApp(1, 1180, 600); }
+                if(isset($direct_cuento_narrado)){ echo "console.log('DIRECT CUENTO NARRADO: ".$direct_cuento_narrado."');"; }
                 if(isset($direct_juego)){ echo "console.log('DIRECT JUEGO: ".$direct_juego."');"; }
                 echo "})();";
 
