@@ -80,6 +80,7 @@ function start_cursos(){
     if(typeof direct_cuento !== 'undefined'){
         for(var i=0, ilen=material.length; i<ilen; i++){
             if(material[i].tipo == 1){
+                console.log(material[i].nombre+"//"+direct_cuento);
                 if(material[i].nombre == direct_cuento){
                     loadApp(material[i].id, material[i].ancho, material[i].alto);
                 }
