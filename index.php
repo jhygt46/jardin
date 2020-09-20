@@ -537,7 +537,7 @@
                         </div>
                         <div class="curso_lista" id="curso_lista"></div>
                         <div class="curso_contenido" onclick="hide_lista()">
-                            <div class="pagina_inicio"></div>
+                            <div class="pagina_inicio" <?php echo $curso_url; ?>></div>
                             <div class="cuentos">
                                 <div class='flipbook-viewport'><div class='container'></div></div>
                             </div>
