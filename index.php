@@ -374,10 +374,10 @@
             var pagina = '<?php echo $pagina_inicio; ?>';
             <?php if($curso == 1){
 
-                if(isset($direct_cancion)){ echo "var direct_cancion = ".$direct_cancion.";"; }
-                if(isset($direct_cuento)){ echo "var direct_cuento = ".$direct_cuento.";"; }
-                if(isset($direct_cuento_narrado)){ echo "var direct_cuento_narrado = ".$direct_cuento_narrado.";"; }
-                if(isset($direct_juego)){ echo "var direct_juego = ".$direct_juego.";"; }
+                if(isset($direct_cancion)){ echo "var direct_cancion = '".$direct_cancion."';"; }
+                if(isset($direct_cuento)){ echo "var direct_cuento = '".$direct_cuento."';"; }
+                if(isset($direct_cuento_narrado)){ echo "var direct_cuento_narrado = '".$direct_cuento_narrado."';"; }
+                if(isset($direct_juego)){ echo "var direct_juego = '".$direct_juego."';"; }
 
             } ?>
             var material = <?php echo json_encode($material); ?>;
