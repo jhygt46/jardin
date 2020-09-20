@@ -58,6 +58,8 @@ function play_youtube(v_code){
     $('.trabajos').hide();
     $('.pagina_inicio').hide();
 
+    console.log(player);
+
     player.loadVideoById(v_code);
     player.playVideo();
     youtb = 1;
