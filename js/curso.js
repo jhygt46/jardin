@@ -66,7 +66,10 @@ function play_youtube(v_code){
 function start_cursos(){
     $(".curso_online").show();
     curso_paso_1();
-    console.log();
+    console.log("direct_cancion: "+direct_cancion);
+    console.log("direct_cancion: "+direct_cuento);
+    console.log("direct_cancion: "+direct_cuento_narrado);
+    console.log("direct_cancion: "+direct_juego);
 }
 function curso_paso_1(){
     $(".curso_online .hada").animate({
