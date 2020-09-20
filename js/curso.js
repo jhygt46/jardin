@@ -58,15 +58,11 @@ function play_youtube(v_code){
     $('.trabajos').hide();
     $('.pagina_inicio').hide();
 
-    if(typeof player === 'undefined'){
-        setTimeout(function(){
-            play_youtube(v_code);
-        }, 10);
-    }else{
-        player.loadVideoById(v_code);
-        player.playVideo();
-        youtb = 1;
-    }
+    console.log(player);
+
+    player.loadVideoById(v_code);
+    player.playVideo();
+    youtb = 1;
 
 }
 function start_cursos(){
