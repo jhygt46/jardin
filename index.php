@@ -376,9 +376,9 @@
 
                 echo "(function() {";
                 if(isset($direct_cancion)){ echo "console.log('DIRECT CANCION: ".$direct_cancion."');"; }
-                if(isset($direct_cuento)){ echo "loadApp(1, 1180, 600);"; }
+                if(isset($direct_cuento)){ }
                 if(isset($direct_cuento_narrado)){ echo "console.log('DIRECT CUENTO NARRADO: ".$direct_cuento_narrado."');"; }
-                if(isset($direct_juego)){  }
+                if(isset($direct_juego)){ }
                 echo "})();";
 
             } ?>
@@ -386,7 +386,7 @@
             var fotos_cuentos = <?php echo json_encode($fotos_cuentos); ?>;
         </script>
     </head>
-    <body>
+    <body onload="loadApp(1, 1180, 600)">
         <div class="sitio">
             <div class="clouds">
                 <div class="cloud cloud1"></div>
