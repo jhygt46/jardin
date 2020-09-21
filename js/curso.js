@@ -326,6 +326,8 @@ function agrandar_trabajo(that){
 }
 function play_youtube_aux(that){
     var code = $(that).attr('lista-code');
+    var nombre = $(that).attr('nombre');
+    history.pushState(null, 'Cancion', path+'cancion/'+nombre.replace(/\s+/g, '-').toLowerCase());
     play_youtube(code);
 }
 function listar_videos(aux){
@@ -334,6 +336,7 @@ function listar_videos(aux){
     for(var i=0, ilen=aux.length; i<ilen; i++){
         var lista = create_element_class('lista');
         lista.setAttribute('lista-code', aux[i].code);
+        lista.setAttribute('nombre', aux[i].nombre);
         lista.onclick = function(){ play_youtube_aux(this) };
         var foto = create_element_class_inner('foto', '<img src="'+path+'online/prev/'+aux[i].foto+'" alt="" />');
         var nombre = create_element_class_inner('nombre', aux[i].nombre);
