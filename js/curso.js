@@ -291,7 +291,8 @@ function listar_trabajos(aux){
 }
 function html_video(that, aux = null){
 
-    console.log("HTML VIDEO "+$(that).attr('nombre'));
+    var nombre = $(that).attr('nombre');
+    history.pushState(null, 'Cuento Narrado', path+'cuento-narrado/'+nombre.replace(/\s+/g, '-').toLowerCase());
 
     resize.id = 0;
     stop_youtube();
