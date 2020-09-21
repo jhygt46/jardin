@@ -276,6 +276,7 @@ function listar_trabajos(aux){
     for(var i=0, ilen=aux.length; i<ilen; i++){
         var lista = create_element_class('lista');
         lista.setAttribute('video', aux[i].foto_grande);
+        lista.setAttribute('nombre', aux[i].nombre);
         lista.onclick = function(){ html_video(this) };
         var nombre = create_element_class_inner('nombre', aux[i].nombre);
         lista.appendChild(nombre);
@@ -289,6 +290,8 @@ function listar_trabajos(aux){
 
 }
 function html_video(that, aux = null){
+
+    console.log("HTML VIDEO");
 
     resize.id = 0;
     stop_youtube();
@@ -366,10 +369,14 @@ function loadApp_aux(that){
     var nombre = $(that).attr('lista-nombre');
     var ancho = $(that).attr('lista-ancho');
     var alto = $(that).attr('lista-alto');
-    loadApp(i, ancho, alto);
-    history.pushState(null, 'Cuento', path+'cuento/'+nombre.replace(/\s+/g, '-').toLowerCase());
+    loadApp(i, ancho, alto, nombre);
+    
 }
-function loadApp(id, ancho, alto){
+function loadApp(id, ancho, alto, nombre = null){
+
+    if(nombre !== null){
+        history.pushState(null, 'Cuento', path+'cuento/'+nombre.replace(/\s+/g, '-').toLowerCase());
+    }
 
     resize.id = id;
     resize.ancho = ancho;
