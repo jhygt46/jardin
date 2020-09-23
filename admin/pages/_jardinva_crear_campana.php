@@ -79,29 +79,15 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                         <div class="mensaje"></div>
                     </label>
                     <label>
-                        <span>Titulo:</span>
-                        <input id="titulo" type="text" value="<?php echo $that['titulo']; ?>" require="" placeholder="Diego Gomez" />
+                        <span>Asunto:</span>
+                        <input id="asunto" type="text" value="<?php echo $that['asunto']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
-                    <?php if($categoria == 1 || $categoria == 2){ ?>
-                    <label class="clearfix">
-                        <span><p>Preview: (133x100)</p></span>
-                        <input id="file_image0" type="file" />
-                    </label>
-                    <?php } ?>
-                    <?php if($categoria == 3){ ?>
                     <label>
-                        <span>Youtube:</span>
-                        <input id="youtube" type="text" value="<?php echo $that['youtube']; ?>" require="" placeholder="Diego Gomez" />
+                        <span>Template:</span>
+                        <input id="template" type="text" value="<?php echo $that['template']; ?>" require="" placeholder="" />
                         <div class="mensaje"></div>
                     </label>
-                    <?php } ?>
-                    <?php if($categoria == 2){ ?>
-                    <label class="clearfix">
-                        <span><p>Video:</p></span>
-                        <input id="file_image1" type="file" />
-                    </label>
-                    <?php } ?>
                     <label style='margin-top:20px'>
                         <span>&nbsp;</span>
                         <a id='button' onclick="form()">Enviar</a>
