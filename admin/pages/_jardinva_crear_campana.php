@@ -64,20 +64,10 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
         <div class="name"><?php echo $sub_titulo; ?></div>
         <div class="message"></div>
         <div class="sucont">
-
             <form action="" method="post" class="basic-grey">
                 <fieldset>
                     <input id="id" type="hidden" value="<?php echo $id; ?>" />
                     <input id="accion" type="hidden" value="<?php echo $accion; ?>" />
-                    <label>
-                        <span>Categoria:</span>
-                            <select id="categoria">
-                                <option value="1" <?php echo ($categoria == 1) ? 'selected' : '' ; ?>>Cuentos</option>
-                                <option value="2" <?php echo ($categoria == 2) ? 'selected' : '' ; ?>>Cuentos Narrados</option>
-                                <option value="3" <?php echo ($categoria == 3) ? 'selected' : '' ; ?>>Canciones</option>
-                            </select>
-                        <div class="mensaje"></div>
-                    </label>
                     <label>
                         <span>Asunto:</span>
                         <input id="asunto" type="text" value="<?php echo $that['asunto']; ?>" require="" placeholder="" />
@@ -94,7 +84,6 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
                     </label>
                 </fieldset>
             </form>
-            
         </div>
     </div>
 </div>
