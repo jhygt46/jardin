@@ -35,8 +35,8 @@
         	unset($array);
     	}
 
-		$array[0]["nombre"] = "Ingresar Material";
-    	$array[0]["link"] = "pages/_jardinva_crear_material.php";
+		$array[0]["nombre"] = "Ingresar Campa&ntilde;a";
+    	$array[0]["link"] = "pages/_jardinva_crear_campana.php";
     
     	if(isset($array)){
     

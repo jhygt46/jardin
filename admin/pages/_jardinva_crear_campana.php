@@ -15,18 +15,17 @@ if($_SERVER["HTTP_HOST"] == "localhost"){
 
 require_once DIR."admin/class/jardin_class.php";
 $jardin = new Jardin();
-$list = $jardin->usuarios();
 
-$titulo = "Material";
-$titulo_list = "Lista de Materiales";
-$sub_titulo1 = "Ingresar Material";
-$sub_titulo2 = "Modificar Material";
-$accion = "_jardinva_crearmaterial";
+$titulo = "Campa&ntilde;as";
+$titulo_list = "Lista de Campa&ntilde;as";
+$sub_titulo1 = "Ingresar Campa&ntilde;a";
+$sub_titulo2 = "Modificar Campa&ntilde;a";
+$accion = "_jardinva_crearcampana";
 
-$eliminaraccion = "eliminarmaterial";
-$id_list = "id_mat";
-$eliminarobjeto = "Material";
-$page_mod = "pages/_jardinva_crear_material.php";
+$eliminaraccion = "eliminarcampana";
+$id_list = "id_cam";
+$eliminarobjeto = "CampaCampa&ntilde;a";
+$page_mod = "pages/_jardinva_crear_campana.php";
 
 $id = 0;
 $sub_titulo = $sub_titulo1;
