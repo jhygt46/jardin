@@ -17,7 +17,6 @@ require_once DIR."admin/class/jardin_class.php";
 $jardin = new Jardin();
 $list = $jardin->usuarios();
 
-
 $titulo = "Material";
 $titulo_list = "Lista de Materiales";
 $sub_titulo1 = "Ingresar Material";
@@ -32,10 +31,6 @@ $page_mod = "pages/_jardinva_crear_material.php";
 $id = 0;
 $sub_titulo = $sub_titulo1;
 
-$categoria = 1;
-if(isset($_GET["categoria"]) && is_numeric($_GET["categoria"]) && $_GET["categoria"] != 0){
-	$categoria = $_GET["categoria"];
-}
 
 if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
     
@@ -45,7 +40,7 @@ if(isset($_GET["id"]) && is_numeric($_GET["id"]) && $_GET["id"] != 0){
     	
 }
 
-$list = $jardin->get_materiales($categoria);
+//$list = $jardin->get_materiales($categoria);
 
 ?>
 

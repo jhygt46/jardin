@@ -73,6 +73,7 @@ function start_cursos(){
             if(material[i].tipo == 2){
                 if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_cancion){
                     var code = material[i].code;
+                    console.log("CANCION AUTO");
                     setTimeout(function(){
                         play_youtube(code);
                     }, 1000);

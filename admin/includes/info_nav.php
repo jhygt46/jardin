@@ -41,7 +41,7 @@
     	if(isset($array)){
     
         	$aux["ico"] = 3;
-        	$aux["categoria"] = "Curso Online";
+        	$aux["categoria"] = "Emailing";
         	$aux["subcategoria"] = $array;
         	$menu[] = $aux;
         	unset($aux);
