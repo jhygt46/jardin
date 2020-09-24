@@ -107,7 +107,7 @@ function start_cursos(){
             if(material[i].tipo == 4){
                 console.log(material[i].nombre.replace(/\s+/g, '-').toLowerCase()+"//"+direct_juego);
                 if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_juego){
-                    show_game(material[i].code);
+                    show_game(material[i]);
                 }
             }
         }
@@ -471,7 +471,9 @@ function stop_video(){
     var video = document.getElementById('video');
     video.pause();
 }
-function show_game(url){
+function show_game(obj){
+
+    console.log(obj);
 
     $('.juegos').show();
     $('.cuentos').hide();
@@ -480,7 +482,7 @@ function show_game(url){
     $('.pagina_inicio').hide();
 
     var iframe = document.createElement('iframe');
-    iframe.src = url;
+    iframe.src = obj.code;
     $('.juegos').html(iframe);
 
 }
