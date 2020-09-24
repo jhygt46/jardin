@@ -490,8 +490,8 @@ function show_game(obj){
 
     var iframe = document.createElement('iframe');
     iframe.src = obj.code;
-    iframe.style.width = width;
-    iframe.style.height = height;
+    iframe.style.width = width + "px";
+    iframe.style.height = height + "px";
     $('.juegos').html(iframe);
 
 }
