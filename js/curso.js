@@ -479,9 +479,6 @@ function show_game(url){
     $('.trabajos').hide();
     $('.pagina_inicio').hide();
 
-    var x = game_count % arr.length;
-    game_count++;
-
     var iframe = document.createElement('iframe');
     iframe.src = url;
     $('.juegos').html(iframe);
