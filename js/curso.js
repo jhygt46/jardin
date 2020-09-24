@@ -335,9 +335,18 @@ function listar_videos(aux){
     var listado = create_element_class('listado');
     for(var i=0, ilen=aux.length; i<ilen; i++){
         var lista = create_element_class('lista');
-        lista.setAttribute('lista-code', aux[i].code);
-        lista.setAttribute('nombre', aux[i].nombre);
-        lista.onclick = function(){ play_youtube_aux(this) };
+        
+        if(aux[i].tipo == 2){
+            lista.setAttribute('lista-code', aux[i].code);
+            lista.setAttribute('nombre', aux[i].nombre);
+            lista.onclick = function(){ play_youtube_aux(this) };
+        }
+        if(aux[i].tipo == 4){
+            lista.setAttribute('code', aux[i].code);
+            lista.setAttribute('w', aux[i].foto_w);
+            lista.setAttribute('h', aux[i].foto_h);
+            lista.onclick = function(){ show_game2(this) };
+        }
         var foto = create_element_class_inner('foto', '<img src="'+path+'online/prev/'+aux[i].foto+'" alt="" />');
         var nombre = create_element_class_inner('nombre', aux[i].nombre);
         lista.appendChild(foto);
@@ -471,16 +480,8 @@ function stop_video(){
 }
 function show_game(obj){
 
-    obj.foto_w
-    obj.foto_h
-
-    var w = $('.curso_contenido').width();
-    var h = $('.curso_contenido').height();
-
-    var height = h;
-
+    var height = $('.curso_contenido').height();
     var width = obj.foto_w * height / obj.foto_h;
-    console.log(width);
 
     $('.juegos').show();
     $('.cuentos').hide();
@@ -490,6 +491,30 @@ function show_game(obj){
 
     var iframe = document.createElement('iframe');
     iframe.src = obj.code;
+    iframe.style.width = width + "px";
+    iframe.style.height = height + "px";
+    $('.juegos').html(iframe);
+
+}
+function show_game2(that){
+
+    var code = $(that).attr('code');
+    var w = $(that).attr('w');
+    var h = $(that).attr('h');
+
+    var height = $('.curso_contenido').height();
+    var width = w * height / h;
+
+    
+
+    $('.juegos').show();
+    $('.cuentos').hide();
+    $('#player').hide();
+    $('.trabajos').hide();
+    $('.pagina_inicio').hide();
+
+    var iframe = document.createElement('iframe');
+    iframe.src = code;
     iframe.style.width = width + "px";
     iframe.style.height = height + "px";
     $('.juegos').html(iframe);
