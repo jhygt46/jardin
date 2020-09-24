@@ -256,8 +256,18 @@
     $material[] = crear_objeto("La mariquita", 3, [2], null, null, "mariquita.jpg", null, null, "mariquita.mp4", 640, 352);
     
     // TIPO 4
-    $material[] = crear_objeto("juego-1", 4, [2], null, "https://arbolabcgames.top/L6A/", "juego1.jpg", null, null, null, 0, 0);
-    $material[] = crear_objeto("juego-2", 4, [2], null, "https://arbolabcgames.top/L4A/", "juego2.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("Los colores", 4, [2], null, "https://arbolabcgames.top/F19ABC", "juego1.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("Memoria animal", 4, [2], null, "https://arbolabcgames.top/F32BC/BUILDS", "juego2.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("Que hay en el oceano", 4, [2], null, "https://arbolabcgames.top/L22A", "juego2.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("Los animales de lulu", 4, [2], null, "https://arbolabcgames.top/L13A", "juego2.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("Conecta los puntos", 4, [2], null, "https://arbolabcgames.top/L7A", "juego2.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("juego-1", 4, [2], null, "https://arbolabcgames.top/F20ABC", "juego2.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("juego-2", 4, [2], null, "https://arbolabcgames.top/F15ABC", "juego2.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("Juguemos con los colores", 4, [2], null, "https://arbolabcgames.top/F16A", "juego2.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("Para colorear", 4, [2], null, "https://arbolabcgames.top/F31", "juego2.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("En el oceano", 4, [2], null, "https://arbolabcgames.top/L22A", "juego2.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("Juguemos con las formas", 4, [2], null, "https://arbolabcgames.top/M5A", "juego2.jpg", null, null, null, 0, 0);
+    $material[] = crear_objeto("1 al 10", 4, [2], null, "https://arbolabcgames.top/M15A", "juego2.jpg", null, null, null, 0, 0);
     
 
 
