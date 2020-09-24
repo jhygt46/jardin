@@ -101,12 +101,12 @@ function start_cursos(){
             }
         }
     }
-    console.log(direct_juego);
+    
     if(typeof direct_juego !== 'undefined'){ 
         for(var i=0, ilen=material.length; i<ilen; i++){
             if(material[i].tipo == 4){
+                console.log(material[i].nombre.replace(/\s+/g, '-').toLowerCase()+"//"+direct_juego);
                 if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_juego){
-                    console.log(material[i].nombre.replace(/\s+/g, '-').toLowerCase()+"//"+direct_juego);
                     show_game(material[i].code);
                 }
             }
