@@ -9,7 +9,6 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-
 function onYouTubeIframeAPIReady(){
     player = new YT.Player('player', {
         height: '360',
@@ -105,7 +104,6 @@ function start_cursos(){
     if(typeof direct_juego !== 'undefined'){ 
         for(var i=0, ilen=material.length; i<ilen; i++){
             if(material[i].tipo == 4){
-                console.log(material[i].nombre.replace(/\s+/g, '-').toLowerCase()+"//"+direct_juego);
                 if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_juego){
                     show_game(material[i]);
                 }
@@ -473,7 +471,16 @@ function stop_video(){
 }
 function show_game(obj){
 
-    console.log(obj);
+    obj.foto_w
+    obj.foto_h
+
+    var w = $('.curso_contenido').width();
+    var h = $('.curso_contenido').height();
+
+    var height = h;
+
+    var width = obj.foto_w * height / obj.foto_h;
+    console.log(width);
 
     $('.juegos').show();
     $('.cuentos').hide();
@@ -483,6 +490,8 @@ function show_game(obj){
 
     var iframe = document.createElement('iframe');
     iframe.src = obj.code;
+    iframe.style.width = width;
+    iframe.style.height = height;
     $('.juegos').html(iframe);
 
 }
