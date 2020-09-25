@@ -482,6 +482,9 @@ function show_game(obj){
 
     console.log("SHOW GAME");
 
+    hide_lista();
+    history.pushState(null, 'Juego', path+'juego/'+obj.nombre.replace(/\s+/g, '-').toLowerCase());
+
     var height = $('.curso_contenido').height();
     var width = obj.foto_w * height / obj.foto_h;
 
@@ -497,9 +500,7 @@ function show_game(obj){
     iframe.style.height = height + "px";
     $('.juegos').html(iframe);
 
-    hide_lista();
-    history.pushState(null, 'Juego', path+'juego/'+obj.nombre.replace(/\s+/g, '-').toLowerCase());
-
+    
 }
 function show_game2(that){
 
