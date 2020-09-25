@@ -256,6 +256,7 @@ class Guardar{
                         $info['op'] = 1;
                         $info['mensaje'] = "Campa&ntilde;a ingresada exitosamente";
                         $id = $this->con->insert_id;
+                        $this->usuarios_campana($id);
                     }else{ echo htmlspecialchars($sql->error); }
                 }else{ echo htmlspecialchars($sql->error); }
             }else{ echo htmlspecialchars($this->con->error); }
