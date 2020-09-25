@@ -154,7 +154,10 @@
     $material[] = crear_objeto("La Jirafa y el Mono", 2, [1], null, "06ydZ2kP4Ek", "cancion37prev.jpg");
     $material[] = crear_objeto("Roco el Huron", 2, [1], null, "hxIIEfP78fA", "cancion38prev.jpg");
     $material[] = crear_objeto("En el fondo del mar", 2, [1], null, "omkpNvrOJVE", "cancion39prev.jpg");
-
+    $material[] = crear_objeto("Canción de los colores", 2, [1], null, "z-jmvOelNPo", "cancion40prev.jpg");
+    $material[] = crear_objeto("El sonido de los animales", 2, [1], null, "WV0DIaOmmps", "cancion41prev.jpg");
+    $material[] = crear_objeto("Animales Acuáticos", 2, [1], null, "Fe-AmoBtp_A", "cancion42prev.jpg");
+    
     
 
 
@@ -256,7 +259,7 @@
     $material[] = crear_objeto("La mariquita", 3, [2], null, null, "mariquita.jpg", null, null, "mariquita.mp4", 640, 352);
     
     // TIPO 4
-    $material[] = crear_objeto("Los colores", 4, [2], null, "https://arbolabcgames.top/F19ABC", "juego1.jpg", null, null, null, 1290, 800);
+    $material[] = crear_objeto("Los colores", 4, [2], null, "https://arbolabcgames.top/F19ABC", "juego2.jpg", null, null, null, 1290, 800);
     $material[] = crear_objeto("Memoria animal", 4, [2], null, "https://arbolabcgames.top/F32BC/BUILDS", "juego2.jpg", null, null, null, 1290, 726);
     $material[] = crear_objeto("Que hay en el oceano", 4, [2], null, "https://arbolabcgames.top/L22A", "juego2.jpg", null, null, null, 1290, 800);
     $material[] = crear_objeto("Los animales de lulu", 4, [2], null, "https://arbolabcgames.top/L13A", "juego2.jpg", null, null, null, 1290, 800);
