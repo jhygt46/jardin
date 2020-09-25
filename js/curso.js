@@ -70,9 +70,9 @@ function start_cursos(){
     if(typeof direct_cancion !== 'undefined'){
         for(var i=0, ilen=material.length; i<ilen; i++){
             if(material[i].tipo == 2){
+                console.log(material[i].nombre.replace(/\s+/g, '-').toLowerCase()+"//"+direct_cancion);
                 if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_cancion){
                     var code = material[i].code;
-                    console.log("CANCION AUTO");
                     setTimeout(function(){
                         play_youtube(code);
                     }, 1000);
@@ -93,8 +93,8 @@ function start_cursos(){
     if(typeof direct_cuento_narrado !== 'undefined'){
         for(var i=0, ilen=material.length; i<ilen; i++){
             if(material[i].tipo == 3){
+                console.log(material[i].nombre.replace(/\s+/g, '-').toLowerCase()+"//"+direct_cuento_narrado);
                 if(material[i].nombre.replace(/\s+/g, '-').toLowerCase() == direct_cuento_narrado){
-                    console.log(material[i].nombre.replace(/\s+/g, '-').toLowerCase()+"//"+direct_cuento_narrado);
                     html_video(null, material[i].foto_grande);
                 }
             }
