@@ -277,7 +277,6 @@ function listar_trabajos(aux){
         var lista = create_element_class('lista');
         lista.setAttribute('video', aux[i].foto_grande);
         lista.setAttribute('nombre', aux[i].nombre);
-        console.log(aux[i]);
         lista.onclick = function(){ html_video(this) };
         var nombre = create_element_class_inner('nombre', aux[i].nombre);
         lista.appendChild(nombre);
@@ -292,15 +291,13 @@ function listar_trabajos(aux){
 }
 function html_video(that, aux = null){
 
-    var nombre = $(that).attr('nombre');
-    history.pushState(null, 'Cuento Narrado', path+'cuento-narrado/'+nombre.replace(/\s+/g, '-').toLowerCase());
-
     resize.id = 0;
     stop_youtube();
     hide_lista();
 
     if(aux == null){
         var n = $(that).attr('video');
+        history.pushState(null, 'Cuento Narrado', path+'cuento-narrado/'+$(that).attr('nombre').replace(/\s+/g, '-').toLowerCase());
     }else{
         var n = aux;
     }
