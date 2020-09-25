@@ -495,6 +495,9 @@ function show_game(obj){
     iframe.style.height = height + "px";
     $('.juegos').html(iframe);
 
+    hide_lista();
+    history.pushState(null, 'Juego', path+'juego/'+obj.nombre.replace(/\s+/g, '-').toLowerCase());
+
 }
 function show_game2(that){
 
