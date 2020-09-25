@@ -480,6 +480,8 @@ function stop_video(){
 }
 function show_game(obj){
 
+    console.log("SHOW GAME");
+
     var height = $('.curso_contenido').height();
     var width = obj.foto_w * height / obj.foto_h;
 
