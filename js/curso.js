@@ -303,7 +303,7 @@ function html_video(that, aux = null){
     }
       
     var video = document.getElementById('video');
-    video.onclick = function(){ if(this.playing){ this.pause() }else{ this.play() } };
+    video.onclick = function(){ if(!this.paused){ this.pause() }else{ this.play() } };
     video.setAttribute("src", 'http://34.121.26.254/video?video='+n);
     
     video.load();
