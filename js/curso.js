@@ -343,6 +343,7 @@ function listar_videos(aux){
         }
         if(aux[i].tipo == 4){
             lista.setAttribute('code', aux[i].code);
+            lista.setAttribute('nombre', aux[i].nombre);
             lista.setAttribute('w', aux[i].foto_w);
             lista.setAttribute('h', aux[i].foto_h);
             lista.onclick = function(){ show_game2(this) };
@@ -500,6 +501,7 @@ function show_game(obj){
 function show_game2(that){
 
     var code = $(that).attr('code');
+    var nombre = $(that).attr('nombre');
     var w = $(that).attr('w');
     var h = $(that).attr('h');
 
@@ -507,7 +509,7 @@ function show_game2(that){
     var width = w * height / h;
 
     hide_lista();
-    history.pushState(null, 'Juego', path+'juego/'+obj.nombre.replace(/\s+/g, '-').toLowerCase());
+    history.pushState(null, 'Juego', path+'juego/'+nombre.replace(/\s+/g, '-').toLowerCase());
 
     $('.juegos').show();
     $('.cuentos').hide();
