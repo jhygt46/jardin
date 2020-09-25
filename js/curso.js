@@ -303,6 +303,7 @@ function html_video(that, aux = null){
     }
       
     var video = document.getElementById('video');
+    video.onclick = function(){ console.log(this) };
     video.setAttribute("src", 'http://34.121.26.254/video?video='+n);
     
     video.load();
