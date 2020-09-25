@@ -75,7 +75,7 @@ function start_cursos(){
                     var code = material[i].code;
                     setTimeout(function(){
                         play_youtube(code);
-                    }, 1000);
+                    }, 2000);
                 }
             }
         }
