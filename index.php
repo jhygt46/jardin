@@ -154,9 +154,9 @@
     $material[] = crear_objeto("La Jirafa y el Mono", 2, [1], null, "06ydZ2kP4Ek", "cancion37prev.jpg");
     $material[] = crear_objeto("Roco el Huron", 2, [1], null, "hxIIEfP78fA", "cancion38prev.jpg");
     $material[] = crear_objeto("En el fondo del mar", 2, [1], null, "omkpNvrOJVE", "cancion39prev.jpg");
-    $material[] = crear_objeto("Canción de los colores", 2, [1], null, "z-jmvOelNPo", "cancion40prev.jpg");
+    $material[] = crear_objeto("Cancion de los colores", 2, [1], null, "z-jmvOelNPo", "cancion40prev.jpg");
     $material[] = crear_objeto("El sonido de los animales", 2, [1], null, "WV0DIaOmmps", "cancion41prev.jpg");
-    $material[] = crear_objeto("Animales Acuáticos", 2, [1], null, "Fe-AmoBtp_A", "cancion42prev.jpg");
+    $material[] = crear_objeto("Animales Acuaticos", 2, [1], null, "Fe-AmoBtp_A", "cancion42prev.jpg");
     
     
 
