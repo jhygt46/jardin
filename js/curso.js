@@ -480,11 +480,6 @@ function stop_video(){
 }
 function show_game(obj){
 
-    console.log("SHOW GAME");
-
-    hide_lista();
-    history.pushState(null, 'Juego', path+'juego/'+obj.nombre.replace(/\s+/g, '-').toLowerCase());
-
     var height = $('.curso_contenido').height();
     var width = obj.foto_w * height / obj.foto_h;
 
@@ -511,7 +506,8 @@ function show_game2(that){
     var height = $('.curso_contenido').height();
     var width = w * height / h;
 
-    
+    hide_lista();
+    history.pushState(null, 'Juego', path+'juego/'+obj.nombre.replace(/\s+/g, '-').toLowerCase());
 
     $('.juegos').show();
     $('.cuentos').hide();
