@@ -277,6 +277,7 @@ function listar_trabajos(aux){
         var lista = create_element_class('lista');
         lista.setAttribute('video', aux[i].foto_grande);
         lista.setAttribute('nombre', aux[i].nombre);
+        console.log(aux[i]);
         lista.onclick = function(){ html_video(this) };
         var nombre = create_element_class_inner('nombre', aux[i].nombre);
         lista.appendChild(nombre);
