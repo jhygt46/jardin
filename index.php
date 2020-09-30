@@ -157,7 +157,9 @@
     $material[] = crear_objeto("Cancion de los colores", 2, [1], null, "z-jmvOelNPo", "cancion40prev.jpg");
     $material[] = crear_objeto("El sonido de los animales", 2, [1], null, "WV0DIaOmmps", "cancion41prev.jpg");
     $material[] = crear_objeto("Animales Acuaticos", 2, [1], null, "Fe-AmoBtp_A", "cancion42prev.jpg");
-    
+    $material[] = crear_objeto("Las Vocales", 2, [1], null, "ahle5yXy6vg", "cancion43prev.jpg");
+    $material[] = crear_objeto("Juguemos con las formas", 2, [1], null, "lJFbCGD6w9s", "cancion44prev.jpg");
+    $material[] = crear_objeto("Dedos de colores", 2, [1], null, "9cpR2Vs0j90", "cancion45prev.jpg");
     
 
 
