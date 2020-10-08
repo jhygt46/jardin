@@ -161,7 +161,10 @@
     $material[] = crear_objeto("Juguemos con las formas", 2, [1], null, "lJFbCGD6w9s", "cancion44prev.jpg");
     $material[] = crear_objeto("Dedos de colores", 2, [1], null, "9cpR2Vs0j90", "cancion45prev.jpg");
     
-
+    $material[] = crear_objeto("Animales de la granja", 2, [1], null, "hnhdU5hFufo", "cancion46prev.jpg");
+    $material[] = crear_objeto("Cancion del pintor", 2, [1], null, "WkrMEV-36Ms", "cancion47prev.jpg");
+    $material[] = crear_objeto("Chocolo y los colores", 2, [1], null, "wwHTvq-OLHg", "cancion48prev.jpg");
+    
 
 
     // TIPO 3
