@@ -45,7 +45,7 @@
     $material[] = crear_objeto("Lola cuenta patos", 1, [1], 25, null, "cuento24prev.jpg", 1120, 600);
     $material[] = crear_objeto("Lola descubre el agua", 1, [1], 26, null, "cuento25prev.jpg", 944, 600);
     $material[] = crear_objeto("El libro del Osito", 1, [1], 27, null, "cuento26prev.jpg", 876, 600);
-    $material[] = crear_objeto("Gastón Ratón y Gastoncito", 1, [1], 28, null, "cuento27prev.jpg", 1102, 600);
+    $material[] = crear_objeto("Gaston Raton y Gastoncito", 1, [1], 28, null, "cuento27prev.jpg", 1102, 600);
     $material[] = crear_objeto("Buenas noches monstruo verde", 1, [1], 29, null, "cuento28prev.jpg", 1056, 600);
     $material[] = crear_objeto("Elmer y el clima", 1, [1], 30, null, "cuento29prev.jpg", 1054, 600);
     $material[] = crear_objeto("Federico y su hermanita", 1, [1], 31, null, "cuento30prev.jpg", 1168, 600);
@@ -53,18 +53,18 @@
     $material[] = crear_objeto("Había una vez un barco", 1, [1], 33, null, "cuento32prev.jpg", 1114, 600);
     $material[] = crear_objeto("Federico no presta", 1, [1], 34, null, "cuento33prev.jpg", 1272, 600);
     $material[] = crear_objeto("Federico dice no", 1, [1], 35, null, "cuento34prev.jpg", 1196, 600);
-    $material[] = crear_objeto("Que esconde el pequeño Edu", 1, [1], 36, null, "cuento35prev.jpg", 1170, 600);
+    $material[] = crear_objeto("Que esconde el pequeno Edu", 1, [1], 36, null, "cuento35prev.jpg", 1170, 600);
     $material[] = crear_objeto("Dinosauria de viaje", 1, [1], 37, null, "cuento36prev.jpg", 1148, 600);
     $material[] = crear_objeto("Caillou Por favor y Gracias", 1, [1], 38, null, "cuento37prev.jpg", 1124, 600);
     $material[] = crear_objeto("Y YO que?", 1, [1], 39, null, "cuento38prev.jpg", 1204, 600);
     $material[] = crear_objeto("Formas", 1, [1], 40, null, "cuento39prev.jpg", 1086, 600);
     $material[] = crear_objeto("Me llamo NO", 1, [1], 41, null, "cuento40prev.jpg", 944, 600);
     $material[] = crear_objeto("Como reconocer a un monstruo", 1, [1], 42, null, "cuento41prev.jpg", 1016, 600);
-    $material[] = crear_objeto("El pequeño Edu tiene hambre", 1, [1], 43, null, "cuento42prev.jpg", 1420, 600);
-    $material[] = crear_objeto("Tito no usa pañal", 1, [1], 44, null, "cuento43prev.jpg", 1120, 600);
-    $material[] = crear_objeto("¿Quien eres Tigre?", 1, [1], 45, null, "cuento44prev.jpg", 1422, 600);
+    $material[] = crear_objeto("El pequeno Edu tiene hambre", 1, [1], 43, null, "cuento42prev.jpg", 1420, 600);
+    $material[] = crear_objeto("Tito no usa panal", 1, [1], 44, null, "cuento43prev.jpg", 1120, 600);
+    $material[] = crear_objeto("Quien eres Tigre?", 1, [1], 45, null, "cuento44prev.jpg", 1422, 600);
     $material[] = crear_objeto("Colectivos", 1, [1], 46, null, "cuento45prev.jpg", 1146, 600);
-    $material[] = crear_objeto("Música de Mar", 1, [1], 47, null, "cuento46prev.jpg", 1250, 600);
+    $material[] = crear_objeto("Musica de Mar", 1, [1], 47, null, "cuento46prev.jpg", 1250, 600);
     $material[] = crear_objeto("Entramos en el bosque", 1, [1], 48, null, "cuento47prev.jpg", 968, 600);
     $material[] = crear_objeto("Shh....! Me hice pis", 1, [1], 49, null, "cuento48prev.jpg", 968, 600);
     $material[] = crear_objeto("Con papel de chocolate", 1, [1], 50, null, "cuento49prev.jpg", 968, 600);
@@ -160,13 +160,13 @@
     $material[] = crear_objeto("Las Vocales", 2, [1], null, "ahle5yXy6vg", "cancion43prev.jpg");
     $material[] = crear_objeto("Juguemos con las formas", 2, [1], null, "lJFbCGD6w9s", "cancion44prev.jpg");
     $material[] = crear_objeto("Dedos de colores", 2, [1], null, "9cpR2Vs0j90", "cancion45prev.jpg");
-    
     $material[] = crear_objeto("Animales de la granja", 2, [1], null, "hnhdU5hFufo", "cancion46prev.jpg");
     $material[] = crear_objeto("Cancion del pintor", 2, [1], null, "WkrMEV-36Ms", "cancion47prev.jpg");
     $material[] = crear_objeto("Chocolo y los colores", 2, [1], null, "wwHTvq-OLHg", "cancion48prev.jpg");
+    $material[] = crear_objeto("Puntos", 2, [1], null, "Z7zbyIDmS9I", "cancion49prev.jpg");
+    $material[] = crear_objeto("Bailando los numeros", 2, [1], null, "zSnhk8O3CAQ", "cancion50prev.jpg");
+    $material[] = crear_objeto("Pastelero", 2, [1], null, "irr255RJVu0", "cancion51prev.jpg");
     
-
-
     // TIPO 3
     $material[] = crear_objeto("Clo Clo Clotilde", 3, [1], null, null, "clo-clo-clotilde.jpg", null, null, "Clo-Clo-Clotilde.mp4", 640, 352);
     $material[] = crear_objeto("Dino el Dinosuario", 3, [2], null, null, "dino-el-dinosuario.jpg", null, null, "Dino-el-Dinosuario.mp4", 640, 352);
@@ -219,7 +219,6 @@
     $material[] = crear_objeto("La importancia de bañarse", 3, [2], null, null, "la-importancia-de-banarse.jpg", null, null, "la-importancia-de-banarse.mp4", 640, 352);
     $material[] = crear_objeto("Avión", 3, [2], null, null, "avion.jpg", null, null, "avion.mp4", 640, 352);
     $material[] = crear_objeto("Elefante y colores", 3, [2], null, null, "elefante-y-colores.jpg", null, null, "elefante-y-colores.mp4", 640, 352);
-
     $material[] = crear_objeto("Saludo", 3, [2], null, null, "saludo2.jpg", null, null, "saludo2.mp4", 640, 352);
     $material[] = crear_objeto("Pintura Simetrica", 3, [2], null, null, "pintura-simetrica.jpg", null, null, "pintura-simetrica.mp4", 640, 352);
     $material[] = crear_objeto("Los Numeros", 3, [2], null, null, "los-numeros.jpg", null, null, "los-numeros.mp4", 640, 352);
@@ -229,7 +228,6 @@
     $material[] = crear_objeto("Paleta de emociones", 3, [2], null, null, "paleta-de-emociones.jpg", null, null, "paleta-de-emociones.mp4", 640, 352);
     $material[] = crear_objeto("A lavarse los dientes", 3, [2], null, null, "a-lavarse-los-dientes.jpg", null, null, "a-lavarse-los-dientes.mp4", 640, 352);
     $material[] = crear_objeto("Gallina", 3, [2], null, null, "gallina.jpg", null, null, "gallina.mp4", 640, 352);
-    
     $material[] = crear_objeto("Vaca", 3, [2], null, null, "vaca.jpg", null, null, "vaca.mp4", 640, 352);
     $material[] = crear_objeto("Metalofono", 3, [2], null, null, "metalofono.jpg", null, null, "metalofono.mp4", 640, 352);
     $material[] = crear_objeto("Tren", 3, [2], null, null, "tren.jpg", null, null, "tren.mp4", 640, 352);
@@ -238,7 +236,6 @@
     $material[] = crear_objeto("Las vocales", 3, [2], null, null, "las-vocales.jpg", null, null, "las-vocales.mp4", 640, 352);
     $material[] = crear_objeto("Saludos", 3, [2], null, null, "saludos-3.jpg", null, null, "saludos-3.mp4", 640, 352);
     $material[] = crear_objeto("Día del niño", 3, [2], null, null, "dia-del-nino.jpg", null, null, "dia-del-nino.mp4", 640, 352);
-    
     $material[] = crear_objeto("Pato", 3, [2], null, null, "pato.jpg", null, null, "pato.mp4", 640, 352);
     $material[] = crear_objeto("Ciencias", 3, [2], null, null, "ciencias.jpg", null, null, "ciencias.mp4", 640, 352);
     $material[] = crear_objeto("Cocadas", 3, [2], null, null, "cocadas.jpg", null, null, "cocadas.mp4", 640, 352);
@@ -248,7 +245,6 @@
     $material[] = crear_objeto("La familia 2", 3, [2], null, null, "la_familia_2.jpg", null, null, "familia_2.mp4", 640, 352);
     $material[] = crear_objeto("Grande mediano pequeño", 3, [2], null, null, "grande_mediano_pequeno.jpg", null, null, "grande_mediano_pequeno.mp4", 640, 352);
     $material[] = crear_objeto("Los insectos", 3, [2], null, null, "los_insectos.jpg", null, null, "los_insectos.mp4", 640, 352);
-    
     $material[] = crear_objeto("Las Formas", 3, [2], null, null, "las-formas.jpg", null, null, "las-formas.mp4", 640, 352);
     $material[] = crear_objeto("Tenis", 3, [2], null, null, "tenis.jpg", null, null, "tenis.mp4", 640, 352);
     $material[] = crear_objeto("La Familia", 3, [2], null, null, "la-familia.jpg", null, null, "la-familia.mp4", 640, 352);
@@ -276,9 +272,9 @@
     $material[] = crear_objeto("En el oceano", 4, [2], null, "https://arbolabcgames.top/L22A", "juego2.jpg", null, null, null, 1290, 800);
     $material[] = crear_objeto("Juguemos con las formas", 4, [2], null, "https://arbolabcgames.top/M5A", "juego2.jpg", null, null, null, 1290, 800);
     $material[] = crear_objeto("1 al 10", 4, [2], null, "https://arbolabcgames.top/M15A", "juego2.jpg", null, null, null, 1290, 800);
+    $material[] = crear_objeto("Contar hojas", 4, [2], null, "https://arbolabcgames.top/M11A", "juego2.jpg", null, null, null, 1290, 800);
+    $material[] = crear_objeto("Decoremos pasteles", 4, [2], null, "https://arbolabcgames.top/F14ABC", "juego2.jpg", null, null, null, 1290, 800);
     
-
-
 
 
     require_once "./url_function.php";
