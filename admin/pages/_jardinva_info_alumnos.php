@@ -18,20 +18,6 @@ $jardin = new Jardin();
 $list_ = $jardin->alumnos();
 $curs_ = $jardin->cursos();
 
-
-echo "<table border='0' cellspacing='0' cellpadding='0'>";
-
-for($i=0; $i<count($list_); $i++){
-
-    $j = $i + 1;
-    $nombre = $k."- ".$list_[$i]['nombres']." ".$list_[$i]['apellido_p']." ".$list_[$i]['apellido_m'];
-    echo "<tr><td>".$j."</td><td>".$nombre."</td><td>".$list_[$i]['rut']."</td></tr>";
-
-}
-
-echo "</table>";
-exit;
-
 /* CONFIG PAGE */
 $titulo = "Alumnos";
 $titulo_list = "Lista de Alumnos";
