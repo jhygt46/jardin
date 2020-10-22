@@ -166,6 +166,9 @@
     $material[] = crear_objeto("Puntos", 2, [1], null, "Z7zbyIDmS9I", "cancion49prev.jpg");
     $material[] = crear_objeto("Bailando los numeros", 2, [1], null, "zSnhk8O3CAQ", "cancion50prev.jpg");
     $material[] = crear_objeto("Pastelero", 2, [1], null, "irr255RJVu0", "cancion51prev.jpg");
+
+    $material[] = crear_objeto("Rompecabezas", 2, [1], null, "722bYFux9Qw", "cancion52prev.jpg");
+    $material[] = crear_objeto("Cantando los numeros", 2, [1], null, "pSqnl2eSu9Y", "cancion53prev.jpg");
     
     // TIPO 3
     $material[] = crear_objeto("Clo Clo Clotilde", 3, [1], null, null, "clo-clo-clotilde.jpg", null, null, "Clo-Clo-Clotilde.mp4", 640, 352);
@@ -274,8 +277,15 @@
     $material[] = crear_objeto("1 al 10", 4, [2], null, "https://arbolabcgames.top/M15A", "juego2.jpg", null, null, null, 1290, 800);
     $material[] = crear_objeto("Contar hojas", 4, [2], null, "https://arbolabcgames.top/M11A", "juego2.jpg", null, null, null, 1290, 800);
     $material[] = crear_objeto("Decoremos pasteles", 4, [2], null, "https://arbolabcgames.top/F14ABC", "juego2.jpg", null, null, null, 1290, 800);
+    $material[] = crear_objeto("Los colores con rana tana", 4, [2], null, "https://arbolabcgames.top/F13A", "juego2.jpg", null, null, null, 1290, 800);
+    $material[] = crear_objeto("Memoria vocales", 4, [2], null, "https://arbolabcgames.top/L5A", "juego2.jpg", null, null, null, 1290, 800);
+    $material[] = crear_objeto("Simon dice", 4, [2], null, "https://arbolabcgames.top/Simon_dice", "juego2.jpg", null, null, null, 1290, 800);
+    $material[] = crear_objeto("Memoria navidad", 4, [2], null, "https://arbolabcgames.top/Memoria-Navidad", "juego2.jpg", null, null, null, 1290, 800);
+    $material[] = crear_objeto("Locometria", 4, [2], null, "https://arbolabcgames.top/M85A/BUILDS", "juego2.jpg", null, null, null, 1290, 800);
+    $material[] = crear_objeto("Volcan de formas", 4, [2], null, "https://arbolabcgames.top/M91AB", "juego2.jpg", null, null, null, 1290, 800);
+    $material[] = crear_objeto("Aprendamos las formas", 4, [2], null, "https://arbolabcgames.top/M1A", "juego2.jpg", null, null, null, 1290, 800);
+    $material[] = crear_objeto("Juguemos al bingo", 4, [2], null, "https://arbolabcgames.top/M10A", "juego2.jpg", null, null, null, 1290, 800);
     
-
 
     require_once "./url_function.php";
     $url = url();
