@@ -31,7 +31,7 @@
     $material[] = crear_objeto("¡A bañarse!", 1, [3, 4], 11, null, "cuento10prev.jpg", 1200, 600);
     $material[] = crear_objeto("El autobus de Maisy", 1, [1], 12, null, "cuento11prev.jpg", 2132, 600);
     $material[] = crear_objeto("Mi primer libro del cuerpo", 1, [2], 13, null, "cuento12prev.jpg", 2132, 600);
-    $material[] = crear_objeto("El camaleon de colores", 1, [4], 14, null, "cuento13prev.jpg", 1712, 689);
+    $material[] = crear_objeto("El camaleón de colores", 1, [4], 14, null, "cuento13prev.jpg", 1712, 689);
     $material[] = crear_objeto("Visito al doctor", 1, [3], 15, null, "cuento14prev.jpg", 2132, 600);
     $material[] = crear_objeto("Colibri", 1, [3], 16, null, "cuento15prev.jpg", 1600, 600);
     $material[] = crear_objeto("Nacho va a la escuela", 1, [4], 17, null, "cuento16prev.jpg", 1500, 600);
@@ -124,7 +124,7 @@
     $material[] = crear_objeto("Las Ruedas del Autobus", 2, [1], null, "EwZ3KhAh448", "cancion7prev.jpg");
     $material[] = crear_objeto("El Zoológico", 2, [2], null, "UJezG8dP4Nc", "cancion8prev.jpg");
     $material[] = crear_objeto("La selva loca", 2, [1], null, "JxN_rbCLdso", "cancion9prev.jpg");
-    $material[] = crear_objeto("El camaleón de colores", 2, [4], null, "jxv9YEE8Wuc", "cancion10prev.jpg");
+    $material[] = crear_objeto("El camaleon de colores", 2, [4], null, "jxv9YEE8Wuc", "cancion10prev.jpg");
     $material[] = crear_objeto("¡A bañarse!", 2, [4], null, "okKiWXi7Hsg", "cancion11prev.jpg");
     $material[] = crear_objeto("Visito al doctor", 2, [4], null, "hBb04SzOizo", "cancion12prev.jpg");
     $material[] = crear_objeto("Hipopotamos", 2, [4], null, "DYzxoGkRCFM", "cancion13prev.jpg");
