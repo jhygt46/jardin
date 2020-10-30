@@ -31,7 +31,7 @@
     $material[] = crear_objeto("¡A bañarse!", 1, [3, 4], 11, null, "cuento10prev.jpg", 1200, 600);
     $material[] = crear_objeto("El autobus de Maisy", 1, [1], 12, null, "cuento11prev.jpg", 2132, 600);
     $material[] = crear_objeto("Mi primer libro del cuerpo", 1, [2], 13, null, "cuento12prev.jpg", 2132, 600);
-    $material[] = crear_objeto("El camaleón de colores", 1, [4], 14, null, "cuento13prev.jpg", 1712, 689);
+    $material[] = crear_objeto("El camaleon de colores", 1, [4], 14, null, "cuento13prev.jpg", 1712, 689);
     $material[] = crear_objeto("Visito al doctor", 1, [3], 15, null, "cuento14prev.jpg", 2132, 600);
     $material[] = crear_objeto("Colibri", 1, [3], 16, null, "cuento15prev.jpg", 1600, 600);
     $material[] = crear_objeto("Nacho va a la escuela", 1, [4], 17, null, "cuento16prev.jpg", 1500, 600);
@@ -166,9 +166,10 @@
     $material[] = crear_objeto("Puntos", 2, [1], null, "Z7zbyIDmS9I", "cancion49prev.jpg");
     $material[] = crear_objeto("Bailando los numeros", 2, [1], null, "zSnhk8O3CAQ", "cancion50prev.jpg");
     $material[] = crear_objeto("Pastelero", 2, [1], null, "irr255RJVu0", "cancion51prev.jpg");
-
     $material[] = crear_objeto("Rompecabezas", 2, [1], null, "722bYFux9Qw", "cancion52prev.jpg");
     $material[] = crear_objeto("Cantando los numeros", 2, [1], null, "pSqnl2eSu9Y", "cancion53prev.jpg");
+    $material[] = crear_objeto("El tren", 2, [1], null, "foURpp7ZGC0", "cancion54prev.jpg");
+    $material[] = crear_objeto("Sal de ahi chivita chivita", 2, [1], null, "K9GLvX9rA_0", "cancion55prev.jpg");
     
     // TIPO 3
     $material[] = crear_objeto("Clo Clo Clotilde", 3, [1], null, null, "clo-clo-clotilde.jpg", null, null, "Clo-Clo-Clotilde.mp4", 640, 352);
