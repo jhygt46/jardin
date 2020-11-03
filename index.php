@@ -434,7 +434,7 @@
                 <div class="arbol"></div>
                 <div class="arbol2"></div>
             </div>
-            <div class="web" style="display: none">
+            <div class="web" style="display: block">
                 <div class="contenido">
                     <div class="menu_resp">
                         <div class="cont clearfix vhalign">
