@@ -1,6 +1,6 @@
 <?php
 
-    $curso = 1;
+    $curso = 0;
     function crear_objeto($nombre, $tipo, $sala, $id = null, $code = null, $foto = null, $ancho = null, $alto = null, $foto_grande = null, $foto_w = null, $foto_h = null){
 
         $r["nombre"] = $nombre;
