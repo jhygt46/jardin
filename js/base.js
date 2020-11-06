@@ -54,7 +54,7 @@ $(document).ready(function(){
 
     x();
     y();
-    //start_cursos();
+    start_cursos();
     $('#send').click(function(){
         
         var nombre = $('#nombre').val();

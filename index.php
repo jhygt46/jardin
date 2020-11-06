@@ -1,6 +1,6 @@
 <?php
 
-    $curso = 0;
+    $curso = 1;
     function crear_objeto($nombre, $tipo, $sala, $id = null, $code = null, $foto = null, $ancho = null, $alto = null, $foto_grande = null, $foto_w = null, $foto_h = null){
 
         $r["nombre"] = $nombre;
@@ -434,7 +434,7 @@
                 <div class="arbol"></div>
                 <div class="arbol2"></div>
             </div>
-            <div class="web" style="display: block">
+            <div class="web" style="display: none">
                 <div class="contenido">
                     <div class="menu_resp">
                         <div class="cont clearfix vhalign">
