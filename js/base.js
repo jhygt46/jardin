@@ -73,6 +73,8 @@ $(document).ready(function(){
             data: send,
             success: function(data){
                 
+                console.log("data", data);
+
                 if(data.op == 1){
                     $('#msg_result').css({color: 'green'});
                     $('#msg_result').html("Mensaje Enviado");
