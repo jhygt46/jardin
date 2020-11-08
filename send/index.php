@@ -12,8 +12,10 @@ if($_POST["accion"] == "enviar" && $_POST["nombre"] != "" && $_POST["correo"] !=
 	$send['mensaje'] = $_POST["mensaje"];
 	$send['tipo'] = 3;
 
+    file_put_contents("contacto", $send);
+
 	$ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://www.izusushi.cl/mail_jardin');
+    curl_setopt($ch, CURLOPT_URL, 'http://34.121.26.254/mail_jardin');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
     if(!curl_errno($ch)){
