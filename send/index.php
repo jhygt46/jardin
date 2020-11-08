@@ -3,6 +3,8 @@
 header('Content-type: text/json');
 header('Content-type: application/json');
 
+$info['post'] = $_POST;
+
 if($_POST["accion"] == "enviar" && $_POST["nombre"] != "" && $_POST["correo"] != "" && $_POST["telefono"] != ""){
 
 	$send['code'] = 'k8Dqa2C9lKgxT6kpNs1z6RgKb0r3WaCvN6RjK7rU';
