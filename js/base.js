@@ -57,6 +57,8 @@ $(document).ready(function(){
     start_cursos();
     $('#send').click(function(){
         
+        console.log("ENVIAR");
+
         var nombre = $('#nombre').val();
         var correo = $('#correo').val();
         var telefono = $('#telefono').val();
