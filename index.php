@@ -461,7 +461,7 @@
                                             <div class="input"><span>Correo:</span><input type="text" value="" /></div>
                                             <div class="input"><span>Telefono:</span><input type="text" value="" /></div>
                                             <div class="input"><span>Mensaje:</span><textarea></textarea></div>
-                                            <div class="boton"><input type="button" value="Enviar" /></div>
+                                            <div class="boton"><input type="button" id="send" value="Enviar" /></div>
                                             <div class="leyenda">Alberto Valenzuela Llanos 2705<br/>227589500<br/>Whatsapp +56962856227</div>
                                         </div>
                                         <div class="mapa" id="mapa"></div>
