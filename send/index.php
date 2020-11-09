@@ -3,13 +3,6 @@
 header('Content-type: text/json');
 header('Content-type: application/json');
 
-if ( $_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST) ) {
-    $_POST = json_decode(file_get_contents('php://input'), true);
-}
-
-$info['post'] = $_POST;
-$info['get'] = $_GET;
-
 if($_POST["accion"] == "enviar" && $_POST["nombre"] != "" && $_POST["correo"] != "" && $_POST["telefono"] != ""){
 
 	$send['code'] = 'k8Dqa2C9lKgxT6kpNs1z6RgKb0r3WaCvN6RjK7rU';
@@ -18,8 +11,6 @@ if($_POST["accion"] == "enviar" && $_POST["nombre"] != "" && $_POST["correo"] !=
 	$send['telefono'] = $_POST["telefono"];
 	$send['mensaje'] = $_POST["mensaje"];
 	$send['tipo'] = 3;
-
-    file_put_contents("contacto", $send);
 
 	$ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'http://34.121.26.254/mail_jardin');
