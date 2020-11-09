@@ -12,6 +12,8 @@ if($_POST["accion"] == "enviar" && $_POST["nombre"] != "" && $_POST["correo"] !=
 	$send['mensaje'] = $_POST["mensaje"];
 	$send['tipo'] = 3;
 
+    file_put_contents("contactos.txt", $send, FILE_APPEND | LOCK_EX);
+
 	$ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'http://34.121.26.254/mail_jardin');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -26,11 +28,11 @@ if($_POST["accion"] == "enviar" && $_POST["nombre"] != "" && $_POST["correo"] !=
     if($resp_email->{'op'} != 1){
         // ALERTAR ERROR //
         $info['op'] = 2;
-        $info['msj'] = "Error: Mensaje no fue enviado";
+        $info['msj'] = "Error1: Mensaje no fue enviado";
     }
 	}else{
 		$info['op'] = 2;
-		$info['msj'] = "Error: Mensaje no fue enviado";
+		$info['msj'] = "Error2: Mensaje no fue enviado";
 	}
    
 }else{
