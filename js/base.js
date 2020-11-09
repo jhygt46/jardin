@@ -57,8 +57,6 @@ $(document).ready(function(){
     start_cursos();
     $('#send').click(function(){
         
-        console.log("ENVIAR");
-
         var nombre = $('#nombre').val();
         var correo = $('#correo').val();
         var telefono = $('#telefono').val();
@@ -66,17 +64,13 @@ $(document).ready(function(){
         
         var send = { accion: "enviar", nombre: nombre, correo: correo, telefono: telefono, mensaje: mensaje };
         
-        console.log("send", send);
-
         $.ajax({
-            dataType: "json",
-            url: "/send",
+            url: '/send/index.php',
             type: "POST",
             data: send,
             success: function(data){
-                
-                console.log("data", data);
 
+                console.log("data", data);
                 if(data.op == 1){
                     $('#msg_result').css({color: 'green'});
                     $('#msg_result').html("Mensaje Enviado");
@@ -90,11 +84,7 @@ $(document).ready(function(){
                     $('#msg_result').html(data.msj);
                 }
 
-            },
-            error: function(err, e){
-                console.log(err);
-                console.log(e);
-            }
+            }, error: function(e){}
         });
         
     });
