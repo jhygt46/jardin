@@ -66,6 +66,8 @@ $(document).ready(function(){
         
         var send = { accion: "enviar", nombre: nombre, correo: correo, telefono: telefono, mensaje: mensaje };
         
+        console.log("send", send);
+
         $.ajax({
             dataType: "json",
             url: "/send",

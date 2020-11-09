@@ -457,10 +457,10 @@
                                     <div class="data">
                                         <div class="formulario">
                                             <div class="titulo">Contacto</div>
-                                            <div class="input"><span>Nombre:</span><input type="text" value="" /></div>
-                                            <div class="input"><span>Correo:</span><input type="text" value="" /></div>
-                                            <div class="input"><span>Telefono:</span><input type="text" value="" /></div>
-                                            <div class="input"><span>Mensaje:</span><textarea></textarea></div>
+                                            <div class="input"><span>Nombre:</span><input id="nombre" type="text" value="" /></div>
+                                            <div class="input"><span>Correo:</span><input id="correo" type="text" value="" /></div>
+                                            <div class="input"><span>Telefono:</span><input id="telefono" type="text" value="" /></div>
+                                            <div class="input"><span>Mensaje:</span><textarea id="texto"></textarea></div>
                                             <div class="boton"><input type="button" id="send" value="Enviar" /></div>
                                             <div class="leyenda">Alberto Valenzuela Llanos 2705<br/>227589500<br/>Whatsapp +56962856227</div>
                                         </div>
