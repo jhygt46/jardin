@@ -16,15 +16,17 @@ if($_POST["accion"] == "enviar" && $_POST["nombre"] != "" && $_POST["correo"] !=
 
     file_put_contents("contactos.txt", $txt, FILE_APPEND | LOCK_EX);
     $info['op'] = 1;
+
     
-    /*
 	$ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'http://34.121.26.254/mail_jardin');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
     if(!curl_errno($ch)){
-    $resp_email = json_decode(curl_exec($ch));
-    curl_close($ch);
+        $info['mail'] = json_decode(curl_exec($ch));
+        curl_close($ch);
+    }
+    /*
     if($resp_email->{'op'} == 1){
         // ALERTAR ERROR //
         $info['op'] = 1;
