@@ -15,8 +15,7 @@ if($_POST["accion"] == "enviar" && $_POST["nombre"] != "" && $_POST["correo"] !=
     $txt = $_POST["nombre"]." // ".$_POST["correo"]." // ".$_POST["telefono"]." // ".$_POST["mensaje"]."\n";
 
     file_put_contents("contactos.txt", $txt, FILE_APPEND | LOCK_EX);
-    $info['op'] = 1;
-
+    $info['op'] = 2;
     
 	$ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'http://34.121.26.254/mail_jardin');
