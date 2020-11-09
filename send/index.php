@@ -1,9 +1,10 @@
 <?php
 
 header('Content-type: text/json');
-header('Content-type: application/json');
+header('Content-type: application/json', true);
 
 $info['post'] = $_POST;
+$info['get'] = $_GET;
 
 if($_POST["accion"] == "enviar" && $_POST["nombre"] != "" && $_POST["correo"] != "" && $_POST["telefono"] != ""){
 
