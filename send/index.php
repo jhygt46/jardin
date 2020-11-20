@@ -18,6 +18,7 @@ if($_POST["accion"] == "enviar" && $_POST["nombre"] != "" && $_POST["correo"] !=
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
     if(!curl_errno($ch)){
         $resp_email = json_decode(curl_exec($ch));
+        $info['resp'] = $resp_email;
         curl_close($ch);
         if($resp_email->{'op'} == 1){
             $info['op'] = 1;

@@ -69,7 +69,7 @@ $(document).ready(function(){
             type: "POST",
             data: send,
             success: function(data){
-
+                console.log(data);
                 if(data.op == 1){
                     $('#msg_result').css({color: 'green'});
                     $('#msg_result').html("Mensaje Enviado");
