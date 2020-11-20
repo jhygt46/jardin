@@ -11,7 +11,7 @@ $(document).ready(function(){
             type: "POST",
             data: "accion=ingreso&tipo="+tipo+"&user="+user+"&pass="+pass,
             success: function(data){
-                
+                console.log(data);
                 if(data.op == 1){
                     
                     bien(data.message);
