@@ -13,7 +13,7 @@ if($_POST["accion"] == "enviar" && $_POST["nombre"] != "" && $_POST["correo"] !=
     $send['tipo'] = 3;
     
 	$ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'http://34.121.26.254/mail_jardin');
+    curl_setopt($ch, CURLOPT_URL, 'http://34.71.35.149/mail_jardin');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
     if(!curl_errno($ch)){
