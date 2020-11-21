@@ -12,7 +12,7 @@ if($_POST["accion"] == "enviar" && $_POST["nombre"] != "" && $_POST["correo"] !=
 	$send['mensaje'] = $_POST["mensaje"];
     $send['tipo'] = 3;
 
-    $data = $_POST["nombre"]+"/"+$_POST["correo"]+"/"+$_POST["telefono"]+"/"+$_POST["mensaje"]+"\n";
+    $data = $_POST["nombre"]."/".$_POST["correo"]."/".$_POST["telefono"]."/".$_POST["mensaje"]."\n";
 
     file_put_contents("../contacto.txt", $data, FILE_APPEND);
     $info['op'] = 1;
