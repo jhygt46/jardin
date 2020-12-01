@@ -558,6 +558,7 @@
                             </div>
                         </div>
                     </div>
+                    <div>Cursos Online</div>
                 </div>
             </div>
             <?php if($curso == 1){ ?>
