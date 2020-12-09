@@ -147,7 +147,7 @@ class Guardar{
         $nombre_apoderado = $_POST['nombre_apoderado'];
         $telefono_apoderado = $_POST['telefono_apoderado'];
         $email_apoderado = $_POST['email_apoderado'];
-        $fecha_retiro = $_POST['fecha_retiro'];
+        $fecha_retiro = ($_POST['fecha_retiro'] == '') ? '0000-00-00' : $_POST['fecha_retiro'] ;
         $motivo_retiro = $_POST['motivo_retiro'];
         $observaciones = $_POST['observaciones'];
         $curso = $_POST['curso'];
