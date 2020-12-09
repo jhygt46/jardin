@@ -140,9 +140,9 @@ class Guardar{
         $apellido_m = $_POST['apellido_m'];
         $nombres = $_POST['nombres'];
         $sexo = $_POST['sexo'];
-        $fecha_nacimiento = $_POST['fecha_nacimiento'];
-        $fecha_matricula = $_POST['fecha_matricula'];
-        $fecha_ingreso = $_POST['fecha_ingreso'];
+        $fecha_nacimiento = ($_POST['fecha_nacimiento'] == '') ? '0000-00-00' : $_POST['fecha_nacimiento'] ;
+        $fecha_matricula = ($_POST['fecha_matricula'] == '') ? '0000-00-00' : $_POST['fecha_matricula'] ;
+        $fecha_ingreso = ($_POST['fecha_ingreso'] == '') ? '0000-00-00' : $_POST['fecha_ingreso'] ;
         $direccion = $_POST['direccion'];
         $nombre_apoderado = $_POST['nombre_apoderado'];
         $telefono_apoderado = $_POST['telefono_apoderado'];
