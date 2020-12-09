@@ -434,7 +434,7 @@
                 <div class="arbol"></div>
                 <div class="arbol2"></div>
             </div>
-            <div class="web" style="display: none">
+            <div class="web" style="display: block">
                 <div class="contenido">
                     <div class="menu_resp">
                         <div class="cont clearfix vhalign">
@@ -450,7 +450,7 @@
                         <div class="boton color5"><a href="<?php echo $url['path']; ?>conozcanos" class="btnconozcanos">Con&oacute;zcanos</a></div>
                     </div>
                     <div class="contenedor box">
-                        <div class="hada"><img src="<?php echo $url['path']; ?>img/hada.png" alt=""></div>
+                        <div class="hada"><img src="<?php echo $url['path']; ?>img/hada.png" alt=""><h1 style="text-align: center; font-size: 35px;text-shadow: 0px 0px 10px #99c; color: #66A">Ya abrimos!</h1></div>
                         <div class="info">
                             <div class="cont_pagina">
                                 <div class="pagina contacto" style="<?php echo $style_contacto; ?>">
@@ -558,11 +558,11 @@
                             </div>
                         </div>
                     </div>
-                    <div>Cursos Online</div>
+                    <div class='start_cursos' style='text-align: right; padding-top: 4px'><div style='display: inline-block; padding: 8px 12px; background-color: #900; font-size: 14px; border-radius: 5px; color: #fff' onclick='start_cursos()'>Cursos Online</div></div>
                 </div>
             </div>
             <?php if($curso == 1){ ?>
-            <div class="curso_online">
+            <div class="curso_online" style="display: none">
                 <div class="curso">
                     <div class="hada valign" <?php echo $curso_url; ?>><img src="<?php echo $url['path']; ?>img/hada.png" alt=""></div>
                     <div class="mensaje" <?php echo $curso_url; ?>><div class="valign msg">En estos momentos que estamos cuidándonos para que no se propague el coronavirus y nos piden que no salgamos de casa.<br/>Nuestro compromiso es continuo con todas las familias del Valle Encantado, queremos seguir colaborando para estimular y que los niños y niñas a través del juego y de los cuentos puedan seguir aprendiendo.</div></div>

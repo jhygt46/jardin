@@ -46,9 +46,9 @@ class Libro{
 			$nombre = $_POST["nombre"];
 			if($id_lib == 0 && $usr["perm_ingreso"] == 1){
 				$qr = $_POST["qr"];
-
-				if($sql = $this->con->prepare("INSERT INTO _jardinva_libros (nombre, qr) VALUES (?, ?)")){
-					if($sql->bind_param("ss", $nombre, $qr)){
+				$e = 0;
+				if($sql = $this->con->prepare("INSERT INTO _jardinva_libros (nombre, qr, fecha_ingreso, eliminado) VALUES (?, ?, now(), ?)")){
+					if($sql->bind_param("ssi", $nombre, $qr, $e)){
 						if($sql->execute()){
 							$info['op'] = 1;
 						}else{ echo htmlspecialchars($sql->error); }
@@ -136,9 +136,10 @@ class Libro{
 				$id_alu = $_POST["id_alu"];
 				$estado = $_POST["estado"];
 				$comentario = $_POST["comentario"];
-
-				if($sql = $this->con->prepare("INSERT INTO _jardinva_prestamos (id_lib, id_alu, fecha_presto, id_user_presto) VALUES (?, ?, now(), ?)")){
-				if($sql->bind_param("iii", $id_lib, $id_alu, $usr["id_user"])){
+				$e = 0;
+				$f = '0000-00-00';
+				if($sql = $this->con->prepare("INSERT INTO _jardinva_prestamos (id_lib, id_alu, fecha_presto, id_user_presto, id_user_devolvio, fecha_devolvio, email) VALUES (?, ?, now(), ?, ?, ?, ?)")){
+				if($sql->bind_param("iiiisi", $id_lib, $id_alu, $usr["id_user"], $e, $f, $e)){
 				if($sql->execute()){
 					
 					if($sqla = $this->con->prepare("SELECT * FROM _jardinva_alumnos WHERE eliminado=?")){

@@ -101,8 +101,10 @@ class Guardar{
         }
 
         if($id == 0){
-            if($sql = $this->con->prepare("INSERT INTO usuarios (nombre, correo, fecha_creado, tipo, perm_ingreso, perm_edicion, perm_prestamo, perm_devolucion) VALUES (?, ?, now(), ?, ?, ?, ?, ?)")){
-                if($sql->bind_param("ssiiiii", $nombre, $correo, $tipo, $perm_ingreso, $perm_edicion, $perm_prestamo, $perm_devolucion)){
+            $s = '';
+            $e = 0;
+            if($sql = $this->con->prepare("INSERT INTO usuarios (nombre, correo, pass, code_cookie, fecha_creado, tipo, perm_ingreso, perm_edicion, perm_prestamo, perm_devolucion, eliminado) VALUES (?, ?, ?, ?, now(), ?, ?, ?, ?, ?, ?)")){
+                if($sql->bind_param("ssssiiiiii", $nombre, $correo, $s, $s, $tipo, $perm_ingreso, $perm_edicion, $perm_prestamo, $perm_devolucion, $e)){
                     if($sql->execute()){
                         $id = $this->con->insert_id;
                         $info['op'] = 1;
@@ -171,8 +173,9 @@ class Guardar{
             }else{ echo htmlspecialchars($this->con->error); }
         }
         if($id == 0){
-            if($sql = $this->con->prepare("INSERT INTO _jardinva_alumnos (nmatricula, rut, apellido_p, apellido_m, nombres, sexo, fecha_nacimiento, fecha_matricula, fecha_creado, fecha_ingreso, direccion, nombre_apoderado, telefono_apoderado, email_apoderado, fecha_retiro, motivo_retiro, observaciones, id_cur, rr, nombre_01, nombre_02, celular_01, celular_02, email_01, email_02) VALUES (?, ?, ?, ?, ?, ?, ?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")){
-                if($sql->bind_param("issssissssssssssiissssss", $nmatricula, $rut, $apellido_p, $apellido_m, $nombres, $sexo, $fecha_nacimiento, $fecha_matricula, $fecha_ingreso, $direccion, $nombre_apoderado, $telefono_apoderado, $email_apoderado, $fecha_retiro, $motivo_retiro, $observaciones, $curso, $rr, $nombre_01, $nombre_02, $celular_01, $celular_02, $email_01, $email_02)){
+            $e = 0;
+            if($sql = $this->con->prepare("INSERT INTO _jardinva_alumnos (nmatricula, rut, apellido_p, apellido_m, nombres, sexo, fecha_nacimiento, fecha_matricula, fecha_creado, fecha_ingreso, direccion, nombre_apoderado, telefono_apoderado, email_apoderado, fecha_retiro, motivo_retiro, observaciones, id_cur, rr, nombre_01, nombre_02, celular_01, celular_02, email_01, email_02, orders, eliminado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")){
+                if($sql->bind_param("issssissssssssssiissssssii", $nmatricula, $rut, $apellido_p, $apellido_m, $nombres, $sexo, $fecha_nacimiento, $fecha_matricula, $fecha_ingreso, $direccion, $nombre_apoderado, $telefono_apoderado, $email_apoderado, $fecha_retiro, $motivo_retiro, $observaciones, $curso, $rr, $nombre_01, $nombre_02, $celular_01, $celular_02, $email_01, $email_02, $e, $e)){
                     if($sql->execute()){
                         $info['op'] = 1;
                         $info['mensaje'] = "Alumno ingresado exitosamente";
@@ -202,8 +205,9 @@ class Guardar{
         $id = $_POST['id'];
 
         if($id == 0){
-            if($sql = $this->con->prepare("INSERT INTO _jardinva_boletas (numero, dia, mes, ano, tipo, nula, matricula) VALUES (?, ?, ?, ?, ?, ?, ?)")){
-                if($sql->bind_param("iiiiiii", $numero, $dia, $mes, $ano, $tipo, $nula, $matricula)){
+            $e = 0;
+            if($sql = $this->con->prepare("INSERT INTO _jardinva_boletas (numero, dia, mes, ano, tipo, nula, matricula, mjardin, msalacuna, eliminado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")){
+                if($sql->bind_param("iiiiiiiiii", $numero, $dia, $mes, $ano, $tipo, $nula, $matricula, $e, $e, $e)){
                     if($sql->execute()){
                         $info['op'] = 1;
                         $info['mensaje'] = "Boleta ingresado exitosamente";
@@ -276,8 +280,9 @@ class Guardar{
         $nombre = $_POST['nombre'];
 
         if($id == 0){
-            if($sql = $this->con->prepare("INSERT INTO _jardinva_cursos (nombre) VALUES (?)")){
-                if($sql->bind_param("s", $nombre)){
+            $e = 0;
+            if($sql = $this->con->prepare("INSERT INTO _jardinva_cursos (nombre, parent_id, orders, eliminado) VALUES (?, ?, ?, ?)")){
+                if($sql->bind_param("siii", $nombre, $e, $e, $e)){
                     if($sql->execute()){
                         $info['op'] = 1;
                         $info['mensaje'] = "Curso ingresado exitosamente";
