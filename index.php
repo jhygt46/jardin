@@ -558,7 +558,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='start_cursos' style='text-align: right; padding-top: 4px'><div style='display: inline-block; padding: 8px 12px; background-color: #900; font-size: 14px; border-radius: 5px; color: #fff' onclick='start_cursos()'>Cursos Online</div></div>
+                    <div class='start_cursos' style='text-align: right; padding-top: 4px'><div style='display: inline-block; padding: 8px 12px; background-color: #900; font-size: 14px; border-radius: 5px; color: #fff; cursor: pointer' onclick='start_cursos()'>Cursos Online</div></div>
                 </div>
             </div>
             <?php if($curso == 1){ ?>
