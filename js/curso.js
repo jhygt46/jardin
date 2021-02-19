@@ -304,7 +304,7 @@ function html_video(that, aux = null){
       
     var video = document.getElementById('video');
     video.onclick = function(){ if(!this.paused){ this.pause() }else{ this.play() } };
-    video.setAttribute("src", 'http://34.71.35.149/video?video='+n);
+    video.setAttribute("src", '/online/videos/'+n);
     
     video.load();
     video.play();
