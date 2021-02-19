@@ -298,12 +298,12 @@
     $pagina_inicio = "conozcanos";
     $curso_url = "";
     $curso_url2 = "";
-
+        /*
         echo "<pre>";
         print_r($url);
         echo "</pre>";
-
-    if($pagina != ""){
+        */
+    if($pagina != "" && $pagina[0] != "?"){
 
         if($pagina == "conozcanos"){
             $style_conozcanos = "opacity: 1; top: 0px";
