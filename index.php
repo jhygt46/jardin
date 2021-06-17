@@ -113,6 +113,8 @@
 
 
     // TIPO 2
+    $material[] = crear_objeto("Contando del 1 al 10", 2, [1], null, "k0TLYlgURUY", "cancion56prev.jpg");
+    $material[] = crear_objeto("Canción de los números", 2, [1], null, "CzbF7Umcafk", "cancion57prev.jpg");
     $material[] = crear_objeto("¿Dónde está la cebra?", 2, [1], null, "cgG73CoTz6U", "cancion1prev.jpg");
     $material[] = crear_objeto("Si Estás Feliz", 2, [2], null, "lU8zZjBV53M", "cancion4prev.jpg");
     $material[] = crear_objeto("Estaba el señor Don Gato", 2, [2, 4], null, "9Oyz_egsKI4", "cancion2prev.jpg");
@@ -170,6 +172,7 @@
     $material[] = crear_objeto("Cantando los numeros", 2, [1], null, "pSqnl2eSu9Y", "cancion53prev.jpg");
     $material[] = crear_objeto("El tren", 2, [1], null, "foURpp7ZGC0", "cancion54prev.jpg");
     $material[] = crear_objeto("Sal de ahi chivita chivita", 2, [1], null, "K9GLvX9rA_0", "cancion55prev.jpg");
+    
     
     // TIPO 3
     $material[] = crear_objeto("Clo Clo Clotilde", 3, [1], null, null, "clo-clo-clotilde.jpg", null, null, "Clo-Clo-Clotilde.mp4", 640, 352);
@@ -286,7 +289,8 @@
     $material[] = crear_objeto("Volcan de formas", 4, [2], null, "https://arbolabcgames.top/M91AB", "juego2.jpg", null, null, null, 1290, 800);
     $material[] = crear_objeto("Aprendamos las formas", 4, [2], null, "https://arbolabcgames.top/M1A", "juego2.jpg", null, null, null, 1290, 800);
     $material[] = crear_objeto("Juguemos al bingo", 4, [2], null, "https://arbolabcgames.top/M10A", "juego2.jpg", null, null, null, 1290, 800);
-    
+    $material[] = crear_objeto("Trazar los Numeros", 4, [2], null, "https://arbolabcgames.top/M12A", "juego2.jpg", null, null, null, 1290, 800);
+    $material[] = crear_objeto("Numeros", 4, [2], null, "https://arbolabcgames.top/M8A", "juego2.jpg", null, null, null, 1290, 800);
 
     require_once "./url_function.php";
     $url = url();
